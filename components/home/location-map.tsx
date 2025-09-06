@@ -1,57 +1,77 @@
 "use client"
 
 import Link from "next/link"
-
 import { Button } from "@/components/ui/button"
-
-import { useState } from "react"
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
-import "leaflet/dist/leaflet.css"
-import { Icon } from "leaflet"
+import { MapPin, Phone, Clock } from "lucide-react"
 
 // Define salon locations
 const locations = [
-  { name: "Glow Salon - Bandra", position: [19.0596, 72.8295] },
-  { name: "Glow Salon - Andheri", position: [19.1136, 72.8697] },
-  { name: "Glow Salon - Powai", position: [19.1176, 72.906] },
+  {
+    name: "Glow Salon - Bandra",
+    address: "Shop 12, Hill Road, Bandra West, Mumbai - 400050",
+    phone: "+91 98765 43210",
+    hours: "10:00 AM - 9:00 PM",
+  },
+  {
+    name: "Glow Salon - Andheri",
+    address: "Unit 5, Lokhandwala Complex, Andheri West, Mumbai - 400053",
+    phone: "+91 98765 43211",
+    hours: "10:00 AM - 9:00 PM",
+  },
+  {
+    name: "Glow Salon - Powai",
+    address: "Ground Floor, Hiranandani Gardens, Powai, Mumbai - 400076",
+    phone: "+91 98765 43212",
+    hours: "10:00 AM - 9:00 PM",
+  },
 ]
 
-// Custom icon for markers
-const customIcon = new Icon({
-  iconUrl: "/placeholder.svg?height=41&width=32&text=📍",
-  iconSize: [32, 41],
-  iconAnchor: [16, 41],
-  popupAnchor: [0, -41],
-})
-
 export default function LocationMap() {
-  const [activeLocation, setActiveLocation] = useState(null)
-
   return (
-    <div className="h-[400px] rounded-lg overflow-hidden shadow-md">
-      <MapContainer center={[19.076, 72.8777]} zoom={11} style={{ height: "100%", width: "100%" }}>
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Interactive Map */}
+      <div className="h-[400px] rounded-lg overflow-hidden shadow-md">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.082177513380943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1635789012345!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Glow Salon Locations in Mumbai"
         />
+      </div>
+
+      {/* Location Details */}
+      <div className="space-y-6">
         {locations.map((location, index) => (
-          <Marker
-            key={index}
-            position={location.position}
-            icon={customIcon}
-            eventHandlers={{
-              click: () => setActiveLocation(location),
-            }}
-          >
-            <Popup>
-              <div className="font-semibold">{location.name}</div>
-              <Button asChild size="sm" className="mt-2 bg-primary text-white">
-                <Link href="/booking">Book Now</Link>
-              </Button>
-            </Popup>
-          </Marker>
+          <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <h3 className="font-bold text-lg mb-3 text-primary">{location.name}</h3>
+
+            <div className="space-y-2 mb-4">
+              <div className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 text-gray-500 mt-1 flex-shrink-0" />
+                <span className="text-sm text-gray-600">{location.address}</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-gray-500 flex-shrink-0" />
+                <span className="text-sm text-gray-600">{location.phone}</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4 text-gray-500 flex-shrink-0" />
+                <span className="text-sm text-gray-600">{location.hours}</span>
+              </div>
+            </div>
+
+            <Button asChild size="sm" className="bg-primary text-white hover:bg-primary/90">
+              <Link href="/booking">Book Now</Link>
+            </Button>
+          </div>
         ))}
-      </MapContainer>
+      </div>
     </div>
   )
 }

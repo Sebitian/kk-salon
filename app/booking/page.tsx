@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Suspense } from "react"
 import BookingForm from "@/components/booking/booking-form"
 import BookingBanner from "@/components/booking/booking-banner"
 
@@ -8,13 +9,39 @@ export const metadata: Metadata = {
     "Book your appointment at Glow Unisex Salon. Choose from our range of services and select a convenient time slot.",
 }
 
+function BookingFormSkeleton() {
+  return (
+    <div className="max-w-3xl mx-auto">
+      <div className="animate-pulse">
+        <div className="bg-gray-200 h-32 rounded-t-lg mb-8"></div>
+        <div className="space-y-6 p-8">
+          <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+          <div className="h-10 bg-gray-200 rounded"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="h-10 bg-gray-200 rounded"></div>
+            <div className="h-10 bg-gray-200 rounded"></div>
+          </div>
+          <div className="h-10 bg-gray-200 rounded"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="h-64 bg-gray-200 rounded"></div>
+            <div className="h-64 bg-gray-200 rounded"></div>
+          </div>
+          <div className="h-12 bg-gray-200 rounded"></div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function BookingPage() {
   return (
     <>
       <BookingBanner />
       <div className="py-16 bg-gray-50">
         <div className="container-custom">
-          <BookingForm />
+          <Suspense fallback={<BookingFormSkeleton />}>
+            <BookingForm />
+          </Suspense>
         </div>
       </div>
     </>

@@ -1,26 +1,18 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
-import "leaflet/dist/leaflet.css"
-import { Icon } from "leaflet"
-
-const customIcon = new Icon({
-  iconUrl: "/placeholder.svg?height=41&width=32&text=📍",
-  iconSize: [32, 41],
-  iconAnchor: [16, 41],
-  popupAnchor: [0, -41],
-})
+"use client"
 
 export default function LocationMap() {
   return (
     <div className="rounded-lg overflow-hidden shadow-md h-[400px]">
-      <MapContainer center={[19.076, 72.8777]} zoom={11} style={{ height: "100%", width: "100%" }}>
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        />
-        <Marker position={[19.076, 72.8777]} icon={customIcon}>
-          <Popup>Glow Unisex Salon</Popup>
-        </Marker>
-      </MapContainer>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.082177513380943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1635789012345!5m2!1sen!2sin"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Glow Unisex Salon Location"
+      />
     </div>
   )
 }
