@@ -7,23 +7,11 @@ import { MapPin, Phone, Clock } from "lucide-react"
 // Define salon locations
 const locations = [
   {
-    name: "Glow Salon - Bandra",
-    address: "Shop 12, Hill Road, Bandra West, Mumbai - 400050",
-    phone: "+91 98765 43210",
+    name: "Kossof Kraaz Salon - Linconshire",
+    address: "410 Milwaukee Ave, Lincolnshire, IL 60069",
+    phone: "+333 333 3333",
     hours: "10:00 AM - 9:00 PM",
-  },
-  {
-    name: "Glow Salon - Andheri",
-    address: "Unit 5, Lokhandwala Complex, Andheri West, Mumbai - 400053",
-    phone: "+91 98765 43211",
-    hours: "10:00 AM - 9:00 PM",
-  },
-  {
-    name: "Glow Salon - Powai",
-    address: "Ground Floor, Hiranandani Gardens, Powai, Mumbai - 400076",
-    phone: "+91 98765 43212",
-    hours: "10:00 AM - 9:00 PM",
-  },
+  }
 ]
 
 export default function LocationMap() {
@@ -32,14 +20,14 @@ export default function LocationMap() {
       {/* Interactive Map */}
       <div className="h-[400px] rounded-lg overflow-hidden shadow-md">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.082177513380943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1635789012345!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.9776895714584!2d-87.92439872347052!3d42.19357847920088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fc0e8c9b1785f%3A0x5f7f65cf4fa6d3b8!2s410%20Milwaukee%20Ave%2C%20Lincolnshire%2C%20IL%2060069!5e0!3m2!1sen!2sus!4v1699471547410!5m2!1sen!2sus"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Glow Salon Locations in Mumbai"
+          title="Kossof Kraaz Salon Location in Lincolnshire"
         />
       </div>
 

@@ -12,10 +12,10 @@ export default function Footer() {
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
                 <Scissors className="h-5 w-5 text-white" />
               </div>
-              <span className="text-2xl font-bold gradient-text">Glow Salon</span>
+              <span className="text-2xl font-bold gradient-text">KOSSOF ● KRAAZ</span>
             </div>
             <p className="text-gray-400 mb-6">
-              Elevating beauty and style with our premium unisex salon services. Experience the glow today!
+              Elevating beauty and style for over 30 years. Experience the glow today!
             </p>
             <div className="flex space-x-4">
               <a
@@ -89,11 +89,11 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-6 w-6 text-primary shrink-0 mt-0.5 mr-3" />
-                <span className="text-gray-400">123 Beauty Lane, Mumbai, Maharashtra 400001, India</span>
+                <span className="text-gray-400">Linconshire</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-6 w-6 text-primary mr-3" />
-                <span className="text-gray-400">+91 98765 43210</span>
+                <span className="text-gray-400">+333 333 3333</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-6 w-6 text-primary mr-3" />
@@ -147,12 +147,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Glow Salon. All rights reserved.</p>
-          <p className="mt-2">
-            <span className="inline-block">Made with ❤️ in India</span>
-            <span className="mx-2">|</span>
-            <span className="inline-block">सभी के लिए सुंदरता (Beauty for All)</span>
-          </p>
+          <p>&copy; {new Date().getFullYear()} Kossof & Kraaz Salon. All rights reserved.</p>
         </div>
       </div>
     </footer>
