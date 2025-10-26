@@ -43,15 +43,15 @@ export default function MeetTeamSection() {
           </div>
 
           {/* Right Side - Content */}
-          <div className="text-center lg:text-left space-y-8">
+          <div className=" text-center space-y-8">
             <div>
-              <h2 className="text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-8">
+              <h2 className="text-center text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-8">
                 MEET THE
                 <br />
                 TEAM
               </h2>
 
-              <div className="space-y-4 text-lg leading-relaxed max-w-xl">
+              {/* <div className="text-center space-y-4 px-8 py-4 text-lg leading-relaxed tracking-tight mb-8 max-w-xl"> */}
                 <p className="text-black">
                   SERVING EVERYDAY LUXURY WITH INTENTIONAL STYLE, EFFORTLESS
                   CHARM, AND THE QUIET CONFIDENCE OF A TEAM THAT GETS IT.
@@ -63,7 +63,7 @@ export default function MeetTeamSection() {
 
                 <p className="text-black">NO EXCESS—JUST REFINEMENT.</p>
               </div>
-            </div>
+            {/* </div> */}
 
             <div>
               <Button

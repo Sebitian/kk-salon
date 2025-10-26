@@ -38,10 +38,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} font-sans`}>
         <GoogleAnalytics />
-        <Header />
+        {/* <Header /> */}
         <main>{children}</main>
-        <Footer />
-        <WhatsAppWidget />
+        {/* <Footer /> */}
+        {/* <WhatsAppWidget /> */}
       </body>
     </html>
   )

@@ -9,6 +9,7 @@ import BookShopSection from "@/components/home/book-shop-section"
 import ShopShowcase from "@/components/home/shop-showcase"
 import MeetTeamSection from "@/components/home/meet-team-section"
 import ShopCollections from "@/components/home/shop-collections"
+import ComingSoonPage from "@/components/home/coming-soon"
 
 export const metadata: Metadata = {
   title: "Glow Unisex Salon - Beauty for All",
@@ -20,16 +21,17 @@ export default function Home() {
   return (
     <>
       {/* <SalonBlissHomepage /> */}
-      <HeroSection />
-      <BookShopSection />
-      <ShopShowcase />
-      <ShopCollections />
-      <MeetTeamSection />
+      <ComingSoonPage />
+      {/* <HeroSection /> */}
+      {/* <BookShopSection /> */}
+      {/* <ShopShowcase /> */}
+      {/* <ShopCollections /> */}
+      {/* <MeetTeamSection /> */}
       {/* <ServicesOverview /> */}
       {/* <WhyChooseUsSection />
       <TestimonialsSection />
       <InstagramSection /> */}
-      <CTASection />
+      {/* <CTASection /> */}
     </>
   )
 }
