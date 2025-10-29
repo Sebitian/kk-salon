@@ -14,19 +14,17 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Glow Unisex Salon - Beauty for All",
+  title: "Kossof Salon Spa - Lincolnshire, IL",
   description:
-    "Premier unisex salon in India offering haircuts, styling, nail care, beauty treatments, and makeup services for men and women.",
-  keywords: "unisex salon, beauty salon India, haircuts, hairstyling, nail care, beauty treatments, makeup services",
-  openGraph: {
-    title: "Glow Unisex Salon - Beauty for All",
-    description:
-      "Premier unisex salon in India offering haircuts, styling, nail care, beauty treatments, and makeup services for men and women.",
-    images: ["/images/og-image.jpg"],
-    type: "website",
-    locale: "en_IN",
+    "",
+  // keywords: "unisex salon, beauty salon Lincolnshire, haircuts, hairstyling, nail care, beauty treatments, makeup services",
+  icons: {
+    icon: [
+      { url: "/klogo.png" },
+      { url: "/kogo.png", type: "image/png", sizes: "64x64" }
+    ],
+    apple: "/images/venegas-logo.jpeg",
   },
-    generator: 'v0.app'
 }
 
 export default function RootLayout({

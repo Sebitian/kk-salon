@@ -12,9 +12,15 @@ import ShopCollections from "@/components/home/shop-collections"
 import ComingSoonPage from "@/components/home/coming-soon"
 
 export const metadata: Metadata = {
-  title: "Glow Unisex Salon - Beauty for All",
-  description:
-    "Premier unisex salon in India offering haircuts, styling, nail care, beauty treatments, and makeup services for men and women.",
+  title: "Kossof Salon Spa - Lincolnshire, IL",
+  openGraph: {
+    title: "Kossof Salon Spa - Lincolnshire, IL",
+    description:
+      "",
+    images: ["/public/logo.png"],
+    type: "website",
+    locale: "en_US",
+  },
 }
 
 export default function Home() {
