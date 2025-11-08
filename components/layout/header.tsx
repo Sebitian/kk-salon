@@ -8,9 +8,9 @@ import { Menu, X, Search, ShoppingCart, User } from "lucide-react"
 
 const navItems = [
   { name: "BOOK", href: "/booking" },
-  { name: "ABOUT", href: "/about" },
-  { name: "GALLERY", href: "/gallery" },
+  { name: "ABOUT", href: "/about" }, 
   { name: "SERVICES", href: "/services" },
+  { name: "GALLERY", href: "/gallery" },
   { name: "FAQ", href: "/faq" },
   { name: "CONTACT", href: "/contact" },
 ]
@@ -76,40 +76,40 @@ export default function Header() {
           {/* Right side - Icons */}
           <div className="flex items-center space-x-2 xl:space-x-3 flex-1 justify-end max-w-[calc(50%-120px)]">
             {/* Currency selector (desktop only) */}
-            <div className="hidden xl:flex items-center space-x-1 text-white text-sm">
+            {/* <div className="hidden xl:flex items-center space-x-1 text-white text-sm">
               <span className="text-xs">🇺🇸</span>
               <span className="text-sm">USD $</span>
-            </div>
+            </div> */}
 
             {/* User icon */}
-            <Button
+            {/* <Button
               size="icon"
               variant="ghost"
               className="text-white hover:bg-white/10 hover:text-primary"
               aria-label="User account"
             >
               <User size={18} />
-            </Button>
+            </Button> */}
 
             {/* Search icon */}
-            <Button
+            {/* <Button
               size="icon"
               variant="ghost"
               className="text-white hover:bg-white/10 hover:text-primary"
               aria-label="Search"
             >
               <Search size={18} />
-            </Button>
+            </Button> */}
 
             {/* Shopping cart icon */}
-            <Button
+            {/* <Button
               size="icon"
               variant="ghost"
               className="text-white hover:bg-white/10 hover:text-primary"
               aria-label="Shopping cart"
             >
               <ShoppingCart size={18} />
-            </Button>
+            </Button> */}
           </div>
         </div>
 

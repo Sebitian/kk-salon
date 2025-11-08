@@ -29,7 +29,7 @@ export default function Footer() {
                 alt="Kossof Salon Spa"
                 width={200}
                 height={200}
-                className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover"
+                className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover shadow-[0_0_30px_rgba(255,255,255,0.6),0_0_60px_rgba(255,255,255,0.4),0_0_90px_rgba(255,255,255,0.2)]"
               />
             </div>
             <div className="flex space-x-4">
