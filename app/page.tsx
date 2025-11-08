@@ -26,8 +26,15 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      {/* ===============TEST */}
+      <HeroSection />
+      <MeetTeamSection />
+      <TestimonialsSection />
+      {/* <WhyChooseUsSection /> */}
+      {/* =============== */}
+      
       {/* <SalonBlissHomepage /> */}
-      <ComingSoonPage />
+      {/* <ComingSoonPage /> */}
       {/* <HeroSection /> */}
       {/* <BookShopSection /> */}
       {/* <ShopShowcase /> */}

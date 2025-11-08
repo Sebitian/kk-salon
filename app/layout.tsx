@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Poppins } from "next/font/google"
+import { Poppins, Montserrat } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
@@ -11,6 +11,12 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-poppins",
+})
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-montserrat",
 })
 
 export const metadata: Metadata = {
@@ -34,11 +40,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-sans`}>
+      <body className={`${poppins.variable} ${montserrat.variable} font-sans`}>
         <GoogleAnalytics />
-        {/* <Header /> */}
+        <Header />
         <main>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
         {/* <WhatsAppWidget /> */}
       </body>
     </html>

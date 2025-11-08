@@ -8,10 +8,10 @@ import { Menu, X, Search, ShoppingCart, User } from "lucide-react"
 
 const navItems = [
   { name: "BOOK", href: "/booking" },
-  { name: "SHOP", href: "/shop" },
-  { name: "SERVICES", href: "/services" },
-  { name: "BLOG", href: "/blog" },
   { name: "ABOUT", href: "/about" },
+  { name: "GALLERY", href: "/gallery" },
+  { name: "SERVICES", href: "/services" },
+  { name: "FAQ", href: "/faq" },
   { name: "CONTACT", href: "/contact" },
 ]
 
@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 animate-fadeIn ${
-        isScrolled ? "bg-black/95 backdrop-blur-md shadow-md py-2" : "bg-black/80 backdrop-blur-sm py-3"
+        isScrolled ? "bg-[#251c18]/95 backdrop-blur-md shadow-md py-2" : "bg-[#251c18]/95 backdrop-blur-sm py-3"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -53,8 +53,8 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm font-medium tracking-wide transition-colors hover:text-amber-300 whitespace-nowrap ${
-                    pathname === item.href ? "text-amber-300" : "text-white"
+                  className={`text-sm font-medium tracking-wide transition-colors hover:text-primary whitespace-nowrap ${
+                    pathname === item.href ? "text-primary" : "text-white"
                   }`}
                 >
                   {item.name}
@@ -67,9 +67,9 @@ export default function Header() {
           <div className="absolute left-1/2 transform -translate-x-1/2 z-10 px-4">
             <Link
               href="/"
-              className="text-white text-lg xl:text-xl font-bold tracking-wider hover:text-amber-300 transition-colors whitespace-nowrap"
+              className="font-['Montserrat'] text-white text-lg xl:text-xl font-bold tracking-wider hover:text-primary transition-colors whitespace-nowrap"
             >
-              KOSSOF ● KRAAZ (v.1.0)
+              Kossof Salon Spa  (v.1.0)
             </Link>
           </div>
 
@@ -85,7 +85,7 @@ export default function Header() {
             <Button
               size="icon"
               variant="ghost"
-              className="text-white hover:bg-white/10 hover:text-amber-300"
+              className="text-white hover:bg-white/10 hover:text-primary"
               aria-label="User account"
             >
               <User size={18} />
@@ -95,7 +95,7 @@ export default function Header() {
             <Button
               size="icon"
               variant="ghost"
-              className="text-white hover:bg-white/10 hover:text-amber-300"
+              className="text-white hover:bg-white/10 hover:text-primary"
               aria-label="Search"
             >
               <Search size={18} />
@@ -105,7 +105,7 @@ export default function Header() {
             <Button
               size="icon"
               variant="ghost"
-              className="text-white hover:bg-white/10 hover:text-amber-300"
+              className="text-white hover:bg-white/10 hover:text-primary"
               aria-label="Shopping cart"
             >
               <ShoppingCart size={18} />
@@ -115,15 +115,15 @@ export default function Header() {
 
         {/* Mobile menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 bg-black/95  rounded-lg shadow-lg p-4 border border-white/10">
+          <div className="lg:hidden mt-4 bg-[#251c18]/95 rounded-lg shadow-lg p-4 border border-white/10">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={`block px-4 py-3 rounded text-base font-medium mb-2 transition-colors ${
                   pathname === item.href
-                    ? "text-amber-300 bg-white/10"
-                    : "text-white hover:text-amber-300 hover:bg-white/5"
+                    ? "text-primary bg-white/10"
+                    : "text-white hover:text-primary hover:bg-white/5"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >

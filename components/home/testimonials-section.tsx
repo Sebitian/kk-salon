@@ -1,49 +1,42 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
 
 const testimonials = [
   {
     id: 1,
-    name: "Priya Sharma",
-    role: "Regular Customer",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces&auto=format&q=60",
+    name: "Rachel",
+    source: "Google Review",
     quote:
-      "I've been coming to Glow Salon for over a year now, and I'm always impressed with their hair coloring services. The stylists understand exactly what I want!",
-    rating: 5,
+      "I love this salon! I've had both Stevie and Angelica for color, and not only do they both do an incredible job, but they are really wonderful people with whom to spend time. I also just started getting my hair cut by Lindsay and she is also amazing! Truly, my favorite hair cut ever- right out of the salon. Go see the folks at The Lane salon- you, and your hair, will love them.",
   },
   {
     id: 2,
-    name: "Rohan Mehta",
-    role: "First-time Customer",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces&auto=format&q=60",
+    name: "Sarah",
+    source: "Google Review",
     quote:
-      "Best haircut ever! The stylist took time to understand what I wanted and gave great suggestions. Will definitely be coming back.",
-    rating: 5,
+      "Best salon experience I've ever had! The team is incredibly talented and makes you feel so welcome. Every visit feels like a luxury experience.",
   },
   {
     id: 3,
-    name: "Ananya Patel",
-    role: "Regular Customer",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=faces&auto=format&q=60",
+    name: "Michael",
+    source: "Yelp Review",
     quote:
-      "Loved the nail art! The technicians are so creative and detail-oriented. My nails have never looked better.",
-    rating: 4,
+      "Outstanding service from start to finish. The stylists really listen to what you want and deliver beyond expectations. Highly recommend!",
   },
   {
     id: 4,
-    name: "Vikram Singh",
-    role: "Monthly Customer",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces&auto=format&q=60",
+    name: "Emma",
+    source: "Google Review",
     quote:
-      "As a man who cares about grooming, I appreciate that this salon caters to both men and women. Great beard trimming and facial services!",
-    rating: 5,
+      "I've been coming here for years and wouldn't go anywhere else. The attention to detail and personalized service is unmatched.",
+  },
+  {
+    id: 5,
+    name: "James",
+    source: "Facebook Review",
+    quote:
+      "Professional, friendly, and talented team. They transformed my look and I couldn't be happier. The atmosphere is relaxing and the results speak for themselves.",
   },
 ]
 
@@ -63,99 +56,84 @@ export default function TestimonialsSection() {
     return () => clearInterval(interval)
   }, [autoplay])
 
-  const handlePrev = () => {
+  const handleDotClick = (index: number) => {
     setAutoplay(false)
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
+    setCurrentIndex(index)
   }
 
-  const handleNext = () => {
-    setAutoplay(false)
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-  }
+  const currentTestimonial = testimonials[currentIndex]
 
   return (
-    <section className="salon-section bg-gradient-to-br from-primary/5 to-secondary/5 relative overflow-hidden animate-fadeIn">
-      {/* Decorative Pattern */}
-      <div className="absolute inset-0 pointer-events-none opacity-30">
-        <div className="absolute inset-0 bg-salon-pattern"></div>
-      </div>
+    <section 
+      className="py-20 px-4 relative overflow-hidden"
+      style={{ 
+        backgroundColor: '#f5f5dc',
+        fontFamily: 'var(--font-montserrat), sans-serif'
+      }}
+    >
+      {/* Subtle shadow effect in bottom right */}
+      <div 
+        className="absolute bottom-0 right-0 w-96 h-96 opacity-20 pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle at bottom right, rgba(37, 28, 24, 0.1), transparent 70%)'
+        }}
+      />
 
-      <div className="container-custom relative z-10">
-        <div className="salon-section-title">
-          <h2 className="heading-lg">What Our Customers Say</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our clients have to say about their experiences at Glow Unisex
-            Salon.
-          </p>
-        </div>
+      <div className="container mx-auto max-w-4xl relative z-10">
+        {/* Main Heading */}
+        <h2 
+          className="text-center text-2xl lg:text-3xl font-semibold uppercase tracking-wider mb-12"
+          style={{ color: '#251c18', letterSpacing: '0.15em' }}
+        >
+          FROM OUR CLIENTS
+        </h2>
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="overflow-hidden">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        {/* Testimonial Content */}
+        <div className="text-center">
+          {/* Fixed Height Container for Testimonial */}
+          <div className="min-h-[400px] lg:min-h-[450px] flex flex-col justify-center space-y-8">
+            {/* Quote */}
+            <blockquote 
+              className="text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto px-4"
+              style={{ color: '#251c18' }}
             >
-              {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <div className="salon-card p-8 shadow-salon">
-                    <div className="flex flex-col md:flex-row md:items-center mb-6">
-                      <div className="relative w-16 h-16 rounded-full overflow-hidden mb-4 md:mb-0 md:mr-4">
-                        <Image
-                          src={testimonial.image || "/placeholder.svg"}
-                          alt={testimonial.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-lg">{testimonial.name}</h3>
-                        <p className="text-gray-600 text-sm">{testimonial.role}</p>
-                        <div className="flex text-secondary mt-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4" fill={i < testimonial.rating ? "currentColor" : "none"} />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <div className="absolute -top-2 -left-2 text-5xl text-primary opacity-20">"</div>
-                      <blockquote className="text-gray-700 italic relative z-10 pl-4">{testimonial.quote}</blockquote>
-                      <div className="absolute -bottom-4 -right-2 text-5xl text-primary opacity-20">"</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+              "{currentTestimonial.quote}"
+            </blockquote>
+
+            {/* Separator Line */}
+            <div 
+              className="w-20 h-px mx-auto"
+              style={{ backgroundColor: '#251c18' }}
+            />
+
+            {/* Client Attribution */}
+            <div className="flex flex-col items-center space-y-1">
+              <p 
+                className="text-sm lg:text-base uppercase tracking-wider"
+                style={{ color: '#251c18' }}
+              >
+                {currentTestimonial.name} |{" "}
+                <span className="underline">{currentTestimonial.source}</span>
+              </p>
             </div>
           </div>
 
-          <button
-            onClick={handlePrev}
-            className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
-          <button
-            onClick={handleNext}
-            className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-
-          <div className="flex justify-center mt-6 space-x-2">
+          {/* Pagination Dots */}
+          <div className="flex justify-center items-center space-x-3 pt-8">
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  setAutoplay(false)
-                  setCurrentIndex(index)
-                }}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex ? "bg-primary" : "bg-gray-300"
-                }`}
+                onClick={() => handleDotClick(index)}
+                className="transition-all duration-300 focus:outline-none"
                 aria-label={`Go to testimonial ${index + 1}`}
+                style={{
+                  width: index === currentIndex ? '12px' : '8px',
+                  height: index === currentIndex ? '12px' : '8px',
+                  borderRadius: '50%',
+                  backgroundColor: index === currentIndex ? 'transparent' : '#251c18',
+                  border: index === currentIndex ? '2px solid #251c18' : 'none',
+                  opacity: index === currentIndex ? 1 : 0.6,
+                }}
               />
             ))}
           </div>

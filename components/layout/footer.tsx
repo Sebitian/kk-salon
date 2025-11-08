@@ -1,28 +1,44 @@
 import Link from "next/link"
-import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Clock, Scissors } from "lucide-react"
+import Image from "next/image"
+import { Facebook, Instagram } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white pt-20 pb-10">
+    <footer className="bg-[#251c18] text-white pt-16 pb-10">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* About Glow Salon */}
-          <div>
-            <div className="flex items-center mb-6">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
-                <Scissors className="h-5 w-5 text-white" />
-              </div>
-              <span className="text-2xl font-bold gradient-text">KOSSOF ● KRAAZ</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          {/* CONTACT Section */}
+          <div className="text-center">
+            <h3 className="text-lg font-serif uppercase mb-6 tracking-wide">CONTACT</h3>
+            <div className="space-y-3 text-sm uppercase font-sans">
+              <p className="leading-relaxed">185 N MILWAUKEE AVENUE, STE. 120</p>
+              <p className="leading-relaxed">LINCOLNSHIRE, IL 60069</p>
+              <p className="mt-4">info@kossofsalonspa.com</p>
+              <p className="mt-2">(847) 571-8078</p>
+              <Link href="/contact" className="block mt-6 underline hover:text-gray-300 transition-colors">
+                FAQ'S
+              </Link>
             </div>
-            <p className="text-gray-400 mb-6">
-              Elevating beauty and style for over 30 years. Experience the glow today!
-            </p>
+          </div>
+
+          {/* Logo and Social Media */}
+          <div className="flex flex-col items-center justify-start">
+            <div className="mb-6">
+              <Image
+                src="/logo.png"
+                alt="Kossof Salon Spa"
+                width={200}
+                height={200}
+                className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover"
+              />
+            </div>
             <div className="flex space-x-4">
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary transition-colors"
+                className="text-white hover:text-gray-300 transition-colors"
+                aria-label="Instagram"
               >
                 <Instagram className="h-6 w-6" />
               </a>
@@ -30,124 +46,41 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary transition-colors"
+                className="text-white hover:text-gray-300 transition-colors"
+                aria-label="Facebook"
               >
                 <Facebook className="h-6 w-6" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary transition-colors"
-              >
-                <Twitter className="h-6 w-6" />
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 flex items-center">
-              <span className="w-8 h-0.5 bg-primary mr-3"></span>
-              Quick Links
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/services" className="text-gray-400 hover:text-primary transition-colors">
-                  Our Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/gallery" className="text-gray-400 hover:text-primary transition-colors">
-                  Gallery
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-400 hover:text-primary transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-400 hover:text-primary transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/booking" className="text-gray-400 hover:text-primary transition-colors">
-                  Book Appointment
-                </Link>
-              </li>
+          {/* HOURS Section */}
+          <div className="text-center">
+            <h3 className="text-lg font-serif uppercase mb-6 tracking-wide">HOURS</h3>
+            <ul className="space-y-2 text-sm uppercase font-sans">
+              <li>MONDAY: CLOSED</li>
+              <li>TUESDAY: 9-6</li>
+              <li>WEDNESDAY: 9-4</li>
+              <li>THURSDAY: 9-6</li>
+              <li>FRIDAY: 9-6</li>
+              <li>SATURDAY: 9-4</li>
             </ul>
-          </div>
-
-          {/* Contact Information */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 flex items-center">
-              <span className="w-8 h-0.5 bg-primary mr-3"></span>
-              Contact Us
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin className="h-6 w-6 text-primary shrink-0 mt-0.5 mr-3" />
-                <span className="text-gray-400">Linconshire</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="h-6 w-6 text-primary mr-3" />
-                <span className="text-gray-400">+333 333 3333</span>
-              </li>
-              <li className="flex items-center">
-                <Mail className="h-6 w-6 text-primary mr-3" />
-                <span className="text-gray-400">info@glowsalon.in</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Business Hours */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 flex items-center">
-              <span className="w-8 h-0.5 bg-primary mr-3"></span>
-              Business Hours
-            </h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <Clock className="h-6 w-6 text-primary shrink-0 mt-0.5 mr-3" />
-                <div>
-                  <p className="text-gray-400">Monday - Saturday:</p>
-                  <p className="font-semibold text-white">10:00 AM - 8:00 PM</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <Clock className="h-6 w-6 text-primary shrink-0 mt-0.5 mr-3" />
-                <div>
-                  <p className="text-gray-400">Sunday:</p>
-                  <p className="font-semibold text-white">11:00 AM - 6:00 PM</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Newsletter Subscription */}
-        <div className="border-t border-gray-800 pt-10 pb-8 mb-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-xl font-semibold mb-4">Subscribe to Our Newsletter</h3>
-            <p className="text-gray-400 mb-6">Stay updated with our latest offers and beauty tips.</p>
-            <form className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-grow px-4 py-3 rounded-full bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <button type="submit" className="btn-primary">
-                Subscribe
-              </button>
-            </form>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Kossof & Kraaz Salon. All rights reserved.</p>
+        <div className="text-center text-gray-400 text-xs pt-8 border-t border-gray-700">
+          <p>
+            &copy; {new Date().getFullYear()} Kossof Salon Spa. Designed by{" "}
+            <a
+              href="https://www.sebastian-sovailescu.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-gray-300 transition-colors"
+            >
+              Sebastian
+            </a>
+          </p>
         </div>
       </div>
     </footer>
