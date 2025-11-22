@@ -4,14 +4,14 @@ export default function LocationMap() {
   return (
     <div className="rounded-lg overflow-hidden shadow-md h-[400px]">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.082177513380943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1635789012345!5m2!1sen!2sin"
+        src="https://maps.google.com/maps?q=Salon%20Bennett%2C%20185%20N%20Milwaukee%20Ave%20Suite%20120%2C%20Lincolnshire%2C%20IL%2060069&t=&z=15&ie=UTF8&iwloc=&output=embed"
         width="100%"
         height="100%"
         style={{ border: 0 }}
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        title="Glow Unisex Salon Location"
+        title="Kossof Salon Spa Location - 185 N Milwaukee Ave Suite 120, Lincolnshire, IL 60069"
       />
     </div>
   )

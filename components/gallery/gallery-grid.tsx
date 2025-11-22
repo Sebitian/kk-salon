@@ -39,14 +39,14 @@ const galleryItems = {
     },
     {
       id: 5,
-      src: "https://images.unsplash.com/photo-1621607750233-795db0a5c655?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80",
+      src: "/gallery4.jpg",
       alt: "Beard trimming",
       category: "hair",
       size: "small", // 1x1
     },
     {
       id: 6,
-      src: "https://images.unsplash.com/photo-1594051843789-db9e5cdcd4b8?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80",
+      src: "/gallery1.jpg",
       alt: "Bridal makeup",
       category: "makeup",
       size: "wide", // 2x1
@@ -60,14 +60,14 @@ const galleryItems = {
     },
     {
       id: 8,
-      src: "https://images.unsplash.com/photo-1630406897653-6309fc2288b7?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80",
+      src: "/gallery2.jpg",
       alt: "Men's hair coloring",
       category: "hair",
       size: "large", // 2x2
     },
     {
       id: 9,
-      src: "https://images.unsplash.com/photo-1617896848219-5ebc11ac2376?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80",
+      src: "/gallery3.jpg",
       alt: "Women's hair coloring",
       category: "hair",
       size: "small", // 1x1

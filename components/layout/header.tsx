@@ -4,11 +4,19 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Search, ShoppingCart, User } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+import { cn } from "@/lib/utils"
 
 const navItems = [
   { name: "BOOK", href: "/booking" },
-  { name: "ABOUT", href: "/about" }, 
+  { name: "ABOUT", href: "/about" },
   { name: "SERVICES", href: "/services" },
   { name: "GALLERY", href: "/gallery" },
   { name: "FAQ", href: "/faq" },
@@ -47,20 +55,30 @@ export default function Header() {
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </Button>
 
-            {/* Desktop navigation */}
-            <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6 overflow-hidden">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`text-sm font-medium tracking-wide transition-colors hover:text-primary whitespace-nowrap ${
-                    pathname === item.href ? "text-primary" : "text-white"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
+            {/* Desktop navigation - NOW USING NAVIGATION MENU */}
+            <div className="hidden lg:flex">
+              <NavigationMenu>
+                <NavigationMenuList className="space-x-1">
+                  {navItems.map((item) => (
+                    <NavigationMenuItem key={item.name}>
+                      <Link href={item.href} legacyBehavior passHref>
+                        <NavigationMenuLink
+                          className={cn(
+                            navigationMenuTriggerStyle(),
+                            "bg-transparent hover:bg-white/10 focus:bg-white/10 h-auto py-2 px-3 text-sm font-medium tracking-wide transition-colors",
+                            pathname === item.href 
+                              ? "text-primary" 
+                              : "text-white hover:text-primary"
+                          )}
+                        >
+                          {item.name}
+                        </NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
           </div>
 
           {/* Center - Title */}
@@ -69,7 +87,7 @@ export default function Header() {
               href="/"
               className="font-['Montserrat'] text-white text-lg xl:text-xl font-bold tracking-wider hover:text-primary transition-colors whitespace-nowrap"
             >
-              Kossof Salon Spa  (v.1.0)
+              Kossof Salon Spa (v.1.0)
             </Link>
           </div>
 

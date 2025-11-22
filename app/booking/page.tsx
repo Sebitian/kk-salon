@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Suspense } from "react"
-import BookingForm from "@/components/booking/booking-form"
+import BookingMangomint from "@/components/booking/booking-mangomint"
+import MangomintScript from "@/components/booking/mangomint-script"
 import BookingBanner from "@/components/booking/booking-banner"
 
 export const metadata: Metadata = {
@@ -40,7 +41,8 @@ export default function BookingPage() {
       <div className="py-16 bg-gray-50">
         <div className="container-custom">
           <Suspense fallback={<BookingFormSkeleton />}>
-            <BookingForm />
+            <MangomintScript />
+            {/* <BookingMangomint /> */}
           </Suspense>
         </div>
       </div>

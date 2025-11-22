@@ -16,7 +16,8 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 flex flex-col justify-center items-center w-full h-full px-4">
+      {/* Added pt-24 md:pt-32 to add space from the top */}
+      <div className="relative z-10 flex flex-col justify-center items-center w-full h-full px-4 pt-24 md:pt-32 pb-24 md:pb-24">
         <div className="flex flex-col items-center">
           <div className="mb-8">
             <Image
