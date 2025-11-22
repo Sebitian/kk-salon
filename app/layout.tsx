@@ -6,6 +6,8 @@ import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import WhatsAppWidget from "@/components/widgets/whatsapp-widget"
 import GoogleAnalytics from "@/components/analytics/google-analytics"
+import MangomintOverlay from "@/components/booking/mangomint-overlay"
+
 
 import JsonLd from "@/components/json-ld"
 
@@ -79,6 +81,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${montserrat.variable} font-sans`}>
         <JsonLd />
         <GoogleAnalytics />
+        <MangomintOverlay />
         <Header />
         <main>{children}</main>
         <Footer />

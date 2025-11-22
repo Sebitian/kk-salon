@@ -43,12 +43,20 @@ export default function HeroSection() {
             Intentional style. Everyday luxury. <span className="block mt-2">Lincolnshire, IL</span>
           </p>
           
-          <Button 
-            asChild
-            className="rounded-full px-8 py-6 text-lg font-semibold bg-white text-black hover:bg-primary hover:text-white transition-colors duration-300"
-          >
-            <Link href="/booking">SERVICES</Link>
-          </Button>
+          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+            <Button 
+              asChild
+              className="rounded-full px-8 py-6 text-lg font-semibold bg-white text-black hover:bg-primary hover:text-white transition-colors duration-300"
+            >
+              <Link href="https://booking.mangomint.com/kossofsalonspa">Book Your Appointment</Link>
+            </Button>
+            <Button 
+              asChild
+              className="rounded-full px-8 py-6 text-lg font-semibold bg-white text-black hover:bg-primary hover:text-white transition-colors duration-300"
+            >
+              <Link href="/services">View Services & Pricing</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

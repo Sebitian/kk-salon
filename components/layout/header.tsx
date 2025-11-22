@@ -10,14 +10,24 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
 
 const navItems = [
-  { name: "BOOK", href: "/booking" },
+  { name: "BOOK", href: "https://booking.mangomint.com/kossofsalonspa" },
   { name: "ABOUT", href: "/about" },
-  { name: "SERVICES", href: "/services" },
+  { 
+    name: "SERVICES", 
+    href: "/services",
+    items: [
+      { name: "Hair Services", href: "/services#hair" },
+      { name: "Nail Services", href: "/services#nails" },
+      { name: "Spa Treatment", href: "/services#spa" },
+    ]
+  },
   { name: "GALLERY", href: "/gallery" },
   { name: "FAQ", href: "/faq" },
   { name: "CONTACT", href: "/contact" },
@@ -61,19 +71,49 @@ export default function Header() {
                 <NavigationMenuList className="space-x-1">
                   {navItems.map((item) => (
                     <NavigationMenuItem key={item.name}>
-                      <Link href={item.href} legacyBehavior passHref>
-                        <NavigationMenuLink
-                          className={cn(
-                            navigationMenuTriggerStyle(),
-                            "bg-transparent hover:bg-white/10 focus:bg-white/10 h-auto py-2 px-3 text-sm font-medium tracking-wide transition-colors",
-                            pathname === item.href 
-                              ? "text-primary" 
-                              : "text-white hover:text-primary"
-                          )}
-                        >
-                          {item.name}
-                        </NavigationMenuLink>
-                      </Link>
+                      {item.items ? (
+                        <>
+                          <NavigationMenuTrigger
+                            className={cn(
+                              "bg-transparent hover:bg-white/10 focus:bg-white/10 h-auto py-2 px-3 text-sm font-medium tracking-wide transition-colors text-white hover:text-primary data-[state=open]:bg-white/10",
+                              pathname.startsWith(item.href) && "text-primary"
+                            )}
+                          >
+                            {item.name}
+                          </NavigationMenuTrigger>
+                          <NavigationMenuContent>
+                            <ul className="grid w-[200px] gap-1 p-2 md:w-[220px] bg-white rounded-md shadow-xl">
+                              {item.items.map((subItem) => (
+                                <li key={subItem.name}>
+                                  <Link href={subItem.href} legacyBehavior passHref>
+                                    <NavigationMenuLink
+                                      className={cn(
+                                        "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-gray-900 hover:bg-gray-100"
+                                      )}
+                                    >
+                                      <div className="text-sm font-medium leading-none">{subItem.name}</div>
+                                    </NavigationMenuLink>
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </NavigationMenuContent>
+                        </>
+                      ) : (
+                        <Link href={item.href} legacyBehavior passHref>
+                          <NavigationMenuLink
+                            className={cn(
+                              navigationMenuTriggerStyle(),
+                              "bg-transparent hover:bg-white/10 focus:bg-white/10 h-auto py-2 px-3 text-sm font-medium tracking-wide transition-colors",
+                              pathname === item.href 
+                                ? "text-primary" 
+                                : "text-white hover:text-primary"
+                            )}
+                          >
+                            {item.name}
+                          </NavigationMenuLink>
+                        </Link>
+                      )}
                     </NavigationMenuItem>
                   ))}
                 </NavigationMenuList>
@@ -135,18 +175,34 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div className="lg:hidden mt-4 bg-[#251c18]/95 rounded-lg shadow-lg p-4 border border-white/10">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`block px-4 py-3 rounded text-base font-medium mb-2 transition-colors ${
-                  pathname === item.href
-                    ? "text-primary bg-white/10"
-                    : "text-white hover:text-primary hover:bg-white/5"
-                }`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
+              <div key={item.name}>
+                <Link
+                  href={item.href}
+                  className={`block px-4 py-3 rounded text-base font-medium mb-2 transition-colors ${
+                    pathname === item.href
+                      ? "text-primary bg-white/10"
+                      : "text-white hover:text-primary hover:bg-white/5"
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+                {/* Display sub-items for mobile if they exist */}
+                {item.items && (
+                  <div className="pl-6 mb-2 space-y-1">
+                    {item.items.map((subItem) => (
+                      <Link
+                        key={subItem.name}
+                        href={subItem.href}
+                        className="block px-4 py-2 text-sm text-white/80 hover:text-primary transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         )}
