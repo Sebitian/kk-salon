@@ -15,14 +15,14 @@ export default function Home() {
   return (
     <>
       {/* ===============TEST */}
-      {/* <HeroSection />
+      <HeroSection /> 
       <MeetTeamSection />
-      <TestimonialsSection /> */}
-      {/* <WhyChooseUsSection /> */}
+      <TestimonialsSection />
+      <WhyChooseUsSection />
       {/* =============== */}
       
       {/* <SalonBlissHomepage /> */}
-      <ComingSoonPage />
+      {/* <ComingSoonPage /> */}
       {/* <HeroSection /> */}
       {/* <BookShopSection /> */}
       {/* <ShopShowcase /> */}

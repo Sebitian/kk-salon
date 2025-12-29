@@ -81,10 +81,10 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${montserrat.variable} font-sans`}>
         <JsonLd />
         <GoogleAnalytics />
-        {/* <MangomintOverlay /> */}
-        {/* <Header /> */}
+        <MangomintOverlay />
+        <Header />
         <main>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
         {/* <WhatsAppWidget /> */}
       </body>
     </html>
