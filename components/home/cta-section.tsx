@@ -19,10 +19,10 @@ export default function CTASection() {
         </div>
 
         <div className="text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to Experience the Glow?</h3>
+          {/* <h3 className="text-2xl font-bold mb-4">Ready to Experience the Glow?</h3>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
             Book your appointment today and let our expert stylists help you look and feel your best.
-          </p>
+          </p> */}
           <Button
             asChild
             size="lg"
