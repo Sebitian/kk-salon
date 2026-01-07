@@ -77,9 +77,9 @@ export default function ComingSoonPage() {
             />
         </div>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight font-['Montserrat']">
-            Coming Soon
+            Opening Soon
             <br />
-            <span className="text-6xl md:text-4xl">Spring 2026</span>
+            <span className="text-6xl md:text-4xl font-bold font-['Montserrat']">February 2026</span>
         </h1>
 
         {/* <p className="text-xl text-muted-foreground max-w-xl mx-auto font-['Montserrat']">
