@@ -1,63 +1,10 @@
-"use client"
-
-import type React from "react"
-
-
 import Image from "next/image"
-import { useState, useEffect } from "react"
-import { Mail, Github, Twitter, Linkedin, ArrowRight, Facebook } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card } from "@/components/ui/card"
-import LogoHero from "./logo-hero"
+import { Facebook, Instagram } from "lucide-react"
 
 export default function ComingSoonPage() {
-  const [email, setEmail] = useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [countdown, setCountdown] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  })
-
-  // Set launch date to 30 days from now
-  useEffect(() => {
-    const launchDate = new Date()
-    launchDate.setDate(launchDate.getDate() + 126)
-
-    const timer = setInterval(() => {
-      const now = new Date()
-      const difference = launchDate.getTime() - now.getTime()
-
-      if (difference <= 0) {
-        clearInterval(timer)
-        return
-      }
-
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24))
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000)
-
-      setCountdown({ days, hours, minutes, seconds })
-    }, 1000)
-
-    return () => clearInterval(timer)
-  }, [])
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you would typically send the email to your backend
-    console.log("Email submitted:", email)
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
-    setEmail("")
-  }
-
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-background to-secondary/20 p-4">
-      <div className="w-full max-w-3xl text-center space-y-8">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-black p-4">
+      <div className="w-full max-w-3xl text-center space-y-6 sm:space-y-8 text-white">
         
         {/* <LogoHero /> */}
                 
@@ -69,18 +16,40 @@ export default function ComingSoonPage() {
           </div> */}
         <div className="flex justify-center">
             <Image
-              src="/logo-bold.png"
+              src="/logo_white.png"
               alt="Kossof Salon Spa"
               width={400}
               height={300}
-              className="w-80 h-60 md:w-96 md:h-96 lg:w-[400px] lg:h-[300px] object-contain"
+              className="w-64 h-48 sm:w-80 sm:h-60 md:w-96 md:h-96 lg:w-[400px] lg:h-[300px] object-contain"
             />
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight font-['Montserrat']">
-            Opening Soon
-            <br />
-            <span className="text-6xl md:text-4xl font-bold font-['Montserrat']">February 2026</span>
+        <h1 className="font-['Montserrat'] font-bold tracking-tight leading-tight">
+          <span className="block text-4xl sm:text-5xl md:text-6xl">Opening soon!</span>
+          <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl">February 17, 2026</span>
         </h1>
+
+        <div className="max-w-md mx-auto space-y-2 text-base sm:text-lg text-white/80 font-['Montserrat'] leading-relaxed">
+          <p>
+            <span className="font-semibold text-white">Address:</span>{" "}
+            <a
+              href="https://share.google/YhPLLBtUSgkiLQAsT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 text-white/80 hover:text-white transition-colors"
+            >
+              185 Milwaukee Avenue, Suite 120, Lincolnshire, IL 60069
+            </a>
+          </p>
+          <p>
+            <span className="font-semibold text-white">Phone:</span>{" "}
+            <a
+              href="tel:+18478216604"
+              className="underline underline-offset-4 hover:text-white transition-colors text-white"
+            >
+              847-821-6604
+            </a>
+          </p>
+        </div>
 
         {/* <p className="text-xl text-muted-foreground max-w-xl mx-auto font-['Montserrat']">
           We're working hard to bring you something extraordinary. Stay tuned and be the first to know when we open.
@@ -113,10 +82,30 @@ export default function ComingSoonPage() {
         </div> */}
 
         <div className="flex justify-center gap-6 mt-8">
-          {/* <a href="https://www.facebook.com/share/17LgiwR1Sy/?mibextid=wwXIfr" className="text-muted-foreground hover:text-foreground transition-colors">
-            <Facebook className="h-6 w-6" />
+          <a
+            href="https://www.facebook.com/people/Kossof-Salon-Spa/61582500130935/"
+            className="group transition-colors flex flex-col items-center gap-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Facebook className="h-6 w-6 text-[#1877F2] group-hover:text-[#3b82f6] transition-colors" />
+            <span className="text-xs underline underline-offset-4 text-white/80 group-hover:text-white transition-colors">
+              Kossof Salon Spa
+            </span>
             <span className="sr-only">Facebook</span>
-          </a> */}
+          </a>
+          <a
+            href="https://www.instagram.com/kossof_salonspa/"
+            className="group transition-colors flex flex-col items-center gap-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Instagram className="h-6 w-6 text-[#E1306C] group-hover:text-[#F77737] transition-colors" />
+            <span className="text-xs underline underline-offset-4 text-white/80 group-hover:text-white transition-colors">
+              kossof_salonspa
+            </span>
+            <span className="sr-only">Instagram</span>
+          </a>
           {/* <a href="https://www.tiktok.com/@kossofsalonspa?lang=en" className="text-muted-foreground hover:text-foreground transition-colors" target="_blank" rel="noopener noreferrer">
             <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
