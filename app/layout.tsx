@@ -7,6 +7,7 @@ import Footer from "@/components/layout/footer"
 import WhatsAppWidget from "@/components/widgets/whatsapp-widget"
 import GoogleAnalytics from "@/components/analytics/google-analytics"
 import MangomintOverlay from "@/components/booking/mangomint-overlay"
+import { Analytics } from "@vercel/analytics/next"
 
 
 import JsonLd from "@/components/json-ld"
@@ -80,7 +81,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} ${montserrat.variable} font-sans`}>
         <JsonLd />
-        <GoogleAnalytics />
+        {/* <GoogleAnalytics /> */}
+        <Analytics />
         {/* <MangomintOverlay /> */}
         {/* <Header /> */}
         <main>{children}</main>
