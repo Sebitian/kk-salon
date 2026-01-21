@@ -20,12 +20,12 @@ export default function ComingSoonPage() {
               alt="Kossof Salon Spa"
               width={400}
               height={300}
-              className="w-64 h-48 sm:w-80 sm:h-60 md:w-96 md:h-96 lg:w-[400px] lg:h-[300px] object-contain"
+              className="w-80 h-60 sm:w-[440px] sm:h-[330px] md:w-[520px] md:h-[390px] lg:w-[560px] lg:h-[420px] object-contain"
             />
         </div>
         <h1 className="font-['Montserrat'] font-bold tracking-tight leading-tight">
-          <span className="block text-4xl sm:text-5xl md:text-6xl">Opening soon!</span>
-          <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl">February 17, 2026</span>
+          <span className="block text-5xl sm:text-5xl md:text-6xl">Opening soon!</span>
+          <span className="block mt-2 text-3xl sm:text-3xl md:text-4xl">February 17, 2026</span>
         </h1>
 
         <div className="max-w-md mx-auto space-y-2 text-base sm:text-lg text-white/80 font-['Montserrat'] leading-relaxed">
