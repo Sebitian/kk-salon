@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Clock, IndianRupee } from "lucide-react"
+import { Clock, DollarSign } from "lucide-react"
 
 interface ServiceProps {
   service: {
@@ -33,7 +33,7 @@ export default function ServiceCard({ service }: ServiceProps) {
 
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center text-primary font-semibold">
-            <IndianRupee className="h-4 w-4 mr-1" />
+            <DollarSign className="h-4 w-4 mr-1" />
             <span>{service.price}</span>
           </div>
 

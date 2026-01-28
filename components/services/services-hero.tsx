@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 export default function ServicesHero() {
   return (
-    <section className="relative h-[75vh] flex items-center justify-center overflow-hidden" style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)' }}>
+    <section className="relative h-[75vh] w-full flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <video
           src="/services.mp4"

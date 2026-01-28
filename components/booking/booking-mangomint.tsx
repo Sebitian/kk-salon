@@ -26,30 +26,30 @@ const serviceCategories = [
     id: "hair",
     label: "Hair Services",
     services: [
-      { id: "men-haircut", name: "Men's Haircut", price: 300, duration: "30 min" },
-      { id: "women-haircut", name: "Women's Haircut", price: 500, duration: "45 min" },
-      { id: "men-color", name: "Men's Hair Color", price: 800, duration: "60 min" },
-      { id: "women-color", name: "Women's Hair Color", price: 1200, duration: "90 min" },
-      { id: "hair-spa", name: "Hair Spa Treatment", price: 800, duration: "60 min" },
+      { id: "men-haircut", name: "Men’s Haircut & Style", price: 40, duration: "30 min" },
+      { id: "women-haircut", name: "Women’s Haircut & Style", price: 65, duration: "45 min" },
+      { id: "single-process", name: "Single Process", price: 80, duration: "60 min" },
+      { id: "full-foil", name: "Full Foil", price: 150, duration: "90 min" },
+      { id: "blowdry", name: "Blow-dry Style", price: 45, duration: "45 min" },
     ],
   },
   {
     id: "beauty",
     label: "Beauty Services",
     services: [
-      { id: "men-facial", name: "Men's Facial", price: 600, duration: "45 min" },
-      { id: "basic-facial", name: "Basic Facial", price: 500, duration: "45 min" },
-      { id: "threading", name: "Eyebrow Threading", price: 100, duration: "15 min" },
-      { id: "bridal-makeup", name: "Bridal Makeup", price: 3000, duration: "180 min" },
+      { id: "glow-facial", name: "Farmhouse Fresh Glow Facial", price: 95, duration: "60 min" },
+      { id: "brow-wax", name: "Brow wax", price: 20, duration: "15 min" },
+      { id: "lash-lift", name: "Lash Lift", price: 70, duration: "45 min" },
+      { id: "full-face-makeup", name: "Full Face Makeup", price: 100, duration: "60 min" },
     ],
   },
   {
     id: "nails",
     label: "Nail Services",
     services: [
-      { id: "manicure", name: "Manicure", price: 300, duration: "45 min" },
-      { id: "pedicure", name: "Pedicure", price: 400, duration: "60 min" },
-      { id: "nail-art", name: "Nail Art", price: 500, duration: "60 min" },
+      { id: "classic-mani", name: "Classic Manicure", price: 28, duration: "45 min" },
+      { id: "no-chip-mani", name: "No Chip Manicure", price: 54, duration: "60 min" },
+      { id: "classic-pedi", name: "Classic Pedicure", price: 56, duration: "60 min" },
     ],
   },
 ]
@@ -173,9 +173,7 @@ export default function BookingMangomint() {
                         <div className="text-xs text-gray-500">{service.duration}</div>
                       </div>
                     </div>
-                    <div className="font-medium text-gray-900">
-                      ₹{service.price}
-                    </div>
+                    <div className="font-medium text-gray-900">${service.price}</div>
                   </div>
                 )
               })}
@@ -358,13 +356,13 @@ export default function BookingMangomint() {
                   return (
                     <div key={id} className="flex justify-between text-sm">
                       <span className="text-gray-300">{s?.name}</span>
-                      <span className="font-medium">₹{s?.price}</span>
+                      <span className="font-medium">${s?.price}</span>
                     </div>
                   )
                 })}
                 <div className="border-t border-gray-800 pt-3 flex justify-between font-bold text-lg">
                   <span>Total</span>
-                  <span>₹{totalPrice}</span>
+                  <span>${totalPrice}</span>
                 </div>
                 <div className="text-xs text-gray-400 text-right">
                   ~ {totalDuration} mins
@@ -492,7 +490,7 @@ export default function BookingMangomint() {
         <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t p-4 shadow-[0_-4px_10px_rgba(0,0,0,0.1)] z-50 flex items-center justify-between">
           <div>
             <div className="text-xs text-gray-500">{selectedServices.length} services selected</div>
-            <div className="font-bold text-lg text-primary">₹{totalPrice}</div>
+            <div className="font-bold text-lg text-primary">${totalPrice}</div>
           </div>
           {step < 4 ? (
              <Button 

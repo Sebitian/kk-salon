@@ -18,28 +18,29 @@ const serviceCategories = [
   {
     label: "Hair Services",
     options: [
-      { value: "men-haircut", label: "Men's Haircut - ₹300" },
-      { value: "women-haircut", label: "Women's Haircut - ₹500" },
-      { value: "men-color", label: "Men's Hair Color - ₹800" },
-      { value: "women-color", label: "Women's Hair Color - ₹1200" },
-      { value: "hair-spa", label: "Hair Spa Treatment - ₹800" },
+      { value: "men-haircut", label: "Men’s Haircut & Style - from $40" },
+      { value: "women-haircut", label: "Women’s Haircut & Style - from $65" },
+      { value: "single-process", label: "Single Process - from $80" },
+      { value: "full-foil", label: "Full Foil - from $150" },
+      { value: "blowdry", label: "Blow-dry Style - from $45" },
     ],
   },
   {
     label: "Beauty Services",
     options: [
-      { value: "men-facial", label: "Men's Facial - ₹600" },
-      { value: "basic-facial", label: "Basic Facial - ₹500" },
-      { value: "threading", label: "Eyebrow Threading - ₹100" },
-      { value: "bridal-makeup", label: "Bridal Makeup - ₹3000" },
+      { value: "brow-wax", label: "Brow wax - $20" },
+      { value: "lash-lift", label: "Lash Lift - $70" },
+      { value: "full-face-makeup", label: "Full Face Makeup - $100" },
+      { value: "bride-makeup", label: "Bride Make-Up - $120" },
     ],
   },
   {
     label: "Nail Services",
     options: [
-      { value: "manicure", label: "Manicure - ₹300" },
-      { value: "pedicure", label: "Pedicure - ₹400" },
-      { value: "nail-art", label: "Nail Art - ₹500" },
+      { value: "classic-mani", label: "Classic Manicure - $28" },
+      { value: "no-chip-mani", label: "No Chip Manicure - $54" },
+      { value: "classic-pedi", label: "Classic Pedicure - $56" },
+      { value: "spa-pedi", label: "Spa Pedicure - $75" },
     ],
   },
 ]
@@ -124,7 +125,7 @@ export default function BookingForm() {
       <CardHeader className="bg-gradient-to-r from-primary to-primary/80 text-white rounded-t-lg">
         <CardTitle>Book Your Appointment</CardTitle>
         <CardDescription className="text-white/90">
-          Fill out the form below to schedule your visit to Glow Unisex Salon.
+          Fill out the form below to schedule your visit to Kossof Salon Spa.
         </CardDescription>
       </CardHeader>
       <CardContent className="p-8">

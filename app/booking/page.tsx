@@ -1,13 +1,12 @@
 import type { Metadata } from "next"
 import { Suspense } from "react"
-import BookingMangomint from "@/components/booking/booking-mangomint"
 import MangomintScript from "@/components/booking/mangomint-script"
 import BookingBanner from "@/components/booking/booking-banner"
 
 export const metadata: Metadata = {
-  title: "Book an Appointment - Glow Unisex Salon",
+  title: "Book an Appointment - Kossof Salon Spa",
   description:
-    "Book your appointment at Glow Unisex Salon. Choose from our range of services and select a convenient time slot.",
+    "Book your appointment at Kossof Salon Spa. Choose your service and reserve a time that works best for you.",
 }
 
 function BookingFormSkeleton() {
