@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import MeetTeamSection from "@/components/home/meet-team-section";
 
 export const metadata: Metadata = {
   title: "About Us - Kossof Salon Spa | Lincolnshire Hair Salon",
@@ -279,74 +279,18 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
-        {/* Hero Section */}
-        <div className="relative py-20 mb-12 pt-32">
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/faq_bg.jpg"
-              alt="Kossof Salon Spa Interior - Lincolnshire IL Hair Salon"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
-          </div>
-
-          <div className="container-custom relative z-10">
-            <h1
-              className="heading-xl text-white text-center mb-4"
-              style={{ fontFamily: '"Orpheus Pro", serif' }}
-            >
-              About Kossof Salon Spa
-            </h1>
-            <p className="text-white text-center text-lg md:text-xl max-w-3xl mx-auto">
-              Kossof Salon Spa was created by Keeley Kossof and Amy Kraaz—built on a Kossof legacy of excellence spanning over 50 years and a shared commitment to Luxury, Beauty, and Experience in every visit.
-            </p>
-          </div>
-        </div>
+      <div className="pt-24 bg-white" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
+        {/* Cofounders Section (moved from Home) */}
+        <MeetTeamSection />
 
         <div className="container-custom mb-20">
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Section 1: The Founders - Enhanced */}
-            <article className="bg-white rounded-lg shadow-md p-6 md:p-8 overflow-hidden">
-              <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="w-full md:w-1/2 relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-                  <Image
-                    src="/keeley.jpg"
-                    alt="Keeley Kossof and Amy Kraaz - Master Stylists and Founders"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="w-full md:w-1/2">
-                  <h2
-                    className="text-2xl font-bold text-gray-900 mb-4"
-                    style={{ fontFamily: '"Orpheus Pro", serif' }}
-                  >
-                    Meet the Founders
-                  </h2>
-                  <div className="text-gray-600 leading-relaxed space-y-4">
-                    <p>
-                      <strong>Kossof Salon Spa</strong> was created by <strong>Keeley Kossof</strong> and <strong>Amy Kraaz</strong>, two experienced hairstylists who built their careers working alongside Keeley’s father, <strong>Teddie Kossof</strong>, at the renowned <strong>Teddie Kossof Salon Spa</strong>.
-                    </p>
-                    <p>
-                      With a legacy of excellence spanning over <strong>50 years</strong>, the Kossof name has long been trusted for beauty, professionalism, and an elevated guest experience. For several years, Keeley and Amy also managed <strong>Teddie Kossof Salon Spa</strong> together—strengthening their leadership skills and deepening their shared commitment to running a salon with excellence and integrity.
-                    </p>
-                    <p>
-                      Through years of working together, Keeley and Amy not only refined their craft—they also became close friends. Their personalities balance each other perfectly, creating a dynamic partnership built on trust, passion, and a shared commitment to excellence. Together, they founded Kossof Salon Spa with one clear purpose: to create a destination where every guest feels confident, cared for, and truly valued.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </article>
-
             {/* Section 2: Our Heritage - Enhanced */}
             <article className="bg-white rounded-lg shadow-md p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-bold text-salon-brown mb-4 tracking-widest uppercase">
                 Our Heritage & Vision
               </h2>
-              <div className="text-gray-600 leading-relaxed space-y-4">
+              <div className="text-salon-brown/70 leading-relaxed space-y-4">
                 <p>
                   At Kossof Salon Spa, our vision is simple—to deliver <strong>Luxury, Beauty, and Experience</strong> in every visit.
                 </p>
@@ -361,10 +305,10 @@ export default function AboutPage() {
 
             {/* Values Section - Enhanced with Specifics */}
             <article className="bg-[#ede7e4]/30 rounded-lg shadow-md p-6 md:p-8 border border-[#ede7e4]">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-bold text-salon-brown mb-4 tracking-widest uppercase">
                 Why Choose Kossof Salon Spa
               </h2>
-              <div className="text-gray-700 leading-relaxed space-y-3">
+              <div className="text-salon-brown/80 leading-relaxed space-y-3">
                 <ul className="list-disc list-inside space-y-3 ml-2">
                   <li>
                     <strong>Legacy of Excellence:</strong> Built on the Kossof name—trusted for beauty, professionalism, and an elevated guest experience for over 50 years.
@@ -408,7 +352,7 @@ export default function AboutPage() {
                 </a>
                 <Link
                   href="/booking"
-                  className="bg-white hover:bg-white/90 text-[#251c18] font-bold py-4 px-8 rounded-sm transition-colors text-lg shadow-lg tracking-widest uppercase"
+                  className="bg-white hover:bg-white/90 text-salon-brown font-bold py-4 px-8 rounded-sm transition-colors text-lg shadow-lg tracking-widest uppercase"
                 >
                   Book Online
                 </Link>

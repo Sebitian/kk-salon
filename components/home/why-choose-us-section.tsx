@@ -1,32 +1,62 @@
+
+"use client"
+
+import { useCallback, useEffect, useMemo, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import useEmblaCarousel from "embla-carousel-react"
 import { Users, Award, Sparkles } from "lucide-react"
+import brownHair from "./brown-hair.jpeg"
 
 const features = [
   {
     icon: <Users className="h-8 w-8" />,
     title: "Expert Talent",
     description: "Our team of certified professionals brings years of experience and creativity to every service.",
-    image:
-      "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=400&fit=crop&crop=focalpoint&auto=format&q=80",
+    image: brownHair,
   },
   {
     icon: <Award className="h-8 w-8 text-primary" />,
     title: "Premium Products",
     description: "We use only the highest quality, luxurious products to ensure the best results for our clients.",
-    image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=400&fit=crop&crop=focalpoint&auto=format&q=80",
+    image: brownHair,
   },
   {
     icon: <Sparkles className="h-8 w-8 text-primary" />,
     title: "Personalized Experience",
     description: "Enjoy a tailored approach to beauty, with services customized to your unique style and needs.",
-    image:
-      "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop&crop=focalpoint&auto=format&q=80",
+    image: brownHair,
   },
 ]
 
 export default function WhyChooseUsSection() {
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    useMemo(
+      () => ({
+        loop: true,
+        align: "center",
+        containScroll: "trimSnaps",
+      }),
+      []
+    )
+  )
+
+  useEffect(() => {
+    if (!emblaApi) return
+
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap())
+    onSelect()
+    emblaApi.on("select", onSelect)
+
+    return () => {
+      emblaApi.off("select", onSelect)
+    }
+  }, [emblaApi])
+
+  const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi])
+
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
@@ -37,36 +67,70 @@ export default function WhyChooseUsSection() {
             Experience the difference with our commitment to excellence, luxury, and personalized care.
           </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {features.map((feature, index) => (
-            <div key={index} className="flex flex-col group">
-              <div className="relative h-80 w-full mb-8 overflow-hidden rounded-sm shadow-xl transition-all duration-500 group-hover:shadow-2xl">
-                <Image
-                  src={feature.image || "/placeholder.svg"}
-                  alt={feature.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-salon-brown/20 group-hover:bg-salon-brown/0 transition-all duration-500"></div>
-              </div>
-              <div className="flex items-center mb-4">
-                <div className="p-2 bg-salon-blue/20 rounded-full mr-4 text-salon-raspberry">
-                  {feature.icon}
+      {/* Mobile-first full-width carousel */}
+      <div className="relative w-full">
+        <div className="overflow-hidden" ref={emblaRef} style={{ touchAction: "pan-y" }}>
+          <div className="flex will-change-transform">
+            {features.map((feature, index) => (
+              <div key={index} className="flex-[0_0_100%] min-w-0">
+                <div className="relative w-full h-[82vh] sm:h-[620px] lg:h-[700px] overflow-hidden">
+                  <Image
+                    src={feature.image || "/placeholder.svg"}
+                    alt={feature.title}
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
+                    priority={index === 0}
+                  />
+
+                  {/* bottom caption */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                    <div className="max-w-xl">
+                      <div className="flex items-center gap-3 mb-3 text-white">
+                        <div className="p-2 bg-white/10 rounded-full backdrop-blur-sm">{feature.icon}</div>
+                        <h3 className="text-xl sm:text-2xl font-bold tracking-widest uppercase font-gotham">
+                          {feature.title}
+                        </h3>
+                      </div>
+                      <p className="text-white/90 text-[15px] sm:text-base leading-6 sm:leading-7 font-normal">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-salon-brown">{feature.title}</h3>
               </div>
-              <p className="text-salon-brown/70 leading-relaxed font-light">{feature.description}</p>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Pagination (matches Testimonials) */}
+        <div className="flex justify-center items-center space-x-4 pt-8 px-6">
+          {features.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollTo(index)}
+              className="transition-all duration-300 focus:outline-none"
+              aria-label={`Go to slide ${index + 1}`}
+              style={{
+                width: index === selectedIndex ? "32px" : "10px",
+                height: "4px",
+                borderRadius: "2px",
+                backgroundColor: index === selectedIndex ? "#c21887" : "#251c18",
+                opacity: index === selectedIndex ? 1 : 0.2,
+              }}
+            />
           ))}
         </div>
 
         <div className="mt-20 text-center">
           <Link
-            href="/about"
+            href="/services"
             className="inline-flex items-center text-salon-raspberry font-semibold tracking-widest hover:text-salon-raspberry/80 transition-colors uppercase text-sm"
           >
-            Learn More About Us
+            Learn More About Our Services
             <svg
               className="ml-3 w-5 h-5"
               fill="none"

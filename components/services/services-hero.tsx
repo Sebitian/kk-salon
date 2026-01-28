@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 export default function ServicesHero() {
   return (
-    <section className="relative h-[75vh] w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <video
           src="/services.mp4"
@@ -12,7 +12,7 @@ export default function ServicesHero() {
           loop
           playsInline
           poster="/services-poster.jpg"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
           aria-hidden="true"
         >
           <track kind="captions" />
@@ -37,7 +37,7 @@ export default function ServicesHero() {
 
         <Button 
           asChild
-          className="rounded-full px-8 py-6 text-lg font-semibold bg-white text-black hover:bg-primary hover:text-white transition-colors duration-300"
+          className="mt-16 md:mt-24 rounded-full px-8 py-6 text-lg font-semibold bg-white text-black hover:bg-primary hover:text-white transition-colors duration-300"
         >
           <Link href="https://booking.mangomint.com/kossofsalonspa">Book Your Appointment</Link>
         </Button>

@@ -131,10 +131,10 @@ export default function TestimonialsSection() {
         {/* Testimonial Content */}
         <div className="text-center">
           {/* Swipeable carousel (mobile-friendly) */}
-          <div className="overflow-hidden" ref={emblaRef} style={{ touchAction: "pan-y" }}>
-            <div className="flex will-change-transform">
+          <div className="relative isolate w-full overflow-hidden" ref={emblaRef} style={{ touchAction: "pan-y" }}>
+            <div className="flex w-full will-change-transform">
               {testimonials.map((t) => (
-                <div key={t.id} className="flex-[0_0_100%] min-w-0">
+                <div key={t.id} className="w-full shrink-0 grow-0 basis-full">
                   {/* Fixed Height Container for Testimonial */}
                   <div className="min-h-[350px] lg:min-h-[400px] flex flex-col justify-center space-y-10 select-none">
                     {/* Quote with Schema Markup */}

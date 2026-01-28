@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Instagram, Mail } from "lucide-react"
+import { Facebook, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -27,7 +27,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6 mt-8">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/kossof_salonspa/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/80 hover:text-salon-raspberry transition-colors"
@@ -36,7 +36,7 @@ export default function Footer() {
                 <Instagram className="h-6 w-6" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/people/Kossof-Salon-Spa/61582500130935/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/80 hover:text-salon-raspberry transition-colors"
