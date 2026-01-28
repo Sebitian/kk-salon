@@ -70,32 +70,31 @@ export default function TestimonialsSection() {
 
   return (
     <section 
-      className="py-20 px-4 relative overflow-hidden"
+      className="py-24 px-4 relative overflow-hidden"
       style={{ 
-        backgroundColor: '#f5f5dc',
+        backgroundColor: '#ede7e4',
         fontFamily: 'var(--font-montserrat), sans-serif'
       }}
     >
       {/* Subtle shadow effect in bottom right */}
       <div 
-        className="absolute bottom-0 right-0 w-96 h-96 opacity-20 pointer-events-none"
+        className="absolute bottom-0 right-0 w-96 h-96 opacity-10 pointer-events-none"
         style={{
-          background: 'radial-gradient(circle at bottom right, rgba(37, 28, 24, 0.1), transparent 70%)'
+          background: 'radial-gradient(circle at bottom right, rgba(194, 24, 135, 0.1), transparent 70%)'
         }}
       />
 
       <div className="container mx-auto max-w-4xl relative z-10">
         {/* Main Heading with Context */}
-        <div className="text-center mb-12 space-y-3">
+        <div className="text-center mb-12 space-y-4">
           <h2 
-            className="text-2xl lg:text-3xl font-semibold uppercase tracking-wider"
-            style={{ color: '#251c18', letterSpacing: '0.15em' }}
+            className="text-3xl lg:text-4xl font-bold tracking-[0.2em] text-salon-brown"
           >
-            FROM OUR CLIENTS
+            TESTIMONIALS
           </h2>
+          <div className="w-16 h-1 bg-salon-raspberry mx-auto mt-4"></div>
           <p 
-            className="text-base lg:text-lg"
-            style={{ color: '#251c18', opacity: 0.8 }}
+            className="text-lg lg:text-xl text-salon-brown/60 pt-4"
           >
             Rated 5 Stars by Lincolnshire Clients
           </p>
@@ -104,10 +103,10 @@ export default function TestimonialsSection() {
         {/* Testimonial Content */}
         <div className="text-center">
           {/* Fixed Height Container for Testimonial */}
-          <div className="min-h-[400px] lg:min-h-[450px] flex flex-col justify-center space-y-8">
+          <div className="min-h-[350px] lg:min-h-[400px] flex flex-col justify-center space-y-10">
             {/* Quote with Schema Markup */}
             <blockquote 
-              className="text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto px-4"
+              className="text-2xl lg:text-3xl leading-relaxed max-w-3xl mx-auto px-4 font-light italic"
               style={{ color: '#251c18' }}
               itemProp="review"
               itemScope
@@ -125,12 +124,12 @@ export default function TestimonialsSection() {
             </blockquote>
 
             {/* Star Rating Visual */}
-            <div className="flex justify-center items-center space-x-1">
+            <div className="flex justify-center items-center space-x-2">
               {[...Array(5)].map((_, i) => (
                 <span 
                   key={i}
-                  className="text-xl lg:text-2xl"
-                  style={{ color: '#251c18' }}
+                  className="text-2xl lg:text-3xl"
+                  style={{ color: '#c21887' }}
                   aria-hidden="true"
                 >
                   ★
@@ -138,26 +137,18 @@ export default function TestimonialsSection() {
               ))}
             </div>
 
-            {/* Separator Line */}
-            <div 
-              className="w-20 h-px mx-auto"
-              style={{ backgroundColor: '#251c18' }}
-            />
-
             {/* Client Attribution */}
             <div className="flex flex-col items-center space-y-1">
               <p 
-                className="text-sm lg:text-base uppercase tracking-wider"
-                style={{ color: '#251c18' }}
+                className="text-base lg:text-lg font-semibold tracking-widest text-salon-brown"
               >
-                {currentTestimonial.name} |{" "}
-                <span className="underline">{currentTestimonial.source}</span>
+                {currentTestimonial.name} — <span className="font-light opacity-60">{currentTestimonial.source}</span>
               </p>
             </div>
           </div>
 
           {/* Pagination Dots */}
-          <div className="flex justify-center items-center space-x-3 pt-8">
+          <div className="flex justify-center items-center space-x-4 pt-12">
             {testimonials.map((_, index) => (
               <button
                 key={index}
@@ -165,12 +156,11 @@ export default function TestimonialsSection() {
                 className="transition-all duration-300 focus:outline-none"
                 aria-label={`Go to testimonial ${index + 1}`}
                 style={{
-                  width: index === currentIndex ? '12px' : '8px',
-                  height: index === currentIndex ? '12px' : '8px',
-                  borderRadius: '50%',
-                  backgroundColor: index === currentIndex ? 'transparent' : '#251c18',
-                  border: index === currentIndex ? '2px solid #251c18' : 'none',
-                  opacity: index === currentIndex ? 1 : 0.6,
+                  width: index === currentIndex ? '32px' : '10px',
+                  height: '4px',
+                  borderRadius: '2px',
+                  backgroundColor: index === currentIndex ? '#c21887' : '#251c18',
+                  opacity: index === currentIndex ? 1 : 0.2,
                 }}
               />
             ))}

@@ -29,19 +29,19 @@ interface ServiceItemProps {
 
 function ServiceItem({ name, price, description }: ServiceItemProps) {
   return (
-    <div className="mb-4" itemScope itemType="https://schema.org/Service">
-      <div className="flex items-baseline gap-2 mb-1">
-        <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wide" itemProp="name">
+    <div className="mb-6 group" itemScope itemType="https://schema.org/Service">
+      <div className="flex items-baseline justify-between gap-4 mb-2">
+        <h3 className="text-base font-semibold text-salon-brown uppercase tracking-wider group-hover:text-salon-raspberry transition-colors" itemProp="name">
           {name}
         </h3>
-        <span className="text-sm text-gray-900">-</span>
-        <span className="text-sm text-gray-900" itemProp="offers" itemScope itemType="https://schema.org/Offer">
+        <div className="flex-grow border-b border-dotted border-salon-brown/20 mx-2"></div>
+        <span className="text-base font-medium text-salon-brown" itemProp="offers" itemScope itemType="https://schema.org/Offer">
           <meta itemProp="priceCurrency" content="USD" />
           <span itemProp="price">{price}</span>
         </span>
       </div>
       {description && (
-        <p className="text-xs text-gray-700 leading-relaxed" itemProp="description">
+        <p className="text-sm text-salon-brown/60 leading-relaxed font-light italic" itemProp="description">
           {description}
         </p>
       )}
@@ -251,22 +251,25 @@ export default function ServicesContent() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <article className="w-full" itemScope itemType="https://schema.org/WebPage">
+      <article className="w-full bg-white" itemScope itemType="https://schema.org/WebPage">
         <meta itemProp="name" content="Hair Salon Services & Pricing" />
         <meta itemProp="description" content="Professional hair salon services including haircuts, color, highlights, balayage, and luxury treatments" />
 
         {/* Section 1: Haircuts - Text left, Image right */}
         <section className="w-full flex flex-col lg:flex-row" aria-labelledby="haircuts-heading">
           {/* Text Section */}
-          <div className="w-full lg:w-1/2 py-12 lg:py-16 px-6 lg:px-12 flex items-center order-2 lg:order-1 bg-white">
+          <div className="w-full lg:w-1/2 py-20 lg:py-32 px-8 lg:px-20 flex items-center order-2 lg:order-1 bg-[#ede7e4]/20">
             <div className="w-full max-w-xl mx-auto">
-              <h1 
-                id="haircuts-heading"
-                className="text-3xl md:text-4xl font-bold mb-8 uppercase tracking-wide" 
-                style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.05em' }}
-              >
-                Haircuts
-              </h1>
+              <div className="mb-12">
+                <h2 
+                  id="haircuts-heading"
+                  className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-widest text-salon-brown" 
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                >
+                  Haircuts
+                </h2>
+                <div className="w-20 h-1 bg-salon-raspberry"></div>
+              </div>
               <div itemScope itemType="https://schema.org/ItemList">
                 {haircutServices.map((service, index) => (
                   <ServiceItem key={index} {...service} />
@@ -282,29 +285,12 @@ export default function ServicesContent() {
                 src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&h=1200&fit=crop&auto=format&q=85"
                 alt="Modern hair salon interior with styling stations"
                 fill
-                className="object-cover object-center scale-110"
+                className="object-cover object-center"
                 priority
                 quality={90}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            <div className="relative z-10 flex items-center justify-center h-full p-8">
-              <div className="w-[280px] h-[380px] md:w-[320px] md:h-[450px] lg:w-[360px] lg:h-[500px] relative shadow-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=800&fit=crop&auto=format&q=90"
-                  alt="Professional women's haircut and styling service"
-                  fill
-                  className="object-cover"
-                  quality={95}
-                  sizes="(max-width: 768px) 280px, (max-width: 1024px) 320px, 360px"
-                />
-              </div>
-            </div>__
-
-
-
-
-
           </div>
         </section>
 
@@ -317,35 +303,26 @@ export default function ServicesContent() {
                 src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&h=1200&fit=crop&auto=format&q=85"
                 alt="Professional hair color application and foiling technique"
                 fill
-                className="object-cover object-center scale-110"
+                className="object-cover object-center"
                 quality={90}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            <div className="relative z-10 flex items-center justify-center h-full p-8">
-              <div className="w-[280px] h-[380px] md:w-[320px] md:h-[450px] lg:w-[360px] lg:h-[500px] relative shadow-2xl overflow-hidden">
-                <Image
-                  src="/gif1.gif"
-                  alt="Hair color transformation showing balayage and highlight results"
-                  fill
-                  className="object-cover"
-                  unoptimized
-                  sizes="(max-width: 768px) 280px, (max-width: 1024px) 320px, 360px"
-                />
-              </div>
-            </div>
           </div>
 
           {/* Text Section */}
-          <div className="w-full lg:w-1/2 py-12 lg:py-16 px-6 lg:px-12 flex items-center bg-white">
+          <div className="w-full lg:w-1/2 py-20 lg:py-32 px-8 lg:px-20 flex items-center bg-white">
             <div className="w-full max-w-xl mx-auto">
-              <h2 
-                id="color-heading"
-                className="text-3xl md:text-4xl font-bold mb-8 uppercase tracking-wide" 
-                style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.05em' }}
-              >
-                Color
-              </h2>
+              <div className="mb-12">
+                <h2 
+                  id="color-heading"
+                  className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-widest text-salon-brown" 
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                >
+                  Color
+                </h2>
+                <div className="w-20 h-1 bg-salon-raspberry"></div>
+              </div>
               <div itemScope itemType="https://schema.org/ItemList">
                 {colorServices.map((service, index) => (
                   <ServiceItem key={index} {...service} />
@@ -358,15 +335,18 @@ export default function ServicesContent() {
         {/* Section 3: Treatments - Text left, Image right */}
         <section className="w-full flex flex-col lg:flex-row" aria-labelledby="treatments-heading">
           {/* Text Section */}
-          <div className="w-full lg:w-1/2 py-12 lg:py-16 px-6 lg:px-12 flex items-center order-2 lg:order-1 bg-white">
+          <div className="w-full lg:w-1/2 py-20 lg:py-32 px-8 lg:px-20 flex items-center order-2 lg:order-1 bg-[#cad7de]/20">
             <div className="w-full max-w-xl mx-auto">
-              <h2 
-                id="treatments-heading"
-                className="text-3xl md:text-4xl font-bold mb-8 uppercase tracking-wide" 
-                style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.05em' }}
-              >
-                Hair & Scalp Treatments
-              </h2>
+              <div className="mb-12">
+                <h2 
+                  id="treatments-heading"
+                  className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-widest text-salon-brown" 
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                >
+                  Treatments
+                </h2>
+                <div className="w-20 h-1 bg-salon-raspberry"></div>
+              </div>
               <div itemScope itemType="https://schema.org/ItemList">
                 {treatmentServices.map((service, index) => (
                   <ServiceItem key={index} {...service} />
@@ -382,22 +362,10 @@ export default function ServicesContent() {
                 src="https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?w=1920&h=1200&fit=crop&auto=format&q=85"
                 alt="Luxury hair treatment application at professional salon"
                 fill
-                className="object-cover object-center scale-110"
+                className="object-cover object-center"
                 quality={90}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-            </div>
-            <div className="relative z-10 flex items-center justify-center h-full p-8">
-              <div className="w-[280px] h-[380px] md:w-[320px] md:h-[450px] lg:w-[360px] lg:h-[500px] relative shadow-2xl overflow-hidden">
-                <Image
-                  src="/gif2.gif"
-                  alt="Hair treatment and scalp massage therapy results"
-                  fill
-                  className="object-cover"
-                  unoptimized
-                  sizes="(max-width: 768px) 280px, (max-width: 1024px) 320px, 360px"
-                />
-              </div>
             </div>
           </div>
         </section>

@@ -14,62 +14,56 @@ export default function MeetTeamSection() {
   ];
 
   return (
-    <section className="py-20 px-4" style={{ backgroundColor: '#251c18' }}>
+    <section className="py-24 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="flex flex-col items-center space-y-12" style={{ fontFamily: 'var(--font-montserrat), sans-serif' }}>
+        <div className="flex flex-col items-center space-y-16" style={{ fontFamily: 'var(--font-montserrat), sans-serif' }}>
           {/* Title with context */}
           <div className="text-center space-y-4">
             <h2 
-              className="text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight"
-              style={{ color: '#f5f5dc' }}
+              className="text-5xl lg:text-7xl font-bold tracking-tight text-salon-brown"
             >
-              The Team
+              Talent
             </h2>
-            <p className="text-white text-xl lg:text-2xl font-light tracking-wide">
+            <div className="w-24 h-1 bg-salon-blue mx-auto mt-4"></div>
+            <p className="text-salon-brown/70 text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto pt-4">
               30+ Years of Expertise in Hair & Spa Services
             </p>
           </div>
 
-          {/* First Description - More specific */}
-          <p className="text-white text-lg lg:text-xl leading-relaxed text-center max-w-3xl mx-auto">
-            Led by founders <strong style={{ color: '#f5f5dc' }}>Keeley Kossof</strong> and <strong style={{ color: '#f5f5dc' }}>Amy Kraaz</strong>, 
-            our stylists specialize in precision cuts, custom color, extensions, and spa treatments. 
-            Every team member brings proven expertise and a dedication to making you look and feel exceptional.
+          {/* Description */}
+          <p className="text-salon-brown text-lg lg:text-xl leading-relaxed text-center max-w-3xl mx-auto font-light">
+            Kossof Salon Spa was created by <strong className="font-semibold">Keeley Kossof</strong> and <strong className="font-semibold">Amy Kraaz</strong> and built on a Kossof legacy of excellence spanning over <strong className="font-semibold">50 years</strong>.
+            Our purpose is simple: create a destination where every guest feels confident, cared for, and truly valued.
           </p>
 
           {/* Image Grid */}
-          <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto w-full">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 w-full">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="aspect-square overflow-hidden rounded-lg relative group cursor-pointer"
-                style={{ border: '2px solid #f5f5dc' }}
+                className="flex flex-col items-center space-y-4 group cursor-pointer"
               >
-                <Image
-                  src={member.image}
-                  alt={`${member.name} - Hair Stylist at Kossof Salon Spa`}
-                  width={120}
-                  height={120}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  unoptimized
-                />
-                {/* Name Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center bg-[#f5f5dc] bg-opacity-0 group-hover:bg-opacity-90 transition-all duration-300">
-                  <span 
-                    className="text-black font-bold text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ fontFamily: 'var(--font-montserrat), sans-serif' }}
-                  >
-                    {member.name}
-                  </span>
+                <div className="relative aspect-square w-full overflow-hidden rounded-full border-4 border-salon-blue/30 group-hover:border-salon-blue transition-all duration-500 shadow-lg">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name} - Talent at Kossof Salon Spa`}
+                    fill
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-110"
+                    unoptimized
+                  />
                 </div>
+                <span 
+                  className="text-salon-brown font-medium text-lg tracking-wider"
+                >
+                  {member.name}
+                </span>
               </div>
             ))}
           </div>
 
-          {/* Second Description - Keep your brand voice */}
-          <p className="text-white text-base lg:text-lg leading-relaxed text-center max-w-2xl mx-auto">
-            Serving everyday luxury with intentional style, effortless charm, and the quiet confidence 
-            of a team that gets it. Every cut, tone, and touch is considered. No excess—just refinement.
+          {/* Brand Voice */}
+          <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed text-center max-w-2xl mx-auto italic font-light">
+            Our vision is to deliver <strong>Luxury, Beauty, and Experience</strong> in every visit—within a welcoming, fun, and social environment supported by top-notch hospitality and exceptional service.
           </p>
 
           {/* Button */}
@@ -77,14 +71,9 @@ export default function MeetTeamSection() {
             <Button
               asChild
               size="lg"
-              className="text-lg px-8 py-4 bg-transparent border-2 transition-all duration-300 hover:bg-[#89cff0] hover:text-[#251c18]"
-              style={{ 
-                borderColor: '#89cff0',
-                color: '#89cff0'
-              }}
-              variant="outline"
+              className="text-sm tracking-[0.2em] px-10 py-6 bg-salon-raspberry hover:bg-salon-raspberry/90 text-white transition-all duration-300 rounded-sm uppercase"
             >
-              <Link href="/about">Meet Our Team</Link>
+              <Link href="/about">About Us</Link>
             </Button>
           </div>
         </div>

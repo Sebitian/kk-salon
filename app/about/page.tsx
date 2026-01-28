@@ -5,11 +5,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About Us - Kossof Salon Spa | Lincolnshire Hair Salon",
   description:
-    "Learn about Kossof Salon Spa, founded by Keeley Kossof and Amy Kraaz. Over 30 years of hair styling expertise in Lincolnshire, IL. Continuing a legacy of excellence.",
+    "Learn about Kossof Salon Spa, created by Keeley Kossof and Amy Kraaz. Built on the Kossof legacy of excellence spanning over 50 years and a commitment to Luxury, Beauty, and Experience in every visit.",
   openGraph: {
     title: "About Kossof Salon Spa - Lincolnshire's Premier Hair Salon",
     description:
-      "Discover the story behind Kossof Salon Spa. Founded by industry experts Keeley Kossof and Amy Kraaz, bringing over 30 years of excellence to Lincolnshire.",
+      "Discover the story behind Kossof Salon Spa—created by Keeley Kossof and Amy Kraaz and built on the Kossof legacy of excellence spanning over 50 years.",
     type: "website",
     locale: "en_US",
     siteName: "Kossof Salon Spa",
@@ -48,7 +48,7 @@ const foundersSchema = {
         "Hair Styling"
       ],
       alumniOf: "Teddie Kossof Salon",
-      yearsOfExperience: "30+",
+      yearsOfExperience: "Experienced",
     },
     {
       "@type": "Person",
@@ -67,7 +67,7 @@ const foundersSchema = {
         "Hair Styling"
       ],
       alumniOf: "Teddie Kossof Salon",
-      yearsOfExperience: "30+",
+      yearsOfExperience: "Experienced",
     }
   ]
 };
@@ -79,7 +79,7 @@ const aboutSchema = {
     "@type": "HairSalon",
     name: "Kossof Salon Spa",
     description:
-      "Premier hair salon in Lincolnshire, IL, founded by master stylists Keeley Kossof and Amy Kraaz. Specializing in custom color, precision cuts, hair extensions, and spa services with over 30 years of combined expertise.",
+      "Kossof Salon Spa was created by Keeley Kossof and Amy Kraaz and is built on the Kossof legacy of excellence spanning over 50 years—delivering Luxury, Beauty, and Experience in every visit.",
     foundingDate: "2024",
     founders: [
       {
@@ -226,7 +226,7 @@ const faqSchema = {
       name: "Who founded Kossof Salon Spa?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Kossof Salon Spa was founded by Keeley Kossof and Amy Kraaz, master stylists with over 30 years of combined experience. Both trained at the renowned Teddie Kossof Salon before opening their own location in Lincolnshire, IL."
+        text: "Kossof Salon Spa was created by Keeley Kossof and Amy Kraaz. They built their careers working alongside Keeley’s father, Teddie Kossof, at the renowned Teddie Kossof Salon Spa, and went on to found a destination built on excellence, integrity, and an elevated guest experience."
       }
     },
     {
@@ -301,7 +301,7 @@ export default function AboutPage() {
               About Kossof Salon Spa
             </h1>
             <p className="text-white text-center text-lg md:text-xl max-w-3xl mx-auto">
-              Founded by master stylists Keeley Kossof and Amy Kraaz. Over 30 years of expertise in custom color, precision cuts, and hair extensions. Serving Lincolnshire and the North Shore.
+              Kossof Salon Spa was created by Keeley Kossof and Amy Kraaz—built on a Kossof legacy of excellence spanning over 50 years and a shared commitment to Luxury, Beauty, and Experience in every visit.
             </p>
           </div>
         </div>
@@ -328,14 +328,13 @@ export default function AboutPage() {
                   </h2>
                   <div className="text-gray-600 leading-relaxed space-y-4">
                     <p>
-                      <strong>Keeley Kossof</strong> and{" "}
-                      <strong>Amy Kraaz</strong> are master stylists who founded Kossof Salon Spa with a shared vision: to bring world-class hair services to Lincolnshire, Illinois.
+                      <strong>Kossof Salon Spa</strong> was created by <strong>Keeley Kossof</strong> and <strong>Amy Kraaz</strong>, two experienced hairstylists who built their careers working alongside Keeley’s father, <strong>Teddie Kossof</strong>, at the renowned <strong>Teddie Kossof Salon Spa</strong>.
                     </p>
                     <p>
-                      With over <strong>30 years of combined experience</strong>, both trained at the prestigious <strong>Teddie Kossof Salon</strong>, where they mastered advanced techniques in <strong>custom color</strong>, <strong>precision cutting</strong>, <strong>balayage</strong>, and <strong>hair extensions</strong>.
+                      With a legacy of excellence spanning over <strong>50 years</strong>, the Kossof name has long been trusted for beauty, professionalism, and an elevated guest experience. For several years, Keeley and Amy also managed <strong>Teddie Kossof Salon Spa</strong> together—strengthening their leadership skills and deepening their shared commitment to running a salon with excellence and integrity.
                     </p>
                     <p>
-                      Their expertise spans everything from <strong>color correction</strong> and <strong>highlights</strong> to <strong>bridal styling</strong> and <strong>keratin treatments</strong>. They've built lasting relationships with clients throughout the North Shore by delivering consistently exceptional results.
+                      Through years of working together, Keeley and Amy not only refined their craft—they also became close friends. Their personalities balance each other perfectly, creating a dynamic partnership built on trust, passion, and a shared commitment to excellence. Together, they founded Kossof Salon Spa with one clear purpose: to create a destination where every guest feels confident, cared for, and truly valued.
                     </p>
                   </div>
                 </div>
@@ -349,45 +348,41 @@ export default function AboutPage() {
               </h2>
               <div className="text-gray-600 leading-relaxed space-y-4">
                 <p>
-                  We continue the tradition of excellence established by the <strong>Kossof name</strong>—a legacy synonymous with precision, artistry, and uncompromising quality in hair care.
+                  At Kossof Salon Spa, our vision is simple—to deliver <strong>Luxury, Beauty, and Experience</strong> in every visit.
                 </p>
                 <p>
-                  Kossof Salon Spa blends time-tested techniques with modern innovation. We specialize in <strong>lived-in color</strong>, <strong>dimensional highlights</strong>, <strong>textured cuts</strong>, and <strong>seamless extensions</strong>—services that enhance your natural beauty while reflecting your personal style.
+                  We are proud to offer a welcoming, fun, and social environment where clients can relax, connect, and enjoy an elevated salon and spa experience supported by top-notch hospitality and exceptional service.
                 </p>
                 <p>
-                  Located at{" "}
-                  <strong>185 N Milwaukee Avenue, Suite 120 in Lincolnshire, IL</strong>, we serve clients from <strong>Buffalo Grove</strong>, <strong>Deerfield</strong>, <strong>Lake Forest</strong>, <strong>Bannockburn</strong>, <strong>Riverwoods</strong>, and throughout the <strong>North Shore Chicago suburbs</strong>.
-                </p>
-                <p>
-                  Whether you're seeking a <strong>transformative color service</strong>, a <strong>precision haircut</strong>, or <strong>luxury extensions</strong>, our team provides personalized consultations and expert execution in a welcoming, upscale environment.
+                  Located at <strong>185 N Milwaukee Avenue, Suite 120 in Lincolnshire, IL</strong>, we’re here to make every guest feel confident, cared for, and truly valued.
                 </p>
               </div>
             </article>
 
             {/* Values Section - Enhanced with Specifics */}
-            <article className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg shadow-md p-6 md:p-8 border border-amber-200">
+            <article className="bg-[#ede7e4]/30 rounded-lg shadow-md p-6 md:p-8 border border-[#ede7e4]">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Why Choose Kossof Salon Spa
               </h2>
               <div className="text-gray-700 leading-relaxed space-y-3">
                 <ul className="list-disc list-inside space-y-3 ml-2">
                   <li>
-                    <strong>Master-Level Expertise:</strong> Over 30 years of experience in advanced color techniques, precision cutting, and hair extensions.
+                    <strong>Legacy of Excellence:</strong> Built on the Kossof name—trusted for beauty, professionalism, and an elevated guest experience for over 50 years.
                   </li>
                   <li>
-                    <strong>Teddie Kossof Legacy:</strong> Trained at one of Chicago's most respected salons, bringing that caliber of service to Lincolnshire.
+                    <strong>Leadership & Integrity:</strong> Founded by Keeley Kossof and Amy Kraaz, who led and managed Teddie Kossof Salon Spa together for years.
                   </li>
                   <li>
-                    <strong>Personalized Consultations:</strong> Every appointment begins with an in-depth discussion of your hair goals, lifestyle, and maintenance preferences.
+                    <strong>Elevated Hospitality:</strong> Top-notch service and care designed to make every guest feel confident, cared for, and truly valued.
                   </li>
                   <li>
-                    <strong>Advanced Techniques:</strong> Specializing in balayage, color melting, lived-in color, and seamless extension methods.
+                    <strong>Welcoming Atmosphere:</strong> A fun, social environment where clients can relax, connect, and enjoy the experience.
                   </li>
                   <li>
-                    <strong>North Shore Convenience:</strong> Serving Lincolnshire, Buffalo Grove, Deerfield, Lake Forest, Bannockburn, and surrounding communities.
+                    <strong>Built on Partnership:</strong> A dynamic founder duo whose personalities balance perfectly—creating a culture rooted in trust and excellence.
                   </li>
                   <li>
-                    <strong>Luxury Experience:</strong> Upscale salon environment with spa-quality amenities and attentive service.
+                    <strong>Luxury, Beauty, Experience:</strong> Our simple promise—delivered with intention, every visit.
                   </li>
                 </ul>
               </div>
@@ -402,18 +397,18 @@ export default function AboutPage() {
                 Experience Master-Level Hair Care
               </h2>
               <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
-                Book your appointment with Keeley, Amy, or one of our talented stylists. Serving Lincolnshire and the North Shore with over 30 years of expertise.
+                Book your appointment and experience Luxury, Beauty, and Experience in every visit—supported by top-notch hospitality and exceptional service.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
                   href="tel:8475718078"
-                  className="bg-amber-300 hover:bg-amber-400 text-[#251c18] font-bold py-4 px-8 rounded-lg transition-colors text-lg shadow-lg"
+                  className="bg-salon-raspberry hover:bg-salon-raspberry/90 text-white font-bold py-4 px-8 rounded-sm transition-colors text-lg shadow-lg tracking-widest uppercase"
                 >
                   Call (847) 571-8078
                 </a>
                 <Link
                   href="/booking"
-                  className="bg-white hover:bg-gray-100 text-[#251c18] font-bold py-4 px-8 rounded-lg transition-colors text-lg shadow-lg"
+                  className="bg-white hover:bg-white/90 text-[#251c18] font-bold py-4 px-8 rounded-sm transition-colors text-lg shadow-lg tracking-widest uppercase"
                 >
                   Book Online
                 </Link>
