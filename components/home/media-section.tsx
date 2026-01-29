@@ -7,6 +7,7 @@ const instagramPosts = [
   { url: "https://www.instagram.com/p/DT5w6sAgPnG/" },
   { url: "https://www.instagram.com/p/DTN34J-gMNJ/" },
   { url: "https://www.instagram.com/p/DSX7WwmAOT4/" },
+  { url: "https://www.instagram.com/p/DS1lGOjgDkH/" },
 ]
 
 function getInstagramEmbedUrl(url: string) {
@@ -27,12 +28,11 @@ export default function MediaSection() {
     window.open(url, "_blank", "noopener,noreferrer")
   }
 
-  // Tuning knobs: crop Instagram embed chrome (header/footer) for a cleaner card look.
-  // These values are approximate and may be tweaked to taste.
-  const IFRAME_CROP_TOP_PX = 64
-  const IFRAME_CROP_BOTTOM_PX = 56
-  // Slight zoom helps the photo fill the square (like object-cover)
-  const IFRAME_COVER_SCALE = 1.18
+  // Tuning knobs:
+  // We want to see the *entire* picture, so avoid "cover" style cropping/zooming.
+  const IFRAME_CROP_TOP_PX = 0
+  const IFRAME_CROP_BOTTOM_PX = 0
+  const IFRAME_COVER_SCALE = 1
 
   useEffect(() => {
     // Add custom styles to make embeds show only images in cards
@@ -85,7 +85,7 @@ export default function MediaSection() {
         }}
       />
 
-      <div className="container mx-auto max-w-6xl relative z-10">
+      <div className="container mx-auto max-w-7xl relative z-10">
         {/* Main Heading */}
         <div className="text-center mb-12 space-y-4">
           <h2 
@@ -102,14 +102,14 @@ export default function MediaSection() {
         </div>
 
         {/* Instagram Posts Grid - Equal sized cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
           {instagramPosts.map((post, index) => (
             <div
               key={index}
               role="link"
               tabIndex={0}
               aria-label={`Open Instagram post ${index + 1} in a new tab`}
-              className="group relative w-full aspect-square overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+              className="group relative w-full aspect-[4/5] overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
               style={{
                 background: 'rgba(255, 255, 255, 0.1)',
                 backdropFilter: 'blur(10px)',
