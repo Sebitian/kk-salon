@@ -8,7 +8,7 @@ export default function MangomintScript() {
       <Script id="mangomint-init" strategy="afterInteractive">
         {`
           window.Mangomint = window.Mangomint || {};
-          window.Mangomint.CompanyId = 804281;
+          window.Mangomint.CompanyId = 741141;
         `}
       </Script>
       <Script 
