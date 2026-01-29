@@ -54,7 +54,7 @@ export default function Footer() {
               <p className="leading-relaxed">185 N MILWAUKEE AVENUE, STE. 120<br />LINCOLNSHIRE, IL 60069</p>
               <div className="pt-4 space-y-2">
                 <a href="mailto:info@kossofsalonspa.com" className="block hover:text-salon-blue transition-colors italic">info@kossofsalonspa.com</a>
-                <a href="tel:8475718078" className="block hover:text-salon-blue transition-colors font-medium">(847) 571-8078</a>
+                <a href="tel:8478216604" className="block hover:text-salon-blue transition-colors font-medium">847-821-6604</a>
               </div>
             </div>
           </div>

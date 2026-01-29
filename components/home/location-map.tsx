@@ -9,7 +9,7 @@ const locations = [
   {
     name: "Kossof Kraaz Salon - Linconshire",
     address: "410 Milwaukee Ave, Lincolnshire, IL 60069",
-    phone: "+333 333 3333",
+    phone: "847-821-6604",
     hours: "10:00 AM - 9:00 PM",
   }
 ]
@@ -55,7 +55,7 @@ export default function LocationMap() {
             </div>
 
             <Button asChild size="sm" className="bg-primary text-white hover:bg-primary/90">
-              <Link href="/booking">Book Now</Link>
+              <Link href="https://booking.mangomint.com/kossofsalonspa">Book Now</Link>
             </Button>
           </div>
         ))}

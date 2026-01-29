@@ -13,7 +13,7 @@ export default function JsonLd() {
       "name": "Kossof Salon Spa",
       "image": "https://kossofsalonspa.com/klogo.png",
       "url": "https://kossofsalonspa.com",
-      "telephone": "(847) 571-8078",
+      "telephone": "847-821-6604",
       "email": "info@kossofsalonspa.com",
       "address": {
         "@type": "PostalAddress",

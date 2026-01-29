@@ -193,7 +193,7 @@ const localBusinessSchema = {
     postalCode: "60069",
     addressCountry: "US",
   },
-  telephone: "+18475718078",
+  telephone: "847-821-6604",
   email: "info@kossofsalonspa.com",
   openingHoursSpecification: [
     {
@@ -344,13 +344,13 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
-                  href="tel:8475718078"
+                  href="tel:8478216604"
                   className="bg-salon-raspberry hover:bg-salon-raspberry/90 text-white font-bold py-4 px-8 rounded-sm transition-colors text-lg shadow-lg tracking-widest uppercase"
                 >
-                  Call (847) 571-8078
+                  Call 847-821-6604
                 </a>
                 <Link
-                  href="/booking"
+                  href="https://booking.mangomint.com/kossofsalonspa"
                   className="bg-white hover:bg-white/90 text-salon-brown font-bold py-4 px-8 rounded-sm transition-colors text-lg shadow-lg tracking-widest uppercase"
                 >
                   Book Online

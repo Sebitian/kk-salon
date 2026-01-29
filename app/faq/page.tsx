@@ -28,7 +28,7 @@ const faqSchema = {
       name: "What is the best way to make an appointment at Kossof Salon Spa?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You can book an appointment by calling (847) 571-8078, messaging us on Facebook or Instagram, or contacting your stylist directly through their Instagram page. All social media links are available on our website.",
+        text: "You can book an appointment by calling 847-821-6604, messaging us on Facebook or Instagram, or contacting your stylist directly through their Instagram page. All social media links are available on our website.",
       },
     },
     {
@@ -52,7 +52,7 @@ const faqSchema = {
       name: "How can I cancel or reschedule my appointment?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You can cancel or reschedule by replying to your confirmation text or calling (847) 571-8078. We require 24-hour notice for cancellations or rescheduling to avoid a 50% service charge.",
+        text: "You can cancel or reschedule by replying to your confirmation text or calling 847-821-6604. We require 24-hour notice for cancellations or rescheduling to avoid a 50% service charge.",
       },
     },
     {
@@ -95,7 +95,7 @@ const localBusinessSchema = {
     postalCode: "60069",
     addressCountry: "US",
   },
-  telephone: "+18475718078",
+  telephone: "847-821-6604",
   email: "info@kossofsalonspa.com",
   openingHoursSpecification: [
     {
@@ -181,10 +181,10 @@ export default function FAQ() {
                   We're excited to have you! You can book an appointment by
                   calling{" "}
                   <a
-                    href="tel:8475718078"
+                    href="tel:8478216604"
                     className="text-primary hover:text-primary-dark font-semibold"
                   >
-                    (847) 571-8078
+                    847-821-6604
                   </a>
                   , messaging us on Facebook or Instagram, or contacting your
                   stylist directly through their Instagram page. All social
@@ -273,10 +273,10 @@ export default function FAQ() {
                   You can request a rescheduling when you receive your
                   confirmation text, or call us at{" "}
                   <a
-                    href="tel:8475718078"
+                    href="tel:8478216604"
                     className="text-primary hover:text-primary-dark font-semibold"
                   >
-                    (847) 571-8078
+                    847-821-6604
                   </a>{" "}
                   and we're happy to assist.{" "}
                   <strong>
@@ -400,10 +400,10 @@ export default function FAQ() {
                 <p className="mt-4 font-semibold text-gray-900">Phone:</p>
                 <p>
                   <a
-                    href="tel:8475718078"
+                    href="tel:8478216604"
                     className="text-primary hover:text-primary-dark transition-colors font-medium text-lg"
                   >
-                    (847) 571-8078
+                    847-821-6604
                   </a>
                 </p>
               </div>
@@ -504,13 +504,13 @@ export default function FAQ() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
-                  href="tel:8475718078"
+                  href="tel:8478216604"
                   className="bg-amber-300 hover:bg-amber-400 text-[#251c18] font-bold py-4 px-8 rounded-lg transition-colors text-lg shadow-lg"
                 >
-                  Call (847) 571-8078
+                  Call 847-821-6604
                 </a>
                 <a
-                  href="/booking"
+                  href="https://booking.mangomint.com/kossofsalonspa"
                   className="bg-white hover:bg-gray-100 text-[#251c18] font-bold py-4 px-8 rounded-lg transition-colors text-lg shadow-lg"
                 >
                   Book Online
@@ -539,7 +539,7 @@ export default function FAQ() {
           </p>
           <p>
             Hours: Tuesday, Thursday, Friday 9am-6pm. Wednesday and Saturday
-            9am-4pm. Closed Monday. Contact: (847) 571-8078 or
+            9am-4pm. Closed Monday. Contact: 847-821-6604 or
             info@kossofsalonspa.com
           </p>
         </div>

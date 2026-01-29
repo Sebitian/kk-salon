@@ -68,9 +68,9 @@ export default function ProductsPage() {
             <p className="text-white/70 max-w-xl mx-auto font-light mb-10 leading-relaxed">
               We are currently working on our online boutique. In the meantime, all products are available for purchase at our Lincolnshire location.
             </p>
-            <Button asChild className="bg-salon-raspberry hover:bg-salon-raspberry/90 text-white px-10 py-6 rounded-none tracking-widest uppercase">
+            {/* <Button asChild className="bg-salon-raspberry hover:bg-salon-raspberry/90 text-white px-10 py-6 rounded-none tracking-widest uppercase">
               <Link href="/contact">Inquire About Products</Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>

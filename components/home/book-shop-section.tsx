@@ -8,7 +8,7 @@ export default function BookShopSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-[500px]">
           {/* BOOK Button - Left Side with Framed Image */}
           <Link 
-            href="/booking"
+            href="https://booking.mangomint.com/kossofsalonspa"
             className="group relative overflow-hidden rounded-2xl bg-gray-100 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
           >
             <div className="absolute inset-0 bg-gray-100 flex items-center justify-center p-12">

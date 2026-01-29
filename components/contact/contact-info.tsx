@@ -30,11 +30,11 @@ export default function ContactInfo() {
           <div>
             <h3 className="font-semibold mb-1">Phone</h3>
             <a 
-              href="tel:+18475718078"
+              href="tel:8478216604"
               className="text-gray-600 hover:text-primary transition-colors"
               itemProp="telephone"
             >
-              +1 (847) 571-8078
+              847-821-6604
             </a>
           </div>
         </div>
