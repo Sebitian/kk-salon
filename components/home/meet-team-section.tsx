@@ -1,7 +1,8 @@
- "use client"
+"use client"
 
-import { useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import Image from "next/image"
+import { cn } from "@/lib/utils"
 
 export default function MeetTeamSection() {
   const categories = useMemo(
@@ -83,9 +84,50 @@ export default function MeetTeamSection() {
   )
 
   const [activeCategory, setActiveCategory] = useState<string>("all")
+  const [activeMemberKey, setActiveMemberKey] = useState<string | null>(null)
   const visibleMembers = activeCategory === "all"
     ? allMembers
     : allMembers.filter((m) => m.categoryId === activeCategory)
+
+  const itemElsRef = useRef(new Map<string, HTMLElement>())
+  const setItemEl = useCallback(
+    (key: string) => (el: HTMLElement | null) => {
+      if (el) itemElsRef.current.set(key, el)
+      else itemElsRef.current.delete(key)
+    },
+    [],
+  )
+
+  useEffect(() => {
+    // Reset active selection when filtering changes
+    setActiveMemberKey(null)
+  }, [activeCategory])
+
+  useEffect(() => {
+    const els = Array.from(itemElsRef.current.values())
+    if (els.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting)
+        if (visible.length === 0) return
+
+        // Pick the most-visible card as "active"
+        const best = visible.reduce((a, b) => (b.intersectionRatio > a.intersectionRatio ? b : a))
+        const key = (best.target as HTMLElement).dataset.memberKey
+        if (key) setActiveMemberKey(key)
+      },
+      {
+        // Trigger when a card is mostly in view (mobile scroll friendly)
+        threshold: [0.25, 0.4, 0.55, 0.7, 0.85],
+        rootMargin: "-10% 0px -25% 0px",
+      },
+    )
+
+    els.forEach((el) => observer.observe(el))
+
+    return () => observer.disconnect()
+  }, [visibleMembers])
 
   return (
     <section className="py-24 px-4 bg-white">
@@ -102,6 +144,10 @@ export default function MeetTeamSection() {
             <div className="w-24 h-1 bg-salon-blue mx-auto mt-4"></div>
             <p className="text-salon-brown/70 text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto pt-4">
               30+ Years of Expertise in Hair & Spa Services
+            </p>
+            <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto italic font-light pt-2">
+              Our vision is to deliver <strong>Luxury, Beauty, and Experience</strong> in every visit—within a welcoming,
+              fun, and social environment supported by top-notch hospitality and exceptional service.
             </p>
           </div>
 
@@ -137,18 +183,38 @@ export default function MeetTeamSection() {
           {/* People list (Pascal-style) */}
           <div className="w-full space-y-6">
             {visibleMembers.map((member) => (
+              // "Active" card is driven by scroll position (IntersectionObserver)
               <article
                 key={`${member.categoryId}-${member.name}`}
-                className="bg-white border border-salon-brown/10 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 md:p-8"
+                ref={setItemEl(`${member.categoryId}-${member.name}`)}
+                data-member-key={`${member.categoryId}-${member.name}`}
+                onMouseEnter={() => setActiveMemberKey(`${member.categoryId}-${member.name}`)}
+                onFocus={() => setActiveMemberKey(`${member.categoryId}-${member.name}`)}
+                className={cn(
+                  "bg-white border rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-6 md:p-8",
+                  activeMemberKey === `${member.categoryId}-${member.name}`
+                    ? "border-salon-raspberry/30"
+                    : "border-salon-brown/10",
+                )}
               >
                 <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-center sm:items-start">
                   <div className="shrink-0">
-                    <div className="relative h-40 w-40 sm:h-44 sm:w-44 overflow-hidden rounded-full border-4 border-salon-blue/30 shadow-lg">
+                    <div
+                      className={cn(
+                        "relative h-40 w-40 sm:h-44 sm:w-44 overflow-hidden rounded-full border-4 shadow-lg transition-colors duration-500",
+                        activeMemberKey === `${member.categoryId}-${member.name}`
+                          ? "border-salon-raspberry/70"
+                          : "border-salon-blue/30",
+                      )}
+                    >
                       <Image
                         src={member.image}
                         alt={`${member.name} - ${member.title} at Kossof Salon Spa`}
                         fill
-                        className="object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-110"
+                        className={cn(
+                          "object-cover transition-all duration-700 ease-in-out scale-110 hover:grayscale-0",
+                          activeMemberKey === `${member.categoryId}-${member.name}` ? "grayscale-0" : "grayscale",
+                        )}
                         unoptimized
                         sizes="176px"
                       />
@@ -168,13 +234,6 @@ export default function MeetTeamSection() {
               </article>
             ))}
           </div>
-
-          {/* Brand Voice */}
-          <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed text-center max-w-2xl mx-auto italic font-light">
-            Our vision is to deliver <strong>Luxury, Beauty, and Experience</strong>{" "}
-            in every visit—within a welcoming, fun, and social environment supported
-            by top-notch hospitality and exceptional service.
-          </p>
 
         </div>
       </div>

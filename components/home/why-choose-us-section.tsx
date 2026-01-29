@@ -1,129 +1,171 @@
-
 "use client"
 
-import { useCallback, useEffect, useMemo, useState } from "react"
+import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import useEmblaCarousel from "embla-carousel-react"
-import { Users, Award, Sparkles } from "lucide-react"
-import brownHair from "./brown-hair.jpeg"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel"
 
-const features = [
-  {
-    icon: <Users className="h-8 w-8" />,
-    title: "Expert Talent",
-    description: "Our team of certified professionals brings years of experience and creativity to every service.",
-    image: brownHair,
-  },
-  {
-    icon: <Award className="h-8 w-8 text-primary" />,
-    title: "Premium Products",
-    description: "We use only the highest quality, luxurious products to ensure the best results for our clients.",
-    image: brownHair,
-  },
-  {
-    icon: <Sparkles className="h-8 w-8 text-primary" />,
-    title: "Personalized Experience",
-    description: "Enjoy a tailored approach to beauty, with services customized to your unique style and needs.",
-    image: brownHair,
-  },
+import tymo from "./tymo.jpg"
+import rosa from "./rosa.jpg"
+import aliPazani from "@/public/ali-pazani.jpg"
+import mostafa from "@/public/mostafa.jpg"
+import nathan from "@/public/nathan.jpg"
+
+const carouselImages = [
+  { src: tymo, alt: "Salon style photo 1" },
+  { src: aliPazani, alt: "Salon style photo 2" },
+  { src: rosa, alt: "Salon style photo 3" },
+  { src: mostafa, alt: "Salon style photo 4" },
+  { src: nathan, alt: "Salon style photo 5" },
 ]
 
 export default function WhyChooseUsSection() {
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [selectedIndex, setSelectedIndex] = React.useState(0)
+  const [autoplay, setAutoplay] = React.useState(true)
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    useMemo(
-      () => ({
-        loop: true,
-        align: "center",
-        containScroll: "trimSnaps",
-      }),
-      []
-    )
-  )
+  const autoplayIntervalRef = React.useRef<number | null>(null)
 
-  useEffect(() => {
-    if (!emblaApi) return
+  const stopAutoplay = React.useCallback(() => {
+    setAutoplay(false)
+    if (autoplayIntervalRef.current !== null) {
+      window.clearInterval(autoplayIntervalRef.current)
+      autoplayIntervalRef.current = null
+    }
+  }, [])
 
-    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap())
+  React.useEffect(() => {
+    if (!api) return
+
+    const onSelect = () => setSelectedIndex(api.selectedScrollSnap())
+    const onPointerDown = () => stopAutoplay()
+
     onSelect()
-    emblaApi.on("select", onSelect)
+    api.on("select", onSelect)
+    api.on("pointerDown", onPointerDown)
 
     return () => {
-      emblaApi.off("select", onSelect)
+      api.off("select", onSelect)
+      api.off("pointerDown", onPointerDown)
     }
-  }, [emblaApi])
+  }, [api, stopAutoplay])
 
-  const scrollTo = useCallback((index: number) => emblaApi?.scrollTo(index), [emblaApi])
+  React.useEffect(() => {
+    if (!api) return
+    if (!autoplay) return
+
+    autoplayIntervalRef.current = window.setInterval(() => {
+      api.scrollNext()
+    }, 6500)
+
+    return () => {
+      if (autoplayIntervalRef.current !== null) {
+        window.clearInterval(autoplayIntervalRef.current)
+        autoplayIntervalRef.current = null
+      }
+    }
+  }, [autoplay, api])
+
+  const scrollPrev = React.useCallback(() => api?.scrollPrev(), [api])
+  const scrollNext = React.useCallback(() => api?.scrollNext(), [api])
+  const scrollTo = React.useCallback(
+    (index: number) => {
+      stopAutoplay()
+      api?.scrollTo(index)
+    },
+    [api, stopAutoplay]
+  )
 
   return (
     <section className="py-24 bg-white overflow-hidden">
+      {/* Full-bleed carousel (swipe + arrows + dots) */}
+      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen mb-16">
+        <div className="relative">
+          <Carousel
+            setApi={setApi}
+            opts={{
+              loop: true,
+              align: "center",
+              containScroll: "trimSnaps",
+            }}
+          >
+            <CarouselContent className="ml-0 w-full will-change-transform">
+              {carouselImages.map((image, index) => (
+                <CarouselItem key={index} className="pl-0 w-full">
+                  <div className="relative h-[95vh] min-h-[680px] max-h-[1100px] w-full bg-salon-brown/10">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      priority={index === 0}
+                      quality={100}
+                      placeholder="blur"
+                      className="object-cover"
+                      sizes="100vw"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-black/0 to-black/10" />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-salon-brown rounded-full shadow-lg z-10"
+            onClick={scrollPrev}
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </Button>
+
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-salon-brown rounded-full shadow-lg z-10"
+            onClick={scrollNext}
+            aria-label="Next image"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </Button>
+
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10">
+            {carouselImages.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => scrollTo(index)}
+                aria-label={`Go to image ${index + 1}`}
+                className="h-1.5 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-salon-raspberry/60"
+                style={{
+                  width: index === selectedIndex ? 28 : 10,
+                  backgroundColor: "white",
+                  opacity: index === selectedIndex ? 0.95 : 0.55,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="container mx-auto px-6">
-        <div className="text-center mb-20">
+        {/* <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-bold text-salon-brown mb-6">Why Kossof Salon Spa?</h2>
           <div className="w-24 h-1 bg-salon-raspberry mx-auto"></div>
           <p className="text-xl text-salon-brown/60 max-w-3xl mx-auto mt-8 font-light">
             Experience the difference with our commitment to excellence, luxury, and personalized care.
           </p>
-        </div>
-      </div>
-
-      {/* Mobile-first full-width carousel */}
-      <div className="relative w-full">
-        <div className="overflow-hidden" ref={emblaRef} style={{ touchAction: "pan-y" }}>
-          <div className="flex will-change-transform">
-            {features.map((feature, index) => (
-              <div key={index} className="flex-[0_0_100%] min-w-0">
-                <div className="relative w-full h-[82vh] sm:h-[620px] lg:h-[700px] overflow-hidden">
-                  <Image
-                    src={feature.image || "/placeholder.svg"}
-                    alt={feature.title}
-                    fill
-                    className="object-cover"
-                    sizes="100vw"
-                    priority={index === 0}
-                  />
-
-                  {/* bottom caption */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                    <div className="max-w-xl">
-                      <div className="flex items-center gap-3 mb-3 text-white">
-                        <div className="p-2 bg-white/10 rounded-full backdrop-blur-sm">{feature.icon}</div>
-                        <h3 className="text-xl sm:text-2xl font-bold tracking-widest uppercase font-gotham">
-                          {feature.title}
-                        </h3>
-                      </div>
-                      <p className="text-white/90 text-[15px] sm:text-base leading-6 sm:leading-7 font-normal">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Pagination (matches Testimonials) */}
-        <div className="flex justify-center items-center space-x-4 pt-8 px-6">
-          {features.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollTo(index)}
-              className="transition-all duration-300 focus:outline-none"
-              aria-label={`Go to slide ${index + 1}`}
-              style={{
-                width: index === selectedIndex ? "32px" : "10px",
-                height: "4px",
-                borderRadius: "2px",
-                backgroundColor: index === selectedIndex ? "#c21887" : "#251c18",
-                opacity: index === selectedIndex ? 1 : 0.2,
-              }}
-            />
-          ))}
-        </div>
+        </div> */}
 
         <div className="mt-20 text-center">
           <Link

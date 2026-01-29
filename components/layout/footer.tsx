@@ -82,7 +82,7 @@ export default function Footer() {
                 placeholder="YOUR EMAIL" 
                 className="bg-white/5 border-white/10 text-white rounded-none focus:border-salon-blue transition-colors"
               />
-              <Button className="w-full bg-salon-raspberry hover:bg-salon-raspberry/90 text-white rounded-none tracking-widest text-xs h-11">
+              <Button className="w-full bg-salon-raspberry hover:bg-salon-raspberry/90 text-white rounded-sm tracking-widest text-xs h-11">
                 SIGN UP
               </Button>
             </form>

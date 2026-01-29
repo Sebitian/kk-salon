@@ -335,8 +335,7 @@ export default function AboutPage() {
             {/* Call to Action */}
             <div className="bg-[#251c18] rounded-lg shadow-xl p-8 md:p-12 text-center">
               <h2
-                className="text-3xl font-bold text-white mb-4"
-                style={{ fontFamily: '"Orpheus Pro", serif' }}
+                className="text-3xl lg:text-4xl font-bold text-white mb-4 tracking-[0.2em] uppercase"
               >
                 Experience Master-Level Hair Care
               </h2>
