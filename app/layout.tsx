@@ -9,7 +9,6 @@ import GoogleAnalytics from "@/components/analytics/google-analytics"
 import MangomintOverlay from "@/components/booking/mangomint-overlay"
 import { Analytics } from "@vercel/analytics/next"
 
-
 import JsonLd from "@/components/json-ld"
 
 const poppins = Poppins({
@@ -83,7 +82,7 @@ export default function RootLayout({
         <JsonLd />
         {/* <GoogleAnalytics /> */}
         <Analytics />
-        {/* <MangomintOverlay /> */}
+        <MangomintOverlay />
         {/* <Header /> */}
         <main>{children}</main>
         {/* <Footer /> */}

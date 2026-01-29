@@ -1,7 +1,45 @@
+"use client"
+
 import Image from "next/image"
 import { Facebook, Instagram } from "lucide-react"
+import { useCallback, useEffect } from "react"
+
+const MANGOMINT_COMPANY_ID = 741141
+const MANGOMINT_BOOKING_URL = `https://booking.mangomint.com/${MANGOMINT_COMPANY_ID}`
 
 export default function ComingSoonPage() {
+  useEffect(() => {
+    // Redundant with `MangomintOverlay` in layout, but harmless and ensures
+    // the company id is present before a user clicks "Book".
+    window.Mangomint = window.Mangomint || {}
+    window.Mangomint.CompanyId = MANGOMINT_COMPANY_ID
+  }, [])
+
+  const openMangomintBooking = useCallback(() => {
+    // If the MangoMint embed exposes a method, use it; otherwise fall back to direct URL.
+    try {
+      const mm: any = window.Mangomint
+
+      const maybeFn =
+        mm?.open ||
+        mm?.openBooking ||
+        mm?.show ||
+        mm?.launch ||
+        mm?.toggle ||
+        mm?.Booking?.open ||
+        mm?.booking?.open
+
+      if (typeof maybeFn === "function") {
+        maybeFn()
+        return
+      }
+    } catch {
+      // ignore and fall back
+    }
+
+    window.open(MANGOMINT_BOOKING_URL, "_blank", "noopener,noreferrer")
+  }, [])
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black p-4">
       <div className="w-full max-w-3xl text-center space-y-6 sm:space-y-8 text-white">
@@ -27,6 +65,16 @@ export default function ComingSoonPage() {
           <span className="block text-5xl sm:text-5xl md:text-6xl">Opening soon!</span>
           <span className="block mt-2 text-3xl sm:text-3xl md:text-4xl">February 17, 2026</span>
         </h1>
+
+        <div className="flex justify-center">
+          <button
+            type="button"
+            onClick={openMangomintBooking}
+            className="rounded-full bg-white text-black px-8 py-3 shadow-md hover:shadow-lg transition-shadow font-['Montserrat'] font-semibold"
+          >
+            Book an appointment
+          </button>
+        </div>
 
         <div className="max-w-md mx-auto space-y-2 text-base sm:text-lg text-white/80 font-['Montserrat'] leading-relaxed">
           <p>
