@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect } from "react"
-import Script from "next/script"
 
 // Instagram post URLs
 const instagramPosts = [
@@ -10,13 +9,32 @@ const instagramPosts = [
   { url: "https://www.instagram.com/p/DSX7WwmAOT4/" },
 ]
 
+function getInstagramEmbedUrl(url: string) {
+  try {
+    const u = new URL(url)
+    const parts = u.pathname.split("/").filter(Boolean)
+    // Expected: /p/{shortcode}/
+    const shortcode = parts[0] === "p" ? parts[1] : undefined
+    if (!shortcode) return url
+    return `https://www.instagram.com/p/${shortcode}/embed/`
+  } catch {
+    return url
+  }
+}
+
 export default function MediaSection() {
+  const openPost = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer")
+  }
+
+  // Tuning knobs: crop Instagram embed chrome (header/footer) for a cleaner card look.
+  // These values are approximate and may be tweaked to taste.
+  const IFRAME_CROP_TOP_PX = 64
+  const IFRAME_CROP_BOTTOM_PX = 56
+  // Slight zoom helps the photo fill the square (like object-cover)
+  const IFRAME_COVER_SCALE = 1.18
+
   useEffect(() => {
-    // Process Instagram embeds after script loads
-    if (window.instgrm) {
-      window.instgrm.Embeds.process()
-    }
-    
     // Add custom styles to make embeds show only images in cards
     const style = document.createElement('style')
     style.id = 'instagram-media-styles'
@@ -34,16 +52,9 @@ export default function MediaSection() {
         overflow: hidden !important;
       }
       .instagram-media-card iframe {
-        width: 100% !important;
-        height: 100% !important;
         border: none !important;
-        border-radius: 12px !important;
         margin: 0 !important;
-      }
-      /* Hide unnecessary elements from Instagram embed */
-      .instagram-media-card > div > a:first-child,
-      .instagram-media-card > div > p:last-child {
-        display: none !important;
+        display: block !important;
       }
     `
     if (!document.getElementById('instagram-media-styles')) {
@@ -93,30 +104,42 @@ export default function MediaSection() {
         {/* Instagram Posts Grid - Equal sized cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {instagramPosts.map((post, index) => (
-            <a
+            <div
               key={index}
-              href={post.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              role="link"
+              tabIndex={0}
+              aria-label={`Open Instagram post ${index + 1} in a new tab`}
               className="group relative w-full aspect-square overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
               style={{
                 background: 'rgba(255, 255, 255, 0.1)',
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(255, 255, 255, 0.15)',
               }}
+              onClick={() => openPost(post.url)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault()
+                  openPost(post.url)
+                }
+              }}
             >
               <div className="absolute inset-0 w-full h-full">
-                <blockquote
-                  className="instagram-media-card"
-                  data-instgrm-permalink={post.url}
-                  data-instgrm-version="14"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    margin: 0,
-                    padding: 0,
-                  }}
-                />
+                <div className="instagram-media-card w-full h-full">
+                  <iframe
+                    src={getInstagramEmbedUrl(post.url)}
+                    title={`Instagram post ${index + 1}`}
+                    loading="lazy"
+                    scrolling="no"
+                    className="pointer-events-none absolute left-0 w-full"
+                    style={{
+                      top: `-${IFRAME_CROP_TOP_PX}px`,
+                      height: `calc(100% + ${IFRAME_CROP_TOP_PX + IFRAME_CROP_BOTTOM_PX}px)`,
+                      transform: `scale(${IFRAME_COVER_SCALE})`,
+                      transformOrigin: "center",
+                      border: "none",
+                    }}
+                  />
+                </div>
               </div>
               
               {/* Instagram icon overlay on hover */}
@@ -131,21 +154,10 @@ export default function MediaSection() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
-
-      {/* Instagram Embed Script */}
-      <Script
-        src="https://www.instagram.com/embed.js"
-        strategy="lazyOnload"
-        onLoad={() => {
-          if (window.instgrm) {
-            window.instgrm.Embeds.process()
-          }
-        }}
-      />
     </section>
   )
 }

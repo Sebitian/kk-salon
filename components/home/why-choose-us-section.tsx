@@ -14,16 +14,13 @@ import {
 
 import tymo from "./tymo.jpg"
 import rosa from "./rosa.jpg"
-import aliPazani from "@/public/ali-pazani.jpg"
-import mostafa from "@/public/mostafa.jpg"
-import nathan from "@/public/nathan.jpg"
 
 const carouselImages = [
   { src: tymo, alt: "Salon style photo 1" },
-  { src: aliPazani, alt: "Salon style photo 2" },
+  { src: "/ali-pazani.jpg", alt: "Salon style photo 2" },
   { src: rosa, alt: "Salon style photo 3" },
-  { src: mostafa, alt: "Salon style photo 4" },
-  { src: nathan, alt: "Salon style photo 5" },
+  { src: "/mostafa.jpg", alt: "Salon style photo 4" },
+  { src: "/nathan.jpg", alt: "Salon style photo 5" },
 ]
 
 export default function WhyChooseUsSection() {
@@ -106,7 +103,7 @@ export default function WhyChooseUsSection() {
                       fill
                       priority={index === 0}
                       quality={100}
-                      placeholder="blur"
+                      placeholder={typeof image.src === "string" ? "empty" : "blur"}
                       className="object-cover"
                       sizes="100vw"
                     />
