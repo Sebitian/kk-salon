@@ -47,14 +47,14 @@ export default function MeetTeamSection() {
           members: [
             {
               image: "/gif5.gif",
-              name: "Olivia",
+              name: "Phil",
               title: "Esthetician",
               description:
                 "Olivia specializes in relaxing, results-focused skincare and services designed to leave you glowing and refreshed.",
             },
             {
               image: "/gif1.gif",
-              name: "Sophie",
+              name: "Kim",
               title: "Spa Coordinator",
               description:
                 "Sophie helps create a seamless experience—matching guests to the right services and supporting a calm, welcoming visit.",
@@ -67,7 +67,7 @@ export default function MeetTeamSection() {
           members: [
             {
               image: "/gif4.gif",
-              name: "Cynthia",
+              name: "Sebastian",
               title: "Nail Technician",
               description:
                 "Cynthia delivers meticulous manicures and pedicures with an eye for detail—clean, classic, and always polished.",

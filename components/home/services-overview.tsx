@@ -15,7 +15,7 @@ const services = [
     ),
     title: "Expert Haircuts & Styling",
     description: "Precision cuts and trendsetting styles for all hair types.",
-    link: "/services#hair",
+    link: "/salon-services#hair",
   },
   {
     icon: (
@@ -29,7 +29,7 @@ const services = [
     ),
     title: "Nail Art & Care",
     description: "Express yourself with our creative nail designs and treatments.",
-    link: "/services#nails",
+    link: "/salon-services#nails",
   },
   {
     icon: (
@@ -43,7 +43,7 @@ const services = [
     ),
     title: "Makeup & Skincare",
     description: "Enhance your natural beauty with our expert makeup and skincare services.",
-    link: "/services#beauty",
+    link: "/salon-services#beauty",
   },
 ]
 
@@ -95,7 +95,7 @@ export default function ServicesOverview() {
 
         <div className="text-center mt-16">
           <Button asChild size="lg" className="btn-primary">
-            <Link href="/services">View All Services</Link>
+            <Link href="/salon-services">View All Services</Link>
           </Button>
         </div>
       </div>

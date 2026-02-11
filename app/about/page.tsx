@@ -303,35 +303,6 @@ export default function AboutPage() {
               </div>
             </article>
 
-            {/* Values Section - Enhanced with Specifics */}
-            <article className="bg-[#ede7e4]/30 rounded-lg shadow-md p-6 md:p-8 border border-[#ede7e4]">
-              <h2 className="text-2xl font-bold text-salon-brown mb-4 tracking-widest uppercase">
-                Why Choose Kossof Salon Spa
-              </h2>
-              <div className="text-salon-brown/80 leading-relaxed space-y-3">
-                <ul className="list-disc list-inside space-y-3 ml-2">
-                  <li>
-                    <strong>Legacy of Excellence:</strong> Built on the Kossof name—trusted for beauty, professionalism, and an elevated guest experience for over 50 years.
-                  </li>
-                  <li>
-                    <strong>Leadership & Integrity:</strong> Founded by Keeley Kossof and Amy Kraaz, who led and managed Teddie Kossof Salon Spa together for years.
-                  </li>
-                  <li>
-                    <strong>Elevated Hospitality:</strong> Top-notch service and care designed to make every guest feel confident, cared for, and truly valued.
-                  </li>
-                  <li>
-                    <strong>Welcoming Atmosphere:</strong> A fun, social environment where clients can relax, connect, and enjoy the experience.
-                  </li>
-                  <li>
-                    <strong>Built on Partnership:</strong> A dynamic founder duo whose personalities balance perfectly—creating a culture rooted in trust and excellence.
-                  </li>
-                  <li>
-                    <strong>Luxury, Beauty, Experience:</strong> Our simple promise—delivered with intention, every visit.
-                  </li>
-                </ul>
-              </div>
-            </article>
-
             {/* Call to Action */}
             <div className="bg-[#251c18] rounded-lg shadow-xl p-8 md:p-12 text-center">
               <h2

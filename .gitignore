@@ -22,6 +22,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# large video files (served from Vercel Blob)
+*.mov
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

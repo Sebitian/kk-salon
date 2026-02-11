@@ -73,7 +73,7 @@ export default function Footer() {
           </div>
 
           {/* NEWSLETTER Section */}
-          <div className="text-center md:text-left">
+          {/* <div className="text-center md:text-left">
             <h3 className="text-sm font-bold uppercase mb-8 tracking-[0.2em] text-salon-blue">NEWSLETTER</h3>
             <p className="text-sm text-white/60 mb-6 font-light">Join our list for exclusive offers and beauty updates.</p>
             <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
@@ -86,11 +86,11 @@ export default function Footer() {
                 SIGN UP
               </Button>
             </form>
-          </div>
+          </div> */}
         </div>
 
         {/* Copyright */}
-        <div className="text-center text-white/20 text-[10px] tracking-[0.2em] pt-12 border-t border-white/5 uppercase">
+        {/* <div className="text-center text-white/20 text-[10px] tracking-[0.2em] pt-12 border-t border-white/5 uppercase">
           <p>
             &copy; {new Date().getFullYear()} Kossof Salon Spa. Site by{" "}
             <a
@@ -102,7 +102,7 @@ export default function Footer() {
               Sebastian
             </a>
           </p>
-        </div>
+        </div> */}
       </div>
     </footer>
   )

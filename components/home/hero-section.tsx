@@ -5,7 +5,7 @@ export default function HeroSection() {
     <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-white pt-20">
       <div className="absolute inset-0 z-0">
         <video
-          src="/home_vid.mp4"
+          src="/services.mp4"
           autoPlay
           muted
           loop
@@ -21,7 +21,7 @@ export default function HeroSection() {
           <Image
             src="/logo-white.png"
             alt="Kossof Salon Spa"
-            width={1800}
+            width={900}
             height={900}
             priority
             className="w-full h-auto object-contain drop-shadow-[0_0_50px_rgba(0,0,0,0.3)]"

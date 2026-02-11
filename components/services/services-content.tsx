@@ -1,35 +1,11 @@
 import Image from "next/image"
-import { Metadata } from "next"
-import { SERVICES_SECTIONS } from "@/components/services/services-data"
+import { ServicesSection } from "@/components/services/services-data"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-
-// SEO Metadata Export
-export const metadata: Metadata = {
-  title: "Salon & Spa Services & Pricing | Hair, Nails, Facials, Massage, Waxing",
-  description:
-    "Explore our full menu of luxury services: haircuts, color, treatments, retexturizing, nails, facials, body treatments, massage, waxing, lashes & brows, wedding hair & makeup, and makeup artistry.",
-  keywords:
-    "salon services, spa services, haircuts, hair color, balayage, keratin treatments, nails, manicure, pedicure, facial, massage, waxing, lash lift, brow tint, wedding hair, wedding makeup, makeup artistry",
-  openGraph: {
-    title: "Kossof Salon Spa Services & Pricing",
-    description:
-      "Luxury services across hair, nails, skincare, massage, and beauty. View our full pricing menu and book your appointment.",
-    type: "website",
-    images: [
-      {
-        url: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1200&h=630&fit=crop",
-        width: 1200,
-        height: 630,
-        alt: "Professional hair salon services"
-      }
-    ]
-  }
-}
 
 interface ServiceItemProps {
   name: string
@@ -89,9 +65,21 @@ function ServiceItemAccordion({ name, price, description }: ServiceItemProps) {
   )
 }
 
-export default function ServicesContent() {
+interface ServicesContentProps {
+  sections: ServicesSection[]
+  /** Name used in structured data, e.g. "Kossof Salon Services" */
+  schemaName?: string
+  /** Description used in structured data */
+  schemaDescription?: string
+}
+
+export default function ServicesContent({
+  sections,
+  schemaName = "Kossof Salon Spa Services",
+  schemaDescription = "Full service menu including hair, nails, facials, massage, waxing, lashes & brows, and makeup services.",
+}: ServicesContentProps) {
   // JSON-LD Structured Data for AI and Search Engines
-  const allItemsCount = SERVICES_SECTIONS.reduce((sectionAcc, section) => {
+  const allItemsCount = sections.reduce((sectionAcc, section) => {
     return (
       sectionAcc +
       section.groups.reduce((groupAcc, group) => groupAcc + group.items.length, 0)
@@ -101,11 +89,10 @@ export default function ServicesContent() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Kossof Salon Spa Services",
-    "description":
-      "Full service menu including hair, nails, facials, massage, waxing, lashes & brows, and makeup services.",
+    "name": schemaName,
+    "description": schemaDescription,
     "numberOfItems": allItemsCount,
-    "itemListElement": SERVICES_SECTIONS.map((section, idx) => ({
+    "itemListElement": sections.map((section, idx) => ({
       "@type": "Service",
       "position": idx + 1,
       "name": section.title,
@@ -132,7 +119,7 @@ export default function ServicesContent() {
           content="Full service menu including haircuts, color, treatments, nails, facials, massage, waxing, lashes & brows, wedding services, and makeup."
         />
 
-        {SERVICES_SECTIONS.map((section) => {
+        {sections.map((section) => {
           const textColOrder = section.textLeftOnDesktop
             ? "order-2 lg:order-1"
             : "order-2 lg:order-2"

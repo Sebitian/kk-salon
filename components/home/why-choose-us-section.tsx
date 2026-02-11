@@ -166,7 +166,7 @@ export default function WhyChooseUsSection() {
 
         <div className="mt-20 text-center">
           <Link
-            href="/services"
+            href="/salon-services"
             className="inline-flex items-center text-salon-raspberry font-semibold tracking-widest hover:text-salon-raspberry/80 transition-colors uppercase text-sm"
           >
             Learn More About Our Services

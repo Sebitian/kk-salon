@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { getBlobUrls } from "@/lib/blob"
 
 export const metadata: Metadata = {
   title: "Professional Hair Care Products - Kossof Salon Spa",
@@ -12,21 +10,26 @@ const productLines = [
   {
     name: "Milbon",
     description: "Japan's #1 professional hair care brand, offering sophisticated treatments for every hair type.",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop&q=80",
+    videoFilename: "Kossof_Products_Final.mov",
   },
   {
     name: "Moroccanoil",
     description: "The pioneer of oil-infused hair care, providing the perfect foundation for all hair types.",
-    image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=800&h=600&fit=crop&q=80",
+    videoFilename: "Kossof.Moroccan.Final.mov",
   },
   {
     name: "Keratin Complex",
     description: "Revolutionary smoothing treatments and products that eliminate frizz and restore health to hair.",
-    image: "https://images.unsplash.com/photo-1626784215021-2e39ccf971cd?w=800&h=600&fit=crop&q=80",
-  }
+    videoFilename: "Kossof.FarmhouseFresh.Final.mov",
+  },
 ]
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const urls = await getBlobUrls(productLines.map((l) => l.videoFilename))
+  const productLinesWithUrls = productLines.map((line) => ({
+    ...line,
+    video: urls[line.videoFilename],
+  }))
   return (
     <div className="pt-24 bg-white">
       <section className="py-20 px-6 bg-[#ede7e4]/20">
@@ -44,14 +47,17 @@ export default function ProductsPage() {
       <section className="py-24 px-6">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-            {productLines.map((line) => (
+            {productLinesWithUrls.map((line) => (
               <div key={line.name} className="flex flex-col group">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-sm mb-8 shadow-2xl">
-                  <Image
-                    src={line.image}
-                    alt={line.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                <div className="relative aspect-[4/5] overflow-hidden rounded-sm mb-8 shadow-2xl [contain:paint]">
+                  <video
+                    src={line.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out transform-gpu will-change-transform backface-hidden group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-salon-brown/10 group-hover:bg-salon-brown/0 transition-colors duration-500"></div>
                 </div>
@@ -68,9 +74,6 @@ export default function ProductsPage() {
             <p className="text-white/70 max-w-xl mx-auto font-light mb-10 leading-relaxed">
               We are currently working on our online boutique. In the meantime, all products are available for purchase at our Lincolnshire location.
             </p>
-            {/* <Button asChild className="bg-salon-raspberry hover:bg-salon-raspberry/90 text-white px-10 py-6 rounded-none tracking-widest uppercase">
-              <Link href="/contact">Inquire About Products</Link>
-            </Button> */}
           </div>
         </div>
       </section>

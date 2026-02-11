@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       {/* ===============TEST */}
-      <HeroSection /> 
+      <HeroSection />
       <CofoundersTeaser />
       <WhyChooseUsSection />
       <TestimonialsSection />
