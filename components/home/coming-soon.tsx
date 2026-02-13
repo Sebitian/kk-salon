@@ -6,6 +6,7 @@ import { useCallback, useEffect } from "react"
 
 const MANGOMINT_COMPANY_ID = 741141
 const MANGOMINT_BOOKING_URL = `https://booking.mangomint.com/${MANGOMINT_COMPANY_ID}`
+const MANGOMINT_GIFT_CARDS_URL = `https://clients.mangomint.com/gift-cards/${MANGOMINT_COMPANY_ID}`
 
 export default function ComingSoonPage() {
   useEffect(() => {
@@ -66,7 +67,7 @@ export default function ComingSoonPage() {
           <span className="block mt-2 text-3xl sm:text-3xl md:text-4xl">February 17, 2026</span>
         </h1>
 
-        <div className="flex justify-center">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
           <button
             type="button"
             onClick={openMangomintBooking}
@@ -74,6 +75,14 @@ export default function ComingSoonPage() {
           >
             Book an appointment
           </button>
+          <a
+            href={MANGOMINT_GIFT_CARDS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-white text-black px-8 py-3 shadow-md hover:shadow-lg transition-shadow font-['Montserrat'] font-semibold"
+          >
+            Buy a gift card
+          </a>
         </div>
 
         <div className="max-w-md mx-auto space-y-2 text-base sm:text-lg text-white/80 font-['Montserrat'] leading-relaxed">
