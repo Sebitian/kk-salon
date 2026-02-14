@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function SalonServicesHero() {
   return (
     <section className="pt-32 sm:pt-36 pb-16 px-4 bg-white">
@@ -11,13 +13,20 @@ export default function SalonServicesHero() {
           </h1>
           <div className="w-24 h-1 bg-salon-blue mx-auto mt-4" />
           <p className="text-salon-brown/70 text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto pt-4">
-            Hair, Nails, Wedding & Beauty
+            Hair, Nails & Makeup
           </p>
           <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto italic font-light pt-2">
-            Explore our full menu of elevated salon services—from precision cuts and custom color
-            to nail care, waxing, makeup artistry, and bridal styling—delivered with top-notch
-            hospitality and exceptional service.
+            Explore our full menu of elevated salon services, from precision cuts and custom color
+            to retexturizing, nail care, and non-wedding makeup artistry.
           </p>
+          <div className="pt-8 flex w-full items-center justify-center">
+            <Link
+              href="https://booking.mangomint.com/kossofsalonspa"
+              className="inline-flex w-full max-w-xs sm:w-auto sm:min-w-[210px] items-center justify-center whitespace-nowrap bg-salon-raspberry text-white px-8 py-3.5 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase hover:bg-salon-raspberry/90 transition-colors"
+            >
+              Book Now
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { cn } from "@/lib/utils"
 
 export default function MeetTeamSection() {
@@ -233,6 +234,20 @@ export default function MeetTeamSection() {
                 </div>
               </article>
             ))}
+          </div>
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="https://booking.mangomint.com/kossofsalonspa"
+              className="inline-flex items-center justify-center bg-salon-raspberry text-white px-6 py-3 rounded-sm text-xs sm:text-sm font-semibold tracking-widest uppercase hover:bg-salon-raspberry/90 transition-colors"
+            >
+              Book With Our Team
+            </Link>
+            <Link
+              href="/salon-services"
+              className="inline-flex items-center justify-center bg-white text-salon-brown border border-salon-brown/20 px-6 py-3 rounded-sm text-xs sm:text-sm font-semibold tracking-widest uppercase hover:border-salon-blue/60 transition-colors"
+            >
+              Browse Services
+            </Link>
           </div>
 
         </div>

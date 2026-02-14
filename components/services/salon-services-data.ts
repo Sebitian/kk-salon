@@ -3,9 +3,9 @@ import { ServicesSection } from "./services-data"
 export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
   {
     id: "hair",
-    title: "Hair",
+    title: "Salon Services",
     intro:
-      "Luxury cutting, styling, color, treatments, and retexturizing services. Pricing may vary based on consultation.",
+      "Haircuts, styling, color, treatments, and retexturizing services from the final service menu.",
     textLeftOnDesktop: true,
     textPanelBgClassName: "bg-[#ede7e4]/20",
     image: {
@@ -14,91 +14,91 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
     },
     groups: [
       {
-        title: "Haircuts",
+        title: "Haircuts & Styling",
         items: [
           {
             name: "Consultation",
             price: "Pricing based on consultation",
             description:
-              "A one-on-one consultation designed to create a thoughtful and personalized hair experience. Your stylist will assess your hair's texture, density, condition, and history while discussing your lifestyle, styling routine, and long-term goals. This intentional session allows us to create a tailored plan for cutting, styling, or treatment services - ensuring seamless executions and beautiful results.",
+              "A one-on-one consultation designed to create a thoughtful and personalized hair experience. Your stylist will assess your hair texture, density, condition, and history while discussing your lifestyle, styling routine, and long-term goals.",
           },
           {
-            name: "Girls Haircut & Style 10 & Under",
+            name: "Girls Haircut & Style (10 & Under)",
             price: "from $40",
             description:
-              "A luxury service for girls 10 and under, featuring a gentle shampoo, precision haircut, and expert styling for soft, polished, and beautifully finished hair.",
+              "A luxury service for girls 10 and under, featuring a gentle shampoo, precision haircut, and expert styling for a polished finish.",
           },
           {
-            name: "Boys Haircut 10 & Under",
+            name: "Boys Haircut (10 & Under)",
             price: "from $35",
             description:
-              "A gentle shampoo and precision haircut designed for boys 10 and under, finished with light styling for a clean polished look.",
+              "A gentle shampoo and precision haircut for boys 10 and under, finished with light styling.",
           },
           {
             name: "Women's Haircut & Style",
             price: "from $65",
             description:
-              "A luxury haircut and style for guests 11 and up, featuring expert precision cutting, customized shaping, and professional styling for a polished, sophisticated finish.",
+              "A luxury haircut and style for guests 11 and up with customized shaping and professional styling.",
           },
           {
-            name: "Woman's Haircut Only",
+            name: "Women's Haircut Only",
             price: "from $55",
             description:
-              "A luxury haircut for guests ages 11 and up, featuring expert precision cutting and customized shaping to enhance your natural beauty with a polished, refined look.",
+              "A precision haircut for guests 11 and up with customized shaping and a polished result.",
           },
           {
             name: "Men's Haircut & Style",
             price: "from $40",
             description:
-              "A luxury shampoo and precision haircut tailored to your style, for ages 11 and up, finished with expert styling for a clean, polished look.",
+              "A luxury shampoo and precision haircut tailored to your style, finished with expert styling.",
           },
           {
-            name: "Blow-dry Style",
+            name: "Blow-Dry Style",
             price: "from $45",
             description:
-              "A luxury service begins with a relaxing shampoo, followed by blow-dry and styling for beautifully finished hair.",
+              "A relaxing shampoo followed by blow-dry and styling for beautifully finished hair.",
           },
           {
             name: "Hot Tool Add-On",
             price: "$10",
             description:
-              "Enhance your blow-dry with professional hot tool styling for added volume, curl or a sleek finish.",
+              "Enhance your blow-dry with professional hot tool styling for added volume, curl, or a sleek finish.",
           },
           {
             name: "Braiding",
             price: "from $30",
             description:
-              "Luxurious braiding service is designed to create beautifully crafted, polished styles. Expertly styled for lasting wear, each braid enhances texture, shape, and elegance.",
+              "Beautifully crafted, polished braiding designed for texture, shape, and elegant wear.",
           },
           {
             name: "Bang Trim",
             price: "$10",
             description:
-              "A quick, precise trimming service designed to maintain the perfect shape, length, and style of your fringe. It also includes refreshing face-framing layers to keep your look balanced and polished.",
+              "A quick fringe refresh to maintain shape, length, and face-framing balance.",
           },
           {
             name: "Beard Trim & Shaping",
             price: "$15",
             description:
-              "A tailored trim and precise shaping to refine your beard and enhance your natural features.",
+              "A tailored beard trim and precise shaping to refine your look.",
           },
           {
             name: "Neck Trim",
             price: "$10",
             description:
-              "A refined finishing service focused on precise cleanup and contouring of the neckline. This luxury touch creates a crisp, polished appearance, enhancing overall balance while maintaining a clean, well-groomed look.",
+              "A detailed neckline cleanup and contouring service for a crisp, polished finish.",
           },
           {
             name: "Curly Hair Certified Haircut/Style with Joanna",
             price: "from $140",
             description:
-              "This luxury curly haircut is expertly crafted by Joanna, a certified curly hair stylist trained in Rezo Cut, Ouidad Cut, and Mizani AirCut techniques. Each cut is tailored to enhance curl definition, minimize frizz, and shape curls for long-lasting balance, movement, and health. Pricing based on consultation.",
+              "Certified curly haircut service using Rezo Cut, Ouidad Cut, and Mizani AirCut techniques. Final pricing based on consultation.",
           },
           {
-            name: "Wigs & Hairpieces",
+            name: "Wigs & Hairpieces Consultation",
             price: "Pricing based on consultation",
             description:
-              "A personalized consultation to discuss wig or hairpiece options, fit, customization, and care - designed to achieve a natural, seamless result.",
+              "Personalized consultation to discuss wig or hairpiece options, fit, customization, and care for a seamless result.",
           },
         ],
       },
@@ -110,107 +110,108 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
             name: "Updo",
             price: "from $95",
             description:
-              "A luxury styling service featuring expertly crafted updos tailored for elegance and sophistication. Perfect for special occasions, each style is designed with precision to ensure a polished, long-lasting, and beautifully finished look.",
+              "Expertly crafted updo styling tailored for elegance and long-lasting hold.",
           },
           {
             name: "Downstyle",
             price: "from $95",
             description:
-              "A luxury hair styling service designed to enhance natural texture and movement. Expertly crafted for a polished, elegant, and effortlessly refined look, perfect for any occasion.",
+              "A polished downstyle that enhances natural texture and movement.",
           },
         ],
       },
       {
-        title: "Color",
+        title: "Hair Color",
         items: [
           {
             name: "Single Process",
             price: "from $80",
             description:
-              "Intended to cover gray hair at the roots only, without being pulled through the ends.",
+              "Covers gray hair at the roots only, without pulling through the ends.",
           },
           {
-            name: "Single Process thru the Ends",
+            name: "Single Process Through the Ends",
             price: "from $95",
             description:
-              "Formulated to cover gray hair throughout and refresh or change the overall base color.",
+              "Covers gray throughout and refreshes or changes the overall base color.",
           },
           {
             name: "Root Blending",
             price: "from $60",
             description:
-              "A color technique that softens the line between natural regrowth and highlighted or colored hair, creating a seamless, more natural transition from roots to ends.",
+              "Softens the regrowth line for a seamless transition from roots to ends.",
           },
           {
-            name: "Womans Grey Blending",
+            name: "Women's Grey Blending",
             price: "from $80",
             description:
-              "A refined, natural approach to softening grey. Our colorist expertly blends custom tones to add dimension and subtle coverage, creating a seamless, low-maintenance finish that enhances your look with understated elegance.",
+              "Custom grey blending that adds soft coverage and dimension with a low-maintenance finish.",
           },
           {
-            name: "Mens Grey Blending",
+            name: "Men's Grey Blending",
             price: "from $50",
             description:
-              "Softens gray hair by subtly blending it with the natural color for a natural, low-maintenance look.",
+              "Subtly blends gray with natural color for a natural, low-maintenance look.",
           },
           {
             name: "Beard Color",
             price: "from $40",
             description:
-              "A service that blends or fully covers gray hair in the beard to achieve a natural, even tone.",
+              "Blends or fully covers gray in the beard to create an even tone.",
           },
           {
             name: "Partial Foil",
             price: "from $120",
             description:
-              "Lightens or darkens select sections – typically the crown and sides – to add brightness or depth and dimension without coloring the entire head.",
+              "Adds brightness or depth to selected sections, typically crown and sides.",
           },
           {
             name: "Full Foil",
             price: "from $150",
             description:
-              "Lightens or darkens the entire head – including the crown, sides, and underneath – to create all-over brightness, depth and dimension.",
+              "All-over foil service for full-head brightness, depth, and dimension.",
           },
           {
-            name: "Face Frame highlight",
+            name: "Face Frame Highlight",
             price: "from $60",
             description:
-              "Focuses on lightening the strands around the face to brighten and accentuate facial features, creating a soft, sun kissed glow.",
+              "Lightens face-framing strands to brighten and accentuate features.",
           },
           {
-            name: "Partial Balayage/Ombre",
+            name: "Partial Balayage / Ombre",
             price: "from $160",
             description:
-              "Lightens select sections of the hair – typically around the face and upper layers – using a hand-painted technique for a soft, natural gradient from darker roots to lighter ends. It gives a sun-kissed, low-maintenance look without fully coloring the entire head.",
+              "Hand-painted lightening around the face and upper layers for a soft gradient.",
           },
           {
-            name: "Full Balayage/Ombre",
+            name: "Full Balayage / Ombre",
             price: "from $200",
             description:
-              "Lightens the hair from roots to ends across the entire head using a hand-painted technique. It creates a seamless, blended transition from darker roots to lighter ends for an all-over sun-kissed or dramatically brightened look.",
+              "Full-head hand-painted lightening for a seamless darker-to-lighter blend.",
           },
           {
-            name: "Gloss/Toner",
+            name: "Gloss / Toner",
             price: "from $50",
             description:
-              "Refines color and enhances tone adding shine for a vibrant finish.",
+              "Refines color and tone while adding shine for a vibrant finish.",
           },
           {
-            name: "Gloss/Toner with Color Service",
+            name: "Gloss / Toner with Color Service",
             price: "from $30",
             description:
-              "Refines color and enhances tone adding shine for a vibrant finish.",
+              "Add-on gloss or toner to refine tone and boost shine.",
           },
           {
-            name: "Double Process (bleach & tone)",
+            name: "Double Process (Bleach & Tone)",
             price: "from $125",
             description:
-              "Lightens the hair with bleach, then applies a toner to achieve the desired shade and remove unwanted tones for an even, customized color.",
+              "Bleach and tone service to lighten and refine to your target shade.",
           },
           {
-            name: "Specialty color and corrective color",
+            name: "Specialty / Corrective Color",
             price: "Pricing based on consultation",
-            description: "Pricing based on consultation.",
+            description:
+              "Specialty and corrective color services are priced after consultation.",
           },
         ],
       },
@@ -221,97 +222,97 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
             name: "Pure Balance Clarifying Treatment",
             price: "$15",
             description:
-              "A detoxifying experience that gently yet effectively removes product buildup, hard water minerals, and environmental impurities from the hair and scalp. Restores clarity, balance, and natural shine while creating the ideal foundation for color, smoothing, or conditioning services. Hair feels lighter, refreshed and revitalized.",
+              "Detoxifies buildup, hard water minerals, and impurities while restoring clarity and shine.",
           },
           {
             name: "Milbon Moisture Replenishing Treatment",
             price: "$75",
             description:
-              "A luxurious 5-step ritual that replenishes moisture from inside out, reviving dry, porous, or color-processed hair. Seals in hydration and boosts shine for up to 5 weeks. Includes a take-home weekly booster to maintain results between visits.",
+              "A 5-step ritual that replenishes moisture and includes a take-home weekly booster.",
           },
           {
             name: "Milbon Smooth Deep Conditioning Treatment",
             price: "$65",
             description:
-              "A luxurious 3-step smoothing ritual that infuses moisture and smooths hair structure and is ideal for fine to coarse hair. This treatment leaves hair soft, silky, and frizz-free for up to 5 weeks. Includes a take-home booster to keep results fresh between salon visits.",
+              "A 3-step smoothing ritual for soft, silky, frizz-free hair with take-home booster support.",
           },
           {
             name: "Milbon Repair Treatment",
             price: "$85",
             description:
-              "A luxurious 4-step reconstructive ritual designed for severely damaged or over-processed hair. Rebuilds internal structure and adds shine. Includes a take-home booster so clients can enjoy smooth, resilient hair for up to 5 weeks.",
+              "A 4-step reconstructive ritual for severely damaged hair with take-home booster.",
           },
           {
             name: "Milbon Scalp Ritual",
             price: "$50",
             description:
-              "A detoxifying head spa that deeply cleanses, exfoliates, and hydrates the scalp to relieve buildup and scalp irritation. Finished with a luxurious scalp massage and aromatherapy for total relaxation and healthier hair from the root.",
+              "A detoxifying scalp ritual with exfoliation, hydration, massage, and aromatherapy.",
           },
           {
             name: "Moroccanoil Moisture Treatment",
             price: "$25",
             description:
-              "Indulge your hair in a luxurious conditioning experience infused with rich argan oil and nourishing antioxidants. This deeply hydrating treatment restores softness, smoothness, and shine while improving manageability and strength. Perfect for dry, color-treated, or damaged hair in need of moisture and revitalization.",
+              "Argan oil-infused moisture treatment that restores softness, shine, and manageability.",
           },
           {
             name: "Moroccanoil Scalp Treatment",
             price: "$40",
             description:
-              "Revitalize your scalp and restore balance with this luxurious Moroccanoil pre-shampoo treatment. Infused with antioxidant-rich argan oil and essential nutrients, it deeply nourishes and soothes while promoting a healthier scalp environment. Whether targeting dryness, flakiness, or excess oil, this customized treatment gently rebalances and refreshes- leaving the scalp purified and the hair soft, shiny, and full of vitality.",
+              "Customized pre-shampoo scalp treatment that nourishes, rebalances, and refreshes.",
           },
           {
             name: "Keratin Vanilla Bean Treatment",
             price: "$20",
             description:
-              "Indulge your hair in the rich nourishment of this aromatic vanilla bean and keratin infused conditioning treatment. Designed to restore softness, strength, and shine, it deeply hydrates dry or chemically treated hair while replenishing essential proteins for a silky, frizz-free finish. The warm vanilla aroma enhances the experience, leaving hair smooth, luminous, and luxuriously revitalized.",
+              "Keratin-infused conditioning treatment for softness, strength, and frizz control.",
           },
           {
             name: "Brazilian Blowout Split End Corrector",
             price: "$25",
             description:
-              "A powerful reparative treatment designed to instantly seal, strengthen, and protect fragile ends. This luxe therapy uses Brazilian Blowout's signature bonding technology to mend split fibers, prevent future breakage, and create a smooth, polished finish. Hair is left silky, resilient, and beautifully refined.",
+              "Seals and protects fragile ends while improving smoothness and resilience.",
           },
           {
             name: "Rene Furterer Scalp Treatment",
             price: "$35",
             description:
-              "A revitalizing pre-shampoo scalp treatment designed to energize the scalp, boost circulation, and help rebalance the scalp environment. This luxurious blend of essential oils leaves the scalp feeling refreshed and purified while supporting healthier-looking, stronger hair from root to ends.",
+              "Energizing pre-shampoo scalp treatment that boosts circulation and scalp balance.",
           },
           {
             name: "Keune Vital Nutrition Mask",
             price: "$25",
             description:
-              "Deeply restores dry, damaged hair with essential minerals and moisture-replenishing technology for softness, strength and renewed elasticity.",
+              "Restores dry, damaged hair with moisture and minerals for improved elasticity.",
           },
           {
             name: "Keune Keratin Smooth Mask",
             price: "$25",
             description:
-              "A keratin-rich smoothing treatment that tames frizz, softens coarse texture, and seals the cuticle for sleek, controlled, humidity-resistant shine.",
+              "Keratin-rich mask that smooths frizz and seals the cuticle for sleek shine.",
           },
           {
             name: "Keune Color Brillianz Mask",
             price: "$25",
             description:
-              "A color-preserving mask that hydrates, enhances vibrancy, and shields hair from UV fading, leaving color-treated hair luminous and supple.",
+              "Color-preserving hydration mask that enhances vibrancy and protects from UV fade.",
           },
           {
             name: "Keune Satin Oil Mask",
             price: "$25",
             description:
-              "Lightweight hydration powered by a blend of nourishing oils that boosts softness, smoothness, and reflective shine without weighting hair down.",
+              "Lightweight oil-infused hydration for softness, smoothness, and reflective shine.",
           },
           {
             name: "Keune Blonde Savior Mask",
             price: "$25",
             description:
-              "A bond-repairing mask for compromised blondes, strengthening and restoring softness while reducing breakage and enhancing brightness.",
+              "Bond-repairing mask for compromised blonde hair to reduce breakage and add brightness.",
           },
           {
             name: "Keune Bond Builder System",
             price: "$20",
             description:
-              "A professional bond-strengthening system that repairs and protects the hair's internal structure during and after color or chemical services. This advanced treatment rebuilds broken bonds, reduces breakage, and improves strength, elasticity, and shine- leaving hair healthier, smoother, and more resilient. Suitable for all hair types.",
+              "Professional bond-strengthening system that protects and repairs internal hair structure.",
           },
         ],
       },
@@ -322,43 +323,43 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
             name: "Keratin Complex Blowout Treatment",
             price: "from $145",
             description:
-              "Smooth, sleek, and radiant hair in just one hour. This express keratin treatment eliminates frizz, defies humidity, enhances shine, and reduces styling time for up to 6 weeks of effortless beauty.",
+              "Express keratin service that smooths frizz, boosts shine, and reduces styling time.",
           },
           {
             name: "Keratin Complex Smoothing Treatment",
             price: "from $395",
             description:
-              "Experience the ultimate hair refinement. This professional keratin treatment infuses every strand with rich, smoothing proteins to eliminate frizz, repair damage, and unveil luminous shine. Hair is left silky, resilient, and perfectly polished – dramatically reducing blow-dry time and maintaining flawless smoothness for up to 5 months.",
+              "Professional smoothing treatment for long-lasting frizz control and enhanced shine.",
           },
           {
             name: "Brazilian Express Treatment",
             price: "from $145",
             description:
-              "Experience the beauty of smooth, glossy hair in a fraction of the time. This advanced express formula infuses the hair with Brazilian keratin and nutrient-rich conditioners to eliminate frizz, boost shine, and improve manageability. In just one hour, achieve long-lasting smoothness and radiant, healthy movement that endures for up to 4 to 6 weeks with no down time.",
+              "Express smoothing formula for glossy, manageable hair with no downtime.",
           },
           {
             name: "Brazilian Smoothing Treatment",
             price: "from $395",
             description:
-              "Renowned for its transformative results, the Brazilian Blowout Smoothing Treatment delivers the smoothest, most radiant version of your hair. This professional smoothing system creates a protective protein layer around each strand, eliminating frizz and sealing in luxurious shine. Enjoy silky, weightless movement, humidity resistance, and effortless styling that lasts up to 12 weeks with no down time.",
+              "Transformative smoothing system for silky, humidity-resistant hair.",
           },
           {
-            name: "Perm/Body Wave",
+            name: "Perm / Body Wave",
             price: "from $150",
             description:
-              "Revive your hair with timeless texture and effortless movement. Our Perm and Body Wave service expertly tailored to your hair type and desired look- from loose, beachy waves to full, bouncy curls. Gentle, conditioning formulas add body and dimension while maintaining softness and shine, leaving you with beautifully defined, natural- looking texture that lasts.",
+              "Custom texture service from loose waves to fuller curls while maintaining softness.",
           },
           {
             name: "Virgin Relaxer",
             price: "from $200",
             description:
-              "Perfect for first-time smoothing, our Virgin Relaxer gently restructures natural texture for sleek, frizz-free hair that's soft, shiny, and easy to style. This full-head application uses conditioning ingredients to protect the hair's strength and moisture, leaving each strand silky, polished, and luxuriously smooth.",
+              "First-time smoothing service for sleek, frizz-free hair with conditioning support.",
           },
           {
             name: "Retouch Relaxer",
             price: "from $150",
             description:
-              "Refresh and maintain sleek, straight results. This precision retouch relaxer smooths new growth while preserving the integrity and shine of previously relaxed hair.",
+              "Precision relaxer retouch for new growth while preserving previously relaxed hair.",
           },
         ],
       },
@@ -366,8 +367,8 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
   },
   {
     id: "nails",
-    title: "Nails",
-    intro: "Luxury manicures and pedicures with polished finishes and indulgent care.",
+    title: "Nail Services",
+    intro: "Luxury manicures and pedicures from the final menu.",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
     image: {
@@ -376,7 +377,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
     },
     groups: [
       {
-        title: "Manicure",
+        title: "Manicures",
         items: [
           {
             name: "Classic Manicure",
@@ -400,7 +401,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
             name: "Structured Gel Manicure",
             price: "$75",
             description:
-              "A luxury gel manicure that includes a strengthening builder gel layer to reinforce the natural nail. This service adds support, durability, and a smooth, flawless finish, helping prevent breakage while extending the life of your manicure – perfect for clients who want stronger, longer-lasting nails.",
+              "A luxury gel manicure that includes a strengthening builder gel layer to reinforce the natural nail. This service adds support, durability, and a smooth, flawless finish, helping prevent breakage while extending the life of your manicure.",
           },
           {
             name: "Spa Manicure",
@@ -429,8 +430,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
           {
             name: "No Chip Removal",
             price: "$10",
-            description:
-              "A gentle, luxury service to safely remove no-chip polish, followed by nail prep to leave nails clean, smooth, and ready for your next manicure or treatment. Removal fee applies if prior no chip was not performed in house.",
+            description: "Removal fee applies if prior no chip was not performed in house.",
           },
           {
             name: "Polish Change Hands",
@@ -447,7 +447,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
         ],
       },
       {
-        title: "Pedicure",
+        title: "Pedicures",
         items: [
           {
             name: "Classic Pedicure",
@@ -480,7 +480,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
               "A luxurious and indulgent foot treatment infused with the hydrating and soothing properties of fresh honey nectar. This pampering experience includes a soothing soak, gentle exfoliation, nail shaping, cuticle care, and a rich whipped honey-scented mask, finished with a relaxing foot and calf massage and your choice of polish for soft, nourished, and beautifully polished feet.",
           },
           {
-            name: "Express \u201CMini\u201D Pedicure",
+            name: 'Express "Mini" Pedicure',
             price: "$45",
             description:
               "A luxury foot treatment designed for a quick refresh, including a soothing soak, nail shaping, and a light polish application, leaving feet clean, polished, and perfectly refreshed.",
@@ -496,156 +496,16 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
     ],
   },
   {
-    id: "wedding",
-    title: "Wedding",
-    intro: "Bridal hair and makeup services for your special day—available in-salon and on-location.",
+    id: "beauty",
+    title: "Makeup Artistry (Non-Wedding)",
+    intro: "Professional makeup services for events and special occasions.",
     textLeftOnDesktop: true,
     textPanelBgClassName: "bg-[#ede7e4]/20",
     image: {
-      src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&h=1200&fit=crop&auto=format&q=85",
-      alt: "Bridal hair and makeup styling",
-    },
-    groups: [
-      {
-        title: "Wedding Hair and Make-Up (In Salon Pricing)",
-        note: "Please come with a clean face for make-up application. Hair must be clean and dry for formal styling.",
-        items: [
-          {
-            name: "Bride Hair \u2013 Trial Run or Wedding Day",
-            price: "from $150",
-          },
-          {
-            name: "Bride Make-Up",
-            price: "$120",
-          },
-          {
-            name: "Bride Make-Up with Lashes",
-            price: "$140",
-          },
-          {
-            name: "Bridal Party Hair \u2013 Blow dry",
-            price: "from $65",
-          },
-          {
-            name: "Bridal Party Hair \u2013 Formal styling",
-            price: "from $95",
-          },
-          {
-            name: "Bridal Party Make-Up",
-            price: "$100",
-          },
-          {
-            name: "Bridal Party Make-Up with Lashes",
-            price: "$120",
-          },
-        ],
-      },
-      {
-        title: "Wedding Hair and Make-Up (Out of Salon Pricing)",
-        note: "Out of salon fee: $250 + 18% gratuity added. Please have a clean face for make-up application. Hair must be clean and dry for formal styling.",
-        items: [
-          {
-            name: "Bride Hair \u2013 Wedding Day",
-            price: "from $200",
-          },
-          {
-            name: "Bride Make-Up",
-            price: "$150",
-          },
-          {
-            name: "Bride Make-Up with Lashes",
-            price: "$170",
-          },
-          {
-            name: "Bridal Party Hair \u2013 Blow dry",
-            price: "from $85",
-          },
-          {
-            name: "Bridal Party Hair \u2013 Formal styling",
-            price: "from $125",
-          },
-          {
-            name: "Bridal Party Make-Up",
-            price: "$120",
-          },
-          {
-            name: "Bridal Party Make-Up with Lashes",
-            price: "$140",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "beauty",
-    title: "Beauty",
-    intro: "Waxing, lashes & brows, and makeup artistry.",
-    textLeftOnDesktop: false,
-    textPanelBgClassName: "bg-white",
-    image: {
       src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&h=1200&fit=crop&auto=format&q=85",
-      alt: "Makeup artistry and beauty tools in a studio setting",
+      alt: "Makeup artistry and beauty tools",
     },
     groups: [
-      {
-        title: "Body Waxing \u2013 Facial & Detail Areas",
-        items: [
-          {
-            name: "Brow wax",
-            price: "$20",
-            description:
-              "A precision brow shaping service designed to enhance your natural features. This luxury treatment gently removes unwanted hair while creating clean, balanced arches for a polished, refined finish.",
-          },
-          {
-            name: "Brow Tweeze",
-            price: "$22",
-            description:
-              "A meticulous brow shaping service using precision tweezing to refine and define your natural brow shape. Ideal for sensitive skin, this luxury treatment delivers clean, balanced brows with a polished, natural finish.",
-          },
-          { name: "Unibrow", price: "$10", description: "A precise, gentle service focused on removing unwanted hair between the brows for a clean, refined appearance while maintaining your natural brow shape." },
-          { name: "Lip", price: "$17", description: "A gentle, precision waxing service to remove unwanted hair from the upper lip, leaving skin smooth, clean, and beautifully refined." },
-          { name: "Chin", price: "$17", description: "A gentle, precision waxing service to remove unwanted hair from the chin area, leaving skin smooth, clean, and beautifully refined." },
-          { name: "Side of Face", price: "$22", description: "A gentle, precision waxing service to remove unwanted hair along the sides of the face, creating a smooth, clean, and beautifully refined finish." },
-          { name: "Nose", price: "$20", description: "A quick, precise grooming service to safely remove unwanted hair from the nose area, leaving a clean, polished, and well-groomed appearance." },
-          { name: "Ears", price: "$17", description: "A precise grooming service to gently remove unwanted hair from the ears, leaving a clean, polished, and well-groomed appearance." },
-          { name: "Neck", price: "$17", description: "A gentle, precision waxing service to remove unwanted hair from the neck area, leaving skin smooth, clean, and beautifully refined." },
-        ],
-      },
-      {
-        title: "Body Waxing \u2013 Upper Body",
-        items: [
-          { name: "Half Arm", price: "$40", description: "A luxurious waxing service designed to remove unwanted hair from the lower or upper half of the arm with precision, leaving skin smooth, soft, and beautifully refined." },
-          { name: "Full Arm", price: "$53", description: "A luxury waxing service that removes unwanted hair from the entire arm with precision, leaving skin smooth, soft, and beautifully polished." },
-          { name: "Under Arm", price: "$22", description: "A gentle, precision waxing service to remove unwanted hair from the underarm area, leaving skin smooth, clean, and refreshed." },
-          { name: "Chest", price: "$65", description: "A precision waxing service to remove unwanted hair from the chest area, leaving skin smooth, clean, and beautifully refined." },
-          { name: "Shoulders", price: "$35", description: "A gentle, precision waxing service to remove unwanted hair from the shoulder area, leaving skin smooth, clean, and beautifully refined." },
-          { name: "Half Back", price: "$45", description: "A luxurious waxing service targeting the upper or lower half of the back. Removing unwanted hair with precision for smooth, soft, and beautifully refined skin." },
-          { name: "Full Back", price: "$65", description: "A luxury waxing service that removes unwanted hair from the entire back with precision, leaving skin smooth, soft, and perfectly polished." },
-          { name: "Stomach/Abdominal", price: "$25", description: "A gentle, precision waxing service to remove unwanted hair from the stomach area, leaving skin smooth, soft, and beautifully refined." },
-          { name: "Fingers", price: "$17", description: "A precise waxing service to remove unwanted hair from the fingers, leaving skin smooth, clean, and perfectly polished." },
-        ],
-      },
-      {
-        title: "Body Waxing \u2013 Lower Body",
-        items: [
-          { name: "Toes", price: "$17", description: "A gentle, precision waxing service to remove unwanted hair from the toes, leaving skin smooth, clean, and beautifully refined." },
-          { name: "Half Leg", price: "$55", description: "A luxurious waxing service to remove unwanted hair from either the upper or lower half of the leg, leaving skin smooth, soft, and beautifully refined." },
-          { name: "Full Leg", price: "$75", description: "A luxury waxing service that removes unwanted hair from the entire leg with precision, leaving skin smooth, soft, and perfectly polished." },
-          { name: "Inner Thigh", price: "$25", description: "A precise and gentle waxing service to remove unwanted hair from the inner thigh area, leaving skin smooth, soft, and beautifully refined." },
-          { name: "Bikini Line", price: "$40", description: "A luxury waxing service designed to remove unwanted hair along the bikini line with precision, leaving skin smooth, clean, and beautifully refined." },
-          { name: "French Bikini", price: "$55", description: "A precise and luxurious waxing service that removes hair beyond the standard bikini line for a smooth, polished, and elegant finish." },
-          { name: "Brazilian Bikini", price: "$65", description: "A luxury, full-service waxing treatment that removes all unwanted hair from the bikini area, leaving skin smooth, clean, and impeccably polished for a refined, long-lasting finish." },
-        ],
-      },
-      {
-        title: "Lashes, Brows & Beauty",
-        items: [
-          { name: "Brow Tint", price: "$22", description: "Enhances fullness and definition." },
-          { name: "Lash Tint", price: "$35", description: "Darkens and enhances natural lashes." },
-          { name: "Lash Lift", price: "$70", description: "A semi-permanent treatment that lifts and curls your natural lashes for a longer, brighter look. Results last 6-8 weeks with no extensions or daily curling needed." },
-          { name: "Brow Lamination", price: "$70", description: "A smoothing treatment that shapes and sets brow hairs for a fuller, more defined look. Results last 6-8 weeks." },
-        ],
-      },
       {
         title: "Makeup Artistry",
         items: [
@@ -662,13 +522,13 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
               "A luxury, customized makeup experience that includes full-face application and expertly applies lashes. Enhance your features with flawless foundation, eyeshadow, eyeliner, contouring, blush, and lip color, finishing with beautifully defined, eye-opening lashes for a polished, glamorous look.",
           },
           {
-            name: "\u201CEyes Only\u201D Makeup",
+            name: "Eyes Only Makeup",
             price: "$75",
             description:
               "A luxury service focused on enhancing your eyes, including expertly blended eyeshadow, eyeliner, and mascara.",
           },
           {
-            name: "\u201CEyes Only\u201D Makeup with Lashes",
+            name: "Eyes Only Makeup with Lashes",
             price: "$95",
             description:
               "A luxurious service focused on the eyes, featuring expertly blended eyeshadow, eyeliner, and mascara, finished with professional lash application for beautifully defined, glamorous, and polished eyes.",

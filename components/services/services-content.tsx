@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { ServicesSection } from "@/components/services/services-data"
 import {
   Accordion,
@@ -9,8 +10,9 @@ import {
 
 interface ServiceItemProps {
   name: string
-  price: string
+  price?: string
   description?: string
+  defaultOpen?: boolean
 }
 
 function ServiceRow({ name, price }: Pick<ServiceItemProps, "name" | "price">) {
@@ -23,36 +25,40 @@ function ServiceRow({ name, price }: Pick<ServiceItemProps, "name" | "price">) {
         >
           {name}
         </h4>
-        <span
-          className="text-[15px] md:text-sm font-semibold text-salon-brown font-gotham"
-          itemProp="offers"
-          itemScope
-          itemType="https://schema.org/Offer"
-        >
-          <meta itemProp="priceCurrency" content="USD" />
-          <span itemProp="price">{price}</span>
-        </span>
+        {price ? (
+          <span
+            className="text-[15px] md:text-sm font-semibold text-salon-brown font-gotham"
+            itemProp="offers"
+            itemScope
+            itemType="https://schema.org/Offer"
+          >
+            <meta itemProp="priceCurrency" content="USD" />
+            <span itemProp="price">{price}</span>
+          </span>
+        ) : null}
       </div>
     </div>
   )
 }
 
-function ServiceItemAccordion({ name, price, description }: ServiceItemProps) {
+function ServiceItemAccordion({ name, price, description, defaultOpen = false }: ServiceItemProps) {
   if (!description) {
     return <ServiceRow name={name} price={price} />
   }
 
   return (
-    <Accordion type="multiple">
+    <Accordion type="multiple" defaultValue={defaultOpen ? [name] : undefined}>
       <AccordionItem value={name}>
         <AccordionTrigger className="py-3 hover:no-underline">
           <div className="flex w-full items-baseline justify-between gap-4 pr-3">
             <h4 className="text-[15px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.14em] font-gotham flex-1 pr-4">
               {name}
             </h4>
-            <span className="text-[15px] md:text-sm font-semibold text-salon-brown font-gotham whitespace-nowrap">
-              {price}
-            </span>
+            {price ? (
+              <span className="text-[15px] md:text-sm font-semibold text-salon-brown font-gotham whitespace-nowrap">
+                {price}
+              </span>
+            ) : null}
           </div>
         </AccordionTrigger>
         <AccordionContent className="pt-0 pb-4">
@@ -120,6 +126,7 @@ export default function ServicesContent({
         />
 
         {sections.map((section) => {
+          const autoExpandAll = section.groups.length <= 2
           const textColOrder = section.textLeftOnDesktop
             ? "order-2 lg:order-1"
             : "order-2 lg:order-2"
@@ -157,7 +164,11 @@ export default function ServicesContent({
                     )}
                   </div>
 
-                  <Accordion type="multiple" className="w-full">
+                  <Accordion
+                    type="multiple"
+                    className="w-full"
+                    defaultValue={autoExpandAll ? section.groups.map((group) => group.title) : undefined}
+                  >
                     {section.groups.map((group) => (
                       <AccordionItem key={group.title} value={group.title}>
                         <AccordionTrigger className="hover:no-underline">
@@ -167,17 +178,26 @@ export default function ServicesContent({
                         </AccordionTrigger>
                         <AccordionContent className="pt-2">
                           {group.note && (
-                            <p className="text-[15px] md:text-sm text-salon-brown/65 font-medium mb-4">
-                              {group.note}
-                            </p>
+                            /Out-of-salon fee/i.test(group.note) ? (
+                              <div className="mb-4 rounded-md border border-salon-raspberry/40 bg-salon-raspberry/10 px-4 py-3">
+                                <p className="text-[15px] md:text-sm text-salon-brown/80 font-semibold">
+                                  {group.note}
+                                </p>
+                              </div>
+                            ) : (
+                              <p className="text-[15px] md:text-sm text-salon-brown/65 font-medium mb-4">
+                                {group.note}
+                              </p>
+                            )
                           )}
-                          <div itemScope itemType="https://schema.org/ItemList">
+                          <div className="pl-3 sm:pl-4" itemScope itemType="https://schema.org/ItemList">
                             {group.items.map((service, idx) => (
                               <ServiceItemAccordion
                                 key={`${group.title}-${idx}`}
                                 name={service.name}
                                 price={service.price}
                                 description={service.description}
+                                defaultOpen={autoExpandAll}
                               />
                             ))}
                           </div>
@@ -221,6 +241,16 @@ export default function ServicesContent({
             </section>
           )
         })}
+        <section className="w-full bg-white border-t border-salon-brown/10">
+          <div className="container mx-auto max-w-7xl px-8 py-14 sm:py-16 flex justify-center">
+            <Link
+              href="https://booking.mangomint.com/kossofsalonspa"
+              className="inline-flex w-full max-w-xs sm:w-auto sm:min-w-[220px] items-center justify-center whitespace-nowrap bg-salon-raspberry text-white px-8 py-3.5 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase hover:bg-salon-raspberry/90 transition-colors"
+            >
+              Book Now
+            </Link>
+          </div>
+        </section>
       </article>
     </>
   )

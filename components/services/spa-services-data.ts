@@ -2,14 +2,224 @@ import { ServicesSection } from "./services-data"
 
 export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
   {
-    id: "facials",
-    title: "Facials",
-    intro: "Customized skincare treatments designed to restore radiance, clarity, and youthful glow.",
+    id: "waxing",
+    title: "Waxing",
+    intro: "Precision body waxing services for facial, upper-body, and lower-body areas.",
     textLeftOnDesktop: true,
     textPanelBgClassName: "bg-[#cad7de]/20",
     image: {
       src: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&h=1200&fit=crop&auto=format&q=85",
-      alt: "Spa setting with massage towels and calming ambiance",
+      alt: "Spa waxing and skincare setup",
+    },
+    groups: [
+      {
+        title: "Body Waxing - Facial & Detail Areas",
+        items: [
+          {
+            name: "Brow Wax",
+            price: "$20",
+            description:
+              "A precision brow shaping service designed to enhance your natural features. This luxury treatment gently removes unwanted hair while creating clean, balanced arches for a polished, refined finish.",
+          },
+          {
+            name: "Brow Tweeze",
+            price: "$22",
+            description:
+              "A meticulous brow shaping service using precision tweezing to refine and define your natural brow shape. Ideal for sensitive skin, this luxury treatment delivers clean, balanced brows with a polished, natural finish.",
+          },
+          {
+            name: "Unibrow",
+            price: "$10",
+            description:
+              "A precise, gentle service focused on removing unwanted hair between the brows for a clean, refined appearance while maintaining your natural brow shape.",
+          },
+          {
+            name: "Lip",
+            price: "$17",
+            description:
+              "A gentle, precision waxing service to remove unwanted hair from the upper lip, leaving skin smooth, clean, and beautifully refined.",
+          },
+          {
+            name: "Chin",
+            price: "$17",
+            description:
+              "A gentle, precision waxing service to remove unwanted hair from the chin area, leaving skin smooth, clean, and beautifully refined.",
+          },
+          {
+            name: "Side of Face",
+            price: "$22",
+            description:
+              "A gentle, precision waxing service to remove unwanted hair along the sides of the face, creating a smooth, clean, and beautifully refined finish.",
+          },
+          {
+            name: "Nose",
+            price: "$20",
+            description:
+              "A quick, precise grooming service to safely remove unwanted hair from the nose area, leaving a clean, polished, and well-groomed appearance.",
+          },
+          {
+            name: "Ears",
+            price: "$17",
+            description:
+              "A precise grooming service to gently remove unwanted hair from the ears, leaving a clean, polished, and well-groomed appearance.",
+          },
+          {
+            name: "Neck",
+            price: "$17",
+            description:
+              "A gentle, precision waxing service to remove unwanted hair from the neck area, leaving skin smooth, clean, and beautifully refined.",
+          },
+        ],
+      },
+      {
+        title: "Body Waxing - Upper Body",
+        items: [
+          {
+            name: "Half Arm",
+            price: "$40",
+            description:
+              "A luxurious waxing service designed to remove unwanted hair from the lower or upper half of the arm with precision, leaving skin smooth, soft, and beautifully refined.",
+          },
+          {
+            name: "Full Arm",
+            price: "$53",
+            description:
+              "A luxury waxing service that removes unwanted hair from the entire arm with precision, leaving skin smooth, soft, and beautifully polished.",
+          },
+          {
+            name: "Under Arm",
+            price: "$22",
+            description:
+              "A gentle, precision waxing service to remove unwanted hair from the underarm area, leaving skin smooth, clean, and refreshed.",
+          },
+          {
+            name: "Chest",
+            price: "$65",
+            description:
+              "A precision waxing service to remove unwanted hair from the chest area, leaving skin smooth, clean, and beautifully refined.",
+          },
+          {
+            name: "Shoulders",
+            price: "$35",
+            description:
+              "A gentle, precision waxing service to remove unwanted hair from the shoulder area, leaving skin smooth, clean, and beautifully refined.",
+          },
+          {
+            name: "Half Back",
+            price: "$45",
+            description:
+              "A luxurious waxing service targeting the upper or lower half of the back, removing unwanted hair with precision for smooth, soft, and beautifully refined skin.",
+          },
+          {
+            name: "Full Back",
+            price: "$65",
+            description:
+              "A luxury waxing service that removes unwanted hair from the entire back with precision, leaving skin smooth, soft, and perfectly polished.",
+          },
+          {
+            name: "Stomach / Abdominal",
+            price: "$25",
+            description:
+              "A gentle, precision waxing service to remove unwanted hair from the stomach area, leaving skin smooth, soft, and beautifully refined.",
+          },
+          {
+            name: "Fingers",
+            price: "$17",
+            description:
+              "A precise waxing service to remove unwanted hair from the fingers, leaving skin smooth, clean, and perfectly polished.",
+          },
+        ],
+      },
+      {
+        title: "Body Waxing - Lower Body",
+        items: [
+          {
+            name: "Toes",
+            price: "$17",
+            description:
+              "A gentle, precision waxing service to remove unwanted hair from the toes, leaving skin smooth, clean, and beautifully refined.",
+          },
+          {
+            name: "Half Leg",
+            price: "$55",
+            description:
+              "A luxurious waxing service to remove unwanted hair from either the upper or lower half of the leg, leaving skin smooth, soft, and beautifully refined.",
+          },
+          {
+            name: "Full Leg",
+            price: "$75",
+            description:
+              "A luxury waxing service that removes unwanted hair from the entire leg with precision, leaving skin smooth, soft, and perfectly polished.",
+          },
+          {
+            name: "Inner Thigh",
+            price: "$25",
+            description:
+              "A precise and gentle waxing service to remove unwanted hair from the inner thigh area, leaving skin smooth, soft, and beautifully refined.",
+          },
+          {
+            name: "Bikini Line",
+            price: "$40",
+            description:
+              "A luxury waxing service designed to remove unwanted hair along the bikini line with precision, leaving skin smooth, clean, and beautifully refined.",
+          },
+          {
+            name: "French Bikini",
+            price: "$55",
+            description:
+              "A precise and luxurious waxing service that removes hair beyond the standard bikini line for a smooth, polished, and elegant finish.",
+          },
+          {
+            name: "Brazilian Bikini",
+            price: "$65",
+            description:
+              "A luxury, full-service waxing treatment that removes all unwanted hair from the bikini area, leaving skin smooth, clean, and impeccably polished for a refined, long-lasting finish.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "lashes-brows",
+    title: "Lashes & Brows",
+    intro: "Enhancing lash and brow services for shape, lift, and definition.",
+    textLeftOnDesktop: false,
+    textPanelBgClassName: "bg-white",
+    image: {
+      src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&h=1200&fit=crop&auto=format&q=85",
+      alt: "Lash and brow beauty treatment",
+    },
+    groups: [
+      {
+        title: "Lashes, Brows & Beauty",
+        items: [
+          { name: "Brow Tint", price: "$22", description: "Enhances fullness and definition." },
+          { name: "Lash Tint", price: "$35", description: "Darkens and enhances natural lashes." },
+          {
+            name: "Lash Lift",
+            price: "$70",
+            description:
+              "A semi-permanent treatment that lifts and curls your natural lashes for a longer, brighter look. Results last 6-8 weeks with no extensions or daily curling needed.",
+          },
+          {
+            name: "Brow Lamination",
+            price: "$70",
+            description:
+              "A smoothing treatment that shapes and sets brow hairs for a fuller, more defined look. Results last 6-8 weeks.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "facials",
+    title: "Facials",
+    intro: "Core facials, advanced facials, and enhancements for healthy, radiant skin.",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#cad7de]/20",
+    image: {
+      src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&h=1200&fit=crop&auto=format&q=85",
+      alt: "Relaxing facial treatment at the spa",
     },
     groups: [
       {
@@ -58,7 +268,7 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
               "A condensed radiance treatment for instant refresh and hydration.",
           },
           {
-            name: "Farmhouse Fresh \u201CFreshly Squeezed\u201D Vitamin C Facial",
+            name: 'Farmhouse Fresh "Freshly Squeezed" Vitamin C Facial',
             price: "$140",
             description:
               "A potent brightening treatment infused with concentrated vitamin C to illuminate the complexion, improve clarity, and restore a youthful, radiant glow.",
@@ -138,74 +348,14 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
     ],
   },
   {
-    id: "body-treatments",
-    title: "Body Treatments",
-    intro: "Luxurious body wraps, scrubs, and polishing treatments for total renewal.",
+    id: "massages",
+    title: "Massages",
+    intro: "Therapeutic and relaxation massage services with optional enhancements.",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
     image: {
-      src: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1920&h=1200&fit=crop&auto=format&q=85",
-      alt: "Luxury spa body treatment setting",
-    },
-    groups: [
-      {
-        title: "Body Treatments",
-        items: [
-          {
-            name: "Farmhouse Fresh Citrus Glow Body Polish",
-            price: "$120 | 60min",
-            description:
-              "Botanical exfoliation revealing silky, radiant skin.",
-          },
-          {
-            name: "Moroccanoil Body Scrub",
-            price: "$130 | 60min",
-            description:
-              "Argan oil-infused exfoliation with uplifting signature scents.",
-          },
-          {
-            name: "Moroccanoil Hydration Body Wrap",
-            price: "$130 | 60min",
-            description:
-              "A deeply moisturizing full-body ritual using a blend of nutrient-rich moisturizers.",
-          },
-          {
-            name: "Farmhouse Fresh Pure Himalayan Detox Wrap",
-            price: "$140 | 60min",
-            description:
-              "A purifying salt-infused wrap that cleanses and re-energizes.",
-          },
-          {
-            name: "Rebalancing Mud Wrap",
-            price: "$140 | 60min",
-            description:
-              "Detoxifying volcanic mud for renewed vitality.",
-          },
-          {
-            name: "Farmhouse Fresh Polished \u201CBack\u201D to Perfection",
-            price: "$80 | 30min",
-            description:
-              "A smoothing exfoliation and hydration treatment for the back.",
-          },
-          {
-            name: "Farmhouse Fresh Bronzed Babe Scrub & Glow",
-            price: "$135 | 60min",
-            description:
-              "A full-body exfoliating scrub to refresh and smooth the skin, followed by a professional light self-tanner application for an even, sun kissed glow within hours. To continue to achieve the best results follow with bronzed fox tanning drops at home added to your favorite Farmhouse Fresh moisturizer.",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "massage",
-    title: "Massage",
-    intro: "Therapeutic and relaxation massage therapies tailored to restore balance and ease tension.",
-    textLeftOnDesktop: true,
-    textPanelBgClassName: "bg-[#cad7de]/20",
-    image: {
       src: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1920&h=1200&fit=crop&auto=format&q=85",
-      alt: "Relaxing massage therapy in a serene spa environment",
+      alt: "Massage therapy in a serene spa room",
     },
     groups: [
       {
@@ -284,10 +434,10 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
               "Focused neck, shoulder, and scalp work to ease headaches and mental fatigue.",
           },
           {
-            name: "Neuromuscular therapy",
+            name: "Neuromuscular Therapy",
             price: "$160 | 60min / $200 | 90min",
             description:
-              "A corrective, precision-focused treatment that targets trigger points, muscles imbalances, and chronic tension to restore optimal function, relieve pain, and promote deep structural balance.",
+              "A corrective, precision-focused treatment that targets trigger points, muscle imbalances, and chronic tension to restore optimal function, relieve pain, and promote deep structural balance.",
           },
           {
             name: "Couples Massage",
@@ -316,7 +466,7 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
             name: "Cranial Sensory Experience",
             price: "$10 / 15min",
             description:
-              "A deeply relaxing scalp ritual using a stainless-steel ball-tipped device to gently stimulate the scalp, ease tension, and calm the nervous system.",
+              "A deeply relaxing scalp ritual using a stainless-steel ball-tipped device to gently stimulate the scalp, ease tension, and calm the nervous system. This soothing sensory treatment promotes circulation, releases stress and delivers an immediate sense of tranquility.",
           },
           {
             name: "Hot Stone",
@@ -334,7 +484,67 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
             name: "Morocconoil Nourish/Firm - Hand & Foot Wrap",
             price: "$35",
             description:
-              "A deeply conditioning hand & foot treatment infused with Moroccanoil oil to nourish dry skin, improve firmness, and restore softness while promoting relaxation and comfort.",
+              "A deeply conditioning hand and foot treatment infused with Moroccanoil oil to nourish dry skin, improve firmness, and restore softness while promoting relaxation and comfort.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "body-treatments",
+    title: "Body Treatments",
+    intro: "Exfoliating, hydrating, and detoxifying body rituals for full-body renewal.",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#cad7de]/20",
+    image: {
+      src: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1920&h=1200&fit=crop&auto=format&q=85",
+      alt: "Luxury body treatment setup in spa",
+    },
+    groups: [
+      {
+        title: "Body Treatments",
+        items: [
+          {
+            name: "Farmhouse Fresh Citrus Glow Body Polish",
+            price: "$120 | 60min",
+            description:
+              "Botanical exfoliation revealing silky, radiant skin.",
+          },
+          {
+            name: "Moroccanoil Body Scrub",
+            price: "$130 | 60min",
+            description:
+              "Argan oil-infused exfoliation with uplifting signature scents.",
+          },
+          {
+            name: "Moroccanoil Hydration Body Wrap",
+            price: "$130 | 60min",
+            description:
+              "A deeply moisturizing full-body ritual using a blend of nutrient-rich moisturizers.",
+          },
+          {
+            name: "Farmhouse Fresh Pure Himalayan Detox Wrap",
+            price: "$140 | 60min",
+            description:
+              "A purifying salt-infused wrap that cleanses and re-energizes.",
+          },
+          {
+            name: "Rebalancing Mud Wrap",
+            price: "$140 | 60min",
+            description:
+              "Detoxifying volcanic mud for renewed vitality.",
+          },
+          {
+            name: 'Farmhouse Fresh Polished "Back" to Perfection',
+            price: "$80 | 30min",
+            description:
+              "A smoothing exfoliation and hydration treatment for the back.",
+          },
+          {
+            name: "Farmhouse Fresh Bronzed Babe Scrub & Glow",
+            price: "$135 | 60min",
+            description:
+              "A full-body exfoliating scrub to refresh and smooth the skin, followed by a professional light self-tanner application for an even, sun kissed glow within hours. To continue to achieve the best results follow with bronzed fox tanning drops at home added to your favorite Farmhouse Fresh moisturizer.",
           },
         ],
       },

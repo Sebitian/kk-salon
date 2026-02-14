@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 
 export default function CofoundersTeaser() {
   return (
-    <section className="bg-white py-16 sm:py-24">
+    <section className="bg-white py-12 sm:py-20 lg:py-24">
       <div className="container-custom">
         <div className="mx-auto max-w-5xl">
           <div className="text-center">
@@ -15,7 +15,7 @@ export default function CofoundersTeaser() {
           </div>
 
           {/* Amy placeholder uses Keeley for now */}
-          <div className="mt-10 flex items-center justify-center gap-10">
+          <div className="mt-8 sm:mt-10 flex items-center justify-center gap-8 sm:gap-10">
             <div className="flex flex-col items-center gap-3">
               <div className="relative h-36 w-36 sm:h-44 sm:w-44 overflow-hidden rounded-full border-4 border-salon-blue/40 shadow-lg">
                 <Image
@@ -46,7 +46,7 @@ export default function CofoundersTeaser() {
             </div>
           </div>
 
-          <div className="mt-10 sm:mt-12 bg-salon-taupe/40 border border-salon-blue/40 rounded-sm shadow-md p-6 sm:p-10 text-left">
+          <div className="mt-8 sm:mt-12 bg-salon-taupe/40 border border-salon-blue/40 rounded-sm shadow-md p-5 sm:p-10 text-left">
             <div className="space-y-5 text-salon-brown/80 leading-relaxed text-base sm:text-lg font-light">
               <p>
                 <strong className="font-semibold text-salon-brown">
@@ -101,7 +101,7 @@ export default function CofoundersTeaser() {
               </p>
             </div>
 
-            <div className="mt-8 flex justify-center">
+            <div className="mt-6 sm:mt-8 flex justify-center">
               <Button
                 asChild
                 size="lg"

@@ -27,6 +27,7 @@ export default function WhyChooseUsSection() {
   const [api, setApi] = React.useState<CarouselApi>()
   const [selectedIndex, setSelectedIndex] = React.useState(0)
   const [autoplay, setAutoplay] = React.useState(true)
+  const [isMobile, setIsMobile] = React.useState(false)
 
   const autoplayIntervalRef = React.useRef<number | null>(null)
 
@@ -55,8 +56,26 @@ export default function WhyChooseUsSection() {
   }, [api, stopAutoplay])
 
   React.useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)")
+    const updateIsMobile = () => setIsMobile(mediaQuery.matches)
+
+    updateIsMobile()
+    mediaQuery.addEventListener("change", updateIsMobile)
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateIsMobile)
+    }
+  }, [])
+
+  React.useEffect(() => {
+    if (!isMobile) return
+    stopAutoplay()
+  }, [isMobile, stopAutoplay])
+
+  React.useEffect(() => {
     if (!api) return
     if (!autoplay) return
+    if (isMobile) return
 
     autoplayIntervalRef.current = window.setInterval(() => {
       api.scrollNext()
@@ -68,10 +87,16 @@ export default function WhyChooseUsSection() {
         autoplayIntervalRef.current = null
       }
     }
-  }, [autoplay, api])
+  }, [autoplay, api, isMobile])
 
-  const scrollPrev = React.useCallback(() => api?.scrollPrev(), [api])
-  const scrollNext = React.useCallback(() => api?.scrollNext(), [api])
+  const scrollPrev = React.useCallback(() => {
+    stopAutoplay()
+    api?.scrollPrev()
+  }, [api, stopAutoplay])
+  const scrollNext = React.useCallback(() => {
+    stopAutoplay()
+    api?.scrollNext()
+  }, [api, stopAutoplay])
   const scrollTo = React.useCallback(
     (index: number) => {
       stopAutoplay()
@@ -81,31 +106,41 @@ export default function WhyChooseUsSection() {
   )
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-12 sm:py-20 lg:py-24 bg-white overflow-hidden">
       {/* Full-bleed carousel (swipe + arrows + dots) */}
-      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen mb-16">
+      <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen mb-8 sm:mb-12 lg:mb-16">
         <div className="relative">
           <Carousel
             setApi={setApi}
             opts={{
               loop: true,
-              align: "center",
-              containScroll: "trimSnaps",
+              align: "start",
+              duration: 35,
+              skipSnaps: false,
+              dragFree: false,
+              breakpoints: {
+                "(max-width: 768px)": {
+                  loop: false,
+                  duration: 28,
+                },
+              },
             }}
           >
-            <CarouselContent className="ml-0 w-full will-change-transform">
+            <CarouselContent className="ml-0 w-full will-change-transform transform-gpu">
               {carouselImages.map((image, index) => (
-                <CarouselItem key={index} className="pl-0 w-full">
-                  <div className="relative h-[95vh] min-h-[680px] max-h-[1100px] w-full bg-salon-brown/10">
+                <CarouselItem key={index} className="pl-0 w-full transform-gpu">
+                  <div className="relative h-[72vh] min-h-[420px] max-h-[760px] w-full bg-salon-brown/10 sm:h-[82vh] sm:min-h-[560px] sm:max-h-[900px] lg:h-[95vh] lg:min-h-[680px] lg:max-h-[1100px]">
                     <Image
                       src={image.src}
                       alt={image.alt}
                       fill
-                      priority={index === 0}
-                      quality={100}
+                      priority={index < 2}
+                      loading={index < 3 ? "eager" : "lazy"}
+                      quality={90}
                       placeholder={typeof image.src === "string" ? "empty" : "blur"}
-                      className="object-cover"
+                      className="object-cover select-none"
                       sizes="100vw"
+                      draggable={false}
                     />
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-black/0 to-black/10" />
                   </div>
@@ -118,7 +153,7 @@ export default function WhyChooseUsSection() {
             type="button"
             variant="ghost"
             size="icon"
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-salon-brown rounded-full shadow-lg z-10"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-salon-brown rounded-full shadow-lg z-10 hidden md:inline-flex"
             onClick={scrollPrev}
             aria-label="Previous image"
           >
@@ -129,7 +164,7 @@ export default function WhyChooseUsSection() {
             type="button"
             variant="ghost"
             size="icon"
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-salon-brown rounded-full shadow-lg z-10"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-salon-brown rounded-full shadow-lg z-10 hidden md:inline-flex"
             onClick={scrollNext}
             aria-label="Next image"
           >
@@ -164,14 +199,14 @@ export default function WhyChooseUsSection() {
           </p>
         </div> */}
 
-        <div className="mt-20 text-center">
+        <div className="mt-8 sm:mt-14 lg:mt-20 text-center">
           <Link
             href="/salon-services"
-            className="inline-flex items-center text-salon-raspberry font-semibold tracking-widest hover:text-salon-raspberry/80 transition-colors uppercase text-sm"
+            className="group inline-flex items-center bg-salon-raspberry px-7 py-3 text-white text-sm font-semibold tracking-widest uppercase rounded-sm border border-salon-raspberry shadow-[0_10px_24px_-12px_rgba(198,43,95,0.95)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-salon-raspberry/95 hover:shadow-[0_14px_28px_-12px_rgba(198,43,95,0.95)] focus:outline-none focus-visible:ring-2 focus-visible:ring-salon-raspberry/50 focus-visible:ring-offset-2"
           >
             Learn More About Our Services
             <svg
-              className="ml-3 w-5 h-5"
+              className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

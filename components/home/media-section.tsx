@@ -1,9 +1,10 @@
 "use client"
 
 import { useEffect } from "react"
+import { Facebook, Instagram } from "lucide-react"
 
 // Instagram post URLs
-const instagramPosts = [
+const FALLBACK_INSTAGRAM_POSTS = [
   { url: "https://www.instagram.com/p/DT5w6sAgPnG/" },
   { url: "https://www.instagram.com/p/DTN34J-gMNJ/" },
   { url: "https://www.instagram.com/p/DSX7WwmAOT4/" },
@@ -24,20 +25,22 @@ function getInstagramEmbedUrl(url: string) {
 }
 
 export default function MediaSection() {
+  const instagramPosts = FALLBACK_INSTAGRAM_POSTS
+
   const openPost = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer")
   }
 
   // Tuning knobs:
-  // We want to see the *entire* picture, so avoid "cover" style cropping/zooming.
-  const IFRAME_CROP_TOP_PX = 0
-  const IFRAME_CROP_BOTTOM_PX = 0
+  // Crop the Instagram header strip (profile + button) from embeds.
+  const IFRAME_CROP_TOP_PX = 52
+  // Keep extra embed height so the caption area can appear in the tile.
+  const IFRAME_CROP_BOTTOM_PX = 120
   const IFRAME_COVER_SCALE = 1
 
   useEffect(() => {
-    // Add custom styles to make embeds show only images in cards
-    const style = document.createElement('style')
-    style.id = 'instagram-media-styles'
+    const style = document.createElement("style")
+    style.id = "instagram-media-styles"
     style.textContent = `
       .instagram-media-card {
         background: rgba(255, 255, 255, 0.05) !important;
@@ -56,106 +59,158 @@ export default function MediaSection() {
         margin: 0 !important;
         display: block !important;
       }
+      .media-collage-card {
+        opacity: 0;
+        transform: translateY(28px) scale(0.97);
+        transition: opacity 520ms ease, transform 620ms cubic-bezier(0.2, 0.9, 0.2, 1);
+        will-change: transform, opacity;
+      }
+      .media-collage-card.is-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     `
-    if (!document.getElementById('instagram-media-styles')) {
+    if (!document.getElementById("instagram-media-styles")) {
       document.head.appendChild(style)
     }
-    
+
+    const cards = Array.from(document.querySelectorAll<HTMLElement>(".media-collage-card"))
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible")
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      {
+        root: null,
+        threshold: 0.22,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    )
+
+    cards.forEach((card) => observer.observe(card))
+
     return () => {
-      const existingStyle = document.getElementById('instagram-media-styles')
+      observer.disconnect()
+      const existingStyle = document.getElementById("instagram-media-styles")
       if (existingStyle) {
         document.head.removeChild(existingStyle)
       }
     }
-  }, [])
+  }, [instagramPosts.length])
 
   return (
-    <section 
-      className="pt-12 pb-24 px-4 relative overflow-hidden"
-      style={{ 
-        backgroundColor: '#cad7de',
-        fontFamily: 'var(--font-montserrat), sans-serif'
+    <section
+      className="pt-10 sm:pt-12 pb-20 sm:pb-24 px-4 relative overflow-hidden"
+      style={{
+        backgroundColor: "#cad7de",
+        fontFamily: "var(--font-montserrat), sans-serif",
       }}
     >
       {/* Subtle shadow effect */}
-      <div 
+      <div
         className="absolute top-0 right-0 w-96 h-96 opacity-10 pointer-events-none"
         style={{
-          background: 'radial-gradient(circle at top right, rgba(37, 28, 24, 0.08), transparent 70%)'
+          background: "radial-gradient(circle at top right, rgba(37, 28, 24, 0.08), transparent 70%)",
         }}
       />
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Main Heading */}
-        <div className="text-center mb-12 space-y-4">
-          <h2 
-            className="text-3xl lg:text-4xl font-bold tracking-[0.2em] text-salon-brown"
-          >
+        <div className="text-center mb-10 sm:mb-12 space-y-4">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-[0.15em] sm:tracking-[0.2em] text-salon-brown">
             MEDIA
           </h2>
           <div className="w-16 h-1 bg-salon-raspberry mx-auto mt-4"></div>
-          <p 
-            className="text-lg lg:text-xl text-salon-brown/60 pt-4"
-          >
+          <p className="text-base sm:text-lg lg:text-xl text-salon-brown/60 pt-3 sm:pt-4">
             Follow Our Journey on Social Media
           </p>
         </div>
 
-        {/* Instagram Posts Grid - Equal sized cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
-          {instagramPosts.map((post, index) => (
-            <div
-              key={index}
-              role="link"
-              tabIndex={0}
-              aria-label={`Open Instagram post ${index + 1} in a new tab`}
-              className="group relative w-full aspect-[4/5] overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
-              style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-              }}
-              onClick={() => openPost(post.url)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault()
-                  openPost(post.url)
-                }
-              }}
+        {/* Scroll-reveal tile wall */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
+          {instagramPosts.map((post, index) => {
+            return (
+              <div
+                key={index}
+                role="link"
+                tabIndex={0}
+                aria-label={`Open Instagram post ${index + 1} in a new tab`}
+                className="media-collage-card group relative mx-auto w-full max-w-[460px] sm:max-w-none aspect-[3/4] overflow-hidden rounded-[28px] border border-white/90 bg-[#eef2f4] p-2.5 shadow-[0_18px_36px_-22px_rgba(37,28,24,0.45)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_42px_-20px_rgba(37,28,24,0.52)] active:translate-y-0 active:scale-[0.995]"
+                style={{
+                  transitionDelay: `${index * 120}ms`,
+                }}
+                onClick={() => openPost(post.url)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault()
+                    openPost(post.url)
+                  }
+                }}
+              >
+                <div className="relative h-full w-full overflow-hidden rounded-[22px] border border-slate-200/75 bg-white">
+                  <div className="instagram-media-card h-full w-full rounded-[22px]">
+                    <iframe
+                      src={getInstagramEmbedUrl(post.url)}
+                      title={`Instagram post ${index + 1}`}
+                      loading="lazy"
+                      scrolling="no"
+                      className="pointer-events-none absolute left-0 w-full"
+                      style={{
+                        top: `-${IFRAME_CROP_TOP_PX}px`,
+                        height: `calc(100% + ${IFRAME_CROP_TOP_PX + IFRAME_CROP_BOTTOM_PX}px)`,
+                        transform: `scale(${IFRAME_COVER_SCALE})`,
+                        transformOrigin: "center",
+                        border: "none",
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="pointer-events-none absolute inset-x-2.5 bottom-2.5 z-10 flex items-end justify-between rounded-b-[20px] bg-gradient-to-t from-black/45 via-black/10 to-transparent px-3 pb-3 pt-8 opacity-100 sm:opacity-0 transition-opacity duration-300 sm:group-hover:opacity-100">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90">
+                    Instagram
+                  </span>
+                  <span className="rounded-full bg-salon-blue px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-white shadow-md">
+                    View Post
+                  </span>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        <div className="mt-10 sm:mt-12 flex flex-col items-center gap-4 sm:gap-5">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.14em] text-salon-brown/70">Follow us on social</p>
+          <div className="w-full max-w-md sm:max-w-none flex flex-col sm:flex-row items-stretch sm:items-start justify-center gap-3 sm:gap-8">
+            <a
+              href="https://www.facebook.com/people/Kossof-Salon-Spa/61582500130935/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex w-full sm:w-auto items-center sm:items-center justify-start sm:justify-center gap-3 sm:gap-2 rounded-2xl border border-white/90 bg-white/65 px-4 sm:px-5 py-3.5 sm:py-4 shadow-[0_10px_22px_-16px_rgba(37,28,24,0.5)] transition-all hover:-translate-y-0.5 hover:bg-white/85 active:translate-y-0 active:scale-[0.995]"
+              aria-label="Follow us on Facebook"
             >
-              <div className="absolute inset-0 w-full h-full">
-                <div className="instagram-media-card w-full h-full">
-                  <iframe
-                    src={getInstagramEmbedUrl(post.url)}
-                    title={`Instagram post ${index + 1}`}
-                    loading="lazy"
-                    scrolling="no"
-                    className="pointer-events-none absolute left-0 w-full"
-                    style={{
-                      top: `-${IFRAME_CROP_TOP_PX}px`,
-                      height: `calc(100% + ${IFRAME_CROP_TOP_PX + IFRAME_CROP_BOTTOM_PX}px)`,
-                      transform: `scale(${IFRAME_COVER_SCALE})`,
-                      transformOrigin: "center",
-                      border: "none",
-                    }}
-                  />
-                </div>
-              </div>
-              
-              {/* Instagram icon overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="mt-auto mb-4">
-                  <svg
-                    className="w-10 h-10 text-white drop-shadow-lg"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          ))}
+              <Facebook className="h-6 w-6 text-[#00a6ff] group-hover:opacity-80 transition-opacity" />
+              <span className="text-sm sm:text-[15px] text-salon-brown underline underline-offset-4 group-hover:text-salon-blue transition-colors">
+                Follow us on Facebook
+              </span>
+            </a>
+            <a
+              href="https://www.instagram.com/kossof_salonspa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex w-full sm:w-auto items-center sm:items-center justify-start sm:justify-center gap-3 sm:gap-2 rounded-2xl border border-white/90 bg-white/65 px-4 sm:px-5 py-3.5 sm:py-4 shadow-[0_10px_22px_-16px_rgba(37,28,24,0.5)] transition-all hover:-translate-y-0.5 hover:bg-white/85 active:translate-y-0 active:scale-[0.995]"
+              aria-label="Follow us on Instagram"
+            >
+              <Instagram className="h-6 w-6 text-[#ff2a8e] group-hover:opacity-80 transition-opacity" />
+              <span className="text-sm sm:text-[15px] text-salon-brown underline underline-offset-4 group-hover:text-salon-blue transition-colors">
+                Follow us on Instagram
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

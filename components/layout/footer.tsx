@@ -4,7 +4,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 
 export default function Footer() {
   return (
@@ -25,24 +24,30 @@ export default function Footer() {
             <p className="text-white/60 text-sm leading-relaxed max-w-xs font-light">
               30+ years of expertise in luxury hair and spa services in Lincolnshire, IL. Experience the art of refinement.
             </p>
-            <div className="flex space-x-6 mt-8">
-              <a
-                href="https://www.instagram.com/kossof_salonspa/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-salon-raspberry transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-6 w-6" />
-              </a>
+            <div className="flex items-start gap-8 mt-8">
               <a
                 href="https://www.facebook.com/people/Kossof-Salon-Spa/61582500130935/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/80 hover:text-salon-raspberry transition-colors"
+                className="group flex flex-col items-center md:items-start gap-2"
                 aria-label="Facebook"
               >
-                <Facebook className="h-6 w-6" />
+                <Facebook className="h-6 w-6 text-[#00a6ff] group-hover:opacity-80 transition-opacity" />
+                <span className="text-sm text-white underline underline-offset-4 group-hover:text-salon-blue transition-colors">
+                  Kossof Salon Spa
+                </span>
+              </a>
+              <a
+                href="https://www.instagram.com/kossof_salonspa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center md:items-start gap-2"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-6 w-6 text-[#ff2a8e] group-hover:opacity-80 transition-opacity" />
+                <span className="text-sm text-white underline underline-offset-4 group-hover:text-salon-blue transition-colors">
+                  kossof_salonspa
+                </span>
               </a>
             </div>
           </div>
@@ -72,21 +77,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* NEWSLETTER Section */}
-          {/* <div className="text-center md:text-left">
-            <h3 className="text-sm font-bold uppercase mb-8 tracking-[0.2em] text-salon-blue">NEWSLETTER</h3>
-            <p className="text-sm text-white/60 mb-6 font-light">Join our list for exclusive offers and beauty updates.</p>
-            <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
-              <Input 
-                type="email" 
-                placeholder="YOUR EMAIL" 
-                className="bg-white/5 border-white/10 text-white rounded-none focus:border-salon-blue transition-colors"
-              />
-              <Button className="w-full bg-salon-raspberry hover:bg-salon-raspberry/90 text-white rounded-sm tracking-widest text-xs h-11">
-                SIGN UP
-              </Button>
-            </form>
-          </div> */}
+          {/* QUICK LINKS + CTA */}
+          <div className="text-center md:text-left">
+            <h3 className="text-sm font-bold uppercase mb-8 tracking-[0.2em] text-salon-blue">EXPLORE</h3>
+            <div className="space-y-3 text-sm font-light mb-8">
+              <Link href="/salon-services" className="block hover:text-salon-blue transition-colors">Salon Services</Link>
+              <Link href="/spa-services" className="block hover:text-salon-blue transition-colors">Spa Services</Link>
+              <Link href="/weddings-services" className="block hover:text-salon-blue transition-colors">Wedding Services</Link>
+              <Link href="/about" className="block hover:text-salon-blue transition-colors">Talent</Link>
+              <Link href="/faq" className="block hover:text-salon-blue transition-colors">FAQ</Link>
+            </div>
+            <Button asChild className="bg-salon-raspberry hover:bg-salon-raspberry/90 text-white rounded-sm tracking-widest text-xs h-11 px-6">
+              <Link href="https://booking.mangomint.com/kossofsalonspa">BOOK ONLINE</Link>
+            </Button>
+          </div>
         </div>
 
         {/* Copyright */}

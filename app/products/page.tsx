@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { getBlobUrls } from "@/lib/blob"
 
 export const metadata: Metadata = {
@@ -74,6 +75,20 @@ export default async function ProductsPage() {
             <p className="text-white/70 max-w-xl mx-auto font-light mb-10 leading-relaxed">
               We are currently working on our online boutique. In the meantime, all products are available for purchase at our Lincolnshire location.
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link
+                href="https://booking.mangomint.com/kossofsalonspa"
+                className="inline-flex items-center justify-center bg-salon-raspberry text-white px-6 py-3 rounded-sm text-xs sm:text-sm font-semibold tracking-widest uppercase hover:bg-salon-raspberry/90 transition-colors"
+              >
+                Book A Consultation
+              </Link>
+              <Link
+                href="/salon-services"
+                className="inline-flex items-center justify-center bg-white text-salon-brown px-6 py-3 rounded-sm text-xs sm:text-sm font-semibold tracking-widest uppercase hover:bg-white/90 transition-colors"
+              >
+                Explore Services
+              </Link>
+            </div>
           </div>
         </div>
       </section>

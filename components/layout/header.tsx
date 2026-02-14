@@ -1,44 +1,32 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 import Image from "next/image"
 
 const servicesDropdown = [
-  { name: "SALON SERVICES", href: "/salon-services" },
-  { name: "SPA SERVICES", href: "/spa-services" },
+  { name: "SALON", href: "/salon-services" },
+  { name: "SPA", href: "/spa-services" },
+  { name: "WEDDINGS", href: "/weddings-services" },
 ]
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
-  const [isServicesOpen, setIsServicesOpen] = useState(false)
-  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const pathname = usePathname()
   const isHome = pathname === "/"
   const useLightHeader = !isHome || isScrolled
-  const isServicesActive = pathname === "/salon-services" || pathname === "/spa-services"
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  const handleServicesEnter = () => {
-    if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current)
-    setIsServicesOpen(true)
-  }
-
-  const handleServicesLeave = () => {
-    servicesTimeoutRef.current = setTimeout(() => setIsServicesOpen(false), 150)
-  }
 
   return (
     <header
@@ -63,48 +51,19 @@ export default function Header() {
               TALENT
             </Link>
 
-            {/* Services dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={handleServicesEnter}
-              onMouseLeave={handleServicesLeave}
-            >
-              <button
+            {servicesDropdown.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
                 className={cn(
-                  "text-sm font-semibold tracking-widest transition-colors hover:text-primary flex items-center gap-1",
+                  "text-sm font-semibold tracking-widest transition-colors hover:text-primary",
                   useLightHeader ? "text-salon-brown" : "text-white",
-                  isServicesActive && "text-primary"
+                  pathname === item.href && "text-primary"
                 )}
               >
-                SERVICES
-                <ChevronDown
-                  className={cn(
-                    "h-3.5 w-3.5 transition-transform duration-200",
-                    isServicesOpen && "rotate-180"
-                  )}
-                />
-              </button>
-
-              {isServicesOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3">
-                  <div className="bg-white rounded-md shadow-lg border border-gray-100 py-2 min-w-[200px]">
-                    {servicesDropdown.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className={cn(
-                          "block px-5 py-3 text-xs font-semibold tracking-widest text-salon-brown hover:bg-gray-50 hover:text-primary transition-colors",
-                          pathname === item.href && "text-primary"
-                        )}
-                        onClick={() => setIsServicesOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+                {item.name}
+              </Link>
+            ))}
           </div>
 
           {/* Center - Logo */}
@@ -133,6 +92,16 @@ export default function Header() {
               )}
             >
               PRODUCTS
+            </Link>
+            <Link
+              href="/faq"
+              className={cn(
+                "text-sm font-semibold tracking-widest transition-colors hover:text-primary",
+                useLightHeader ? "text-salon-brown" : "text-white",
+                pathname === "/faq" && "text-primary"
+              )}
+            >
+              FAQ
             </Link>
             <Link
               href="https://booking.mangomint.com/kossofsalonspa"
@@ -166,41 +135,21 @@ export default function Header() {
               TALENT
             </Link>
 
-            {/* Mobile Services Accordion */}
-            <div className="border-b border-gray-50">
-              <button
-                className="flex items-center justify-between w-full px-8 py-4 text-sm font-semibold tracking-widest text-salon-brown"
-                onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+            {servicesDropdown.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "block px-8 py-4 text-sm font-semibold tracking-widest border-b border-gray-50",
+                  pathname === item.href ? "text-primary" : "text-salon-brown"
+                )}
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                }}
               >
-                SERVICES
-                <ChevronDown
-                  className={cn(
-                    "h-4 w-4 transition-transform duration-200",
-                    isMobileServicesOpen && "rotate-180"
-                  )}
-                />
-              </button>
-              {isMobileServicesOpen && (
-                <div className="bg-gray-50/50">
-                  {servicesDropdown.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className={cn(
-                        "block px-12 py-3 text-xs font-semibold tracking-widest text-salon-brown/80 hover:text-primary transition-colors",
-                        pathname === item.href && "text-primary"
-                      )}
-                      onClick={() => {
-                        setIsMobileMenuOpen(false)
-                        setIsMobileServicesOpen(false)
-                      }}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+                {item.name}
+              </Link>
+            ))}
 
             <Link
               href="/products"
@@ -208,6 +157,13 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               PRODUCTS
+            </Link>
+            <Link
+              href="/faq"
+              className="block px-8 py-4 text-sm font-semibold tracking-widest text-salon-brown border-b border-gray-50"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              FAQ
             </Link>
             <Link
               href="https://booking.mangomint.com/kossofsalonspa"
