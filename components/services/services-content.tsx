@@ -18,16 +18,16 @@ interface ServiceItemProps {
 function ServiceRow({ name, price }: Pick<ServiceItemProps, "name" | "price">) {
   return (
     <div className="py-3" itemScope itemType="https://schema.org/Service">
-      <div className="flex items-baseline justify-between gap-4">
+      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4">
         <h4
-          className="text-[15px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.14em] font-gotham flex-1 pr-4"
+          className="min-w-0 pr-3 text-[15px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.14em] font-gotham"
           itemProp="name"
         >
           {name}
         </h4>
         {price ? (
           <span
-            className="text-[15px] md:text-sm font-semibold text-salon-brown font-gotham"
+            className="max-w-[11rem] text-right text-[15px] md:text-sm font-semibold text-salon-brown font-gotham break-words"
             itemProp="offers"
             itemScope
             itemType="https://schema.org/Offer"
@@ -50,12 +50,12 @@ function ServiceItemAccordion({ name, price, description, defaultOpen = false }:
     <Accordion type="multiple" defaultValue={defaultOpen ? [name] : undefined}>
       <AccordionItem value={name}>
         <AccordionTrigger className="py-3 hover:no-underline">
-          <div className="flex w-full items-baseline justify-between gap-4 pr-3">
-            <h4 className="text-[15px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.14em] font-gotham flex-1 pr-4">
+          <div className="grid w-full grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4 pr-3">
+            <h4 className="min-w-0 pr-3 text-[15px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.14em] font-gotham">
               {name}
             </h4>
             {price ? (
-              <span className="text-[15px] md:text-sm font-semibold text-salon-brown font-gotham whitespace-nowrap">
+              <span className="max-w-[11rem] text-right text-[15px] md:text-sm font-semibold text-salon-brown font-gotham break-words">
                 {price}
               </span>
             ) : null}

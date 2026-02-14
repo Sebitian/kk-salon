@@ -102,7 +102,7 @@ const SALON_HAIR_BASE_SECTION: ServicesSection = {
         ],
       },
       {
-        title: "Special Occasion or Formal Hair Styling",
+        title: "Special Occasion & Formal Hair Styling",
         note: "Hair must be clean and dry for formal styling.",
         items: [
           {
