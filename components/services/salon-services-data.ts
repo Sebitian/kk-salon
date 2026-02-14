@@ -1,18 +1,17 @@
 import { ServicesSection } from "./services-data"
 
-export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
-  {
-    id: "hair",
-    title: "Salon Services",
-    intro:
-      "Haircuts, styling, color, treatments, and retexturizing services from the final service menu.",
-    textLeftOnDesktop: true,
-    textPanelBgClassName: "bg-[#ede7e4]/20",
-    image: {
-      src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&h=1200&fit=crop&auto=format&q=85",
-      alt: "Modern hair salon interior with styling stations",
-    },
-    groups: [
+const SALON_HAIR_BASE_SECTION: ServicesSection = {
+  id: "hair",
+  title: "Salon Services",
+  intro:
+    "Haircuts, styling, color, treatments, and retexturizing services from the final service menu.",
+  textLeftOnDesktop: true,
+  textPanelBgClassName: "bg-[#ede7e4]/20",
+  image: {
+    src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&h=1200&fit=crop&auto=format&q=85",
+    alt: "Modern hair salon interior with styling stations",
+  },
+  groups: [
       {
         title: "Haircuts & Styling",
         items: [
@@ -363,8 +362,48 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
           },
         ],
       },
-    ],
+  ],
+}
+
+const SALON_HAIR_SECTION_META: Record<string, { id: string; intro: string }> = {
+  "Haircuts & Styling": {
+    id: "haircuts-styling",
+    intro: "Precision cuts, styling, and finishing services tailored to your look.",
   },
+  "Special Occasion or Formal Hair Styling": {
+    id: "special-occasion-hair",
+    intro: "Event-ready updos and downstyles crafted for elegant, long-lasting wear.",
+  },
+  "Hair Color": {
+    id: "hair-color",
+    intro: "Custom color, highlights, balayage, and corrective options from our color team.",
+  },
+  "Hair & Scalp Treatments": {
+    id: "hair-scalp-treatments",
+    intro: "Nourishing and restorative treatments for healthier hair and scalp balance.",
+  },
+  "Retexturizing Services": {
+    id: "retexturizing-services",
+    intro: "Smoothing, keratin, relaxer, and texture services for manageability and shine.",
+  },
+}
+
+const SALON_HAIR_SPLIT_SECTIONS: ServicesSection[] = SALON_HAIR_BASE_SECTION.groups.map((group, index) => {
+  const meta = SALON_HAIR_SECTION_META[group.title]
+
+  return {
+    id: meta?.id ?? `hair-section-${index + 1}`,
+    title: group.title,
+    intro: meta?.intro,
+    textLeftOnDesktop: index % 2 === 0,
+    textPanelBgClassName: index % 2 === 0 ? "bg-[#ede7e4]/20" : "bg-white",
+    image: SALON_HAIR_BASE_SECTION.image,
+    groups: [group],
+  }
+})
+
+export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
+  ...SALON_HAIR_SPLIT_SECTIONS,
   {
     id: "nails",
     title: "Nail Services",

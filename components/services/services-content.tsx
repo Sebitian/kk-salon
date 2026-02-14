@@ -127,6 +127,7 @@ export default function ServicesContent({
 
         {sections.map((section) => {
           const autoExpandAll = section.groups.length <= 2
+          const singleGroup = section.groups.length === 1 ? section.groups[0] : null
           const textColOrder = section.textLeftOnDesktop
             ? "order-2 lg:order-1"
             : "order-2 lg:order-2"
@@ -164,47 +165,76 @@ export default function ServicesContent({
                     )}
                   </div>
 
-                  <Accordion
-                    type="multiple"
-                    className="w-full"
-                    defaultValue={autoExpandAll ? section.groups.map((group) => group.title) : undefined}
-                  >
-                    {section.groups.map((group) => (
-                      <AccordionItem key={group.title} value={group.title}>
-                        <AccordionTrigger className="hover:no-underline">
-                          <span className="text-sm font-semibold tracking-[0.20em] uppercase text-salon-brown/85 font-gotham">
-                            {group.title}
-                          </span>
-                        </AccordionTrigger>
-                        <AccordionContent className="pt-2">
-                          {group.note && (
-                            /Out-of-salon fee/i.test(group.note) ? (
-                              <div className="mb-4 rounded-md border border-salon-raspberry/40 bg-salon-raspberry/10 px-4 py-3">
-                                <p className="text-[15px] md:text-sm text-salon-brown/80 font-semibold">
+                  {singleGroup ? (
+                    <div className="w-full pt-1">
+                      {singleGroup.note && (
+                        /Out-of-salon fee/i.test(singleGroup.note) ? (
+                          <div className="mb-4 rounded-md border border-salon-raspberry/40 bg-salon-raspberry/10 px-4 py-3">
+                            <p className="text-[15px] md:text-sm text-salon-brown/80 font-semibold">
+                              {singleGroup.note}
+                            </p>
+                          </div>
+                        ) : (
+                          <p className="text-[15px] md:text-sm text-salon-brown/65 font-medium mb-4">
+                            {singleGroup.note}
+                          </p>
+                        )
+                      )}
+                      <div className="pl-3 sm:pl-4" itemScope itemType="https://schema.org/ItemList">
+                        {singleGroup.items.map((service, idx) => (
+                          <ServiceItemAccordion
+                            key={`${singleGroup.title}-${idx}`}
+                            name={service.name}
+                            price={service.price}
+                            description={service.description}
+                            defaultOpen
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <Accordion
+                      type="multiple"
+                      className="w-full"
+                      defaultValue={autoExpandAll ? section.groups.map((group) => group.title) : undefined}
+                    >
+                      {section.groups.map((group) => (
+                        <AccordionItem key={group.title} value={group.title}>
+                          <AccordionTrigger className="hover:no-underline">
+                            <span className="text-sm font-semibold tracking-[0.20em] uppercase text-salon-brown/85 font-gotham">
+                              {group.title}
+                            </span>
+                          </AccordionTrigger>
+                          <AccordionContent className="pt-2">
+                            {group.note && (
+                              /Out-of-salon fee/i.test(group.note) ? (
+                                <div className="mb-4 rounded-md border border-salon-raspberry/40 bg-salon-raspberry/10 px-4 py-3">
+                                  <p className="text-[15px] md:text-sm text-salon-brown/80 font-semibold">
+                                    {group.note}
+                                  </p>
+                                </div>
+                              ) : (
+                                <p className="text-[15px] md:text-sm text-salon-brown/65 font-medium mb-4">
                                   {group.note}
                                 </p>
-                              </div>
-                            ) : (
-                              <p className="text-[15px] md:text-sm text-salon-brown/65 font-medium mb-4">
-                                {group.note}
-                              </p>
-                            )
-                          )}
-                          <div className="pl-3 sm:pl-4" itemScope itemType="https://schema.org/ItemList">
-                            {group.items.map((service, idx) => (
-                              <ServiceItemAccordion
-                                key={`${group.title}-${idx}`}
-                                name={service.name}
-                                price={service.price}
-                                description={service.description}
-                                defaultOpen={autoExpandAll}
-                              />
-                            ))}
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
+                              )
+                            )}
+                            <div className="pl-3 sm:pl-4" itemScope itemType="https://schema.org/ItemList">
+                              {group.items.map((service, idx) => (
+                                <ServiceItemAccordion
+                                  key={`${group.title}-${idx}`}
+                                  name={service.name}
+                                  price={service.price}
+                                  description={service.description}
+                                  defaultOpen={autoExpandAll}
+                                />
+                              ))}
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  )}
                 </div>
               </div>
 
