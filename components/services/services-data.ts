@@ -257,7 +257,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
               "A luxurious 5-step ritual that replenishes moisture from inside out, reviving dry, porous, or color-processed hair. Seals in hydration and boosts shine for up to 5 weeks. Includes a take-home weekly booster to maintain results between visits.",
           },
           {
-            name: "Milbon Smooth Deep Conditioning Treatment",
+            name: "Milbon Smooth Treatment",
             price: "$65",
             description:
               "A luxurious 3-step smoothing ritual that infuses moisture and smooths hair structure and is ideal for fine to coarse hair. This treatment leaves hair soft, silky, and frizz-free for up to 5 weeks. Includes a take-home booster to keep results fresh between salon visits.",

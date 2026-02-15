@@ -33,6 +33,7 @@ export default function WeddingsServicesPage() {
         sections={WEDDINGS_SERVICES_SECTIONS}
         schemaName="Kossof Wedding Services"
         schemaDescription="Wedding service menu including in-salon and on-location bridal hair and makeup."
+        searchPlaceholder="Try: bridal hair, bridal makeup, on-location..."
       />
     </>
   )

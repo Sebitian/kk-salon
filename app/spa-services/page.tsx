@@ -33,6 +33,7 @@ export default function SpaServicesPage() {
         sections={SPA_SERVICES_SECTIONS}
         schemaName="Kossof Spa Services"
         schemaDescription="Full spa service menu including facials, advanced facials, body treatments, body wraps, and massage therapies."
+        searchPlaceholder="Try: massage, facial, body wrap, scrub..."
       />
     </>
   )

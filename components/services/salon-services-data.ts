@@ -230,7 +230,7 @@ const SALON_HAIR_BASE_SECTION: ServicesSection = {
               "A 5-step ritual that replenishes moisture and includes a take-home weekly booster.",
           },
           {
-            name: "Milbon Smooth Deep Conditioning Treatment",
+            name: "Milbon Smooth Treatment",
             price: "$65",
             description:
               "A 3-step smoothing ritual for soft, silky, frizz-free hair with take-home booster support.",
