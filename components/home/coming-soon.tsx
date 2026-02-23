@@ -63,8 +63,7 @@ export default function ComingSoonPage() {
             />
         </div>
         <h1 className="font-['Montserrat'] font-bold tracking-tight leading-tight">
-          <span className="block text-5xl sm:text-5xl md:text-6xl">Opening soon!</span>
-          <span className="block mt-2 text-3xl sm:text-3xl md:text-4xl">February 17, 2026</span>
+          <span className="block text-5xl sm:text-5xl md:text-6xl">Now open!</span>
         </h1>
 
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
