@@ -64,7 +64,7 @@ export default function ComingSoonPage() {
         </div>
         <h1 className="font-['Montserrat'] font-bold leading-tight">
           <span className="block text-5xl sm:text-6xl md:text-7xl tracking-wider animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-out text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-            Now open!
+            Now Open
           </span>
         </h1>
 
