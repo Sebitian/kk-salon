@@ -44,26 +44,26 @@ export default function ComingSoonPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black p-4">
       <div className="w-full max-w-3xl text-center space-y-6 sm:space-y-8 text-white">
-        
+
         {/* <LogoHero /> */}
-                
+
         {/* Logo Hero Section */}
-          
-          {/* <div className="text-center">
+
+        {/* <div className="text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">KK Salon</h2>
             <p className="text-lg text-muted-foreground">Beauty • Style • Excellence</p>
           </div> */}
         <div className="flex justify-center">
-            <Image
-              src="/logo_white.png"
-              alt="Kossof Salon Spa"
-              width={400}
-              height={300}
-              className="w-80 h-60 sm:w-[440px] sm:h-[330px] md:w-[520px] md:h-[390px] lg:w-[560px] lg:h-[420px] object-contain"
-            />
+          <Image
+            src="/logo_white.png"
+            alt="Kossof Salon Spa"
+            width={400}
+            height={300}
+            className="w-80 h-60 sm:w-[440px] sm:h-[330px] md:w-[520px] md:h-[390px] lg:w-[560px] lg:h-[420px] object-contain"
+          />
         </div>
-        <h1 className="font-['Montserrat'] font-bold leading-tight">
-          <span className="block text-5xl sm:text-6xl md:text-7xl tracking-wider animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-out text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+        <h1 className="font-cursive font-normal leading-tight">
+          <span className="block text-6xl sm:text-7xl md:text-8xl tracking-wide animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-out text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.4)]">
             Now Open
           </span>
         </h1>

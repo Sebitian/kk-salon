@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Poppins, Montserrat } from "next/font/google"
+import { Poppins, Montserrat, Great_Vibes } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
@@ -21,6 +21,12 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-montserrat",
+})
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-great-vibes",
 })
 
 export const metadata: Metadata = {
@@ -78,7 +84,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${montserrat.variable} font-sans`}>
+      <body className={`${poppins.variable} ${montserrat.variable} ${greatVibes.variable} font-sans`}>
         <JsonLd />
         {/* <GoogleAnalytics /> */}
         <Analytics />
