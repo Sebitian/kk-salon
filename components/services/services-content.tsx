@@ -4,18 +4,27 @@ import { useMemo, useState } from "react"
 import Fuse from "fuse.js"
 import Image from "next/image"
 import Link from "next/link"
-import { ServicesSection } from "@/components/services/services-data"
+import { CalendarPlus } from "lucide-react"
+import { ServicesSection, ServiceItem } from "@/components/services/services-data"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog"
 
 interface ServiceItemProps {
   name: string
   price?: string
   description?: string
+  bookingUrl?: string
   defaultOpen?: boolean
   anchorId?: string
 }
@@ -46,6 +55,8 @@ type RenderService = {
 type RenderGroup = {
   title: string
   note?: string
+  bookingEmbedUrl?: string
+  bookingEmbedTitle?: string
   groupIndex: number
   items: RenderService[]
 }
@@ -69,52 +80,105 @@ function scrollToTarget(targetId: string) {
   window.history.replaceState(null, "", `#${targetId}`)
 }
 
-function ServiceRow({ name, price, anchorId }: Pick<ServiceItemProps, "name" | "price" | "anchorId">) {
+function formatDisplayPrice(price?: string) {
+  if (!price) return price
+  if (/pricing based on consultation/i.test(price)) return "Consultation based"
+  return price
+}
+
+function BookingIconLink({ bookingUrl }: { bookingUrl?: string }) {
+  if (!bookingUrl) return null
+
   return (
-    <div id={anchorId} className="py-3 scroll-mt-28" itemScope itemType="https://schema.org/Service">
-      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4">
-        <h4
-          className="min-w-0 pr-3 text-[15px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.14em] font-gotham"
-          itemProp="name"
-        >
-          {name}
-        </h4>
-        {price ? (
-          <span
-            className="max-w-[11rem] text-right text-[15px] md:text-sm font-semibold text-salon-brown font-gotham break-words"
-            itemProp="offers"
-            itemScope
-            itemType="https://schema.org/Offer"
-          >
-            <meta itemProp="priceCurrency" content="USD" />
-            <span itemProp="price">{price}</span>
-          </span>
-        ) : null}
+    <Link
+      href={bookingUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Book this service"
+      title="Book this service"
+      className="inline-flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-md bg-salon-raspberry text-white transition-colors hover:bg-salon-raspberry/90"
+    >
+      <CalendarPlus className="h-4 w-4" aria-hidden="true" />
+      <span className="sr-only">Book this service</span>
+    </Link>
+  )
+}
+
+function BookingMenuEmbed({ bookingEmbedUrl, bookingEmbedTitle }: { bookingEmbedUrl: string; bookingEmbedTitle?: string }) {
+  return (
+    <div className="mt-8 border-t border-salon-brown/10 pt-6">
+      <div className="overflow-hidden rounded-2xl border border-salon-brown/15 bg-[#f8f6f5] shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
+        <iframe
+          src={bookingEmbedUrl}
+          title={bookingEmbedTitle ?? "Online booking menu"}
+          loading="lazy"
+          className="h-[620px] w-full bg-[#f3f3f3] md:h-[760px] lg:h-[820px]"
+        />
       </div>
     </div>
   )
 }
 
-function ServiceItemAccordion({ name, price, description, defaultOpen = false, anchorId }: ServiceItemProps) {
+function ServiceRow({ name, price, bookingUrl, anchorId }: Pick<ServiceItemProps, "name" | "price" | "bookingUrl" | "anchorId">) {
+  const displayPrice = formatDisplayPrice(price)
+
+  return (
+    <div id={anchorId} className="py-3 scroll-mt-28" itemScope itemType="https://schema.org/Service">
+      <div className="grid w-full min-w-0 grid-cols-[minmax(0,1fr)_auto_auto] items-start gap-x-3">
+        <h4
+          className="min-w-0 pr-2 text-[14px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.08em] md:tracking-[0.14em] font-gotham break-words"
+          itemProp="name"
+        >
+          {name}
+        </h4>
+        {displayPrice ? (
+          <span
+            className="max-w-[10.5rem] justify-self-end text-right text-[15px] md:text-sm font-semibold text-salon-brown font-gotham break-words leading-tight"
+            itemProp="offers"
+            itemScope
+            itemType="https://schema.org/Offer"
+          >
+            <meta itemProp="priceCurrency" content="USD" />
+            <span itemProp="price">{displayPrice}</span>
+          </span>
+        ) : null}
+        <div className="shrink-0 self-start">
+          <BookingIconLink bookingUrl={bookingUrl} />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function ServiceItemAccordion({ name, price, description, bookingUrl, defaultOpen = false, anchorId }: ServiceItemProps) {
+  const displayPrice = formatDisplayPrice(price)
+
   if (!description) {
-    return <ServiceRow name={name} price={price} anchorId={anchorId} />
+    return <ServiceRow name={name} price={price} bookingUrl={bookingUrl} anchorId={anchorId} />
   }
 
   return (
     <Accordion type="multiple" defaultValue={defaultOpen ? [name] : undefined}>
       <AccordionItem value={name} id={anchorId} className="scroll-mt-28">
-        <AccordionTrigger className="py-3 hover:no-underline">
-          <div className="grid w-full grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4 pr-3">
-            <h4 className="min-w-0 pr-3 text-[15px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.14em] font-gotham">
-              {name}
-            </h4>
-            {price ? (
-              <span className="max-w-[11rem] text-right text-[15px] md:text-sm font-semibold text-salon-brown font-gotham break-words">
-                {price}
-              </span>
-            ) : null}
+        <div className="flex w-full items-start gap-2">
+          <div className="flex-1">
+            <AccordionTrigger className="py-3 hover:no-underline">
+              <div className="grid w-full min-w-0 grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3 pr-3">
+                <h4 className="min-w-0 pr-2 text-[14px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.08em] md:tracking-[0.14em] font-gotham break-words">
+                  {name}
+                </h4>
+                {displayPrice ? (
+                  <span className="max-w-[10.5rem] justify-self-end text-right text-[15px] md:text-sm font-semibold text-salon-brown font-gotham break-words leading-tight">
+                    {displayPrice}
+                  </span>
+                ) : null}
+              </div>
+            </AccordionTrigger>
           </div>
-        </AccordionTrigger>
+          <div className="shrink-0 pt-3">
+            <BookingIconLink bookingUrl={bookingUrl} />
+          </div>
+        </div>
         <AccordionContent className="pt-0 pb-4">
           <p className="text-[15px] md:text-sm leading-7 text-salon-brown/75 font-normal">
             {description}
@@ -122,6 +186,76 @@ function ServiceItemAccordion({ name, price, description, defaultOpen = false, a
         </AccordionContent>
       </AccordionItem>
     </Accordion>
+  )
+}
+
+function ServiceTile({ item, onClick }: { item: ServiceItem; onClick: () => void }) {
+  const displayPrice = formatDisplayPrice(item.price)
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="relative aspect-square flex flex-col items-center justify-center gap-1.5 rounded-xl border border-salon-brown/12 bg-white p-2.5 text-center shadow-sm transition-all duration-150 active:scale-[0.96] active:bg-salon-raspberry/5 hover:border-salon-raspberry/40 hover:shadow-md select-none [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none]"
+    >
+      <span className="text-[15px] font-semibold uppercase leading-[1.15] tracking-[0.01em] text-salon-brown font-gotham">
+        {item.name}
+      </span>
+      {displayPrice ? (
+        <span className="text-[12px] font-semibold leading-tight text-salon-raspberry">
+          {displayPrice}
+        </span>
+      ) : null}
+    </button>
+  )
+}
+
+function ServiceDetailModal({
+  item,
+  open,
+  onOpenChange,
+}: {
+  item: ServiceItem | null
+  open: boolean
+  onOpenChange: (open: boolean) => void
+}) {
+  if (!item) return null
+  const displayPrice = formatDisplayPrice(item.price)
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-w-[92vw] rounded-xl sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle className="text-base font-bold uppercase tracking-[0.1em] text-salon-brown font-gotham">
+            {item.name}
+          </DialogTitle>
+          {displayPrice ? (
+            <p className="mt-1 text-sm font-semibold text-salon-raspberry">{displayPrice}</p>
+          ) : null}
+          {item.duration ? (
+            <p className="text-sm font-medium text-salon-brown/70">Duration: {item.duration}</p>
+          ) : null}
+        </DialogHeader>
+        {item.description ? (
+          <DialogDescription className="text-[14px] leading-relaxed text-salon-brown/75">
+            {item.description}
+          </DialogDescription>
+        ) : null}
+        {item.bookingUrl ? (
+          <div className="mt-2">
+            <Link
+              href={item.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-salon-raspberry px-5 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white transition-colors hover:bg-salon-raspberry/90"
+            >
+              <CalendarPlus className="h-4 w-4" aria-hidden="true" />
+              Book Now
+            </Link>
+          </div>
+        ) : null}
+      </DialogContent>
+    </Dialog>
   )
 }
 
@@ -140,6 +274,8 @@ export default function ServicesContent({
 }: ServicesContentProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const trimmedQuery = searchQuery.trim()
+  const [modalItem, setModalItem] = useState<ServiceItem | null>(null)
+  const [modalOpen, setModalOpen] = useState(false)
 
   const indexedServices = useMemo<IndexedService[]>(() => {
     return sections.flatMap((section) =>
@@ -182,6 +318,8 @@ export default function ServicesContent({
           .map((group, groupIndex) => ({
             title: group.title,
             note: group.note,
+            bookingEmbedUrl: group.bookingEmbedUrl,
+            bookingEmbedTitle: group.bookingEmbedTitle,
             groupIndex,
             items: group.items
               .map((item, itemIndex) => ({ item, itemIndex }))
@@ -288,7 +426,7 @@ export default function ServicesContent({
           content="Full service menu including haircuts, color, treatments, nails, facials, massage, waxing, lashes & brows, wedding services, and makeup."
         />
 
-        <section className="w-full border-y border-salon-brown/10 bg-[#f7f4f2]">
+        <section className="hidden">
           <div className="mx-auto w-full max-w-7xl px-6 py-6 sm:px-8">
             <label htmlFor="services-search" className="block text-xs font-semibold uppercase tracking-[0.2em] text-salon-brown/75">
               Search Services
@@ -399,8 +537,60 @@ export default function ServicesContent({
                     )}
                   </div>
 
+                  {/* ── Mobile: list view (tiles temporarily removed) ── */}
+                  <div className="block md:hidden">
+                    {section.groups.map((group) => (
+                      <div key={group.title} className="mb-6">
+                        <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-salon-brown/70 font-gotham">
+                          {group.title}
+                        </h3>
+                        {group.note && (
+                          /Out-of-salon fee/i.test(group.note) ? (
+                            <div className="mb-3 rounded-md border border-salon-raspberry/40 bg-salon-raspberry/10 px-3 py-2">
+                              <p className="text-xs text-salon-brown/80 font-semibold">{group.note}</p>
+                            </div>
+                          ) : (
+                            <p className="mb-3 text-xs text-salon-brown/65 font-medium">{group.note}</p>
+                          )
+                        )}
+                        {/* <div className="grid grid-cols-2 gap-2.5">
+                          {group.items.map(({ item, itemIndex }) => (
+                            <ServiceTile
+                              key={`tile-${group.title}-${itemIndex}`}
+                              item={item}
+                              onClick={() => {
+                                setModalItem(item)
+                                setModalOpen(true)
+                              }}
+                            />
+                          ))}
+                        </div> */}
+                        {group.bookingEmbedUrl ? (
+                          <BookingMenuEmbed
+                            bookingEmbedUrl={group.bookingEmbedUrl}
+                            bookingEmbedTitle={group.bookingEmbedTitle}
+                          />
+                        ) : (
+                          <div className="pl-2" itemScope itemType="https://schema.org/ItemList">
+                            {group.items.map(({ item, itemIndex }) => (
+                              <ServiceItemAccordion
+                                key={`${group.title}-mobile-${itemIndex}`}
+                                name={item.name}
+                                price={item.price}
+                                description={item.description}
+                                bookingUrl={item.bookingUrl}
+                                anchorId={getServiceAnchorId(section.id, group.groupIndex, itemIndex)}
+                              />
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* ── Desktop: accordion ── */}
                   {singleGroup ? (
-                    <div className="w-full pt-1">
+                    <div className="hidden md:block w-full pt-1">
                       {singleGroup.note && (
                         /Out-of-salon fee/i.test(singleGroup.note) ? (
                           <div className="mb-4 rounded-md border border-salon-raspberry/40 bg-salon-raspberry/10 px-4 py-3">
@@ -414,23 +604,31 @@ export default function ServicesContent({
                           </p>
                         )
                       )}
-                      <div className="pl-3 sm:pl-4" itemScope itemType="https://schema.org/ItemList">
-                        {singleGroup.items.map(({ item, itemIndex }) => (
-                          <ServiceItemAccordion
-                            key={`${singleGroup.title}-${itemIndex}`}
-                            name={item.name}
-                            price={item.price}
-                            description={item.description}
-                            anchorId={getServiceAnchorId(section.id, singleGroup.groupIndex, itemIndex)}
-                            defaultOpen
-                          />
-                        ))}
-                      </div>
+                      {singleGroup.bookingEmbedUrl ? (
+                        <BookingMenuEmbed
+                          bookingEmbedUrl={singleGroup.bookingEmbedUrl}
+                          bookingEmbedTitle={singleGroup.bookingEmbedTitle}
+                        />
+                      ) : (
+                        <div className="pl-3 sm:pl-4" itemScope itemType="https://schema.org/ItemList">
+                          {singleGroup.items.map(({ item, itemIndex }) => (
+                            <ServiceItemAccordion
+                              key={`${singleGroup.title}-${itemIndex}`}
+                              name={item.name}
+                              price={item.price}
+                              description={item.description}
+                              bookingUrl={item.bookingUrl}
+                              anchorId={getServiceAnchorId(section.id, singleGroup.groupIndex, itemIndex)}
+                              defaultOpen
+                            />
+                          ))}
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <Accordion
                       type="multiple"
-                      className="w-full"
+                      className="hidden md:block w-full"
                       defaultValue={autoExpandAll ? section.groups.map((group) => group.title) : undefined}
                     >
                       {section.groups.map((group) => (
@@ -454,18 +652,26 @@ export default function ServicesContent({
                                 </p>
                               )
                             )}
-                            <div className="pl-3 sm:pl-4" itemScope itemType="https://schema.org/ItemList">
-                              {group.items.map(({ item, itemIndex }) => (
-                                <ServiceItemAccordion
-                                  key={`${group.title}-${itemIndex}`}
-                                  name={item.name}
-                                  price={item.price}
-                                  description={item.description}
-                                  anchorId={getServiceAnchorId(section.id, group.groupIndex, itemIndex)}
-                                  defaultOpen={autoExpandAll}
-                                />
-                              ))}
-                            </div>
+                            {group.bookingEmbedUrl ? (
+                              <BookingMenuEmbed
+                                bookingEmbedUrl={group.bookingEmbedUrl}
+                                bookingEmbedTitle={group.bookingEmbedTitle}
+                              />
+                            ) : (
+                              <div className="pl-3 sm:pl-4" itemScope itemType="https://schema.org/ItemList">
+                                {group.items.map(({ item, itemIndex }) => (
+                                  <ServiceItemAccordion
+                                    key={`${group.title}-${itemIndex}`}
+                                    name={item.name}
+                                    price={item.price}
+                                    description={item.description}
+                                    bookingUrl={item.bookingUrl}
+                                    anchorId={getServiceAnchorId(section.id, group.groupIndex, itemIndex)}
+                                    defaultOpen={autoExpandAll}
+                                  />
+                                ))}
+                              </div>
+                            )}
                           </AccordionContent>
                         </AccordionItem>
                       ))}
@@ -514,6 +720,8 @@ export default function ServicesContent({
           </div>
         </section>
       </article>
+
+      <ServiceDetailModal item={modalItem} open={modalOpen} onOpenChange={setModalOpen} />
     </>
   )
 }

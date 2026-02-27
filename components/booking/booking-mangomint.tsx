@@ -238,7 +238,7 @@ export default function BookingMangomint() {
               mode="single"
               selected={date}
               onSelect={setDate}
-              disabled={(date) => date < new Date() || date.getDay() === 0}
+              disabled={(date) => date < new Date() || date.getDay() === 1}
               className="rounded-md border-0"
             />
           </div>

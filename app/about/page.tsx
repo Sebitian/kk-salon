@@ -198,15 +198,27 @@ const localBusinessSchema = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Tuesday", "Thursday", "Friday"],
+      dayOfWeek: ["Tuesday", "Wednesday", "Thursday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Friday",
       opens: "09:00",
       closes: "18:00",
     },
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Wednesday", "Saturday"],
+      dayOfWeek: "Saturday",
       opens: "09:00",
-      closes: "16:00",
+      closes: "17:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Sunday",
+      opens: "09:00",
+      closes: "15:00",
     },
   ],
   priceRange: "$$",

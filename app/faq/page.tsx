@@ -41,7 +41,7 @@ const faqItems = [
   {
     question: "What are your salon hours?",
     answer:
-      "We are closed Monday. Tuesday, Thursday, and Friday: 9:00 AM to 6:00 PM. Wednesday and Saturday: 9:00 AM to 4:00 PM.",
+      "We are closed Monday. Tuesday, Wednesday, and Thursday: 9:00 AM to 7:00 PM. Friday: 9:00 AM to 6:00 PM. Saturday: 9:00 AM to 5:00 PM. Sunday: 9:00 AM to 3:00 PM.",
   },
 ];
 
@@ -105,15 +105,27 @@ const localBusinessSchema = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Tuesday", "Thursday", "Friday"],
+      dayOfWeek: ["Tuesday", "Wednesday", "Thursday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Friday",
       opens: "09:00",
       closes: "18:00",
     },
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Wednesday", "Saturday"],
+      dayOfWeek: "Saturday",
       opens: "09:00",
-      closes: "16:00",
+      closes: "17:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Sunday",
+      opens: "09:00",
+      closes: "15:00",
     },
   ],
   priceRange: "$$",
@@ -259,23 +271,27 @@ export default function FAQPage() {
                 </div>
                 <div className="flex justify-between border-b border-gray-200 py-2">
                   <span className="font-semibold text-gray-900">TUESDAY:</span>
-                  <span>9:00 AM - 6:00 PM</span>
+                  <span>9:00 AM - 7:00 PM</span>
                 </div>
                 <div className="flex justify-between border-b border-gray-200 py-2">
                   <span className="font-semibold text-gray-900">WEDNESDAY:</span>
-                  <span>9:00 AM - 4:00 PM</span>
+                  <span>9:00 AM - 7:00 PM</span>
                 </div>
                 <div className="flex justify-between border-b border-gray-200 py-2">
                   <span className="font-semibold text-gray-900">THURSDAY:</span>
-                  <span>9:00 AM - 6:00 PM</span>
+                  <span>9:00 AM - 7:00 PM</span>
                 </div>
                 <div className="flex justify-between border-b border-gray-200 py-2">
                   <span className="font-semibold text-gray-900">FRIDAY:</span>
                   <span>9:00 AM - 6:00 PM</span>
                 </div>
-                <div className="flex justify-between py-2">
+                <div className="flex justify-between border-b border-gray-200 py-2">
                   <span className="font-semibold text-gray-900">SATURDAY:</span>
-                  <span>9:00 AM - 4:00 PM</span>
+                  <span>9:00 AM - 5:00 PM</span>
+                </div>
+                <div className="flex justify-between py-2">
+                  <span className="font-semibold text-gray-900">SUNDAY:</span>
+                  <span>9:00 AM - 3:00 PM</span>
                 </div>
               </div>
             </article>

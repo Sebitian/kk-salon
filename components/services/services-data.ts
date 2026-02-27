@@ -1,12 +1,18 @@
 export type ServiceItem = {
   name: string
   price: string
+  duration?: string
   description?: string
+  bookingUrl?: string
 }
 
 export type ServiceGroup = {
   title: string
   note?: string
+  /** Optional full booking menu iframe URL shown under the group */
+  bookingEmbedUrl?: string
+  /** Optional iframe title for accessibility */
+  bookingEmbedTitle?: string
   items: ServiceItem[]
 }
 
@@ -47,85 +53,70 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             name: "Consultation",
             price: "Pricing based on consultation",
             description:
-              "A one-on-one consultation designed to create a thoughtful and personalized hair experience. Your stylist will assess your hair’s texture, density, condition, and history while discussing your lifestyle, styling routine, and long-term goals. This intentional session allows us to create a tailored plan for cutting, styling, or treatment services - ensuring seamless executions and beautiful results.",
+              "A one-on-one consultation designed to create a thoughtful and personalized hair experience. Your stylist will assess your hair\u2019s texture, density, condition, and history while discussing your lifestyle, styling routine, and long-term goals. This intentional session allows us to create a tailored plan for cutting, styling, or treatment services - ensuring seamless executions and beautiful results.",
           },
           {
-            name: "Girls Haircut & Style 10 & Under",
-            price: "from $40",
+            name: "Curly Hair Specialty Haircut",
+            price: "$140",
+            bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=180",
+            description:
+              "This luxury curly haircut is expertly crafted by Joanna, a certified curly hair stylist trained in Rezo Cut, Ouidad Cut, and Mizani AirCut techniques. Each cut is tailored to enhance curl definition, minimize frizz, and shape curls for long-lasting balance, movement, and health. Pricing based on consultation.",
+          },
+          {
+            name: "Girls Haircut & Style (10 & Under)",
+            price: "$40",
+            bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=21",
             description:
               "A luxury service for girls 10 and under, featuring a gentle shampoo, precision haircut, and expert styling for soft, polished, and beautifully finished hair.",
           },
           {
-            name: "Boys Haircut 10 & Under",
-            price: "from $35",
-            description:
-              "A gentle shampoo and precision haircut designed for boys 10 and under, finished with light styling for a clean polished look.",
-          },
-          {
-            name: "Women’s Haircut & Style",
-            price: "from $65",
+            name: "Woman\u2019s Haircut & Blowdry",
+            price: "$65",
+            bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=23",
             description:
               "A luxury haircut and style for guests 11 and up, featuring expert precision cutting, customized shaping, and professional styling for a polished, sophisticated finish.",
           },
           {
-            name: "Woman’s Haircut Only",
-            price: "from $55",
+            name: "Woman\u2019s Haircut Only",
+            price: "$55",
+            bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=24",
             description:
               "A luxury haircut for guests ages 11 and up, featuring expert precision cutting and customized shaping to enhance your natural beauty with a polished, refined look.",
           },
           {
-            name: "Men’s Haircut & Style",
-            price: "from $40",
-            description:
-              "A luxury shampoo and precision haircut tailored to your style, for ages 11 and up, finished with expert styling for a clean, polished look.",
-          },
-          {
-            name: "Blow-dry Style",
-            price: "from $45",
-            description:
-              "A luxury service begins with a relaxing shampoo, followed by blow-dry and styling for beautifully finished hair.",
-          },
-          {
-            name: "Hot Tool Add-On",
-            price: "$10",
-            description:
-              "Enhance your blow-dry with professional hot tool styling for added volume, curl or a sleek finish.",
-          },
-          {
-            name: "Braiding",
-            price: "from $30",
-            description:
-              "Luxurious braiding service is designed to create beautifully crafted, polished styles. Expertly styled for lasting wear, each braid enhances texture, shape, and elegance.",
-          },
-          {
             name: "Bang Trim",
             price: "$10",
+            bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=26",
             description:
               "A quick, precise trimming service designed to maintain the perfect shape, length, and style of your fringe. It also includes refreshing face-framing layers to keep your look balanced and polished.",
           },
           {
+            name: "Boy\u2019s Haircut (10 & Under)",
+            price: "$35",
+            bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=22",
+            description:
+              "A gentle shampoo and precision haircut designed for boys 10 and under, finished with light styling for a clean polished look.",
+          },
+          {
+            name: "Men\u2019s Haircut",
+            price: "$40",
+            bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=25",
+            description:
+              "A luxury shampoo and precision haircut tailored to your style, for ages 11 and up, finished with expert styling for a clean, polished look.",
+          },
+          {
             name: "Beard Trim & Shaping",
             price: "$15",
+            bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=27",
             description:
               "A tailored trim and precise shaping to refine your beard and enhance your natural features.",
           },
           {
             name: "Neck Trim",
             price: "$10",
+            bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=28",
             description:
               "A refined finishing service focused on precise cleanup and contouring of the neckline. This luxury touch creates a crisp, polished appearance, enhancing overall balance while maintaining a clean, well-groomed look.",
-          },
-          {
-            name: "Curly Hair Certified Haircut/Style with Joanna",
-            price: "from $140",
-            description:
-              "This luxury curly haircut is expertly crafted by Joanna, a certified curly hair stylist trained in Rezo Cut, Ouidad Cut, and Mizani AirCut techniques. Each cut is tailored to enhance curl definition, minimize frizz, and shape curls for long-lasting balance, movement, and health. Pricing based on consultation.",
-          },
-          {
-            name: "Wigs & Hairpieces",
-            price: "Pricing based on consultation",
-            description:
-              "A personalized consultation to discuss wig or hairpiece options, fit, customization, and care - designed to achieve a natural, seamless result.",
           },
         ],
       },
@@ -190,13 +181,13 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             name: "Partial Foil",
             price: "from $120",
             description:
-              "Lightens or darkens select sections – typically the crown and sides – to add brightness or depth and dimension without coloring the entire head.",
+              "Lightens or darkens select sections \u2013 typically the crown and sides \u2013 to add brightness or depth and dimension without coloring the entire head.",
           },
           {
             name: "Full Foil",
             price: "from $150",
             description:
-              "Lightens or darkens the entire head – including the crown, sides, and underneath – to create all-over brightness, depth and dimension.",
+              "Lightens or darkens the entire head \u2013 including the crown, sides, and underneath \u2013 to create all-over brightness, depth and dimension.",
           },
           {
             name: "Face Frame highlight",
@@ -208,7 +199,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             name: "Partial Balayage/Ombre",
             price: "from $160",
             description:
-              "Lightens select sections of the hair – typically around the face and upper layers – using a hand-painted technique for a soft, natural gradient from darker roots to lighter ends. It gives a sun-kissed, low-maintenance look without fully coloring the entire head.",
+              "Lightens select sections of the hair \u2013 typically around the face and upper layers \u2013 using a hand-painted technique for a soft, natural gradient from darker roots to lighter ends. It gives a sun-kissed, low-maintenance look without fully coloring the entire head.",
           },
           {
             name: "Full Balayage/Ombre",
@@ -296,7 +287,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             name: "Brazilian Blowout Split End Corrector",
             price: "$25",
             description:
-              "A powerful reparative treatment designed to instantly seal, strengthen, and protect fragile ends. This luxe therapy uses Brazilian Blowout’s signature bonding technology to mend split fibers, prevent future breakage, and create a smooth, polished finish. Hair is left silky, resilient, and beautifully refined.",
+              "A powerful reparative treatment designed to instantly seal, strengthen, and protect fragile ends. This luxe therapy uses Brazilian Blowout\u2019s signature bonding technology to mend split fibers, prevent future breakage, and create a smooth, polished finish. Hair is left silky, resilient, and beautifully refined.",
           },
           {
             name: "Rene Furterer Scalp Treatment",
@@ -338,7 +329,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             name: "Keune Bond Builder System",
             price: "$20",
             description:
-              "A professional bond-strengthening system that repairs and protects the hair’s internal structure during and after color or chemical services. This advanced treatment rebuilds broken bonds, reduces breakage, and improves strength, elasticity, and shine- leaving hair healthier, smoother, and more resilient. Suitable for all hair types.",
+              "A professional bond-strengthening system that repairs and protects the hair\u2019s internal structure during and after color or chemical services. This advanced treatment rebuilds broken bonds, reduces breakage, and improves strength, elasticity, and shine- leaving hair healthier, smoother, and more resilient. Suitable for all hair types.",
           },
         ],
       },
@@ -355,7 +346,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             name: "Keratin Complex Smoothing Treatment",
             price: "from $395",
             description:
-              "Experience the ultimate hair refinement. This professional keratin treatment infuses every strand with rich, smoothing proteins to eliminate frizz, repair damage, and unveil luminous shine. Hair is left silky, resilient, and perfectly polished – dramatically reducing blow-dry time and maintaining flawless smoothness for up to 5 months.",
+              "Experience the ultimate hair refinement. This professional keratin treatment infuses every strand with rich, smoothing proteins to eliminate frizz, repair damage, and unveil luminous shine. Hair is left silky, resilient, and perfectly polished \u2013 dramatically reducing blow-dry time and maintaining flawless smoothness for up to 5 months.",
           },
           {
             name: "Brazilian Express Treatment",
@@ -379,7 +370,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             name: "Virgin Relaxer",
             price: "from $200",
             description:
-              "Perfect for first-time smoothing, our Virgin Relaxer gently restructures natural texture for sleek, frizz-free hair that’s soft, shiny, and easy to style. This full-head application uses conditioning ingredients to protect the hair’s strength and moisture, leaving each strand silky, polished, and luxuriously smooth.",
+              "Perfect for first-time smoothing, our Virgin Relaxer gently restructures natural texture for sleek, frizz-free hair that\u2019s soft, shiny, and easy to style. This full-head application uses conditioning ingredients to protect the hair\u2019s strength and moisture, leaving each strand silky, polished, and luxuriously smooth.",
           },
           {
             name: "Retouch Relaxer",
@@ -418,7 +409,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
               "A luxury hand treatment featuring nail shaping, cuticle care, and a soothing hand massage, finished with a timeless French tip for a polished, elegant, and sophisticated look.",
           },
           {
-            name: "Men’s Manicure",
+            name: "Men\u2019s Manicure",
             price: "$28",
             description:
               "A luxury grooming service for hands, including nail shaping, cuticle care, and a revitalizing hand massage, leaving nails clean, healthy, and polished with a natural, refined finish.",
@@ -427,7 +418,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             name: "Structured Gel Manicure",
             price: "$75",
             description:
-              "A luxury gel manicure that includes a strengthening builder gel layer to reinforce the natural nail. This service adds support, durability, and a smooth, flawless finish, helping prevent breakage while extending the life of your manicure – perfect for clients who want stronger, longer-lasting nails.",
+              "A luxury gel manicure that includes a strengthening builder gel layer to reinforce the natural nail. This service adds support, durability, and a smooth, flawless finish, helping prevent breakage while extending the life of your manicure \u2013 perfect for clients who want stronger, longer-lasting nails.",
           },
           {
             name: "Spa Manicure",
@@ -489,7 +480,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
               "A luxurious foot treatment featuring a soothing soak, nail shaping, cuticle care, and gentle exfoliation, finished with a relaxing foot and calf massage and a timeless French tip for polished, elegant, and beautifully refined feet.",
           },
           {
-            name: "Men’s Pedicure",
+            name: "Men\u2019s Pedicure",
             price: "$56",
             description:
               "A luxury grooming treatment for feet, including a soothing soak, nail shaping, cuticle care, and exfoliation, finished with a revitalizing foot and calf massage for clean, healthy, and well-groomed feet.",
@@ -507,7 +498,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
               "A luxurious and indulgent foot treatment infused with the hydrating and soothing properties of fresh honey nectar. This pampering experience includes a soothing soak, gentle exfoliation, nail shaping, cuticle care, and a rich whipped honey-scented mask, finished with a relaxing foot and calf massage and your choice of polish for soft, nourished, and beautifully polished feet.",
           },
           {
-            name: "Express “Mini” Pedicure",
+            name: "Express \u201CMini\u201D Pedicure",
             price: "$45",
             description:
               "A luxury foot treatment designed for a quick refresh, including a soothing soak, nail shaping, and a light polish application, leaving feet clean, polished, and perfectly refreshed.",
@@ -540,7 +531,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             name: "Skin Analysis",
             price: "Pricing based on consultation",
             description:
-              "A personalized, in-depth skin assessment designed to understand your skin’s unique needs. During this consultation, your provider will evaluate your skin type, concerns, and goals while reviewing your current routine and lifestyle factors. You’ll receive expert recommendations for treatments and home care creating a tailored plan to support healthy, radiant skin.",
+              "A personalized, in-depth skin assessment designed to understand your skin\u2019s unique needs. During this consultation, your provider will evaluate your skin type, concerns, and goals while reviewing your current routine and lifestyle factors. You\u2019ll receive expert recommendations for treatments and home care creating a tailored plan to support healthy, radiant skin.",
           },
           {
             name: "Farmhouse Fresh Glow Facial",
@@ -567,10 +558,10 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
               "A purifying and exfoliating treatment designed to clarify the back.",
           },
           {
-            name: "Farmhouse Fresh Gentleman’s Facial",
+            name: "Farmhouse Fresh Gentleman\u2019s Facial",
             price: "$95",
             description:
-              "A deep-cleansing, restorative facial tailored to men’s skin needs.",
+              "A deep-cleansing, restorative facial tailored to men\u2019s skin needs.",
           },
           {
             name: "Express Glow Facial",
@@ -579,7 +570,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
               "A condensed radiance treatment for instant refresh and hydration.",
           },
           {
-            name: "Farmhouse Fresh “Freshly Squeezed” Vitamin C Facial",
+            name: "Farmhouse Fresh \u201CFreshly Squeezed\u201D Vitamin C Facial",
             price: "$140",
             description:
               "A potent brightening treatment infused with concentrated vitamin C to illuminate the complexion, improve clarity, and restore a youthful, radiant glow.",
@@ -690,7 +681,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
               "Detoxifying volcanic mud for renewed vitality.",
           },
           {
-            name: "Farmhouse Fresh Polished “Back” to Perfection",
+            name: "Farmhouse Fresh Polished \u201CBack\u201D to Perfection",
             price: "$80 | 30min",
             description:
               "A smoothing exfoliation and hydration treatment for the back.",
@@ -764,7 +755,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             name: "Expectant Mother Massage",
             price: "$120 | 60min / $160 | 90min",
             description:
-              "A soothing, supportive treatment tailored for pregnancy. Doctor’s note required.",
+              "A soothing, supportive treatment tailored for pregnancy. Doctor\u2019s note required.",
           },
           {
             name: "Reflexology Renewal",
@@ -788,7 +779,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             name: "Couples Massage",
             price: "$200 | 60min / $260 | 90min",
             description:
-              "Unwind together with a luxurious couple’s massage designed to relax the body, calm the mind, and restore balance. Side-by-side in a serene private setting, you and your guest will enjoy a customized massage experience tailored to your preferred pressure and focus areas for total relaxation and connection. Final pricing based on massage service selection.",
+              "Unwind together with a luxurious couple\u2019s massage designed to relax the body, calm the mind, and restore balance. Side-by-side in a serene private setting, you and your guest will enjoy a customized massage experience tailored to your preferred pressure and focus areas for total relaxation and connection. Final pricing based on massage service selection.",
           },
         ],
       },
@@ -851,7 +842,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
         note: "Please come with a clean face for make-up application. Hair must be clean and dry for formal styling.",
         items: [
           {
-            name: "Bride Hair – Trial Run or Wedding Day",
+            name: "Bride Hair \u2013 Trial Run or Wedding Day",
             price: "from $150",
           },
           {
@@ -863,11 +854,11 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             price: "$140",
           },
           {
-            name: "Bridal Party Hair – Blow dry",
+            name: "Bridal Party Hair \u2013 Blow dry",
             price: "from $65",
           },
           {
-            name: "Bridal Party Hair – Formal styling",
+            name: "Bridal Party Hair \u2013 Formal styling",
             price: "from $95",
           },
           {
@@ -885,7 +876,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
         note: "Out of salon fee: $250 + 18% gratuity added. Please have a clean face for make-up application. Hair must be clean and dry for formal styling.",
         items: [
           {
-            name: "Bride Hair – Wedding Day",
+            name: "Bride Hair \u2013 Wedding Day",
             price: "from $200",
           },
           {
@@ -897,11 +888,11 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             price: "$170",
           },
           {
-            name: "Bridal Party Hair – Blow dry",
+            name: "Bridal Party Hair \u2013 Blow dry",
             price: "from $85",
           },
           {
-            name: "Bridal Party Hair – Formal styling",
+            name: "Bridal Party Hair \u2013 Formal styling",
             price: "from $125",
           },
           {
@@ -915,7 +906,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
         ],
       },
       {
-        title: "Body Waxing – Facial & Detail Areas",
+        title: "Body Waxing \u2013 Facial & Detail Areas",
         items: [
           {
             name: "Brow wax",
@@ -939,7 +930,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
         ],
       },
       {
-        title: "Body Waxing – Upper Body",
+        title: "Body Waxing \u2013 Upper Body",
         items: [
           { name: "Half Arm", price: "$40", description: "A luxurious waxing service designed to remove unwanted hair from the lower or upper half of the arm with precision, leaving skin smooth, soft, and beautifully refined." },
           { name: "Full Arm", price: "$53", description: "A luxury waxing service that removes unwanted hair from the entire arm with precision, leaving skin smooth, soft, and beautifully polished." },
@@ -953,7 +944,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
         ],
       },
       {
-        title: "Body Waxing – Lower Body",
+        title: "Body Waxing \u2013 Lower Body",
         items: [
           { name: "Toes", price: "$17", description: "A gentle, precision waxing service to remove unwanted hair from the toes, leaving skin smooth, clean, and beautifully refined." },
           { name: "Half Leg", price: "$55", description: "A luxurious waxing service to remove unwanted hair from either the upper or lower half of the leg, leaving skin smooth, soft, and beautifully refined." },
@@ -989,13 +980,13 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
               "A luxury, customized makeup experience that includes full-face application and expertly applies lashes. Enhance your features with flawless foundation, eyeshadow, eyeliner, contouring, blush, and lip color, finishing with beautifully defined, eye-opening lashes for a polished, glamorous look.",
           },
           {
-            name: "“Eyes Only” Makeup",
+            name: "\u201CEyes Only\u201D Makeup",
             price: "$75",
             description:
               "A luxury service focused on enhancing your eyes, including expertly blended eyeshadow, eyeliner, and mascara.",
           },
           {
-            name: "“Eyes Only” Makeup with Lashes",
+            name: "\u201CEyes Only\u201D Makeup with Lashes",
             price: "$95",
             description:
               "A luxurious service focused on the eyes, featuring expertly blended eyeshadow, eyeliner, and mascara, finished with professional lash application for beautifully defined, glamorous, and polished eyes.",
@@ -1011,4 +1002,3 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
     ],
   },
 ]
-

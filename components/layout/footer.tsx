@@ -69,11 +69,12 @@ export default function Footer() {
             <h3 className="text-sm font-bold uppercase mb-8 tracking-[0.2em] text-salon-blue">HOURS</h3>
             <ul className="space-y-3 text-sm font-light">
               <li className="flex justify-between md:justify-start md:space-x-4"><span>MONDAY</span> <span className="opacity-40">CLOSED</span></li>
-              <li className="flex justify-between md:justify-start md:space-x-4"><span>TUESDAY</span> <span>9AM - 6PM</span></li>
-              <li className="flex justify-between md:justify-start md:space-x-4"><span>WEDNESDAY</span> <span>9AM - 4PM</span></li>
-              <li className="flex justify-between md:justify-start md:space-x-4"><span>THURSDAY</span> <span>9AM - 6PM</span></li>
+              <li className="flex justify-between md:justify-start md:space-x-4"><span>TUESDAY</span> <span>9AM - 7PM</span></li>
+              <li className="flex justify-between md:justify-start md:space-x-4"><span>WEDNESDAY</span> <span>9AM - 7PM</span></li>
+              <li className="flex justify-between md:justify-start md:space-x-4"><span>THURSDAY</span> <span>9AM - 7PM</span></li>
               <li className="flex justify-between md:justify-start md:space-x-4"><span>FRIDAY</span> <span>9AM - 6PM</span></li>
-              <li className="flex justify-between md:justify-start md:space-x-4"><span>SATURDAY</span> <span>9AM - 4PM</span></li>
+              <li className="flex justify-between md:justify-start md:space-x-4"><span>SATURDAY</span> <span>9AM - 5PM</span></li>
+              <li className="flex justify-between md:justify-start md:space-x-4"><span>SUNDAY</span> <span>9AM - 3PM</span></li>
             </ul>
           </div>
 

@@ -10,7 +10,7 @@ const locations = [
     name: "Kossof Kraaz Salon - Linconshire",
     address: "410 Milwaukee Ave, Lincolnshire, IL 60069",
     phone: "847-821-6604",
-    hours: "10:00 AM - 9:00 PM",
+    hours: "Mon: Closed | Tue-Thu: 9:00 AM - 7:00 PM | Fri: 9:00 AM - 6:00 PM | Sat: 9:00 AM - 5:00 PM | Sun: 9:00 AM - 3:00 PM",
   }
 ]
 

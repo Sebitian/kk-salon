@@ -14,39 +14,19 @@ export default function CofoundersTeaser() {
             <div className="w-16 h-1 bg-salon-raspberry mx-auto mt-4" />
           </div>
 
-          {/* Amy placeholder uses Keeley for now */}
-          <div className="mt-8 sm:mt-10 flex items-center justify-center gap-8 sm:gap-10">
-            <div className="flex flex-col items-center gap-3">
-              <div className="relative h-36 w-36 sm:h-44 sm:w-44 overflow-hidden rounded-full border-4 border-salon-blue/40 shadow-lg">
-                <Image
-                  src="/keeley.jpg"
-                  alt="Keeley Kossof"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(min-width: 640px) 176px, 144px"
-                />
-              </div>
-              <span className="text-salon-brown font-semibold tracking-widest uppercase text-sm">
-                Keeley
-              </span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <div className="relative h-36 w-36 sm:h-44 sm:w-44 overflow-hidden rounded-full border-4 border-salon-blue/40 shadow-lg">
-                <Image
-                  src="/keeley.jpg"
-                  alt="Amy Kraaz"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(min-width: 640px) 176px, 144px"
-                />
-              </div>
-              <span className="text-salon-brown font-semibold tracking-widest uppercase text-sm">
-                Amy
-              </span>
+          <div className="mt-8 sm:mt-10">
+            <div className="relative h-56 sm:h-64 lg:h-72 w-full max-w-4xl mx-auto overflow-hidden border border-salon-blue/40 border-b-0 rounded-t-sm">
+              <Image
+                src="/ky_amy.jpeg"
+                alt="Keeley Kossof and Amy Kraaz"
+                fill
+                className="object-cover object-center"
+                sizes="(min-width: 1280px) 896px, (min-width: 1024px) 80vw, 100vw"
+              />
             </div>
           </div>
 
-          <div className="mt-8 sm:mt-12 bg-salon-taupe/40 border border-salon-blue/40 rounded-sm shadow-md p-5 sm:p-10 text-left">
+          <div className="mt-0 bg-salon-taupe/40 border border-salon-blue/40 rounded-b-sm shadow-md p-5 sm:p-10 text-left">
             <div className="space-y-5 text-salon-brown/80 leading-relaxed text-base sm:text-lg font-light">
               <p>
                 <strong className="font-semibold text-salon-brown">

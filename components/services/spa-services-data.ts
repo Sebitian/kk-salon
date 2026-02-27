@@ -1,6 +1,6 @@
 import { ServicesSection } from "./services-data"
 
-export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
+const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
   {
     id: "waxing",
     title: "Waxing",
@@ -14,6 +14,8 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
     groups: [
       {
         title: "Body Waxing - Facial & Detail Areas",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=12",
+        bookingEmbedTitle: "Kossof Salon Spa face and detail body waxing Mangomint booking menu",
         items: [
           {
             name: "Brow Wax",
@@ -73,6 +75,8 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
       },
       {
         title: "Body Waxing - Upper Body",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=17",
+        bookingEmbedTitle: "Kossof Salon Spa upper body waxing Mangomint booking menu",
         items: [
           {
             name: "Half Arm",
@@ -132,6 +136,8 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
       },
       {
         title: "Body Waxing - Lower Body",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=18",
+        bookingEmbedTitle: "Kossof Salon Spa lower body waxing Mangomint booking menu",
         items: [
           {
             name: "Toes",
@@ -192,6 +198,8 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
     groups: [
       {
         title: "Lashes, Brows & Beauty",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=23",
+        bookingEmbedTitle: "Kossof Salon Spa lashes brows and beauty Mangomint booking menu",
         items: [
           { name: "Brow Tint", price: "$22", description: "Enhances fullness and definition." },
           { name: "Lash Tint", price: "$35", description: "Darkens and enhances natural lashes." },
@@ -224,6 +232,8 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
     groups: [
       {
         title: "Facials",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=7",
+        bookingEmbedTitle: "Kossof Salon Spa facials Mangomint booking menu",
         items: [
           {
             name: "Skin Analysis",
@@ -295,6 +305,8 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
       },
       {
         title: "Advanced Facials",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=19",
+        bookingEmbedTitle: "Kossof Salon Spa advanced facials Mangomint booking menu",
         items: [
           {
             name: "Signature Microdermabrasion Facial",
@@ -312,6 +324,8 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
       },
       {
         title: "Facial Enhancements",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=26",
+        bookingEmbedTitle: "Kossof Salon Spa facial enhancements Mangomint booking menu",
         items: [
           {
             name: "Gua Sha Sculpting",
@@ -360,6 +374,8 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
     groups: [
       {
         title: "Massage Therapies",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=5",
+        bookingEmbedTitle: "Kossof Salon Spa massage therapies Mangomint booking menu",
         items: [
           {
             name: "Kossof Signature Massage",
@@ -449,6 +465,8 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
       },
       {
         title: "Massage Enhancements",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=21",
+        bookingEmbedTitle: "Kossof Salon Spa massage enhancements Mangomint booking menu",
         items: [
           {
             name: "Farmhouse Fresh Hand & Foot Treatment",
@@ -503,6 +521,8 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
     groups: [
       {
         title: "Body Treatments",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=11",
+        bookingEmbedTitle: "Kossof Salon Spa body treatments Mangomint booking menu",
         items: [
           {
             name: "Farmhouse Fresh Citrus Glow Body Polish",
@@ -550,4 +570,74 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
       },
     ],
   },
+]
+
+const SPA_SPLIT_SECTION_META: Record<string, { id: string; title?: string; intro: string }> = {
+  "Body Waxing - Facial & Detail Areas": {
+    id: "waxing-face-detail",
+    title: "Face & Detail Body Waxing",
+    intro: "Precision body waxing services for facial and detail areas.",
+  },
+  "Body Waxing - Upper Body": {
+    id: "waxing-upper-body",
+    title: "Upper Body Waxing",
+    intro: "Precision body waxing services for upper-body areas.",
+  },
+  "Body Waxing - Lower Body": {
+    id: "waxing-lower-body",
+    title: "Lower Body Waxing",
+    intro: "Precision body waxing services for lower-body areas.",
+  },
+  Facials: {
+    id: "facials",
+    intro: "Core facials for healthy, radiant skin.",
+  },
+  "Advanced Facials": {
+    id: "advanced-facials",
+    intro: "Advanced facial treatments focused on tone, texture, and renewal.",
+  },
+  "Facial Enhancements": {
+    id: "facial-enhancements",
+    intro: "Targeted facial add-ons and enhancements for glow and balance.",
+  },
+  "Massage Therapies": {
+    id: "massage",
+    title: "Massage",
+    intro: "Therapeutic and relaxation massage services.",
+  },
+  "Massage Enhancements": {
+    id: "massage-enhancements",
+    intro: "Optional massage enhancements for deeper restoration.",
+  },
+}
+
+const splitSectionGroups = (section: ServicesSection, fallbackPrefix: string): ServicesSection[] =>
+  section.groups.map((group, index) => {
+    const meta = SPA_SPLIT_SECTION_META[group.title]
+
+    return {
+      id: meta?.id ?? `${fallbackPrefix}-${index + 1}`,
+      title: meta?.title ?? group.title,
+      intro: meta?.intro ?? section.intro,
+      textLeftOnDesktop: index % 2 === 0,
+      textPanelBgClassName: index % 2 === 0 ? "bg-[#cad7de]/20" : "bg-white",
+      image: section.image,
+      groups: [group],
+    }
+  })
+
+const getSpaSectionById = (id: string): ServicesSection => {
+  const section = SPA_BASE_SERVICES_SECTIONS.find((item) => item.id === id)
+  if (!section) {
+    throw new Error(`Missing spa section: ${id}`)
+  }
+  return section
+}
+
+export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
+  ...splitSectionGroups(getSpaSectionById("waxing"), "waxing"),
+  getSpaSectionById("lashes-brows"),
+  ...splitSectionGroups(getSpaSectionById("facials"), "facials"),
+  ...splitSectionGroups(getSpaSectionById("massages"), "massages"),
+  getSpaSectionById("body-treatments"),
 ]

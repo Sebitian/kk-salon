@@ -215,10 +215,10 @@ export default function BookingForm() {
                       selected={date}
                       onSelect={setDate}
                       disabled={(date) => {
-                        // Disable past dates and Sundays
+                        // Disable past dates and Mondays (salon closed)
                         const today = new Date()
                         today.setHours(0, 0, 0, 0)
-                        return date < today || date.getDay() === 0
+                        return date < today || date.getDay() === 1
                       }}
                       className="rounded-md"
                     />

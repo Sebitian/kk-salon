@@ -26,21 +26,27 @@ export default function JsonLd() {
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Tuesday", "Thursday", "Friday"],
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
           "opens": "09:00",
           "closes": "18:00"
         },
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Wednesday",
+          "dayOfWeek": "Saturday",
           "opens": "09:00",
-          "closes": "16:00"
+          "closes": "17:00"
         },
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
+          "dayOfWeek": "Sunday",
           "opens": "09:00",
-          "closes": "16:00"
+          "closes": "15:00"
         }
       ],
       "sameAs": [

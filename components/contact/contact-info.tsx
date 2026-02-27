@@ -62,24 +62,28 @@ export default function ContactInfo() {
             <div className="text-gray-600">
               <p>Monday: CLOSED</p>
               <p>
-                <meta itemProp="openingHours" content="Tu 09:00-18:00" />
-                Tuesday: 9:00 AM - 6:00 PM
+                <meta itemProp="openingHours" content="Tu 09:00-19:00" />
+                Tuesday: 9:00 AM - 7:00 PM
               </p>
               <p>
-                <meta itemProp="openingHours" content="We 09:00-16:00" />
-                Wednesday: 9:00 AM - 4:00 PM
+                <meta itemProp="openingHours" content="We 09:00-19:00" />
+                Wednesday: 9:00 AM - 7:00 PM
               </p>
               <p>
-                <meta itemProp="openingHours" content="Th 09:00-18:00" />
-                Thursday: 9:00 AM - 6:00 PM
+                <meta itemProp="openingHours" content="Th 09:00-19:00" />
+                Thursday: 9:00 AM - 7:00 PM
               </p>
               <p>
                 <meta itemProp="openingHours" content="Fr 09:00-18:00" />
                 Friday: 9:00 AM - 6:00 PM
               </p>
               <p>
-                <meta itemProp="openingHours" content="Sa 09:00-16:00" />
-                Saturday: 9:00 AM - 4:00 PM
+                <meta itemProp="openingHours" content="Sa 09:00-17:00" />
+                Saturday: 9:00 AM - 5:00 PM
+              </p>
+              <p>
+                <meta itemProp="openingHours" content="Su 09:00-15:00" />
+                Sunday: 9:00 AM - 3:00 PM
               </p>
             </div>
           </div>
