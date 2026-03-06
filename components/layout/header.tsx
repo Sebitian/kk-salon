@@ -112,7 +112,7 @@ export default function Header() {
               href="https://booking.mangomint.com/kossofsalonspa"
               className="text-sm font-semibold tracking-widest transition-colors bg-primary text-white px-4 py-2 rounded-sm hover:bg-primary/90"
             >
-              BOOK ONLINE
+              BOOK NOW
             </Link>
           </div>
 
@@ -121,7 +121,7 @@ export default function Header() {
             <Button
               size="icon"
               variant="ghost"
-              className={useLightHeader ? "text-salon-brown" : "text-white"}
+              className="text-primary hover:text-primary/90"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -177,7 +177,7 @@ export default function Header() {
               className="block px-8 py-4 text-sm font-semibold tracking-widest text-primary"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              BOOK ONLINE
+              BOOK NOW
             </Link>
           </div>
         )}

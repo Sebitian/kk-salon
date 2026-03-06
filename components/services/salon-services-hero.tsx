@@ -16,8 +16,7 @@ export default function SalonServicesHero() {
             Hair, Nails & Makeup
           </p>
           <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto italic font-light pt-2">
-            Explore our full menu of elevated salon services, from precision cuts and custom color
-            to retexturizing, nail care, and non-wedding makeup artistry.
+            Explore our full menu of elevated salon services.
           </p>
           <div className="pt-8 flex w-full items-center justify-center">
             <Link

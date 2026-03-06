@@ -89,7 +89,7 @@ export default function Footer() {
               <Link href="/faq" className="block hover:text-salon-blue transition-colors">FAQ</Link>
             </div>
             <Button asChild className="bg-salon-raspberry hover:bg-salon-raspberry/90 text-white rounded-sm tracking-widest text-xs h-11 px-6">
-              <Link href="https://booking.mangomint.com/kossofsalonspa">BOOK ONLINE</Link>
+              <Link href="https://booking.mangomint.com/kossofsalonspa">BOOK NOW</Link>
             </Button>
           </div>
         </div>

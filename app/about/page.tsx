@@ -338,7 +338,7 @@ export default function AboutPage() {
                   href="https://booking.mangomint.com/kossofsalonspa"
                   className="bg-white hover:bg-white/90 text-salon-brown font-bold py-4 px-8 rounded-sm transition-colors text-lg shadow-lg tracking-widest uppercase"
                 >
-                  Book Online
+                  Book Now
                 </Link>
               </div>
             </div>
