@@ -17,7 +17,6 @@ const servicesDropdown = [
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [showCenterLogo, setShowCenterLogo] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
   const isHome = pathname === "/"
@@ -25,16 +24,13 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const y = window.scrollY
-      setIsScrolled(y > 10)
-      // On home, reveal header logo only after the hero section is mostly passed.
-      setShowCenterLogo(!isHome || y > window.innerHeight * 0.9)
+      setIsScrolled(window.scrollY > 10)
     }
 
     handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [isHome])
+  }, [])
 
   return (
     <header
@@ -75,26 +71,26 @@ export default function Header() {
           </div>
 
           {/* Center - Logo */}
-          {showCenterLogo && (
-            <div className="absolute left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center">
-              <Link href="/" className="block">
-                <div className="relative w-40 h-16 sm:w-44 sm:h-20 lg:w-48 lg:h-20">
-                  <Image
-                    src={useLightHeader ? "/logo-black-nobg.png" : "/logo-white.png"}
-                    alt="Kossof Salon Spa"
-                    fill
-                    className="object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.2)]"
-                    priority
-                  />
-                </div>
-              </Link>
-            </div>
-          )}
+          <div className="absolute left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center">
+            <Link href="/" className="block">
+              <div className="relative w-40 h-16 sm:w-44 sm:h-20 lg:w-48 lg:h-20">
+                <Image
+                  src={useLightHeader ? "/logo-black-nobg.png" : "/logo-white.png"}
+                  alt="Kossof Salon Spa"
+                  fill
+                  className="object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.2)]"
+                  priority
+                />
+              </div>
+            </Link>
+          </div>
 
           {/* Right side - Navigation (desktop) */}
           <div className="hidden lg:flex flex-1 items-center justify-end space-x-8">
             <Link
               href="https://shop.saloninteractive.com/store/kossof-salon-spa-ltd-91277"
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 "text-sm font-semibold tracking-widest transition-colors hover:text-primary",
                 useLightHeader ? "text-salon-brown" : "text-white"
@@ -162,6 +158,8 @@ export default function Header() {
 
             <Link
               href="https://shop.saloninteractive.com/store/kossof-salon-spa-ltd-91277"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block px-8 py-4 text-sm font-semibold tracking-widest text-salon-brown border-b border-gray-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
