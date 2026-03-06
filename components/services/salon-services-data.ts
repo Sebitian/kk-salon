@@ -612,7 +612,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = withDefaultDuration([
   ...SALON_NAIL_SPLIT_SECTIONS,
   {
     id: "beauty",
-    title: "Makeup Artistry (Non-Wedding)",
+    title: "Makeup Artistry",
     intro: "Professional makeup services for events and special occasions.",
     textLeftOnDesktop: true,
     textPanelBgClassName: "bg-[#ede7e4]/20",
