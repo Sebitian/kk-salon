@@ -23,6 +23,8 @@ export default function Home() {
           <div className="mx-auto flex w-full max-w-md flex-col items-center gap-3 sm:max-w-2xl sm:flex-row sm:flex-wrap sm:justify-center">
             <Link
               href="https://booking.mangomint.com/kossofsalonspa"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex w-64 items-center justify-center bg-salon-raspberry text-white px-8 py-3 rounded-sm text-xs sm:text-sm font-semibold tracking-widest uppercase hover:bg-salon-raspberry/90 transition-colors"
             >
               Book Now

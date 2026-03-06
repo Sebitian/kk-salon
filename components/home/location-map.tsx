@@ -55,7 +55,9 @@ export default function LocationMap() {
             </div>
 
             <Button asChild size="sm" className="bg-primary text-white hover:bg-primary/90">
-              <Link href="https://booking.mangomint.com/kossofsalonspa">Book Now</Link>
+              <Link href="https://booking.mangomint.com/kossofsalonspa" target="_blank" rel="noopener noreferrer">
+                Book Now
+              </Link>
             </Button>
           </div>
         ))}

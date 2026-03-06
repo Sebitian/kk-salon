@@ -36,12 +36,15 @@ export default async function ProductsVideoShowcase() {
         </div>
 
         <div
-          className="md:hidden -mx-6 px-6 overflow-x-scroll snap-x snap-mandatory scroll-smooth touch-pan-x [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          className="-mx-6 px-6 overflow-x-scroll snap-x snap-mandatory scroll-smooth touch-pan-x [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:overflow-visible md:snap-none"
           style={{ WebkitOverflowScrolling: "touch" }}
         >
-          <div className="flex gap-6 pb-2">
+          <div className="flex gap-6 pb-2 md:grid md:grid-cols-3 md:gap-16 md:pb-0">
             {productLinesWithUrls.map((line) => (
-              <div key={line.name} className="flex-none w-[85vw] max-w-sm snap-center flex flex-col group">
+              <div
+                key={line.name}
+                className="flex-none w-[85vw] max-w-sm snap-center md:w-auto md:max-w-none md:snap-none flex flex-col group"
+              >
                 <div className="relative aspect-[4/5] overflow-hidden rounded-sm mb-8 shadow-2xl [contain:paint]">
                   <video
                     src={line.video}
@@ -49,7 +52,7 @@ export default async function ProductsVideoShowcase() {
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out transform-gpu will-change-transform backface-hidden group-hover:scale-110 pointer-events-none"
                   />
                   <div className="absolute inset-0 bg-salon-brown/10 group-hover:bg-salon-brown/0 transition-colors duration-500"></div>
@@ -59,27 +62,6 @@ export default async function ProductsVideoShowcase() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-16">
-          {productLinesWithUrls.map((line) => (
-            <div key={line.name} className="flex flex-col group">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-sm mb-8 shadow-2xl [contain:paint]">
-                <video
-                  src={line.video}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out transform-gpu will-change-transform backface-hidden group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-salon-brown/10 group-hover:bg-salon-brown/0 transition-colors duration-500"></div>
-              </div>
-              <h3 className="text-2xl font-bold text-salon-brown mb-4 tracking-wider uppercase">{line.name}</h3>
-              <p className="text-salon-brown/70 font-light leading-relaxed">{line.description}</p>
-            </div>
-          ))}
         </div>
 
         <div className="mt-12 text-center">

@@ -82,14 +82,24 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h3 className="text-sm font-bold uppercase mb-8 tracking-[0.2em] text-salon-blue">EXPLORE</h3>
             <div className="space-y-3 text-sm font-light mb-8">
+              <Link
+                href="https://shop.saloninteractive.com/store/kossof-salon-spa-ltd-91277"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-salon-blue transition-colors"
+              >
+                Shop
+              </Link>
               <Link href="/salon-services" className="block hover:text-salon-blue transition-colors">Salon Services</Link>
               <Link href="/spa-services" className="block hover:text-salon-blue transition-colors">Spa Services</Link>
               <Link href="/weddings-services" className="block hover:text-salon-blue transition-colors">Wedding Services</Link>
-              <Link href="/about" className="block hover:text-salon-blue transition-colors">Talent</Link>
+              <Link href="/about" className="block hover:text-salon-blue transition-colors">About Us</Link>
               <Link href="/faq" className="block hover:text-salon-blue transition-colors">FAQ</Link>
             </div>
             <Button asChild className="bg-salon-raspberry hover:bg-salon-raspberry/90 text-white rounded-sm tracking-widest text-xs h-11 px-6">
-              <Link href="https://booking.mangomint.com/kossofsalonspa">BOOK NOW</Link>
+              <Link href="https://booking.mangomint.com/kossofsalonspa" target="_blank" rel="noopener noreferrer">
+                BOOK NOW
+              </Link>
             </Button>
           </div>
         </div>

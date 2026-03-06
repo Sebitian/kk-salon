@@ -47,7 +47,9 @@ export default function ServiceCard({ service }: ServiceProps) {
           asChild
           className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-full shadow-md"
         >
-          <Link href="https://booking.mangomint.com/kossofsalonspa">Book Now</Link>
+          <Link href="https://booking.mangomint.com/kossofsalonspa" target="_blank" rel="noopener noreferrer">
+            Book Now
+          </Link>
         </Button>
       </div>
     </div>

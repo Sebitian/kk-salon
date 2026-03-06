@@ -110,6 +110,8 @@ export default function Header() {
             </Link>
             <Link
               href="https://booking.mangomint.com/kossofsalonspa"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-semibold tracking-widest transition-colors bg-primary text-white px-4 py-2 rounded-sm hover:bg-primary/90"
             >
               BOOK NOW
@@ -174,6 +176,8 @@ export default function Header() {
             </Link>
             <Link
               href="https://booking.mangomint.com/kossofsalonspa"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block px-8 py-4 text-sm font-semibold tracking-widest text-primary"
               onClick={() => setIsMobileMenuOpen(false)}
             >

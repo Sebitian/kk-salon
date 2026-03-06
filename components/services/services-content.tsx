@@ -713,6 +713,8 @@ export default function ServicesContent({
           <div className="container mx-auto max-w-7xl px-8 py-14 sm:py-16 flex justify-center">
             <Link
               href="https://booking.mangomint.com/kossofsalonspa"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex w-full max-w-xs sm:w-auto sm:min-w-[220px] items-center justify-center whitespace-nowrap bg-salon-raspberry text-white px-8 py-3.5 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase hover:bg-salon-raspberry/90 transition-colors"
             >
               Book Now
