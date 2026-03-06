@@ -8,15 +8,6 @@ export default function CofoundersTeaser() {
       <div className="container-custom">
         <div className="mx-auto max-w-5xl">
           <div className="text-center">
-            <div className="mb-6">
-              <Button
-                asChild
-                size="lg"
-                className="text-xs sm:text-sm tracking-[0.2em] px-8 sm:px-10 py-6 bg-salon-raspberry hover:bg-salon-raspberry/90 text-white transition-all duration-300 rounded-sm uppercase w-full sm:w-auto"
-              >
-                <Link href="https://booking.mangomint.com/kossofsalonspa">Book Online</Link>
-              </Button>
-            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-salon-brown">
               About Us
             </h2>

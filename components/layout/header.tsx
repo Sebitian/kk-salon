@@ -17,22 +17,30 @@ const servicesDropdown = [
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [showCenterLogo, setShowCenterLogo] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
   const isHome = pathname === "/"
   const useLightHeader = !isHome || isScrolled
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10)
+    const handleScroll = () => {
+      const y = window.scrollY
+      setIsScrolled(y > 10)
+      // On home, reveal header logo only after the hero section is mostly passed.
+      setShowCenterLogo(!isHome || y > window.innerHeight * 0.9)
+    }
+
+    handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [isHome])
 
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 animate-fadeIn ${
         useLightHeader
-          ? "bg-white/90 backdrop-blur-md shadow-sm py-4" 
+          ? "bg-white/95 backdrop-blur-md shadow-lg py-4" 
           : "bg-transparent py-6"
       }`}
     >
@@ -48,7 +56,7 @@ export default function Header() {
                 pathname === "/about" && "text-primary"
               )}
             >
-              TALENT
+              ABOUT US
             </Link>
 
             {servicesDropdown.map((item) => (
@@ -67,19 +75,21 @@ export default function Header() {
           </div>
 
           {/* Center - Logo */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center">
-            <Link href="/" className="block">
-              <div className="relative w-48 h-24 sm:w-56 sm:h-28 lg:w-64 lg:h-32">
-                <Image
-                  src={useLightHeader ? "/logo-black-nobg.png" : "/logo-white.png"}
-                  alt="Kossof Salon Spa"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </Link>
-          </div>
+          {showCenterLogo && (
+            <div className="absolute left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center">
+              <Link href="/" className="block">
+                <div className="relative w-40 h-16 sm:w-44 sm:h-20 lg:w-48 lg:h-20">
+                  <Image
+                    src={useLightHeader ? "/logo-black-nobg.png" : "/logo-white.png"}
+                    alt="Kossof Salon Spa"
+                    fill
+                    className="object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.2)]"
+                    priority
+                  />
+                </div>
+              </Link>
+            </div>
+          )}
 
           {/* Right side - Navigation (desktop) */}
           <div className="hidden lg:flex flex-1 items-center justify-end space-x-8">
@@ -90,7 +100,7 @@ export default function Header() {
                 useLightHeader ? "text-salon-brown" : "text-white"
               )}
             >
-              PRODUCTS
+              SHOP
             </Link>
             <Link
               href="/faq"
@@ -131,7 +141,7 @@ export default function Header() {
               className="block px-8 py-4 text-sm font-semibold tracking-widest text-salon-brown border-b border-gray-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              TALENT
+              ABOUT US
             </Link>
 
             {servicesDropdown.map((item) => (
@@ -155,7 +165,7 @@ export default function Header() {
               className="block px-8 py-4 text-sm font-semibold tracking-widest text-salon-brown border-b border-gray-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              PRODUCTS
+              SHOP
             </Link>
             <Link
               href="/faq"

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CofoundersTeaser from "@/components/home/cofounders-teaser";
 import MeetTeamSection from "@/components/home/meet-team-section";
 
 export const metadata: Metadata = {
@@ -293,6 +294,7 @@ export default function AboutPage() {
 
       <div className="pt-24 bg-white" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
         {/* Cofounders Section (moved from Home) */}
+        <CofoundersTeaser />
         <MeetTeamSection />
 
         <div className="container-custom mb-20">
