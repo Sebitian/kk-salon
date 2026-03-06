@@ -10,6 +10,7 @@ import ShopShowcase from "@/components/home/shop-showcase"
 import ShopCollections from "@/components/home/shop-collections"
 import ComingSoonPage from "@/components/home/coming-soon"
 import CofoundersTeaser from "@/components/home/cofounders-teaser"
+import ProductsVideoShowcase from "@/components/home/products-video-showcase"
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <HeroSection />
       <CofoundersTeaser />
       <WhyChooseUsSection />
+      <ProductsVideoShowcase />
       <TestimonialsSection />
       <MediaSection />
       

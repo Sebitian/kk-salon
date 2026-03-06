@@ -67,7 +67,7 @@ export default function Header() {
           </div>
 
           {/* Center - Logo */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
+          <div className="absolute left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center">
             <Link href="/" className="block">
               <div className="relative w-48 h-24 sm:w-56 sm:h-28 lg:w-64 lg:h-32">
                 <Image
@@ -84,11 +84,10 @@ export default function Header() {
           {/* Right side - Navigation (desktop) */}
           <div className="hidden lg:flex flex-1 items-center justify-end space-x-8">
             <Link
-              href="/products"
+              href="https://shop.saloninteractive.com/store/kossof-salon-spa-ltd-91277"
               className={cn(
                 "text-sm font-semibold tracking-widest transition-colors hover:text-primary",
-                useLightHeader ? "text-salon-brown" : "text-white",
-                pathname === "/products" && "text-primary"
+                useLightHeader ? "text-salon-brown" : "text-white"
               )}
             >
               PRODUCTS
@@ -152,7 +151,7 @@ export default function Header() {
             ))}
 
             <Link
-              href="/products"
+              href="https://shop.saloninteractive.com/store/kossof-salon-spa-ltd-91277"
               className="block px-8 py-4 text-sm font-semibold tracking-widest text-salon-brown border-b border-gray-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
