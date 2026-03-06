@@ -1,4 +1,5 @@
 import { getBlobUrls } from "@/lib/blob"
+import Link from "next/link"
 
 const productLines = [
   {
@@ -65,14 +66,12 @@ export default async function ProductsVideoShowcase() {
         </div>
 
         <div className="mt-12 text-center">
-          <a
-            href="https://shop.saloninteractive.com/store/kossof-salon-spa-ltd-91277"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/products"
             className="inline-flex items-center justify-center bg-salon-raspberry text-white px-8 py-3 rounded-sm text-sm font-semibold tracking-widest uppercase hover:bg-salon-raspberry/90 transition-colors"
           >
             Shop Products
-          </a>
+          </Link>
         </div>
       </div>
     </section>

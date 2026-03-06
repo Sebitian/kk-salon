@@ -88,7 +88,16 @@ export default function Header() {
           {/* Right side - Navigation (desktop) */}
           <div className="hidden lg:flex flex-1 items-center justify-end space-x-8">
             <Link
-              href="https://shop.saloninteractive.com/store/kossof-salon-spa-ltd-91277"
+              href="/products"
+              className={cn(
+                "text-sm font-semibold tracking-widest transition-colors hover:text-primary",
+                useLightHeader ? "text-salon-brown" : "text-white"
+              )}
+            >
+              SHOP
+            </Link>
+            <Link
+              href="https://clients.mangomint.com/gift-cards/741141"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
@@ -96,7 +105,7 @@ export default function Header() {
                 useLightHeader ? "text-salon-brown" : "text-white"
               )}
             >
-              SHOP
+              GIFT CARDS
             </Link>
             <Link
               href="/faq"
@@ -159,13 +168,20 @@ export default function Header() {
             ))}
 
             <Link
-              href="https://shop.saloninteractive.com/store/kossof-salon-spa-ltd-91277"
+              href="/products"
+              className="block px-8 py-4 text-sm font-semibold tracking-widest text-salon-brown border-b border-gray-50"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              SHOP
+            </Link>
+            <Link
+              href="https://clients.mangomint.com/gift-cards/741141"
               target="_blank"
               rel="noopener noreferrer"
               className="block px-8 py-4 text-sm font-semibold tracking-widest text-salon-brown border-b border-gray-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              SHOP
+              GIFT CARDS
             </Link>
             <Link
               href="/faq"

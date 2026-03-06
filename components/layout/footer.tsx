@@ -83,9 +83,7 @@ export default function Footer() {
             <h3 className="text-sm font-bold uppercase mb-8 tracking-[0.2em] text-salon-blue">EXPLORE</h3>
             <div className="space-y-3 text-sm font-light mb-8">
               <Link
-                href="https://shop.saloninteractive.com/store/kossof-salon-spa-ltd-91277"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/products"
                 className="block hover:text-salon-blue transition-colors"
               >
                 Shop
