@@ -6,43 +6,30 @@ import useEmblaCarousel from "embla-carousel-react"
 const testimonials = [
   {
     id: 1,
-    name: "Rachel M.",
+    name: "Deanna",
     source: "Google Review",
+    sourceUrl: "https://share.google/5dFFCjpqnv3nfmgr7",
     rating: 5,
     quote:
-      "I love this salon! The stylists do an incredible job with color and cuts. They are really wonderful people with whom to spend time. Truly, my favorite hair cut ever - right out of the salon.",
+      "When I moved from the city to the suburbs, I had a difficult time finding a stylist I was comfortable with until I discovered Keeley. I was thrilled to learn that she had opened her own salon. The new salon is incredible and was packed within just two weeks of its opening. This success is a testament to the exceptional talent and dedication of the staff who have consistently provided exceptional service to so many clients, leading them to follow her to her new location.",
   },
   {
     id: 2,
-    name: "Sarah L.",
+    name: "Merrilee",
     source: "Google Review",
+    sourceUrl: "https://share.google/10PLPmkspGOLqbyez",
     rating: 5,
     quote:
-      "Best salon experience I've ever had! The team is incredibly talented and makes you feel so welcome. Every visit feels like a luxury experience.",
+      "I loved my experience at Kossof Salon! I had struggled to find a high-quality salon at a reasonable price, but they truly exceeded my expectations. They were able to fix my hair color and give me a great haircut, all while really listening to what I wanted. I felt heard, cared for, and so happy with the results. There great with color and cut.",
   },
   {
     id: 3,
-    name: "Michael T.",
-    source: "Yelp Review",
-    rating: 5,
-    quote:
-      "Outstanding service from start to finish. The stylists really listen to what you want and deliver beyond expectations. Highly recommend!",
-  },
-  {
-    id: 4,
-    name: "Emma R.",
+    name: "Madison",
     source: "Google Review",
+    sourceUrl: "https://share.google/opZCzE07mHvX4fTSb",
     rating: 5,
     quote:
-      "I've been coming here for years and wouldn't go anywhere else. The attention to detail and personalized service is unmatched.",
-  },
-  {
-    id: 5,
-    name: "James K.",
-    source: "Facebook Review",
-    rating: 5,
-    quote:
-      "Professional, friendly, and talented team. They transformed my look and I couldn't be happier. The atmosphere is relaxing and the results speak for themselves.",
+      "I followed the Kossof team to their new home! The environment is very energetic and welcoming! I absolutely love the new space and some of the new faces that are there as well. Lisette did my hair cut and Galina did my nails. They are very professional and made me feel like the queen I am! What are you waiting for? Book your appointment queen!",
   },
 ]
 
@@ -139,7 +126,7 @@ export default function TestimonialsSection() {
                   <div className="min-h-[350px] lg:min-h-[400px] flex flex-col justify-center space-y-10 select-none">
                     {/* Quote with Schema Markup */}
                     <blockquote 
-                      className="text-2xl lg:text-3xl leading-relaxed max-w-3xl mx-auto px-4 font-light italic"
+                      className="text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto px-4 font-light italic"
                       style={{ color: '#251c18' }}
                       itemProp="review"
                       itemScope
@@ -151,9 +138,15 @@ export default function TestimonialsSection() {
                         <meta itemProp="ratingValue" content={t.rating.toString()} />
                         <meta itemProp="bestRating" content="5" />
                       </div>
-                      <span itemProp="reviewBody">
+                      <a
+                        href={t.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        itemProp="reviewBody"
+                        className="hover:text-salon-raspberry transition-colors"
+                      >
                         "{t.quote}"
-                      </span>
+                      </a>
                     </blockquote>
 
                     {/* Star Rating Visual */}
@@ -161,7 +154,7 @@ export default function TestimonialsSection() {
                       {[...Array(5)].map((_, i) => (
                         <span 
                           key={i}
-                          className="text-2xl lg:text-3xl"
+                          className="text-xl lg:text-2xl"
                           style={{ color: '#c21887' }}
                           aria-hidden="true"
                         >
@@ -173,9 +166,17 @@ export default function TestimonialsSection() {
                     {/* Client Attribution */}
                     <div className="flex flex-col items-center space-y-1">
                       <p 
-                        className="text-base lg:text-lg font-semibold tracking-widest text-salon-brown"
+                        className="text-sm lg:text-base font-semibold tracking-widest text-salon-brown"
                       >
-                        {t.name} — <span className="font-light opacity-60">{t.source}</span>
+                        {t.name} —{" "}
+                        <a
+                          href={t.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-light opacity-60 hover:opacity-100"
+                        >
+                          {t.source}
+                        </a>
                       </p>
                     </div>
                   </div>

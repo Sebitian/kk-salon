@@ -81,15 +81,6 @@ export default function CofoundersTeaser() {
               </p>
             </div>
 
-            <div className="mt-6 sm:mt-8 flex justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="text-xs sm:text-sm tracking-[0.2em] px-8 sm:px-10 py-6 bg-salon-raspberry hover:bg-salon-raspberry/90 text-white transition-all duration-300 rounded-sm uppercase w-full sm:w-auto"
-              >
-                <Link href="/about">Talent</Link>
-              </Button>
-            </div>
           </div>
         </div>
       </div>

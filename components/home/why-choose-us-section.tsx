@@ -12,13 +12,10 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 
-import tymo from "./tymo.jpg"
-import rosa from "./rosa.jpg"
-
 const carouselImages = [
-  { src: tymo, alt: "Salon style photo 1" },
+  { src: "/tymo.jpg", alt: "Salon style photo 1" },
   { src: "/ali-pazani.jpg", alt: "Salon style photo 2" },
-  { src: rosa, alt: "Salon style photo 3" },
+  { src: "/rosa.jpg", alt: "Salon style photo 3" },
   { src: "/mostafa.jpg", alt: "Salon style photo 4" },
   { src: "/nathan.jpg", alt: "Salon style photo 5" },
 ]

@@ -1,6 +1,6 @@
 export default function ServicesHero() {
   return (
-    <section className="pt-32 sm:pt-36 pb-16 px-4 bg-white">
+    <section className="pt-40 sm:pt-44 pb-16 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
         <div
           className="text-center space-y-4"

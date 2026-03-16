@@ -18,38 +18,34 @@ export default function Home() {
     <>
       {/* ===============TEST */}
       <HeroSection />
-      <section className="bg-white py-6 sm:py-8">
-        <div className="container-custom">
-          <div className="mx-auto flex w-full max-w-md flex-col items-center gap-3 sm:max-w-2xl sm:flex-row sm:flex-wrap sm:justify-center">
-            <Link
-              href="https://booking.mangomint.com/kossofsalonspa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-64 items-center justify-center bg-salon-raspberry text-white px-8 py-3 rounded-sm text-xs sm:text-sm font-semibold tracking-widest uppercase hover:bg-salon-raspberry/90 transition-colors"
-            >
-              Book Now
-            </Link>
-            <Link
-              href="/salon-services"
-              className="inline-flex w-64 items-center justify-center bg-white text-salon-brown border border-salon-brown/20 px-8 py-3 rounded-sm text-xs sm:text-sm font-semibold tracking-widest uppercase hover:border-salon-blue/60 transition-colors"
-            >
-              Salon
-            </Link>
-            <Link
-              href="/spa-services"
-              className="inline-flex w-64 items-center justify-center bg-white text-salon-brown border border-salon-brown/20 px-8 py-3 rounded-sm text-xs sm:text-sm font-semibold tracking-widest uppercase hover:border-salon-blue/60 transition-colors"
-            >
-              Spa
-            </Link>
-            <Link
-              href="/weddings-services"
-              className="inline-flex w-64 items-center justify-center bg-white text-salon-brown border border-salon-brown/20 px-8 py-3 rounded-sm text-xs sm:text-sm font-semibold tracking-widest uppercase hover:border-salon-blue/60 transition-colors"
-            >
-              Weddings Services
-            </Link>
-          </div>
-        </div>
-      </section>
+      <div className="grid grid-cols-2 grid-rows-2">
+        <Link
+          href="https://booking.mangomint.com/kossofsalonspa"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="aspect-square flex items-center justify-center bg-salon-raspberry text-white text-sm sm:text-base font-semibold tracking-widest uppercase hover:bg-salon-raspberry/90 transition-colors"
+        >
+          Book Now
+        </Link>
+        <Link
+          href="/salon-services"
+          className="aspect-square flex items-center justify-center bg-white text-salon-brown border border-salon-brown/10 text-sm sm:text-base font-semibold tracking-widest uppercase hover:bg-gray-50 hover:text-salon-blue transition-colors"
+        >
+          Salon
+        </Link>
+        <Link
+          href="/spa-services"
+          className="aspect-square flex items-center justify-center bg-white text-salon-brown border border-salon-brown/10 text-sm sm:text-base font-semibold tracking-widest uppercase hover:bg-gray-50 hover:text-salon-blue transition-colors"
+        >
+          Spa
+        </Link>
+        <Link
+          href="/weddings-services"
+          className="aspect-square flex items-center justify-center bg-white text-salon-brown border border-salon-brown/10 text-sm sm:text-base font-semibold tracking-widest uppercase hover:bg-gray-50 hover:text-salon-blue transition-colors"
+        >
+          Weddings
+        </Link>
+      </div>
       <WhyChooseUsSection />
       {/* <ProductsVideoShowcase /> */}
       <TestimonialsSection />

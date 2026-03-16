@@ -292,7 +292,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div className="pt-24 bg-white" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
+      <div className="pt-40 sm:pt-44 bg-white" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
         {/* Cofounders Section (moved from Home) */}
         <CofoundersTeaser />
         <MeetTeamSection />

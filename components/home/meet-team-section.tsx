@@ -10,35 +10,37 @@ export default function MeetTeamSection() {
     () =>
       [
         {
-          id: "management",
-          label: "Management",
-          members: [
-            {
-              image: "/gif1.gif",
-              name: "Keeley",
-              title: "Co-Founder / Master Stylist",
-              description:
-                "Keeley brings decades of experience in precision cutting, custom color, and elevated guest care—carrying forward the Kossof legacy.",
-            },
-          ],
-        },
-        {
           id: "hair",
           label: "Hair",
           members: [
             {
-              image: "/gif2.gif",
-              name: "Amy",
-              title: "Co-Founder / Master Stylist",
+              image: "/gif1.gif",
+              name: "Cheryl",
+              title: "Master Hairstylist",
               description:
-                "Amy is known for lived-in color, dimensional highlights, and a warm, detail-driven approach that makes every guest feel at home.",
+                "Master Hairstylist specializing in precision cuts for men and women, expert perms, and professional keratin & Brazilian smoothing treatments — delivering refined, modern results backed by decades of experience.",
             },
             {
-              image: "/gif3.gif",
-              name: "Adam",
+              image: "/gif1.gif",
+              name: "Joanna",
+              title: "Stylist",
+              description:
+                "Joanna is a highly skilled hairstylist with over two decades of experience, specializing in precision cuts, advanced color techniques, keratin treatments, hair extensions, and curly hair design. Her artistry with color includes balayage, foilyage, air touch, ombré, highlights, lowlights, color corrections, and creative transformations—all tailored to each client's personality and style.\n\nA true master of curly and textured hair, Joanna is certified in Ouidad, Advanced Rëzo, and Mizani AirCut cutting methods. She's passionate about empowering clients to embrace their natural texture, offering expert techniques that define curls, enhance shape, and bring out their healthiest, most vibrant look.\n\nKnown for her warmth and professionalism, Joanna takes pride in her personalized approach—ensuring every guest leaves her chair not only loving their hair, but also feeling confident and renewed.",
+              instagram: "https://www.instagram.com/joanna_artistry",
+            },
+            {
+              image: "/gif1.gif",
+              name: "Zack",
               title: "Master Stylist",
               description:
-                "From modern cuts to polished finishing, Adam focuses on clean technique, consultation, and results that fit your lifestyle.",
+                "With over 44 years of experience, hairstyling has been part of Zack's life from the very beginning. Growing up in a salon family—both of his parents were salon owners—the art of hair has always been in his blood.\n\nA two-time winner of the Polish Hairdressing Championships and a finalist in the European Hairdressing Championships in Athens, his career includes advanced training in Germany, France, and Spain, and serving as Creative Director for Londa in Germany, appearing in national television campaigns for the brand.\n\nFor 22 years, he worked alongside Teddie Kossof in Northfield, Illinois, building lasting client relationships and delivering high-level, personalized hairstyling.\n\nWhile proud of the awards and global experience, his greatest joy remains simple: helping every woman feel confident, radiant, and beautiful.",
+            },
+            {
+              image: "/gif1.gif",
+              name: "Grace",
+              title: "Stylist",
+              description:
+                "I believe a great haircut is a masterpiece in motion. With over 30 years of experience, I have transformed my lifelong passion for hair into a dedicated craft. My journey began in my early twenties, and that same creative fire continues to inspire every transformation I create today.\n\nOriginally from Poland and fluent in both Polish and English, I bring an international, artistic perspective to my work behind the chair. While I enjoy all aspects of hairstyling, my true specialty is short, precision cutting. I see hair as a canvas and love the challenge of creating styles that are both bold and effortlessly wearable.\n\nFor me, it's not just about a haircut—it's about the artistry of helping you look and feel like your very best self.",
             },
           ],
         },
@@ -47,35 +49,15 @@ export default function MeetTeamSection() {
           label: "Spa",
           members: [
             {
-              image: "/gif5.gif",
-              name: "Phil",
-              title: "Esthetician",
-              description:
-                "Olivia specializes in relaxing, results-focused skincare and services designed to leave you glowing and refreshed.",
-            },
-            {
               image: "/gif1.gif",
-              name: "Kim",
-              title: "Spa Coordinator",
+              name: "Matt",
+              title: "Licensed Massage Therapist",
               description:
-                "Sophie helps create a seamless experience—matching guests to the right services and supporting a calm, welcoming visit.",
+                "With over 10 years in innovative health and wellness industries, Matt helps clients effectively manage pain and boost wellbeing.\n\nHe specializes in deep tissue and Swedish massage through a therapeutic lens that tackles discomfort head-on, minimizes stress, and promotes better mobility.\n\nDedicated to personalized, results-oriented sessions, he enhances his practice with personal interests in exercise, reading, and meditation for a truly holistic perspective.",
             },
           ],
         },
-        {
-          id: "nails",
-          label: "Nails",
-          members: [
-            {
-              image: "/gif4.gif",
-              name: "Sebastian",
-              title: "Nail Technician",
-              description:
-                "Cynthia delivers meticulous manicures and pedicures with an eye for detail—clean, classic, and always polished.",
-            },
-          ],
-        },
-      ] as const,
+      ] as { id: string; label: string; members: { image: string; name: string; title: string; description: string; instagram?: string }[] }[],
     [],
   )
 
@@ -227,9 +209,22 @@ export default function MeetTeamSection() {
                       {member.name}
                       <span className="font-light text-salon-brown/60"> / {member.title}</span>
                     </h3>
-                    <p className="mt-3 text-salon-brown/75 leading-relaxed text-base lg:text-lg font-light">
-                      {member.description}
-                    </p>
+                    <div className="mt-3 text-salon-brown/75 leading-relaxed text-base lg:text-lg font-light space-y-3">
+                      {member.description.split("\n\n").map((paragraph, i) => (
+                        <p key={i}>{paragraph}</p>
+                      ))}
+                    </div>
+                    {member.instagram && (
+                      <a
+                        href={member.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 inline-flex items-center gap-2 text-salon-raspberry hover:text-salon-raspberry/80 text-sm font-semibold tracking-widest uppercase transition-colors"
+                      >
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        @joanna_artistry
+                      </a>
+                    )}
                   </div>
                 </div>
               </article>

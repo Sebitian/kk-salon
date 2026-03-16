@@ -146,7 +146,7 @@ export default function FAQPage() {
       />
 
       <main style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
-        <section className="relative py-20 mb-12 pt-32">
+        <section className="relative py-20 mb-12 pt-40 sm:pt-44">
           <div className="absolute inset-0 z-0">
             <Image
               src="/faq_bg.jpg"
