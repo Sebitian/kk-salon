@@ -1,9 +1,9 @@
 "use client"
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { IMAGES } from "@/lib/cloudinary"
 
 export default function MeetTeamSection() {
   const categories = useMemo(
@@ -14,33 +14,47 @@ export default function MeetTeamSection() {
           label: "Hair",
           members: [
             {
-              image: "/gif1.gif",
+              image: IMAGES.gif1,
               name: "Cheryl",
               title: "Master Hairstylist",
               description:
                 "Master Hairstylist specializing in precision cuts for men and women, expert perms, and professional keratin & Brazilian smoothing treatments — delivering refined, modern results backed by decades of experience.",
             },
             {
-              image: "/gif1.gif",
+              image: IMAGES.gif1,
               name: "Joanna",
               title: "Stylist",
               description:
-                "Joanna is a highly skilled hairstylist with over two decades of experience, specializing in precision cuts, advanced color techniques, keratin treatments, hair extensions, and curly hair design. Her artistry with color includes balayage, foilyage, air touch, ombré, highlights, lowlights, color corrections, and creative transformations—all tailored to each client's personality and style.\n\nA true master of curly and textured hair, Joanna is certified in Ouidad, Advanced Rëzo, and Mizani AirCut cutting methods. She's passionate about empowering clients to embrace their natural texture, offering expert techniques that define curls, enhance shape, and bring out their healthiest, most vibrant look.\n\nKnown for her warmth and professionalism, Joanna takes pride in her personalized approach—ensuring every guest leaves her chair not only loving their hair, but also feeling confident and renewed.",
+                "Joanna is a highly skilled hairstylist with over two decades of experience, specializing in precision cuts, advanced color techniques, keratin treatments, hair extensions, and curly hair design. Her artistry with color includes balayage, foilyage, air touch, ombré, highlights, lowlights, color corrections, and creative transformations—all tailored to each client's personality and style. She's known for creating natural, multidimensional tones that make hair shine with life and movement.\n\nA true master of curly and textured hair, Joanna is certified in Ouidad, Advanced Rëzo, and Mizani AirCut cutting methods. She's passionate about empowering clients to embrace their natural texture, offering expert techniques that define curls, enhance shape, and bring out their healthiest, most vibrant look. Whether it's soft waves or tight ringlets, Joanna customizes every cut to highlight each client's unique beauty.\n\nKnown for her warmth and professionalism, Joanna takes pride in her personalized approach—ensuring every guest leaves her chair not only loving their hair, but also feeling confident and renewed.",
               instagram: "https://www.instagram.com/joanna_artistry",
             },
             {
-              image: "/gif1.gif",
+              image: IMAGES.gif1,
               name: "Zack",
               title: "Master Stylist",
               description:
-                "With over 44 years of experience, hairstyling has been part of Zack's life from the very beginning. Growing up in a salon family—both of his parents were salon owners—the art of hair has always been in his blood.\n\nA two-time winner of the Polish Hairdressing Championships and a finalist in the European Hairdressing Championships in Athens, his career includes advanced training in Germany, France, and Spain, and serving as Creative Director for Londa in Germany, appearing in national television campaigns for the brand.\n\nFor 22 years, he worked alongside Teddie Kossof in Northfield, Illinois, building lasting client relationships and delivering high-level, personalized hairstyling.\n\nWhile proud of the awards and global experience, his greatest joy remains simple: helping every woman feel confident, radiant, and beautiful.",
+                "With over 44 years of experience, hairstyling has been part of my life from the very beginning. I grew up in a salon family—both of my parents were salon owners—so the art of hair has always been in my blood.\n\nI am a two-time winner of the Polish Hairdressing Championships and a finalist in the European Hairdressing Championships in Athens. My career has included advanced training in Germany, France, and Spain, and I served as Creative Director for Londa in Germany, appearing in national television campaigns for the brand.\n\nFor 22 years, I worked alongside Teddie Kossof in Northfield, Illinois, building lasting client relationships and delivering high-level, personalized hairstyling.\n\nI have judged international competitions, hosted a television program in Poland, and had my work featured in 12 Polish women's magazines. I've also created hairstyles for leading fashion designers and worked with international celebrities, including Mira Sorvino and Adriana Sklenarikova.\n\nWhile I'm proud of the awards and global experience, my greatest joy remains simple: helping every woman feel confident, radiant, and beautiful.",
             },
             {
-              image: "/gif1.gif",
+              image: IMAGES.gif1,
               name: "Grace",
               title: "Stylist",
               description:
                 "I believe a great haircut is a masterpiece in motion. With over 30 years of experience, I have transformed my lifelong passion for hair into a dedicated craft. My journey began in my early twenties, and that same creative fire continues to inspire every transformation I create today.\n\nOriginally from Poland and fluent in both Polish and English, I bring an international, artistic perspective to my work behind the chair. While I enjoy all aspects of hairstyling, my true specialty is short, precision cutting. I see hair as a canvas and love the challenge of creating styles that are both bold and effortlessly wearable.\n\nFor me, it's not just about a haircut—it's about the artistry of helping you look and feel like your very best self.",
+            },
+            {
+              image: IMAGES.gif1,
+              name: "Lisette",
+              title: "Master Hairstylist",
+              description:
+                "Hi, I'm Lisette Norris.\n\nI'm a Master Hairstylist with over 40 years of experience, proudly serving the North Shore. My work blends timeless foundations with modern techniques, and I'm committed to continuous education and growth.\n\nI offer a full range of services including classic and creative haircuts for men and women, perms, relaxers, keratin treatments, extensions, special event styling, and wig services. I've also been honored with multiple industry awards throughout my career.\n\nI believe great hair starts with truly understanding each client. My goal is simple: to know your hair better than you do and help you look and feel your very best.",
+            },
+            {
+              image: IMAGES.gif1,
+              name: "Brentley",
+              title: "Stylist",
+              description:
+                "Your long hair is safe with me. I specialize in cutting and styling long hair and truly understand the journey it takes to grow it. I had hair past my waist and didn't get my first haircut until I was 18, so I know the time, patience, and care that goes into keeping it long, healthy, and beautiful.\n\nI'm certified in Brazilian Blowout and Keratin Complex treatments, helping you achieve smooth, manageable results while maintaining your length.\n\nWhen I'm not behind the chair, I'm usually into photography or working on cars—two passions that reflect my attention to detail and love for craftsmanship.",
             },
           ],
         },
@@ -49,11 +63,18 @@ export default function MeetTeamSection() {
           label: "Spa",
           members: [
             {
-              image: "/gif1.gif",
+              image: IMAGES.gif1,
               name: "Matt",
               title: "Licensed Massage Therapist",
               description:
-                "With over 10 years in innovative health and wellness industries, Matt helps clients effectively manage pain and boost wellbeing.\n\nHe specializes in deep tissue and Swedish massage through a therapeutic lens that tackles discomfort head-on, minimizes stress, and promotes better mobility.\n\nDedicated to personalized, results-oriented sessions, he enhances his practice with personal interests in exercise, reading, and meditation for a truly holistic perspective.",
+                "With over 10 years in innovative health and wellness industries, licensed massage therapist Matt Polakow helps clients effectively manage pain and boost wellbeing. He specializes in deep tissue and Swedish massage through a therapeutic lens that tackles discomfort head-on, minimizes stress, and promotes better mobility. Dedicated to personalized, results-oriented sessions, he enhances his practice with personal interests in exercise, reading books, and meditation for a truly holistic perspective.",
+            },
+            {
+              image: IMAGES.gif1,
+              name: "Carol Marie",
+              title: "Skincare Specialist & Makeup Artist",
+              description:
+                "My new chapter begins at Kossof Salon Spa\n\nHi, I'm Carol Marie Everett, and I'm thrilled to be joining the team! With 35 years of experience, I've dedicated my career to helping clients feel confident and refreshed through personalized skincare and beauty services.\n\nIn addition to skincare and waxing, I've had the privilege of working as a makeup artist for photoshoots, productions, television, film, and commercials, bringing both experience and creativity to every look.\n\nI'm excited to welcome new clients and would love to help you achieve your skincare goals.",
             },
           ],
         },
@@ -180,36 +201,13 @@ export default function MeetTeamSection() {
                     : "border-salon-brown/10",
                 )}
               >
-                <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-center sm:items-start">
-                  <div className="shrink-0">
-                    <div
-                      className={cn(
-                        "relative h-40 w-40 sm:h-44 sm:w-44 overflow-hidden rounded-full border-4 shadow-lg transition-colors duration-500",
-                        activeMemberKey === `${member.categoryId}-${member.name}`
-                          ? "border-salon-raspberry/70"
-                          : "border-salon-blue/30",
-                      )}
-                    >
-                      <Image
-                        src={member.image}
-                        alt={`${member.name} - ${member.title} at Kossof Salon Spa`}
-                        fill
-                        className={cn(
-                          "object-cover transition-all duration-700 ease-in-out scale-110 hover:grayscale-0",
-                          activeMemberKey === `${member.categoryId}-${member.name}` ? "grayscale-0" : "grayscale",
-                        )}
-                        unoptimized
-                        sizes="176px"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="flex-1 text-center sm:text-left">
+                <div>
+                  <div className="text-center sm:text-left">
                     <h3 className="text-2xl font-bold text-salon-brown tracking-widest uppercase">
                       {member.name}
                       <span className="font-light text-salon-brown/60"> / {member.title}</span>
                     </h3>
-                    <div className="mt-3 text-salon-brown/75 leading-relaxed text-base lg:text-lg font-light space-y-3">
+                    <div className="mt-3 text-black leading-relaxed text-base lg:text-lg font-light space-y-3">
                       {member.description.split("\n\n").map((paragraph, i) => (
                         <p key={i}>{paragraph}</p>
                       ))}

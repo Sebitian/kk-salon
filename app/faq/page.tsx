@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { IMAGES } from "@/lib/cloudinary";
 
 const faqItems = [
   {
@@ -90,7 +91,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "HairSalon",
   name: "Kossof Salon Spa",
-  image: "https://kossofsalonspa.com/faq_bg.jpg",
+  image: IMAGES.faqBg,
   url: "https://kossofsalonspa.com",
   telephone: "847-821-6604",
   email: "info@kossofsalonspa.com",
@@ -149,7 +150,7 @@ export default function FAQPage() {
         <section className="relative py-20 mb-12 pt-40 sm:pt-44">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/faq_bg.jpg"
+              src={IMAGES.faqBg}
               alt="Kossof Salon Spa in Lincolnshire, Illinois"
               fill
               className="object-cover"

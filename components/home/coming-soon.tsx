@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 import LogoHero from "./logo-hero"
+import { IMAGES } from "@/lib/cloudinary"
 
 export default function ComingSoonPage() {
   const [email, setEmail] = useState("")
@@ -69,7 +70,7 @@ export default function ComingSoonPage() {
           </div> */}
         <div className="flex justify-center">
             <Image
-              src="/logo-bold.png"
+              src={IMAGES.logoBold}
               alt="Kossof Salon Spa"
               width={400}
               height={300}

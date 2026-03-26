@@ -107,7 +107,7 @@ function BookingIconLink({ bookingUrl }: { bookingUrl?: string }) {
 function BookingMenuEmbed({ bookingEmbedUrl, bookingEmbedTitle }: { bookingEmbedUrl: string; bookingEmbedTitle?: string }) {
   return (
     <div className="mt-8 border-t border-salon-brown/10 pt-6">
-      <div className="overflow-hidden rounded-2xl border border-salon-brown/15 bg-[#f8f6f5] shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
+      <div className="mx-auto max-w-md lg:max-w-lg overflow-hidden rounded-2xl border border-salon-brown/15 bg-[#f8f6f5] shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
         <iframe
           src={bookingEmbedUrl}
           title={bookingEmbedTitle ?? "Online booking menu"}

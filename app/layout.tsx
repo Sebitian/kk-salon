@@ -10,6 +10,7 @@ import MangomintOverlay from "@/components/booking/mangomint-overlay"
 
 
 import JsonLd from "@/components/json-ld"
+import { IMAGES } from "@/lib/cloudinary"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Kossof Salon Spa",
     images: [
       {
-        url: "/klogo.png",
+        url: IMAGES.klogo,
         width: 800,
         height: 600,
         alt: "Kossof Salon Spa Logo",
@@ -51,12 +52,12 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Kossof Salon Spa - Lincolnshire, IL",
     description: "Premier salon and spa in Lincolnshire offering expert hair, nail, and beauty services.",
-    images: ["/klogo.png"],
+    images: [IMAGES.klogo],
   },
   icons: {
-    icon: "/klogo.png",
-    shortcut: "/klogo.png",
-    apple: "/klogo.png",
+    icon: IMAGES.klogo,
+    shortcut: IMAGES.klogo,
+    apple: IMAGES.klogo,
   },
   robots: {
     index: true,

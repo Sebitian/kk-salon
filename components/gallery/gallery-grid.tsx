@@ -5,8 +5,8 @@ import Image from "next/image"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { Scissors, Palette, Sparkles, Users } from "lucide-react"
+import { IMAGES } from "@/lib/cloudinary"
 
-// Gallery data with size specifications for mosaic layout
 const galleryItems = {
   all: [
     {
@@ -14,84 +14,84 @@ const galleryItems = {
       src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80",
       alt: "Salon interior",
       category: "interior",
-      size: "large", // 2x2
+      size: "large",
     },
     {
       id: 2,
       src: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80",
       alt: "Hairstyling",
       category: "hair",
-      size: "wide", // 2x1
+      size: "wide",
     },
     {
       id: 3,
       src: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80",
       alt: "Nail art design",
       category: "nails",
-      size: "small", // 1x1
+      size: "small",
     },
     {
       id: 4,
       src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80",
       alt: "Makeup look",
       category: "makeup",
-      size: "tall", // 1x2
+      size: "tall",
     },
     {
       id: 5,
-      src: "/gallery4.jpg",
+      src: IMAGES.gallery4,
       alt: "Beard trimming",
       category: "hair",
-      size: "small", // 1x1
+      size: "small",
     },
     {
       id: 6,
-      src: "/gallery1.jpg",
+      src: IMAGES.gallery1,
       alt: "Bridal makeup",
       category: "makeup",
-      size: "wide", // 2x1
+      size: "wide",
     },
     {
       id: 7,
       src: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80",
       alt: "Nail art design",
       category: "nails",
-      size: "small", // 1x1
+      size: "small",
     },
     {
       id: 8,
-      src: "/gallery2.jpg",
+      src: IMAGES.gallery2,
       alt: "Men's hair coloring",
       category: "hair",
-      size: "large", // 2x2
+      size: "large",
     },
     {
       id: 9,
-      src: "/gallery3.jpg",
+      src: IMAGES.gallery3,
       alt: "Women's hair coloring",
       category: "hair",
-      size: "small", // 1x1
+      size: "small",
     },
     {
       id: 10,
       src: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80",
       alt: "Pedicure",
       category: "nails",
-      size: "tall", // 1x2
+      size: "tall",
     },
     {
       id: 11,
       src: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80",
       alt: "Party makeup",
       category: "makeup",
-      size: "small", // 1x1
+      size: "small",
     },
     {
       id: 12,
       src: "https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=800&h=600&fit=crop&crop=focalpoint&auto=format&q=80",
       alt: "Women's haircut",
       category: "hair",
-      size: "wide", // 2x1
+      size: "wide",
     },
   ],
   get hair() {

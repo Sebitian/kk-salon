@@ -1,31 +1,25 @@
-import { getBlobUrls } from "@/lib/blob"
+import { VIDEOS } from "@/lib/cloudinary"
 import Link from "next/link"
 
 const productLines = [
   {
     name: "Milbon",
     description: "Japan's #1 professional hair care brand, offering sophisticated treatments for every hair type.",
-    videoFilename: "Kossof_Products_Final.mov",
+    video: VIDEOS.kossofProductsFinal,
   },
   {
     name: "Moroccanoil",
     description: "The pioneer of oil-infused hair care, providing the perfect foundation for all hair types.",
-    videoFilename: "Kossof.Moroccan.Final.mov",
+    video: VIDEOS.kossofMoroccanFinal,
   },
   {
     name: "Keratin Complex",
     description: "Revolutionary smoothing treatments and products that eliminate frizz and restore health to hair.",
-    videoFilename: "Kossof.FarmhouseFresh.Final.mov",
+    video: VIDEOS.kossofFarmhouseFreshFinal,
   },
 ]
 
-export default async function ProductsVideoShowcase() {
-  const urls = await getBlobUrls(productLines.map((line) => line.videoFilename))
-  const productLinesWithUrls = productLines.map((line) => ({
-    ...line,
-    video: urls[line.videoFilename],
-  }))
-
+export default function ProductsVideoShowcase() {
   return (
     <section className="py-24 px-6 bg-white">
       <div className="container mx-auto max-w-7xl">
@@ -41,7 +35,7 @@ export default async function ProductsVideoShowcase() {
           style={{ WebkitOverflowScrolling: "touch" }}
         >
           <div className="flex gap-6 pb-2 md:grid md:grid-cols-3 md:gap-16 md:pb-0">
-            {productLinesWithUrls.map((line) => (
+            {productLines.map((line) => (
               <div
                 key={line.name}
                 className="flex-none w-[85vw] max-w-sm snap-center md:w-auto md:max-w-none md:snap-none flex flex-col group"

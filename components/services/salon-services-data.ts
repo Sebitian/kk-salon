@@ -1,4 +1,5 @@
 import { ServicesSection } from "./services-data"
+import { cloudinaryImage } from "@/lib/cloudinary"
 
 const SALON_HAIR_BASE_SECTION: ServicesSection = {
   id: "hair",
@@ -8,8 +9,8 @@ const SALON_HAIR_BASE_SECTION: ServicesSection = {
   textLeftOnDesktop: true,
   textPanelBgClassName: "bg-[#ede7e4]/20",
   image: {
-    src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&h=1200&fit=crop&auto=format&q=85",
-    alt: "Modern hair salon interior with styling stations",
+    src: cloudinaryImage("HAIRCUT_zic5ay"),
+    alt: "Haircut styling at Kossof Salon Spa",
   },
   groups: [
       {
@@ -398,26 +399,46 @@ const SALON_HAIR_BASE_SECTION: ServicesSection = {
   ],
 }
 
-const SALON_HAIR_SECTION_META: Record<string, { id: string; intro: string }> = {
+const SALON_HAIR_SECTION_META: Record<string, { id: string; intro: string; image?: { src: string; alt: string } }> = {
   "Haircuts": {
     id: "haircuts-styling",
     intro: "Precision cuts, styling, and finishing services tailored to your look.",
+  },
+  "Styling": {
+    id: "styling",
+    intro: "Blowouts, updos, and finishing touches for every occasion.",
+    image: {
+      src: cloudinaryImage("HAIRSTYLE_wir8yz"),
+      alt: "Hairstyling at Kossof Salon Spa",
+    },
   },
   "Special Occasion or Formal Hair Styling": {
     id: "special-occasion-hair",
     intro: "Event-ready updos and downstyles crafted for elegant, long-lasting wear.",
   },
-  "Hair Color": {
+  "Color": {
     id: "hair-color",
     intro: "Custom color, highlights, balayage, and corrective options from our color team.",
+    image: {
+      src: cloudinaryImage("COLOR_rnziuz"),
+      alt: "Hair color services at Kossof Salon Spa",
+    },
   },
   "Hair & Scalp Treatments": {
     id: "hair-scalp-treatments",
     intro: "Nourishing and restorative treatments for healthier hair and scalp balance.",
+    image: {
+      src: cloudinaryImage("SCALP_pjtzku"),
+      alt: "Hair and scalp treatments at Kossof Salon Spa",
+    },
   },
   "Retexturizing Services": {
     id: "retexturizing-services",
     intro: "Smoothing, keratin, relaxer, and texture services for manageability and shine.",
+    image: {
+      src: cloudinaryImage("RETEXTURIZING_zfmr01"),
+      alt: "Retexturizing services at Kossof Salon Spa",
+    },
   },
 }
 
@@ -430,7 +451,7 @@ const SALON_HAIR_SPLIT_SECTIONS: ServicesSection[] = SALON_HAIR_BASE_SECTION.gro
     intro: meta?.intro,
     textLeftOnDesktop: index % 2 === 0,
     textPanelBgClassName: index % 2 === 0 ? "bg-[#ede7e4]/20" : "bg-white",
-    image: SALON_HAIR_BASE_SECTION.image,
+    image: meta?.image ?? SALON_HAIR_BASE_SECTION.image,
     groups: [group],
   }
 })
@@ -570,7 +591,7 @@ const SALON_NAIL_BASE_SECTION: ServicesSection = {
   ],
 }
 
-const SALON_NAIL_SECTION_META: Record<string, { id: string; intro: string }> = {
+const SALON_NAIL_SECTION_META: Record<string, { id: string; intro: string; image?: { src: string; alt: string } }> = {
   Manicures: {
     id: "manicures",
     intro: "Luxury manicures from the final menu.",
@@ -578,6 +599,10 @@ const SALON_NAIL_SECTION_META: Record<string, { id: string; intro: string }> = {
   Pedicures: {
     id: "pedicures",
     intro: "Luxury pedicures from the final menu.",
+    image: {
+      src: cloudinaryImage("PEDICURE_nlvtoz"),
+      alt: "Pedicure services at Kossof Salon Spa",
+    },
   },
 }
 
@@ -590,7 +615,7 @@ const SALON_NAIL_SPLIT_SECTIONS: ServicesSection[] = SALON_NAIL_BASE_SECTION.gro
     intro: meta?.intro,
     textLeftOnDesktop: index % 2 === 0,
     textPanelBgClassName: index % 2 === 0 ? "bg-white" : "bg-[#ede7e4]/20",
-    image: SALON_NAIL_BASE_SECTION.image,
+    image: meta?.image ?? SALON_NAIL_BASE_SECTION.image,
     groups: [group],
   }
 })

@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 import Image from "next/image"
+import { IMAGES } from "@/lib/cloudinary"
 
 const servicesDropdown = [
   { name: "SALON", href: "/salon-services" },
@@ -75,7 +76,7 @@ export default function Header() {
             <Link href="/" className="block">
               <div className="relative w-40 h-16 sm:w-44 sm:h-20 lg:w-48 lg:h-20">
                 <Image
-                  src={useLightHeader ? "/logo-black-nobg.png" : "/logo-white.png"}
+                  src={useLightHeader ? IMAGES.logoBlackNobg : IMAGES.logoWhite}
                   alt="Kossof Salon Spa"
                   fill
                   className="object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.2)]"

@@ -5,12 +5,13 @@ import Image from "next/image"
 import useEmblaCarousel from "embla-carousel-react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { IMAGES } from "@/lib/cloudinary"
 
 const galleryImages = [
-  { src: "/gallery1.jpg", alt: "Kossof Salon Spa Gallery 1" },
-  { src: "/gallery2.jpg", alt: "Kossof Salon Spa Gallery 2" },
-  { src: "/gallery3.jpg", alt: "Kossof Salon Spa Gallery 3" },
-  { src: "/gallery4.jpg", alt: "Kossof Salon Spa Gallery 4" },
+  { src: IMAGES.gallery1, alt: "Kossof Salon Spa Gallery 1" },
+  { src: IMAGES.gallery2, alt: "Kossof Salon Spa Gallery 2" },
+  { src: IMAGES.gallery3, alt: "Kossof Salon Spa Gallery 3" },
+  { src: IMAGES.gallery4, alt: "Kossof Salon Spa Gallery 4" },
   { src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80", alt: "Salon Interior" },
   { src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80", alt: "Styling" },
 ]

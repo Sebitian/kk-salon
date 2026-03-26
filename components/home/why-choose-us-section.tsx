@@ -11,13 +11,14 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel"
+import { IMAGES } from "@/lib/cloudinary"
 
 const carouselImages = [
-  { src: "/tymo.jpg", alt: "Salon style photo 1" },
-  { src: "/ali-pazani.jpg", alt: "Salon style photo 2" },
-  { src: "/rosa.jpg", alt: "Salon style photo 3" },
-  { src: "/mostafa.jpg", alt: "Salon style photo 4" },
-  { src: "/nathan.jpg", alt: "Salon style photo 5" },
+  { src: IMAGES.tymo, alt: "Salon style photo 1" },
+  { src: IMAGES.aliPazani, alt: "Salon style photo 2" },
+  { src: IMAGES.rosa, alt: "Salon style photo 3" },
+  { src: IMAGES.mostafa, alt: "Salon style photo 4" },
+  { src: IMAGES.nathan, alt: "Salon style photo 5" },
 ]
 
 export default function WhyChooseUsSection() {
@@ -103,7 +104,7 @@ export default function WhyChooseUsSection() {
   )
 
   return (
-    <section className="py-12 sm:py-20 lg:py-24 bg-white overflow-hidden">
+    <section className="pt-0 pb-12 sm:pb-20 lg:pb-24 bg-white overflow-hidden">
       {/* Full-bleed carousel (swipe + arrows + dots) */}
       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen mb-8 sm:mb-12 lg:mb-16">
         <div className="relative">

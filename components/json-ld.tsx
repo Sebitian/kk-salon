@@ -1,3 +1,5 @@
+import { IMAGES } from "@/lib/cloudinary"
+
 export default function JsonLd() {
   const schemas = [
     {
@@ -11,7 +13,7 @@ export default function JsonLd() {
       "@context": "https://schema.org",
       "@type": "BeautySalon",
       "name": "Kossof Salon Spa",
-      "image": "https://kossofsalonspa.com/klogo.png",
+      "image": IMAGES.klogo,
       "url": "https://kossofsalonspa.com",
       "telephone": "847-821-6604",
       "email": "info@kossofsalonspa.com",

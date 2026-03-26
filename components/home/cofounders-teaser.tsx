@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { IMAGES } from "@/lib/cloudinary"
 
 export default function CofoundersTeaser() {
   return (
@@ -17,7 +18,7 @@ export default function CofoundersTeaser() {
           <div className="mt-8 sm:mt-10">
             <div className="relative h-56 sm:h-64 lg:h-72 w-full max-w-4xl mx-auto overflow-hidden border border-salon-blue/40 border-b-0 rounded-t-sm">
               <Image
-                src="/ky_amy.jpeg"
+                src={IMAGES.kyAmy}
                 alt="Keeley Kossof and Amy Kraaz"
                 fill
                 className="object-cover object-center"

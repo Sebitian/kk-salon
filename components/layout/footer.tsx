@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { IMAGES } from "@/lib/cloudinary"
 
 export default function Footer() {
   return (
@@ -14,7 +15,7 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <Link href="/" className="mb-8">
               <Image
-                src="/logo-white.png"
+                src={IMAGES.logoWhite}
                 alt="Kossof Salon Spa"
                 width={200}
                 height={80}

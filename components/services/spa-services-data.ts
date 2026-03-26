@@ -1,4 +1,5 @@
 import { ServicesSection } from "./services-data"
+import { cloudinaryImage } from "@/lib/cloudinary"
 
 const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
   {
@@ -192,8 +193,8 @@ const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
     image: {
-      src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&h=1200&fit=crop&auto=format&q=85",
-      alt: "Lash and brow beauty treatment",
+      src: cloudinaryImage("UWAXING_dyi8kr"),
+      alt: "Eyelash and eyebrow services at Kossof Salon Spa",
     },
     groups: [
       {
@@ -572,19 +573,31 @@ const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
   },
 ]
 
-const SPA_SPLIT_SECTION_META: Record<string, { id: string; title?: string; intro: string }> = {
+const SPA_SPLIT_SECTION_META: Record<string, { id: string; title?: string; intro: string; image?: { src: string; alt: string } }> = {
   "Body Waxing - Facial & Detail Areas": {
     id: "waxing-face-detail",
     title: "Face & Detail Body Waxing",
+    image: {
+      src: cloudinaryImage("WAXING_njr9va"),
+      alt: "Face and body waxing at Kossof Salon Spa",
+    },
     intro: "Precision body waxing services for facial and detail areas.",
   },
   "Body Waxing - Upper Body": {
     id: "waxing-upper-body",
+    image: {
+      src: cloudinaryImage("UWAXING_dyi8kr"),
+      alt: "Upper body waxing at Kossof Salon Spa",
+    },
     title: "Upper Body Waxing",
     intro: "Precision body waxing services for upper-body areas.",
   },
   "Body Waxing - Lower Body": {
     id: "waxing-lower-body",
+    image: {
+      src: cloudinaryImage("LWAXING_vy8juo"),
+      alt: "Lower body waxing at Kossof Salon Spa",
+    },
     title: "Lower Body Waxing",
     intro: "Precision body waxing services for lower-body areas.",
   },
@@ -595,6 +608,10 @@ const SPA_SPLIT_SECTION_META: Record<string, { id: string; title?: string; intro
   "Advanced Facials": {
     id: "advanced-facials",
     intro: "Advanced facial treatments focused on tone, texture, and renewal.",
+    image: {
+      src: cloudinaryImage("AFACIALL_csvucq"),
+      alt: "Advanced facial treatments at Kossof Salon Spa",
+    },
   },
   "Facial Enhancements": {
     id: "facial-enhancements",
@@ -621,7 +638,7 @@ const splitSectionGroups = (section: ServicesSection, fallbackPrefix: string): S
       intro: meta?.intro ?? section.intro,
       textLeftOnDesktop: index % 2 === 0,
       textPanelBgClassName: index % 2 === 0 ? "bg-[#cad7de]/20" : "bg-white",
-      image: section.image,
+      image: meta?.image ?? section.image,
       groups: [group],
     }
   })
