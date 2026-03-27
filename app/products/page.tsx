@@ -17,7 +17,7 @@ export default function ProductsPage() {
           </h1>
           <div className="w-20 h-1 bg-salon-raspberry mx-auto mt-5" />
           <p className="mt-6 text-salon-brown/70 text-base sm:text-lg">
-            Choose a product partner below.
+            Shop your favorite products below.
           </p>
         </div>
 

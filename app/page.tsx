@@ -21,27 +21,31 @@ export default function Home() {
       <div className="grid grid-cols-2 grid-rows-2">
         <Link
           href="/products"
-          className="aspect-square flex items-center justify-center bg-salon-raspberry text-white text-sm sm:text-base font-semibold tracking-widest uppercase hover:bg-salon-raspberry/90 transition-colors"
+          className="aspect-square flex items-center justify-center text-center px-2 bg-salon-raspberry text-white text-sm sm:text-base font-semibold tracking-widest uppercase hover:bg-salon-raspberry/90 transition-colors"
         >
-          Shop
+          <span className="leading-tight">
+            Shop Our
+            <br />
+            Brands
+          </span>
         </Link>
         <Link
           href="/salon-services"
           className="aspect-square flex items-center justify-center bg-white text-salon-brown border border-salon-brown/10 text-sm sm:text-base font-semibold tracking-widest uppercase hover:bg-gray-50 hover:text-salon-blue transition-colors"
         >
-          Salon
+          Salon Services
         </Link>
         <Link
           href="/spa-services"
           className="aspect-square flex items-center justify-center bg-white text-salon-brown border border-salon-brown/10 text-sm sm:text-base font-semibold tracking-widest uppercase hover:bg-gray-50 hover:text-salon-blue transition-colors"
         >
-          Spa
+          Spa Services
         </Link>
         <Link
           href="/weddings-services"
-          className="aspect-square flex items-center justify-center bg-white text-salon-brown border border-salon-brown/10 text-sm sm:text-base font-semibold tracking-widest uppercase hover:bg-gray-50 hover:text-salon-blue transition-colors"
+          className="aspect-square flex items-center justify-center text-center px-2 bg-white text-salon-brown border border-salon-brown/10 text-sm sm:text-base font-semibold tracking-widest uppercase hover:bg-gray-50 hover:text-salon-blue transition-colors"
         >
-          Weddings
+          Weddings Services
         </Link>
       </div>
       <WhyChooseUsSection />

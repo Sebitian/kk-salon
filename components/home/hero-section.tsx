@@ -35,7 +35,7 @@ export default function HeroSection() {
             847-821-6604
           </Link>
         </div>
-        <div className="w-full max-w-5xl rounded-2xl bg-black/20 backdrop-blur-[2px] border border-white/20 px-4 py-6 sm:px-8 sm:py-8 lg:py-10">
+        <div className="w-full max-w-5xl px-4 py-6 sm:px-8 sm:py-8 lg:py-10">
           <div className="flex flex-col items-center gap-1 sm:gap-2">
             <span className="block text-center text-white text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-light leading-none tracking-[0.18em] sm:tracking-[0.3em] uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] pl-[0.18em] sm:pl-[0.3em]">
               Luxury
@@ -58,10 +58,12 @@ export default function HeroSection() {
               Book Now
             </Link>
             <Link
-              href="/services"
+              href="https://clients.mangomint.com/gift-cards/741141"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center min-w-[170px] px-6 py-3 text-sm sm:text-base font-semibold tracking-widest uppercase rounded-sm border border-white/80 text-white hover:bg-white hover:text-salon-brown transition-colors"
             >
-              View Services
+              Gift Cards
             </Link>
           </div>
         </div>
