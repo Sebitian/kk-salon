@@ -20,12 +20,10 @@ export default function Home() {
       <HeroSection />
       <div className="grid grid-cols-2 grid-rows-2">
         <Link
-          href="https://booking.mangomint.com/kossofsalonspa"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/products"
           className="aspect-square flex items-center justify-center bg-salon-raspberry text-white text-sm sm:text-base font-semibold tracking-widest uppercase hover:bg-salon-raspberry/90 transition-colors"
         >
-          Book Now
+          Shop
         </Link>
         <Link
           href="/salon-services"
