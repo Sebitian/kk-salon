@@ -74,7 +74,7 @@ export default function Header() {
           {/* Center - Logo */}
           <div className="absolute left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center">
             <Link href="/" className="block">
-              <div className="relative w-40 h-16 sm:w-44 sm:h-20 lg:w-48 lg:h-20">
+              <div className="relative w-48 h-20 sm:w-52 sm:h-24 lg:w-56 lg:h-24">
                 <Image
                   src={useLightHeader ? IMAGES.logoBlackNobg : IMAGES.logoWhite}
                   alt="Kossof Salon Spa"

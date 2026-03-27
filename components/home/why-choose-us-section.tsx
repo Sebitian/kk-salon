@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -124,9 +123,9 @@ export default function WhyChooseUsSection() {
               },
             }}
           >
-            <CarouselContent className="ml-0 w-full will-change-transform transform-gpu">
+            <CarouselContent className="!-ml-0 w-full gap-0 will-change-transform transform-gpu">
               {carouselImages.map((image, index) => (
-                <CarouselItem key={index} className="pl-0 w-full transform-gpu">
+                <CarouselItem key={index} className="!pl-0 w-full transform-gpu">
                   <div className="relative h-[72vh] min-h-[420px] max-h-[760px] w-full bg-salon-brown/10 sm:h-[82vh] sm:min-h-[560px] sm:max-h-[900px] lg:h-[95vh] lg:min-h-[680px] lg:max-h-[1100px]">
                     <Image
                       src={image.src}
@@ -188,33 +187,6 @@ export default function WhyChooseUsSection() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6">
-        {/* <div className="text-center mb-20">
-          <h2 className="text-4xl lg:text-5xl font-bold text-salon-brown mb-6">Why Kossof Salon Spa?</h2>
-          <div className="w-24 h-1 bg-salon-raspberry mx-auto"></div>
-          <p className="text-xl text-salon-brown/60 max-w-3xl mx-auto mt-8 font-light">
-            Experience the difference with our commitment to excellence, luxury, and personalized care.
-          </p>
-        </div> */}
-
-        <div className="mt-8 sm:mt-14 lg:mt-20 text-center">
-          <Link
-            href="/salon-services"
-            className="group inline-flex items-center bg-salon-raspberry px-7 py-3 text-white text-sm font-semibold tracking-widest uppercase rounded-sm border border-salon-raspberry shadow-[0_10px_24px_-12px_rgba(198,43,95,0.95)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-salon-raspberry/95 hover:shadow-[0_14px_28px_-12px_rgba(198,43,95,0.95)] focus:outline-none focus-visible:ring-2 focus-visible:ring-salon-raspberry/50 focus-visible:ring-offset-2"
-          >
-            Learn More About Our Services
-            <svg
-              className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </Link>
-        </div>
-      </div>
     </section>
   )
 }

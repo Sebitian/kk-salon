@@ -40,15 +40,23 @@ export default function HeroSection() {
             <span className="block text-center text-white text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-light leading-none tracking-[0.18em] sm:tracking-[0.3em] uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] pl-[0.18em] sm:pl-[0.3em]">
               Luxury
             </span>
+            <span
+              className="h-px w-36 sm:w-52 lg:w-64 bg-white/85"
+              aria-hidden="true"
+            />
             <span className="block text-center text-white text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-light leading-none tracking-[0.18em] sm:tracking-[0.3em] uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] pl-[0.18em] sm:pl-[0.3em]">
               Beauty
             </span>
+            <span
+              className="h-px w-36 sm:w-52 lg:w-64 bg-white/85"
+              aria-hidden="true"
+            />
             <span className="block text-center text-white text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-light leading-none tracking-[0.18em] sm:tracking-[0.3em] uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] pl-[0.18em] sm:pl-[0.3em]">
               Experience
             </span>
           </div>
 
-          <div className="mt-5 sm:mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <div className="mt-7 sm:mt-9 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <Link
               href="https://booking.mangomint.com/kossofsalonspa"
               target="_blank"

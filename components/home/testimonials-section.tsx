@@ -111,7 +111,7 @@ export default function TestimonialsSection() {
           <p 
             className="text-lg lg:text-xl text-salon-brown/60 pt-4"
           >
-            Rated 5 Stars by Lincolnshire Clients
+            Rated 5 Stars
           </p>
         </div>
 
