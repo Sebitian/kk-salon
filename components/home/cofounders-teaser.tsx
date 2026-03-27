@@ -27,62 +27,7 @@ export default function CofoundersTeaser() {
             </div>
           </div>
 
-          <div className="mt-0 bg-salon-taupe/40 border border-salon-blue/40 rounded-b-sm shadow-md p-5 sm:p-10 text-left">
-            <div className="space-y-5 text-salon-brown/80 leading-relaxed text-base sm:text-lg font-light">
-              <p>
-                <strong className="font-semibold text-salon-brown">
-                  Kossof Salon Spa
-                </strong>{" "}
-                was created by{" "}
-                <strong className="font-semibold text-salon-brown">
-                  Keeley Kossof
-                </strong>{" "}
-                and{" "}
-                <strong className="font-semibold text-salon-brown">
-                  Amy Kraaz
-                </strong>
-                , two
-                experienced hairstylists who built their careers working alongside
-                Keeley’s father,{" "}
-                <strong className="font-semibold text-salon-brown">
-                  Teddie Kossof
-                </strong>
-                , at the renowned{" "}
-                <strong className="font-semibold text-salon-brown">
-                  Teddie Kossof Salon Spa
-                </strong>
-                . With a legacy of excellence spanning over 50 years, the Kossof
-                name has long been trusted for beauty, professionalism, and an
-                elevated guest experience. For several years, Keeley and Amy also
-                managed Teddie Kossof Salon Spa together, strengthening their
-                leadership skills and deepening their shared commitment to running
-                a salon with excellence and integrity.
-              </p>
-              <p>
-                Through years of working together, Keeley and Amy not only refined
-                their craft — they also became close friends. Their personalities
-                balance each other perfectly, creating a dynamic partnership built
-                on trust, passion, and a shared commitment to excellence. Together, they founded{" "}
-                <strong className="font-semibold text-salon-brown">
-                  Kossof Salon Spa
-                </strong>{" "}
-                with one clear purpose: to create a destination where every guest
-                feels confident, cared for, and truly valued.
-              </p>
-              <p>
-                At{" "}
-                <strong className="font-semibold text-salon-brown">
-                  Kossof Salon Spa
-                </strong>
-                , our vision is simple — to deliver Luxury, Beauty, and Experience
-                in every visit. We are proud to offer a welcoming, fun, and social
-                environment where clients can relax, connect, and enjoy an elevated
-                salon and spa experience supported by top-notch hospitality and
-                exceptional service.
-              </p>
-            </div>
-
-          </div>
+          {/* About Us paragraph content hidden for now */}
         </div>
       </div>
     </section>

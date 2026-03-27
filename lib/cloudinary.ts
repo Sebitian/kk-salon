@@ -20,7 +20,7 @@ export const IMAGES = {
   rosa: cloudinaryImage("rosa_kkvcqt"),
   mostafa: cloudinaryImage("mostafa_kfeeq9"),
   nathan: cloudinaryImage("nathan_p1awui"),
-  kyAmy: cloudinaryImage("ky_amy_hhmtbt"),
+  kyAmy: cloudinaryImage("ky_amy_acowvc"),
   faqBg: cloudinaryImage("faq_bg_qjxse4"),
   logoWhite: cloudinaryImage("logo-white_tbrhkx"),
   logoBlackNobg: cloudinaryImage("logo-black-nobg_an8p1f"),
