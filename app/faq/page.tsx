@@ -160,10 +160,7 @@ export default function FAQPage() {
           </div>
 
           <div className="container-custom relative z-10">
-            <h1
-              className="heading-xl text-white text-center mb-4"
-              style={{ fontFamily: '"Orpheus Pro", serif' }}
-            >
+            <h1 className="heading-xl text-white text-center mb-4">
               Frequently Asked Questions
             </h1>
             <p className="text-white text-center text-lg max-w-3xl mx-auto">

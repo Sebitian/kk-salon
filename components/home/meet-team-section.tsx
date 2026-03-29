@@ -87,11 +87,7 @@ export default function MeetTeamSection() {
     [categories],
   )
 
-  const [activeCategory, setActiveCategory] = useState<string>("all")
   const [activeMemberKey, setActiveMemberKey] = useState<string | null>(null)
-  const visibleMembers = activeCategory === "all"
-    ? allMembers
-    : allMembers.filter((m) => m.categoryId === activeCategory)
 
   const itemElsRef = useRef(new Map<string, HTMLElement>())
   const setItemEl = useCallback(
@@ -101,11 +97,6 @@ export default function MeetTeamSection() {
     },
     [],
   )
-
-  useEffect(() => {
-    // Reset active selection when filtering changes
-    setActiveMemberKey(null)
-  }, [activeCategory])
 
   useEffect(() => {
     const els = Array.from(itemElsRef.current.values())
@@ -131,10 +122,10 @@ export default function MeetTeamSection() {
     els.forEach((el) => observer.observe(el))
 
     return () => observer.disconnect()
-  }, [visibleMembers])
+  }, [allMembers])
 
   return (
-    <section className="py-24 px-4 bg-white">
+    <section className="pt-0 pb-24 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
         <div
           className="flex flex-col items-center space-y-16"
@@ -143,50 +134,18 @@ export default function MeetTeamSection() {
           {/* Title with context */}
           <div className="text-center space-y-4">
             <h2 className="text-5xl lg:text-7xl font-bold tracking-tight text-salon-brown">
-              Talent
+              Our Experts
             </h2>
             <div className="w-24 h-1 bg-salon-blue mx-auto mt-4"></div>
-            <p className="text-salon-brown/70 text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto pt-4">
-              30+ Years of Expertise in Hair & Spa Services
-            </p>
             <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto italic font-light pt-2">
               Our vision is to deliver <strong>Luxury, Beauty, and Experience</strong> in every visit—within a welcoming,
               fun, and social environment supported by top-notch hospitality and exceptional service.
             </p>
           </div>
 
-          {/* Filter */}
-          <div className="flex flex-wrap justify-center gap-3">
-            <button
-              type="button"
-              onClick={() => setActiveCategory("all")}
-              className={`px-5 py-2 rounded-full text-sm font-semibold tracking-widest uppercase transition-colors border ${
-                activeCategory === "all"
-                  ? "bg-salon-raspberry text-white border-salon-raspberry"
-                  : "bg-white text-salon-brown border-salon-brown/20 hover:border-salon-blue/60"
-              }`}
-            >
-              All
-            </button>
-            {categories.map((c) => (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => setActiveCategory(c.id)}
-                className={`px-5 py-2 rounded-full text-sm font-semibold tracking-widest uppercase transition-colors border ${
-                  activeCategory === c.id
-                    ? "bg-salon-raspberry text-white border-salon-raspberry"
-                    : "bg-white text-salon-brown border-salon-brown/20 hover:border-salon-blue/60"
-                }`}
-              >
-                {c.label}
-              </button>
-            ))}
-          </div>
-
           {/* People list (Pascal-style) */}
           <div className="w-full space-y-6">
-            {visibleMembers.map((member) => (
+            {allMembers.map((member) => (
               // "Active" card is driven by scroll position (IntersectionObserver)
               <article
                 key={`${member.categoryId}-${member.name}`}
@@ -229,6 +188,12 @@ export default function MeetTeamSection() {
             ))}
           </div>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="/about"
+              className="inline-flex items-center justify-center bg-white text-salon-brown border border-salon-brown/20 px-6 py-3 rounded-sm text-xs sm:text-sm font-semibold tracking-widest uppercase hover:border-salon-blue/60 transition-colors"
+            >
+              Meet Our Experts
+            </Link>
             <Link
               href="https://booking.mangomint.com/kossofsalonspa"
               className="inline-flex items-center justify-center bg-salon-raspberry text-white px-6 py-3 rounded-sm text-xs sm:text-sm font-semibold tracking-widest uppercase hover:bg-salon-raspberry/90 transition-colors"

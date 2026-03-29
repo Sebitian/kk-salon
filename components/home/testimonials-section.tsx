@@ -85,7 +85,7 @@ export default function TestimonialsSection() {
 
   return (
     <section 
-      className="py-24 px-4 relative overflow-hidden"
+      className="pt-12 sm:pt-14 pb-8 sm:pb-10 px-4 relative overflow-hidden"
       style={{ 
         backgroundColor: '#ede7e4',
         fontFamily: 'var(--font-montserrat), sans-serif'
@@ -101,15 +101,15 @@ export default function TestimonialsSection() {
 
       <div className="container mx-auto max-w-4xl relative z-10">
         {/* Main Heading with Context */}
-        <div className="text-center mb-12 space-y-4">
+        <div className="text-center mb-8 sm:mb-10 space-y-3">
           <h2 
-            className="text-3xl lg:text-4xl font-bold tracking-[0.2em] text-salon-brown"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-[0.18em] text-salon-brown"
           >
             TESTIMONIALS
           </h2>
           <div className="w-16 h-1 bg-salon-raspberry mx-auto mt-4"></div>
           <p 
-            className="text-lg lg:text-xl text-salon-brown/60 pt-4"
+            className="text-base lg:text-lg text-salon-brown/60 pt-2"
           >
             Rated 5 Stars
           </p>
@@ -123,10 +123,10 @@ export default function TestimonialsSection() {
               {testimonials.map((t) => (
                 <div key={t.id} className="w-full shrink-0 grow-0 basis-full">
                   {/* Fixed Height Container for Testimonial */}
-                  <div className="min-h-[350px] lg:min-h-[400px] flex flex-col justify-center space-y-10 select-none">
+                  <div className="min-h-[250px] lg:min-h-[300px] flex flex-col justify-center space-y-6 sm:space-y-7 select-none">
                     {/* Quote with Schema Markup */}
                     <blockquote 
-                      className="text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto px-4 font-light italic"
+                      className="text-base lg:text-lg leading-relaxed max-w-3xl mx-auto px-4 font-medium italic"
                       style={{ color: '#251c18' }}
                       itemProp="review"
                       itemScope
@@ -150,11 +150,11 @@ export default function TestimonialsSection() {
                     </blockquote>
 
                     {/* Star Rating Visual */}
-                    <div className="flex justify-center items-center space-x-2">
+                    <div className="flex justify-center items-center space-x-1.5">
                       {[...Array(5)].map((_, i) => (
                         <span 
                           key={i}
-                          className="text-xl lg:text-2xl"
+                          className="text-lg lg:text-xl"
                           style={{ color: '#c21887' }}
                           aria-hidden="true"
                         >
@@ -165,15 +165,13 @@ export default function TestimonialsSection() {
 
                     {/* Client Attribution */}
                     <div className="flex flex-col items-center space-y-1">
-                      <p 
-                        className="text-sm lg:text-base font-semibold tracking-widest text-salon-brown"
-                      >
+                      <p className="text-sm sm:text-base font-semibold tracking-widest text-salon-brown">
                         {t.name} —{" "}
                         <a
                           href={t.sourceUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-light opacity-60 hover:opacity-100"
+                          className="font-medium opacity-85 hover:opacity-100"
                         >
                           {t.source}
                         </a>
@@ -186,7 +184,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Pagination Dots */}
-          <div className="flex justify-center items-center space-x-4 pt-12">
+          <div className="flex justify-center items-center space-x-3 pt-6 sm:pt-8">
             {testimonials.map((_, index) => (
               <button
                 key={index}

@@ -2,9 +2,24 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { IMAGES } from "@/lib/cloudinary"
+
+function FacebookLogo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M22.675 0h-21.35C.595 0 0 .595 0 1.326v21.348C0 23.405.595 24 1.326 24H12.82v-9.294H9.692V11.08h3.128V8.413c0-3.1 1.893-4.788 4.658-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.31h3.587l-.467 3.627H16.56V24h6.115C23.405 24 24 23.405 24 22.674V1.326C24 .595 23.405 0 22.675 0z" />
+    </svg>
+  )
+}
+
+function InstagramLogo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M7.5 0h9C20.642 0 24 3.358 24 7.5v9c0 4.142-3.358 7.5-7.5 7.5h-9C3.358 24 0 20.642 0 16.5v-9C0 3.358 3.358 0 7.5 0zm-.25 2A5.25 5.25 0 0 0 2 7.25v9.5A5.25 5.25 0 0 0 7.25 22h9.5A5.25 5.25 0 0 0 22 16.75v-9.5A5.25 5.25 0 0 0 16.75 2h-9.5zM17.5 4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM12 6a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
+    </svg>
+  )
+}
 
 export default function Footer() {
   return (
@@ -33,7 +48,7 @@ export default function Footer() {
                 className="group flex flex-col items-center md:items-start gap-2"
                 aria-label="Facebook"
               >
-                <Facebook className="h-6 w-6 text-[#00a6ff] group-hover:opacity-80 transition-opacity" />
+                <FacebookLogo className="h-6 w-6 text-[#00a6ff] group-hover:opacity-80 transition-opacity" />
                 <span className="text-sm text-white underline underline-offset-4 group-hover:text-salon-blue transition-colors">
                   Kossof Salon Spa
                 </span>
@@ -45,7 +60,7 @@ export default function Footer() {
                 className="group flex flex-col items-center md:items-start gap-2"
                 aria-label="Instagram"
               >
-                <Instagram className="h-6 w-6 text-[#ff2a8e] group-hover:opacity-80 transition-opacity" />
+                <InstagramLogo className="h-6 w-6 text-[#ff2a8e] group-hover:opacity-80 transition-opacity" />
                 <span className="text-sm text-white underline underline-offset-4 group-hover:text-salon-blue transition-colors">
                   kossof_salonspa
                 </span>
@@ -57,7 +72,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h3 className="text-sm font-bold uppercase mb-8 tracking-[0.2em] text-salon-blue">CONTACT</h3>
             <div className="space-y-4 text-sm font-light">
-              <p className="leading-relaxed">185 N MILWAUKEE AVENUE, STE. 120<br />LINCOLNSHIRE, IL 60069</p>
+              <p className="leading-relaxed">185 MILWAUKEE AVENUE, STE. 120<br />LINCOLNSHIRE, IL 60069</p>
               <div className="pt-4 space-y-2">
                 <a href="mailto:info@kossofsalonspa.com" className="block hover:text-salon-blue transition-colors italic">info@kossofsalonspa.com</a>
                 <a href="tel:8478216604" className="block hover:text-salon-blue transition-colors font-medium">847-821-6604</a>
@@ -103,20 +118,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        {/* <div className="text-center text-white/20 text-[10px] tracking-[0.2em] pt-12 border-t border-white/5 uppercase">
-          <p>
-            &copy; {new Date().getFullYear()} Kossof Salon Spa. Site by{" "}
-            <a
-              href="https://www.sebastian-sovailescu.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              Sebastian
-            </a>
-          </p>
-        </div> */}
+        <div className="text-center text-white/40 text-[10px] tracking-[0.2em] pt-12 border-t border-white/10 uppercase">
+          <p>&copy; {new Date().getFullYear()} Kossof Salon Spa. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   )

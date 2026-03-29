@@ -3,7 +3,7 @@ import { VIDEOS } from "@/lib/cloudinary"
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[92vh] sm:min-h-[100vh] lg:min-h-[100vh] flex items-center justify-center overflow-hidden bg-white pt-20">
+    <section className="relative min-h-[100dvh] sm:min-h-[100vh] flex items-center justify-center overflow-hidden bg-white pt-20">
       <div className="absolute inset-0 z-0">
         <video
           src={VIDEOS.services}
@@ -17,7 +17,7 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-10 flex flex-col justify-center items-center w-full h-full px-4 sm:px-6">
-        <div className="mb-3 sm:mb-4 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <div className="mt-8 lg:mt-12 mb-3 sm:mb-4 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
           <Link
             href="https://maps.google.com/maps?q=Salon%20Bennett%2C%20185%20N%20Milwaukee%20Ave%20Suite%20120%2C%20Lincolnshire%2C%20IL%2060069"
             target="_blank"
@@ -56,12 +56,12 @@ export default function HeroSection() {
             </span>
           </div>
 
-          <div className="mt-7 sm:mt-9 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <div className="mt-9 sm:mt-11 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <Link
               href="https://booking.mangomint.com/kossofsalonspa"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center min-w-[170px] px-6 py-3 text-sm sm:text-base font-semibold tracking-widest uppercase rounded-sm bg-primary text-white hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center justify-center text-center min-w-[210px] px-8 py-4 text-base sm:text-lg font-semibold tracking-widest uppercase rounded-sm bg-primary text-white hover:bg-primary/90 transition-colors"
             >
               Book Now
             </Link>
@@ -69,7 +69,7 @@ export default function HeroSection() {
               href="https://clients.mangomint.com/gift-cards/741141"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center min-w-[170px] px-6 py-3 text-sm sm:text-base font-semibold tracking-widest uppercase rounded-sm border border-white/80 text-white hover:bg-white hover:text-salon-brown transition-colors"
+              className="inline-flex items-center justify-center text-center min-w-[210px] px-8 py-4 text-base sm:text-lg font-semibold tracking-widest uppercase rounded-sm border border-white/80 text-white hover:bg-white hover:text-salon-brown transition-colors"
             >
               Gift Cards
             </Link>
