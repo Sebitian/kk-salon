@@ -109,16 +109,6 @@ export default function Header() {
               GIFT CARDS
             </Link>
             <Link
-              href="/faq"
-              className={cn(
-                "text-sm font-semibold tracking-widest transition-colors hover:text-primary",
-                useLightHeader ? "text-salon-brown" : "text-white",
-                pathname === "/faq" && "text-primary"
-              )}
-            >
-              FAQ
-            </Link>
-            <Link
               href="https://booking.mangomint.com/kossofsalonspa"
               target="_blank"
               rel="noopener noreferrer"
@@ -183,13 +173,6 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               GIFT CARDS
-            </Link>
-            <Link
-              href="/faq"
-              className="block px-8 py-4 text-sm font-semibold tracking-widest text-salon-brown border-b border-gray-50"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              FAQ
             </Link>
             <Link
               href="https://booking.mangomint.com/kossofsalonspa"

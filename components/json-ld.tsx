@@ -52,8 +52,9 @@ export default function JsonLd() {
         }
       ],
       "sameAs": [
-        "https://instagram.com",
-        "https://facebook.com"
+        "https://www.facebook.com/people/Kossof-Salon-Spa/61582500130935/",
+        "https://www.instagram.com/kossof_salonspa/",
+        "https://www.tiktok.com/@kossof.salon.spa"
       ],
       "priceRange": "$$"
     }

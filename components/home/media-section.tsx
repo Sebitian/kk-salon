@@ -1,6 +1,7 @@
 "use client"
 
 import { Facebook, Instagram } from "lucide-react"
+import { TikTokLogo } from "@/components/icons/tiktok-logo"
 
 export default function MediaSection() {
   return (
@@ -56,6 +57,18 @@ export default function MediaSection() {
               <Instagram className="h-6 w-6 text-[#ff2a8e] group-hover:opacity-80 transition-opacity" />
               <span className="text-sm sm:text-[15px] text-salon-brown underline underline-offset-4 group-hover:text-salon-blue transition-colors">
                 Follow us on Instagram
+              </span>
+            </a>
+            <a
+              href="https://www.tiktok.com/@kossof.salon.spa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex w-full sm:w-auto items-center sm:items-center justify-start sm:justify-center gap-3 sm:gap-2 rounded-2xl border border-white/90 bg-white/65 px-4 sm:px-5 py-3.5 sm:py-4 shadow-[0_10px_22px_-16px_rgba(37,28,24,0.5)] transition-all hover:-translate-y-0.5 hover:bg-white/85 active:translate-y-0 active:scale-[0.995]"
+              aria-label="Follow us on TikTok"
+            >
+              <TikTokLogo className="h-6 w-6 shrink-0 group-hover:opacity-90 transition-opacity" />
+              <span className="text-sm sm:text-[15px] text-salon-brown underline underline-offset-4 group-hover:text-salon-blue transition-colors">
+                Follow us on TikTok
               </span>
             </a>
           </div>

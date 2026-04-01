@@ -1,4 +1,5 @@
-import { MapPin, Phone, Mail, Clock, Facebook } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react"
+import { TikTokLogo } from "@/components/icons/tiktok-logo"
 
 export default function ContactInfo() {
   return (
@@ -92,16 +93,36 @@ export default function ContactInfo() {
 
       <div className="mt-8 pt-6 border-t border-gray-100">
         <h3 className="font-semibold mb-3">Connect With Us</h3>
-        <div className="flex space-x-4">
+        <div className="flex flex-wrap gap-3">
           <a
-            href="https://www.facebook.com/profile.php?id=61582500130935"
+            href="https://www.facebook.com/people/Kossof-Salon-Spa/61582500130935/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gray-100 p-2 rounded-full hover:bg-primary hover:text-white transition-colors"
             aria-label="Follow Kossof Salon Spa on Facebook"
             itemProp="sameAs"
           >
-            <Facebook className="h-5 w-5" />
+            <Facebook className="h-5 w-5 text-[#00a6ff]" />
+          </a>
+          <a
+            href="https://www.instagram.com/kossof_salonspa/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-100 p-2 rounded-full hover:bg-primary hover:text-white transition-colors"
+            aria-label="Follow Kossof Salon Spa on Instagram"
+            itemProp="sameAs"
+          >
+            <Instagram className="h-5 w-5 text-[#ff2a8e]" />
+          </a>
+          <a
+            href="https://www.tiktok.com/@kossof.salon.spa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-100 p-2 rounded-full hover:bg-primary hover:text-white transition-colors"
+            aria-label="Follow Kossof Salon Spa on TikTok"
+            itemProp="sameAs"
+          >
+            <TikTokLogo className="h-5 w-5 shrink-0" />
           </a>
         </div>
       </div>

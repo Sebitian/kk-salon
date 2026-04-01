@@ -225,7 +225,8 @@ const localBusinessSchema = {
   url: "https://kossofsalonspa.com",
   sameAs: [
     "https://www.facebook.com/kossofsalonspa",
-    "https://www.instagram.com/kossofsalonspa"
+    "https://www.instagram.com/kossofsalonspa",
+    "https://www.tiktok.com/@kossof.salon.spa"
   ]
 };
 

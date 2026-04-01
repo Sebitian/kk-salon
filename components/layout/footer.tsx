@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { IMAGES } from "@/lib/cloudinary"
+import { TikTokLogo } from "@/components/icons/tiktok-logo"
 
 function FacebookLogo({ className }: { className?: string }) {
   return (
@@ -40,7 +41,7 @@ export default function Footer() {
             <p className="text-white/60 text-sm leading-relaxed max-w-xs font-light">
               30+ years of expertise in luxury hair and spa services in Lincolnshire, IL. Experience the art of refinement.
             </p>
-            <div className="flex items-start gap-8 mt-8">
+            <div className="flex flex-wrap items-start justify-center md:justify-start gap-6 sm:gap-8 mt-8">
               <a
                 href="https://www.facebook.com/people/Kossof-Salon-Spa/61582500130935/"
                 target="_blank"
@@ -63,6 +64,18 @@ export default function Footer() {
                 <InstagramLogo className="h-6 w-6 text-[#ff2a8e] group-hover:opacity-80 transition-opacity" />
                 <span className="text-sm text-white underline underline-offset-4 group-hover:text-salon-blue transition-colors">
                   kossof_salonspa
+                </span>
+              </a>
+              <a
+                href="https://www.tiktok.com/@kossof.salon.spa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center md:items-start gap-2"
+                aria-label="TikTok"
+              >
+                <TikTokLogo className="h-6 w-6 shrink-0 group-hover:opacity-90 transition-opacity" />
+                <span className="text-sm text-white underline underline-offset-4 group-hover:text-salon-blue transition-colors">
+                  @kossof.salon.spa
                 </span>
               </a>
             </div>
