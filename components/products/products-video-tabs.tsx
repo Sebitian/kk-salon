@@ -74,7 +74,7 @@ export default function ProductsVideoTabs({ items, salonInteractiveUrl }: Produc
             href="https://tidd.ly/3Nn3azv"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-sm px-6 py-3 text-xs sm:text-sm font-semibold tracking-widest uppercase bg-white text-salon-brown border border-salon-brown/20 hover:bg-salon-brown/5 transition-colors min-w-[230px]"
+            className="inline-flex items-center justify-center rounded-sm px-6 py-3 text-xs sm:text-sm font-semibold tracking-widest uppercase bg-salon-raspberry text-white hover:bg-salon-raspberry/90 transition-colors min-w-[230px]"
           >
             Farmhouse Fresh
           </Link>

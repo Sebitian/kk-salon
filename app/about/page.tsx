@@ -5,7 +5,7 @@ import MeetTeamSection from "@/components/home/meet-team-section";
 export const metadata: Metadata = {
   title: "About Us - Kossof Salon Spa | Lincolnshire Hair Salon",
   description:
-    "Learn about Kossof Salon Spa, created by Keeley Kossof and Amy Kraaz. Built on the Kossof legacy of excellence spanning over 50 years and a commitment to Luxury, Beauty, and Experience in every visit.",
+    "Learn about Kossof Salon Spa, created by Keeley Kossof and Amy Kraaz. Built on the Kossof legacy of excellence spanning over 50 years and a commitment to Beauty, Luxury, and Experience in every visit.",
   openGraph: {
     title: "About Kossof Salon Spa - Lincolnshire's Premier Hair Salon",
     description:
@@ -79,7 +79,7 @@ const aboutSchema = {
     "@type": "HairSalon",
     name: "Kossof Salon Spa",
     description:
-      "Kossof Salon Spa was created by Keeley Kossof and Amy Kraaz and is built on the Kossof legacy of excellence spanning over 50 years—delivering Luxury, Beauty, and Experience in every visit.",
+      "Kossof Salon Spa was created by Keeley Kossof and Amy Kraaz and is built on the Kossof legacy of excellence spanning over 50 years—delivering Beauty, Luxury, and Experience in every visit.",
     foundingDate: "2024",
     founders: [
       {

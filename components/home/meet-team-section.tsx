@@ -30,7 +30,7 @@ export default function MeetTeamSection() {
             </h2>
             <div className="w-24 h-1 bg-salon-blue mx-auto mt-3" />
             <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto italic font-light pt-2">
-              Our vision is to deliver <strong>Luxury, Beauty, and Experience</strong> in every visit—within a welcoming,
+              Our vision is to deliver <strong>Beauty, Luxury, and Experience</strong> in every visit—within a welcoming,
               fun, and social environment supported by top-notch hospitality and exceptional service.
             </p>
           </div>
@@ -113,13 +113,15 @@ export default function MeetTeamSection() {
               <DialogHeader>
                 <DialogTitle className="text-salon-brown text-xl font-bold tracking-wide">
                   {bioMember.name}
-                  <span className="block text-sm font-normal text-salon-brown/70 mt-1">{bioMember.title}</span>
+                  <span className="block text-sm font-normal text-black mt-1">{bioMember.title}</span>
                 </DialogTitle>
               </DialogHeader>
               {bioMember.description.trim() ? (
-                <div className="text-black leading-relaxed text-sm sm:text-base font-light space-y-3 pt-2">
+                <div className="leading-relaxed text-sm sm:text-base font-normal text-black space-y-3 pt-2">
                   {bioMember.description.split("\n\n").map((paragraph, i) => (
-                    <p key={i}>{paragraph}</p>
+                    <p key={i} className="text-black">
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
               ) : null}

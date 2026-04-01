@@ -49,7 +49,7 @@ export default function ProductsPage() {
               href="https://tidd.ly/3Nn3azv"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-sm px-6 py-3 text-xs sm:text-sm font-semibold tracking-widest uppercase bg-salon-blue text-salon-brown hover:bg-salon-blue/80 transition-colors w-full"
+              className="inline-flex items-center justify-center rounded-sm px-6 py-3 text-xs sm:text-sm font-semibold tracking-widest uppercase bg-salon-raspberry text-white hover:bg-salon-raspberry/90 transition-colors w-full"
             >
               Farmhouse Fresh
             </Link>

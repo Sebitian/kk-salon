@@ -51,8 +51,8 @@ function member(
 
 export const TEAM_CATEGORIES: TeamCategory[] = [
   {
-    id: "management",
-    label: "Management Team",
+    id: "owners",
+    label: "Owners",
     members: [
       member("keeley", "Kym", "Co-Founder", "keeley_rabilg"),
       member("amy", "Amy", "Co-Founder", "amy_meorbn"),
@@ -73,7 +73,7 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
   },
   {
     id: "color-styling",
-    label: "Color & Styling",
+    label: "Stylists & Colorists",
     members: [
       member("zack", "Zack", "Colorist / Stylist", "zack_colorist_stylist_zu3l5d"),
       member("sari", "Sari", "Colorist / Stylist", "sari_colorist_stylist_pstjjz"),
