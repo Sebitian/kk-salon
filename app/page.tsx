@@ -13,6 +13,7 @@ import ShopShowcase from "@/components/home/shop-showcase"
 import ShopCollections from "@/components/home/shop-collections"
 import ComingSoonPage from "@/components/home/coming-soon"
 import ProductsVideoShowcase from "@/components/home/products-video-showcase"
+import { IMAGES } from "@/lib/cloudinary"
 
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
@@ -66,7 +67,7 @@ export default function Home() {
           <div className="mt-10 rounded-2xl overflow-hidden shadow-xl bg-white">
             <div className="relative w-full aspect-[4/3] sm:aspect-[16/10]">
               <Image
-                src="/drive-download-20260329T212614Z-1-001/keeley_amy.jpg"
+                src={IMAGES.keeleyAmy}
                 alt="Keeley and Amy"
                 fill
                 className="object-cover object-[center_18%]"
