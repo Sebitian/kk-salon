@@ -1,5 +1,5 @@
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react"
-import { TikTokLogo } from "@/components/icons/tiktok-logo"
+import { TikTokLogo } from "@/components/tiktok-logo"
 
 export default function ContactInfo() {
   return (

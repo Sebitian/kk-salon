@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { IMAGES } from "@/lib/cloudinary"
-import { TikTokLogo } from "@/components/icons/tiktok-logo"
+import { TikTokLogo } from "@/components/tiktok-logo"
 
 function FacebookLogo({ className }: { className?: string }) {
   return (
