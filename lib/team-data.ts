@@ -54,7 +54,7 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     id: "owners",
     label: "Owners",
     members: [
-      member("keeley", "Kym", "Co-Founder", "keeley_rabilg"),
+      member("keeley", "Keeley", "Co-Founder", "keeley_rabilg"),
       member("amy", "Amy", "Co-Founder", "amy_meorbn"),
     ],
   },
