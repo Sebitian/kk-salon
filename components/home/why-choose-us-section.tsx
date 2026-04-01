@@ -14,10 +14,10 @@ import { IMAGES } from "@/lib/cloudinary"
 
 const carouselImages = [
   { src: IMAGES.tymo, alt: "Salon style photo 1" },
-  { src: IMAGES.aliPazani, alt: "Salon style photo 2" },
-  { src: IMAGES.rosa, alt: "Salon style photo 3" },
   { src: IMAGES.mostafa, alt: "Salon style photo 4" },
+  { src: IMAGES.aliPazani, alt: "Salon style photo 2" },
   { src: IMAGES.nathan, alt: "Salon style photo 5" },
+  { src: IMAGES.rosa, alt: "Salon style photo 3" },
 ]
 
 export default function WhyChooseUsSection() {
