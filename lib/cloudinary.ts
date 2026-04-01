@@ -6,7 +6,7 @@ export function cloudinaryImage(publicId: string, transforms = "f_auto,q_auto") 
   return `${BASE_URL}/image/upload/${transforms}/${publicId}`
 }
 
-export function cloudinaryVideo(publicId: string, transforms = "f_auto,q_auto") {
+export function cloudinaryVideo(publicId: string, transforms = "f_auto,q_auto:best") {
   return `${BASE_URL}/video/upload/${transforms}/${publicId}`
 }
 

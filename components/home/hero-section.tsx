@@ -3,15 +3,15 @@ import { VIDEOS } from "@/lib/cloudinary"
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[100dvh] sm:min-h-[100vh] flex items-center justify-center overflow-hidden bg-white pt-20">
-      <div className="absolute inset-0 z-0">
+    <section className="relative min-h-[100dvh] sm:min-h-[100vh] flex items-center justify-center overflow-hidden bg-black pt-20">
+      <div className="absolute inset-0 z-0 flex items-center justify-center">
         <video
           src={VIDEOS.services}
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className="min-w-full min-h-full object-contain sm:object-cover"
         />
         <div className="absolute inset-0 bg-black/30 z-[1]" />
       </div>
