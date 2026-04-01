@@ -69,7 +69,7 @@ export default function Home() {
                 src="/drive-download-20260329T212614Z-1-001/keeley_amy.jpg"
                 alt="Keeley and Amy"
                 fill
-                className="object-cover"
+                className="object-cover object-[center_18%]"
                 sizes="(max-width: 1024px) 100vw, 1024px"
               />
             </div>

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CofoundersTeaser from "@/components/home/cofounders-teaser";
 import MeetTeamSection from "@/components/home/meet-team-section";
 
 export const metadata: Metadata = {
@@ -292,41 +291,13 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div className="pt-40 sm:pt-44 bg-white" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
-        {/* Cofounders Section (moved from Home) */}
-        <CofoundersTeaser />
+      <div className="pt-32 sm:pt-36 bg-[#faf8f5]" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
         <MeetTeamSection />
 
-        <div className="container-custom mb-20">
+        <div className="container-custom mb-20 bg-white pt-10 pb-4">
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Section 2: Our Heritage - Enhanced */}
-            <article className="bg-white rounded-lg shadow-md p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-salon-brown mb-4 tracking-widest uppercase">
-                Our Heritage & Vision
-              </h2>
-              <div className="text-salon-brown/70 leading-relaxed space-y-4">
-                <p>
-                  At Kossof Salon Spa, our vision is simple—to deliver <strong>Luxury, Beauty, and Experience</strong> in every visit.
-                </p>
-                <p>
-                  We are proud to offer a welcoming, fun, and social environment where clients can relax, connect, and enjoy an elevated salon and spa experience supported by top-notch hospitality and exceptional service.
-                </p>
-                <p>
-                  Located at <strong>185 N Milwaukee Avenue, Suite 120 in Lincolnshire, IL</strong>, we’re here to make every guest feel confident, cared for, and truly valued.
-                </p>
-              </div>
-            </article>
-
             {/* Call to Action */}
             <div className="bg-[#251c18] rounded-lg shadow-xl p-8 md:p-12 text-center">
-              <h2
-                className="text-3xl lg:text-4xl font-bold text-white mb-4 tracking-[0.2em] uppercase"
-              >
-                Experience Master-Level Hair Care
-              </h2>
-              <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
-                Book your appointment and experience Luxury, Beauty, and Experience in every visit—supported by top-notch hospitality and exceptional service.
-              </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
                   href="tel:8478216604"
