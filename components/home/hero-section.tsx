@@ -11,7 +11,7 @@ export default function HeroSection() {
           muted
           loop
           playsInline
-          className="min-w-full min-h-full object-contain sm:object-cover"
+          className="min-w-full min-h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30 z-[1]" />
       </div>
