@@ -426,6 +426,29 @@ export default function ServicesContent({
           content="Full service menu including haircuts, color, treatments, nails, facials, massage, waxing, lashes & brows, wedding services, and makeup."
         />
 
+        {sections.length > 1 ? (
+          <nav
+            className="w-full border-b border-salon-brown/10 bg-[#fdfbf9] px-4 py-4 sm:px-6 sm:py-5"
+            aria-label="Service categories"
+          >
+            <div className="mx-auto max-w-7xl">
+              <ul className="flex flex-wrap justify-center gap-2 sm:gap-2.5">
+                {sections.map((section) => (
+                  <li key={section.id}>
+                    <button
+                      type="button"
+                      onClick={() => scrollToTarget(section.id)}
+                      className="inline-flex max-w-[min(100%,14rem)] items-center justify-center rounded-sm border border-salon-brown/20 bg-white px-3 py-2 text-left text-[11px] font-semibold uppercase leading-snug tracking-[0.06em] text-salon-brown shadow-sm transition-colors hover:border-salon-raspberry/45 hover:bg-salon-raspberry/[0.06] hover:text-salon-brown sm:max-w-none sm:text-xs sm:tracking-[0.08em]"
+                    >
+                      {section.title}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </nav>
+        ) : null}
+
         <section className="hidden">
           <div className="mx-auto w-full max-w-7xl px-6 py-6 sm:px-8">
             <label htmlFor="services-search" className="block text-xs font-semibold uppercase tracking-[0.2em] text-salon-brown/75">

@@ -87,7 +87,7 @@ export default function Home() {
                 and personal.
               </p>
               <p className="text-lg sm:text-xl leading-relaxed font-light text-black">
-                Here, beauty meets luxury, and together they become an experience - one designed just for you.
+                Here, luxury meets beauty, and together they become an experience - one designed just for you.
               </p>
               <p className={`${dancingScript.className} text-4xl sm:text-5xl leading-tight font-semibold pt-1`}>
                 With love,

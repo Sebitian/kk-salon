@@ -30,7 +30,7 @@ export default function MeetTeamSection() {
             </h2>
             <div className="w-24 h-1 bg-salon-blue mx-auto mt-3" />
             <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto italic font-light pt-2">
-              Our vision is to deliver <strong>Beauty, Luxury, and Experience</strong> in every visit—within a welcoming,
+              Our vision is to deliver <strong>Luxury, Beauty, and Experience</strong> in every visit—within a welcoming,
               fun, and social environment supported by top-notch hospitality and exceptional service.
             </p>
           </div>
