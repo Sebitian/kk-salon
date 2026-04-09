@@ -12,7 +12,7 @@ const faqItems = [
   {
     question: "What services do you offer at Kossof Salon Spa?",
     answer:
-      "We offer salon services (haircuts, color, treatments, retexturizing, nails, waxing, lashes and brows, and makeup), spa services (facials, advanced facials, body treatments, body wraps, and massage therapies), and wedding services (bridal hair and makeup with in-salon and on-location options).",
+      "We offer salon services (haircuts, color, treatments, retexturizing, nails, waxing, lashes + brows, and makeup), spa services (facials, advanced facial treatments, body treatments, body wraps, and massage therapies), and wedding services (bridal hair and makeup with in-salon and on-location options).",
   },
   {
     question: "Do new color or extension clients need a consultation?",

@@ -264,13 +264,16 @@ interface ServicesContentProps {
   schemaName?: string
   schemaDescription?: string
   searchPlaceholder?: string
+  /** When set, footer shows a phone CTA instead of online booking. */
+  footerCallSchedule?: { tel: string; numberDisplay: string }
 }
 
 export default function ServicesContent({
   sections,
   schemaName = "Kossof Salon Spa Services",
-  schemaDescription = "Full service menu including hair, nails, facials, massage, waxing, lashes & brows, and makeup services.",
+  schemaDescription = "Full service menu including hair, nails, facials, massage therapies, waxing, lashes + brows, and makeup services.",
   searchPlaceholder = "Try: balayage, bridal makeup, deep tissue...",
+  footerCallSchedule,
 }: ServicesContentProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const trimmedQuery = searchQuery.trim()
@@ -329,7 +332,9 @@ export default function ServicesContent({
                   : true,
               ),
           }))
-          .filter((group) => group.items.length > 0)
+          .filter(
+            (group) => group.items.length > 0 || Boolean(group.bookingEmbedUrl),
+          )
 
         return {
           ...section,
@@ -423,7 +428,7 @@ export default function ServicesContent({
         <meta itemProp="name" content="Salon & Spa Services & Pricing" />
         <meta
           itemProp="description"
-          content="Full service menu including haircuts, color, treatments, nails, facials, massage, waxing, lashes & brows, wedding services, and makeup."
+          content="Full service menu including haircuts, color, treatments, nails, facials, massage therapies, waxing, lashes + brows, wedding services, and makeup."
         />
 
         {sections.length > 1 ? (
@@ -554,7 +559,7 @@ export default function ServicesContent({
                     </h2>
                     <div className="w-20 h-1 bg-salon-raspberry"></div>
                     {section.intro && (
-                      <p className="mt-6 text-[15px] md:text-base text-salon-brown/70 leading-relaxed font-normal">
+                      <p className="mt-6 whitespace-pre-line text-[15px] md:text-base text-salon-brown/70 leading-relaxed font-normal">
                         {section.intro}
                       </p>
                     )}
@@ -734,14 +739,26 @@ export default function ServicesContent({
 
         <section className="w-full bg-white border-t border-salon-brown/10">
           <div className="container mx-auto max-w-7xl px-8 py-14 sm:py-16 flex justify-center">
-            <Link
-              href="https://booking.mangomint.com/kossofsalonspa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full max-w-xs sm:w-auto sm:min-w-[220px] items-center justify-center whitespace-nowrap bg-salon-raspberry text-white px-8 py-3.5 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase hover:bg-salon-raspberry/90 transition-colors"
-            >
-              Book Now
-            </Link>
+            {footerCallSchedule ? (
+              <Link
+                href={`tel:${footerCallSchedule.tel}`}
+                className="inline-flex w-full max-w-xs sm:w-auto sm:min-w-[220px] flex-col items-center justify-center gap-1 bg-salon-raspberry text-white px-8 py-4 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase hover:bg-salon-raspberry/90 transition-colors text-center"
+              >
+                <span>Call to schedule</span>
+                <span className="text-base font-semibold tracking-[0.08em] normal-case tabular-nums">
+                  {footerCallSchedule.numberDisplay}
+                </span>
+              </Link>
+            ) : (
+              <Link
+                href="https://booking.mangomint.com/kossofsalonspa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full max-w-xs sm:w-auto sm:min-w-[220px] items-center justify-center whitespace-nowrap bg-salon-raspberry text-white px-8 py-3.5 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase hover:bg-salon-raspberry/90 transition-colors"
+              >
+                Book Now
+              </Link>
+            )}
           </div>
         </section>
       </article>

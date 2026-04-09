@@ -13,7 +13,7 @@ export default function SalonServicesHero() {
           </h1>
           <div className="w-24 h-1 bg-salon-blue mx-auto mt-4" />
           <p className="text-salon-brown/70 text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto pt-4">
-            Hair, Nails & Makeup
+            Hair & Nails
           </p>
           <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto italic font-light pt-2">
             Explore our full menu of elevated salon services.

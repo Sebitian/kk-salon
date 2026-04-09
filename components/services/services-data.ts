@@ -596,7 +596,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
         ],
       },
       {
-        title: "Advanced Facials",
+        title: "Advanced Facial Treatments",
         items: [
           {
             name: "Signature Microdermabrasion Facial",
@@ -829,7 +829,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
   {
     id: "beauty",
     title: "Beauty",
-    intro: "Wedding services, waxing, lashes & brows, and makeup artistry.",
+    intro: "Wedding services, waxing, lashes + brows, and makeup artistry.",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-[#ede7e4]/20",
     image: {
@@ -906,7 +906,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
         ],
       },
       {
-        title: "Body Waxing \u2013 Facial & Detail Areas",
+        title: "Facial + Detail Areas",
         items: [
           {
             name: "Brow wax",
@@ -956,7 +956,7 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
         ],
       },
       {
-        title: "Lashes, Brows & Beauty",
+        title: "Lashes, Brows + Beauty",
         items: [
           { name: "Brow Tint", price: "$22", description: "Enhances fullness and definition." },
           { name: "Lash Tint", price: "$35", description: "Darkens and enhances natural lashes." },

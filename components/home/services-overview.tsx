@@ -43,7 +43,7 @@ const services = [
     ),
     title: "Makeup & Skincare",
     description: "Enhance your natural beauty with our expert makeup and skincare services.",
-    link: "/salon-services#beauty",
+    link: "/spa-services#beauty",
   },
 ]
 

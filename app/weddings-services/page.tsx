@@ -34,6 +34,7 @@ export default function WeddingsServicesPage() {
         schemaName="Kossof Wedding Services"
         schemaDescription="Wedding service menu including in-salon and on-location bridal hair and makeup."
         searchPlaceholder="Try: bridal hair, bridal makeup, on-location..."
+        footerCallSchedule={{ tel: "8478216604", numberDisplay: "847-821-6604" }}
       />
     </>
   )

@@ -21,12 +21,13 @@ export default function WeddingsServicesHero() {
           </p>
           <div className="pt-8 flex w-full items-center justify-center">
             <Link
-              href="https://booking.mangomint.com/kossofsalonspa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full max-w-xs sm:w-auto sm:min-w-[210px] items-center justify-center whitespace-nowrap bg-salon-raspberry text-white px-8 py-3.5 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase hover:bg-salon-raspberry/90 transition-colors"
+              href="tel:8478216604"
+              className="inline-flex w-full max-w-xs sm:w-auto sm:min-w-[210px] flex-col items-center justify-center gap-1 bg-salon-raspberry text-white px-8 py-4 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase hover:bg-salon-raspberry/90 transition-colors text-center"
             >
-              Book Now
+              <span>Call to schedule</span>
+              <span className="text-base font-semibold tracking-[0.08em] normal-case tabular-nums">
+                847-821-6604
+              </span>
             </Link>
           </div>
         </div>

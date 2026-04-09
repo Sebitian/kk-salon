@@ -4,11 +4,11 @@ import ServicesContent from "@/components/services/services-content"
 import { SALON_SERVICES_SECTIONS } from "@/components/services/salon-services-data"
 
 export const metadata: Metadata = {
-  title: "Salon Services & Pricing | Hair, Nails, Beauty - Kossof Salon Spa",
+  title: "Salon Services & Pricing | Hair & Nails - Kossof Salon Spa",
   description:
-    "Explore our full menu of luxury salon services: haircuts, color, treatments, retexturizing, nails, waxing, lashes & brows, wedding hair & makeup, and makeup artistry.",
+    "Explore our full menu of luxury salon services: haircuts, color, treatments, retexturizing, and nails.",
   keywords:
-    "salon services, haircuts, hair color, balayage, keratin treatments, nails, manicure, pedicure, waxing, lash lift, brow tint, wedding hair, wedding makeup, makeup artistry",
+    "salon services, haircuts, hair color, balayage, keratin treatments, nails, manicure, pedicure",
   openGraph: {
     title: "Kossof Salon Services & Pricing",
     description:
@@ -32,7 +32,7 @@ export default function SalonServicesPage() {
       <ServicesContent
         sections={SALON_SERVICES_SECTIONS}
         schemaName="Kossof Salon Services"
-        schemaDescription="Full salon service menu including haircuts, color, treatments, nails, waxing, lashes & brows, wedding services, and makeup."
+        schemaDescription="Full salon service menu including haircuts, color, treatments, and nails."
         searchPlaceholder="Try: balayage, keratin, manicure, waxing..."
       />
     </>

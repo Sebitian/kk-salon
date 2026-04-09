@@ -13,7 +13,7 @@ export default function SpaServicesHero() {
           </h1>
           <div className="w-24 h-1 bg-salon-blue mx-auto mt-4" />
           <p className="text-salon-brown/70 text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto pt-4">
-            Waxing, Facials, Body Treatments & Massage
+            Waxing, Makeup, Facials, Body Treatments & Massage Therapies
           </p>
           <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto italic font-light pt-2">
             Indulge in our curated spa experiences.

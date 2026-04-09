@@ -14,9 +14,9 @@ const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
     },
     groups: [
       {
-        title: "Body Waxing - Facial & Detail Areas",
+        title: "Facial + Detail Areas",
         bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=12",
-        bookingEmbedTitle: "Kossof Salon Spa face and detail body waxing Mangomint booking menu",
+        bookingEmbedTitle: "Kossof Salon Spa facial and detail areas Mangomint booking menu",
         items: [
           {
             name: "Brow Wax",
@@ -188,7 +188,7 @@ const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
   },
   {
     id: "lashes-brows",
-    title: "Lashes & Brows",
+    title: "Lashes + Brows",
     intro: "Enhancing lash and brow services for shape, lift, and definition.",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
@@ -198,7 +198,7 @@ const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
     },
     groups: [
       {
-        title: "Lashes, Brows & Beauty",
+        title: "Lashes, Brows + Beauty",
         bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=23",
         bookingEmbedTitle: "Kossof Salon Spa lashes brows and beauty Mangomint booking menu",
         items: [
@@ -221,9 +221,70 @@ const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
     ],
   },
   {
+    id: "beauty",
+    title: "Makeup Artistry",
+    intro: "Professional makeup services for events and special occasions.",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#ede7e4]/20",
+    image: {
+      src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&h=1200&fit=crop&auto=format&q=85",
+      alt: "Makeup artistry and beauty tools",
+    },
+    groups: [
+      {
+        title: "Makeup Artistry",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=22",
+        bookingEmbedTitle: "Kossof Salon Spa makeup artistry Mangomint booking menu",
+        items: [
+          {
+            name: "Full Face Makeup",
+            price: "$100",
+            description:
+              "A luxurious customized makeup application designed to enhance your natural features and create a flawless, radiant look. Includes expertly applied foundation, eye makeup, contouring, blush, and lips, finished with a polished, long-lasting finish perfect for any special occasion.",
+          },
+          {
+            name: "Full Face Makeup with Lashes",
+            price: "$120",
+            description:
+              "A luxury, customized makeup experience that includes full-face application and expertly applies lashes. Enhance your features with flawless foundation, eyeshadow, eyeliner, contouring, blush, and lip color, finishing with beautifully defined, eye-opening lashes for a polished, glamorous look.",
+          },
+          {
+            name: "Eyes Only Makeup",
+            price: "$75",
+            description:
+              "A luxury service focused on enhancing your eyes, including expertly blended eyeshadow, eyeliner, and mascara.",
+          },
+          {
+            name: "Eyes Only Makeup with Lashes",
+            price: "$95",
+            description:
+              "A luxurious service focused on the eyes, featuring expertly blended eyeshadow, eyeliner, and mascara, finished with professional lash application for beautifully defined, glamorous, and polished eyes.",
+          },
+          {
+            name: "Lash Application Only",
+            price: "$30",
+            description:
+              "A luxury service for flawless, professionally applied lashes, enhancing the eyes with added length, volume, and definition for a polished, glamorous look.",
+          },
+        ],
+      },
+      {
+        title: "Permanent Make Up",
+        items: [
+          {
+            name: "Consultation",
+            price: "",
+            description:
+              "Contact the salon to learn about permanent makeup services, availability, and pricing.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "facials",
     title: "Facials",
-    intro: "Core facials, advanced facials, and enhancements for healthy, radiant skin.",
+    intro: "Core facials, advanced facial treatments, and enhancements for healthy, radiant skin.",
     textLeftOnDesktop: true,
     textPanelBgClassName: "bg-[#cad7de]/20",
     image: {
@@ -305,9 +366,9 @@ const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
         ],
       },
       {
-        title: "Advanced Facials",
+        title: "Advanced Facial Treatments",
         bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=19",
-        bookingEmbedTitle: "Kossof Salon Spa advanced facials Mangomint booking menu",
+        bookingEmbedTitle: "Kossof Salon Spa advanced facial treatments Mangomint booking menu",
         items: [
           {
             name: "Signature Microdermabrasion Facial",
@@ -364,7 +425,7 @@ const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
   },
   {
     id: "massages",
-    title: "Massages",
+    title: "Massage Therapies",
     intro: "Therapeutic and relaxation massage services with optional enhancements.",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
@@ -466,8 +527,6 @@ const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
       },
       {
         title: "Massage Enhancements",
-        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=21",
-        bookingEmbedTitle: "Kossof Salon Spa massage enhancements Mangomint booking menu",
         items: [
           {
             name: "Farmhouse Fresh Hand & Foot Treatment",
@@ -574,9 +633,8 @@ const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
 ]
 
 const SPA_SPLIT_SECTION_META: Record<string, { id: string; title?: string; intro: string; image?: { src: string; alt: string } }> = {
-  "Body Waxing - Facial & Detail Areas": {
+  "Facial + Detail Areas": {
     id: "waxing-face-detail",
-    title: "Face & Detail Body Waxing",
     image: {
       src: cloudinaryImage("WAXING_njr9va"),
       alt: "Face and body waxing at Kossof Salon Spa",
@@ -603,9 +661,10 @@ const SPA_SPLIT_SECTION_META: Record<string, { id: string; title?: string; intro
   },
   Facials: {
     id: "facials",
-    intro: "Core facials for healthy, radiant skin.",
+    intro:
+      "Your esthetician will perform a personalized, in-depth skin assessment designed to understand your skin's unique needs. During this consultation, your provider will evaluate your skin type, concerns, and goals while reviewing your current routine and lifestyle factors. You'll receive expert recommendations for treatments and home care creating a tailored plan to support healthy, radiant skin.",
   },
-  "Advanced Facials": {
+  "Advanced Facial Treatments": {
     id: "advanced-facials",
     intro: "Advanced facial treatments focused on tone, texture, and renewal.",
     image: {
@@ -619,7 +678,6 @@ const SPA_SPLIT_SECTION_META: Record<string, { id: string; title?: string; intro
   },
   "Massage Therapies": {
     id: "massage",
-    title: "Massage",
     intro: "Therapeutic and relaxation massage services.",
   },
   "Massage Enhancements": {
@@ -654,6 +712,7 @@ const getSpaSectionById = (id: string): ServicesSection => {
 export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
   ...splitSectionGroups(getSpaSectionById("waxing"), "waxing"),
   getSpaSectionById("lashes-brows"),
+  getSpaSectionById("beauty"),
   ...splitSectionGroups(getSpaSectionById("facials"), "facials"),
   ...splitSectionGroups(getSpaSectionById("massages"), "massages"),
   getSpaSectionById("body-treatments"),
