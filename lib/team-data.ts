@@ -100,7 +100,7 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     label: "Stylists",
     members: [
       member("anna", "Anna", "Stylist", "anna_stylist_rp1pgw"),
-      member("brantley", "Brantley", "Hair Stylist", "0G3A7377_cviz1i"),
+      member("brentley", "Brentley", "Hair Stylist", "0G3A7377_cviz1i"),
       member("carole", "Carole", "Stylist", "carole_sttylist_gtdoqr"),
       member("diana", "Diana", "Stylist", "diana_stylist_l95hnw"),
       member("donna", "Donna", "Stylist", "donna_stylist_wy1es9"),
