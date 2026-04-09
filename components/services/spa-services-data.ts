@@ -386,8 +386,6 @@ const SPA_BASE_SERVICES_SECTIONS: ServicesSection[] = [
       },
       {
         title: "Facial Enhancements",
-        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=26",
-        bookingEmbedTitle: "Kossof Salon Spa facial enhancements Mangomint booking menu",
         items: [
           {
             name: "Gua Sha Sculpting",
