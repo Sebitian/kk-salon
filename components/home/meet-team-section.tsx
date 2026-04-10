@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
+import { Instagram } from "lucide-react"
 import {
   Dialog,
   DialogContent,
@@ -69,7 +70,21 @@ export default function MeetTeamSection() {
                             />
                           </button>
                         </div>
-                        <p className="mt-4 font-bold text-black text-sm sm:text-base leading-tight">{member.name}</p>
+                        <div className="mt-4 flex items-center justify-center gap-2 min-h-[1.25rem]">
+                          <p className="font-bold text-black text-sm sm:text-base leading-tight">{member.name}</p>
+                          {member.instagram ? (
+                            <a
+                              href={member.instagram}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="shrink-0 text-[#E4405F] hover:opacity-80 transition-opacity"
+                              aria-label={`${member.name} on Instagram`}
+                            >
+                              <Instagram className="h-[1.05rem] w-[1.05rem] sm:h-5 sm:w-5" aria-hidden />
+                            </a>
+                          ) : null}
+                        </div>
                         <p className="mt-1 text-black/90 text-xs sm:text-sm font-normal leading-snug px-1">
                           {member.title}
                         </p>
@@ -112,7 +127,20 @@ export default function MeetTeamSection() {
             <>
               <DialogHeader>
                 <DialogTitle className="text-salon-brown text-xl font-bold tracking-wide">
-                  {bioMember.name}
+                  <span className="inline-flex flex-wrap items-center gap-2">
+                    {bioMember.name}
+                    {bioMember.instagram ? (
+                      <a
+                        href={bioMember.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex text-[#E4405F] hover:opacity-80 transition-opacity"
+                        aria-label={`${bioMember.name} on Instagram`}
+                      >
+                        <Instagram className="h-6 w-6" aria-hidden />
+                      </a>
+                    ) : null}
+                  </span>
                   <span className="block text-sm font-normal text-black mt-1">{bioMember.title}</span>
                 </DialogTitle>
               </DialogHeader>
@@ -125,16 +153,6 @@ export default function MeetTeamSection() {
                   ))}
                 </div>
               ) : null}
-              {bioMember.instagram && (
-                <a
-                  href={bioMember.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-salon-raspberry hover:text-salon-raspberry/80 text-sm font-semibold tracking-widest uppercase transition-colors"
-                >
-                  Instagram
-                </a>
-              )}
             </>
           )}
         </DialogContent>

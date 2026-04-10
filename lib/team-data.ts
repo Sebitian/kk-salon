@@ -8,10 +8,16 @@ const LEGACY_BIOS: Record<string, string> = {
     "I believe a great haircut is a masterpiece in motion. With over 30 years of experience, I have transformed my lifelong passion for hair into a dedicated craft. My journey began in my early twenties, and that same creative fire continues to inspire every transformation I create today.\n\nOriginally from Poland and fluent in both Polish and English, I bring an international, artistic perspective to my work behind the chair. While I enjoy all aspects of hairstyling, my true specialty is short, precision cutting. I see hair as a canvas and love the challenge of creating styles that are both bold and effortlessly wearable.\n\nFor me, it's not just about a haircut—it's about the artistry of helping you look and feel like your very best self.",
   Matt:
     "With over 10 years in innovative health and wellness industries, licensed massage therapist Matt Polakow helps clients effectively manage pain and boost wellbeing. He specializes in deep tissue and Swedish massage through a therapeutic lens that tackles discomfort head-on, minimizes stress, and promotes better mobility. Dedicated to personalized, results-oriented sessions, he enhances his practice with personal interests in exercise, reading books, and meditation for a truly holistic perspective.",
-  "Carol Marrie":
-    "My new chapter begins at Kossof Salon Spa\n\nHi, I'm Carol Marie Everett, and I'm thrilled to be joining the team! With 35 years of experience, I've dedicated my career to helping clients feel confident and refreshed through personalized skincare and beauty services.\n\nIn addition to skincare and waxing, I've had the privilege of working as a makeup artist for photoshoots, productions, television, film, and commercials, bringing both experience and creativity to every look.\n\nI'm excited to welcome new clients and would love to help you achieve your skincare goals.",
+  "Carol Marie":
+    "✨My new chapter begins at Kossof Salon Spa ✨\n\nHi, I'm Carol Marie Everett, and I'm thrilled to be joining the team! With 35 years of experience, I've dedicated my career to helping clients feel confident and refreshed through personalized skincare and beauty services.\n\nIn addition to skincare and waxing, I've had the privilege of working as a makeup artist for photoshoots, productions, television, film, and commercials, bringing both experience and creativity to every look.\n\nI'm excited to welcome new clients and would love to help you achieve your skincare goals.",
   Lissette:
     "Hi, I'm Lisette Norris.\n\nI'm a Master Hairstylist with over 40 years of experience, proudly serving the North Shore. My work blends timeless foundations with modern techniques, and I'm committed to continuous education and growth.\n\nI offer a full range of services including classic and creative haircuts for men and women, perms, relaxers, keratin treatments, extensions, special event styling, and wig services. I've also been honored with multiple industry awards throughout my career.\n\nI believe great hair starts with truly understanding each client. My goal is simple: to know your hair better than you do and help you look and feel your very best.",
+  Brentley:
+    "Your long hair is safe with me. I specialize in cutting and styling long hair and truly understand the journey it takes to grow it. I had hair past my waist and didn't get my first haircut until I was 18, so I know the time, patience, and care that goes into keeping it long, healthy, and beautiful.\n\nI'm certified in Brazilian Blowout and Keratin Complex treatments, helping you achieve smooth, manageable results while maintaining your length.\n\nWhen I'm not behind the chair, I'm usually into photography or working on cars—two passions that reflect my attention to detail and love for craftsmanship.",
+  Anna:
+    "Hi, my name is Anna! With over 19 years of experience, I love creating styles that help my clients feel confident and express who they are. After spending many years at Teddie Kossof Salon, I'm excited to continue my journey at Kossof Salon Spa. I offer women's, men's, and children's haircuts, along with everyday styling, and special-occasion hairstyling. I stay up to date with the latest trends through ongoing education. I can't wait to welcome both new and familiar faces into my chair!",
+  Joanna:
+    "Joanna is a highly skilled hairstylist with over two decades of experience, specializing in precision cuts, advanced color techniques, keratin treatments, hair extensions, and curly hair design. Her artistry with color includes balayage, foilyage, air touch, ombré, highlights, lowlights, color corrections, and creative transformations—all tailored to each client’s personality and style. She’s known for creating natural, multidimensional tones that make hair shine with life and movement.\n\nA true master of curly and textured hair, Joanna is certified in Ouidad, Advanced Rëzo, and Mizani AirCut cutting methods. She’s passionate about empowering clients to embrace their natural texture, offering expert techniques that define curls, enhance shape, and bring out their healthiest, most vibrant look. Whether it’s soft waves or tight ringlets, Joanna customizes every cut to highlight each client’s unique beauty.\n\nKnown for her warmth and professionalism, Joanna takes pride in her personalized approach—ensuring every guest leaves her chair not only loving their hair, but also feeling confident and renewed.",
 }
 
 export type TeamMember = {
@@ -54,7 +60,7 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     id: "owners",
     label: "Owners",
     members: [
-      member("keeley", "Keeley", "Co-Founder", "keeley_rabilg"),
+      member("keeley", "Keeley", "Co-Founder", "keeley3_phihvr"),
       member("amy", "Amy", "Co-Founder", "amy_meorbn"),
     ],
   },
@@ -90,7 +96,13 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     id: "colorist-stylist",
     label: "Colorists / Stylists",
     members: [
-      member("joanna", "Joanna", "Colorist / Stylist / Curly Hair Specialist / Hair Extensions", "joanna_colorist_stylist_plqlks"),
+      member(
+        "joanna",
+        "Joanna",
+        "Colorist / Stylist / Curly Hair Specialist / Hair Extensions",
+        "joanna2_ejwrac",
+        "https://www.instagram.com/joanna_artistry?igsh=cGUxZ2I4YjhwZ2Fn&utm_source=qr",
+      ),
       member("sari", "Sari", "Colorist / Stylist", "sari_colorist_stylist_pstjjz"),
       member("zack", "Zack", "Colorist / Stylist", "zack_colorist_stylist_zu3l5d"),
     ],
@@ -99,7 +111,13 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     id: "stylists",
     label: "Stylists",
     members: [
-      member("anna", "Anna", "Stylist", "anna_stylist_rp1pgw"),
+      member(
+        "anna",
+        "Anna",
+        "Stylist",
+        "anna_stylist_rp1pgw",
+        "https://www.instagram.com/styleby_anna_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      ),
       member("brentley", "Brentley", "Hair Stylist", "0G3A7377_cviz1i"),
       member("carole", "Carole", "Stylist", "carole_sttylist_gtdoqr"),
       member("diana", "Diana", "Stylist", "diana_stylist_l95hnw"),

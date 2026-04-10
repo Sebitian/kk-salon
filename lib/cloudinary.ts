@@ -21,7 +21,7 @@ export const IMAGES = {
   mostafa: cloudinaryImage("mostafa_kfeeq9"),
   nathan: cloudinaryImage("dude_hair_mfwg0n"),
   kyAmy: cloudinaryImage("ky_amy_acowvc"),
-  keeleyAmy: cloudinaryImage("keeley_amy_kr9inz"),
+  keeleyAmy: cloudinaryImage("ky_amy2_zyvx0j"),
   faqBg: cloudinaryImage("faq_bg_qjxse4"),
   logoWhite: cloudinaryImage("logo-white_tbrhkx"),
   logoBlackNobg: cloudinaryImage("logo-black-nobg_an8p1f"),
