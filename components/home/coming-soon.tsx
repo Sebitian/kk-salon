@@ -77,13 +77,13 @@ export default function ComingSoonPage() {
               className="w-80 h-60 md:w-96 md:h-96 lg:w-[400px] lg:h-[300px] object-contain"
             />
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight font-['Montserrat']">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight font-sans">
             Coming Soon
             <br />
             <span className="text-6xl md:text-4xl">Spring 2026</span>
         </h1>
 
-        {/* <p className="text-xl text-muted-foreground max-w-xl mx-auto font-['Montserrat']">
+        {/* <p className="text-xl text-muted-foreground max-w-xl mx-auto font-sans">
           We're working hard to bring you something extraordinary. Stay tuned and be the first to know when we open.
         </p> */}
 

@@ -126,14 +126,14 @@ function ServiceRow({ name, price, bookingUrl, anchorId }: Pick<ServiceItemProps
     <div id={anchorId} className="py-3 scroll-mt-28" itemScope itemType="https://schema.org/Service">
       <div className="grid w-full min-w-0 grid-cols-[minmax(0,1fr)_auto_auto] items-start gap-x-3">
         <h4
-          className="min-w-0 pr-2 text-[14px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.08em] md:tracking-[0.14em] font-gotham break-words"
+          className="min-w-0 pr-2 text-[14px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.08em] md:tracking-[0.14em] font-sans break-words"
           itemProp="name"
         >
           {name}
         </h4>
         {displayPrice ? (
           <span
-            className="max-w-[10.5rem] justify-self-end text-right text-[15px] md:text-sm font-semibold text-salon-brown font-gotham break-words leading-tight"
+            className="max-w-[10.5rem] justify-self-end text-right text-[15px] md:text-sm font-semibold text-salon-brown font-sans break-words leading-tight"
             itemProp="offers"
             itemScope
             itemType="https://schema.org/Offer"
@@ -164,11 +164,11 @@ function ServiceItemAccordion({ name, price, description, bookingUrl, defaultOpe
           <div className="flex-1">
             <AccordionTrigger className="py-3 hover:no-underline">
               <div className="grid w-full min-w-0 grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3 pr-3">
-                <h4 className="min-w-0 pr-2 text-[14px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.08em] md:tracking-[0.14em] font-gotham break-words">
+                <h4 className="min-w-0 pr-2 text-[14px] md:text-sm font-semibold text-salon-brown uppercase tracking-[0.08em] md:tracking-[0.14em] font-sans break-words">
                   {name}
                 </h4>
                 {displayPrice ? (
-                  <span className="max-w-[10.5rem] justify-self-end text-right text-[15px] md:text-sm font-semibold text-salon-brown font-gotham break-words leading-tight">
+                  <span className="max-w-[10.5rem] justify-self-end text-right text-[15px] md:text-sm font-semibold text-salon-brown font-sans break-words leading-tight">
                     {displayPrice}
                   </span>
                 ) : null}
@@ -198,7 +198,7 @@ function ServiceTile({ item, onClick }: { item: ServiceItem; onClick: () => void
       onClick={onClick}
       className="relative aspect-square flex flex-col items-center justify-center gap-1.5 rounded-xl border border-salon-brown/12 bg-white p-2.5 text-center shadow-sm transition-all duration-150 active:scale-[0.96] active:bg-salon-raspberry/5 hover:border-salon-raspberry/40 hover:shadow-md select-none [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none]"
     >
-      <span className="text-[15px] font-semibold uppercase leading-[1.15] tracking-[0.01em] text-salon-brown font-gotham">
+      <span className="text-[15px] font-semibold uppercase leading-[1.15] tracking-[0.01em] text-salon-brown font-sans">
         {item.name}
       </span>
       {displayPrice ? (
@@ -226,7 +226,7 @@ function ServiceDetailModal({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-[92vw] rounded-xl sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-base font-bold uppercase tracking-[0.1em] text-salon-brown font-gotham">
+          <DialogTitle className="text-base font-bold uppercase tracking-[0.1em] text-salon-brown font-sans">
             {item.name}
           </DialogTitle>
           {displayPrice ? (
@@ -552,8 +552,7 @@ export default function ServicesContent({
                   <div className="mb-10">
                     <h2
                       id={headingId}
-                      className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-widest text-salon-brown font-gotham"
-                      style={{ fontFamily: "Montserrat, sans-serif" }}
+                      className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-widest text-salon-brown font-sans"
                     >
                       {section.title}
                     </h2>
@@ -569,7 +568,7 @@ export default function ServicesContent({
                   <div className="block md:hidden">
                     {section.groups.map((group) => (
                       <div key={group.title} className="mb-6">
-                        <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-salon-brown/70 font-gotham">
+                        <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-salon-brown/70 font-sans">
                           {group.title}
                         </h3>
                         {group.note && (
@@ -662,7 +661,7 @@ export default function ServicesContent({
                       {section.groups.map((group) => (
                         <AccordionItem key={group.title} value={group.title}>
                           <AccordionTrigger className="hover:no-underline">
-                            <span className="text-sm font-semibold tracking-[0.20em] uppercase text-salon-brown/85 font-gotham">
+                            <span className="text-sm font-semibold tracking-[0.20em] uppercase text-salon-brown/85 font-sans">
                               {group.title}
                             </span>
                           </AccordionTrigger>

@@ -90,6 +90,7 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     members: [
       member("alena", "Alena", "Colorist", "alena_colorist_x5ztwa"),
       member("essie", "Essie", "Colorist", "essie_colorist_lrpf9h"),
+      member("jenny", "Jenny", "Colorist", "Jenny_Kossof_vllfru"),
     ],
   },
   {
@@ -121,7 +122,13 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
       member("brentley", "Brentley", "Hair Stylist", "0G3A7377_cviz1i"),
       member("carole", "Carole", "Stylist", "carole_sttylist_gtdoqr"),
       member("diana", "Diana", "Stylist", "diana_stylist_l95hnw"),
-      member("donna", "Donna", "Stylist", "donna_stylist_wy1es9"),
+      member(
+        "donna",
+        "Donna",
+        "Stylist",
+        "donna_stylist_wy1es9",
+        "https://www.instagram.com/hairdesigner33/?utm_source=ig_web_button_share_sheet",
+      ),
       member("grace", "Grace", "Stylist", "grace_stylist_vx9l6x"),
       member("ledia", "Ledia", "Stylist", "ledia_stylist_jkvcer"),
       member("lissette", "Lissette", "Stylist / Hair Extensions / Wigs & Hairpieces", "lissette_stylist_llmt30"),

@@ -4,20 +4,24 @@ import Script from "next/script"
 import { usePathname } from "next/navigation"
 import { useEffect } from "react"
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID
+
 export default function GoogleAnalytics() {
   const pathname = usePathname()
 
   useEffect(() => {
-    if (pathname && window.gtag) {
-      window.gtag("config", "G-MEASUREMENT_ID", {
+    if (pathname && GA_ID && window.gtag) {
+      window.gtag("config", GA_ID, {
         page_path: pathname,
       })
     }
   }, [pathname])
 
+  if (!GA_ID) return null
+
   return (
     <>
-      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID`} />
+      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
       <Script
         id="google-analytics"
         strategy="afterInteractive"
@@ -26,7 +30,7 @@ export default function GoogleAnalytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-MEASUREMENT_ID');
+            gtag('config', '${GA_ID}');
           `,
         }}
       />

@@ -5,6 +5,7 @@ import HeroSection from "@/components/home/hero-section"
 import ServicesOverview from "@/components/home/services-overview"
 import WhyChooseUsSection from "@/components/home/why-choose-us-section"
 import TestimonialsSection from "@/components/home/testimonials-section"
+import CommunityPartnersSection from "@/components/home/community-partners-section"
 import MediaSection from "@/components/home/media-section"
 import InstagramSection from "@/components/home/instagram-section"
 import CTASection from "@/components/home/cta-section"
@@ -108,6 +109,7 @@ export default function Home() {
       </section>
       {/* <ProductsVideoShowcase /> */}
       <TestimonialsSection />
+      <CommunityPartnersSection />
       {/* <MediaSection /> */}
       
       {/* =============== */}

@@ -29,18 +29,6 @@ module.exports = {
           "Arial",
           "sans-serif",
         ],
-        gotham: [
-          "Gotham",
-          "var(--font-montserrat)",
-          "Montserrat",
-          "ui-sans-serif",
-          "system-ui",
-          "-apple-system",
-          "Segoe UI",
-          "Roboto",
-          "Arial",
-          "sans-serif",
-        ],
       },
       colors: {
         border: "hsl(var(--border))",
