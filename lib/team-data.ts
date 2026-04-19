@@ -14,8 +14,6 @@ const LEGACY_BIOS: Record<string, string> = {
     "Hi, I'm Lisette Norris.\n\nI'm a Master Hairstylist with over 40 years of experience, proudly serving the North Shore. My work blends timeless foundations with modern techniques, and I'm committed to continuous education and growth.\n\nI offer a full range of services including classic and creative haircuts for men and women, perms, relaxers, keratin treatments, extensions, special event styling, and wig services. I've also been honored with multiple industry awards throughout my career.\n\nI believe great hair starts with truly understanding each client. My goal is simple: to know your hair better than you do and help you look and feel your very best.",
   Brentley:
     "Your long hair is safe with me. I specialize in cutting and styling long hair and truly understand the journey it takes to grow it. I had hair past my waist and didn't get my first haircut until I was 18, so I know the time, patience, and care that goes into keeping it long, healthy, and beautiful.\n\nI'm certified in Brazilian Blowout and Keratin Complex treatments, helping you achieve smooth, manageable results while maintaining your length.\n\nWhen I'm not behind the chair, I'm usually into photography or working on cars—two passions that reflect my attention to detail and love for craftsmanship.",
-  Anna:
-    "Hi, my name is Anna! With over 19 years of experience, I love creating styles that help my clients feel confident and express who they are. After spending many years at Teddie Kossof Salon, I'm excited to continue my journey at Kossof Salon Spa. I offer women's, men's, and children's haircuts, along with everyday styling, and special-occasion hairstyling. I stay up to date with the latest trends through ongoing education. I can't wait to welcome both new and familiar faces into my chair!",
   Joanna:
     "Joanna is a highly skilled hairstylist with over two decades of experience, specializing in precision cuts, advanced color techniques, keratin treatments, hair extensions, and curly hair design. Her artistry with color includes balayage, foilyage, air touch, ombré, highlights, lowlights, color corrections, and creative transformations—all tailored to each client’s personality and style. She’s known for creating natural, multidimensional tones that make hair shine with life and movement.\n\nA true master of curly and textured hair, Joanna is certified in Ouidad, Advanced Rëzo, and Mizani AirCut cutting methods. She’s passionate about empowering clients to embrace their natural texture, offering expert techniques that define curls, enhance shape, and bring out their healthiest, most vibrant look. Whether it’s soft waves or tight ringlets, Joanna customizes every cut to highlight each client’s unique beauty.\n\nKnown for her warmth and professionalism, Joanna takes pride in her personalized approach—ensuring every guest leaves her chair not only loving their hair, but also feeling confident and renewed.",
 }
@@ -90,7 +88,13 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     members: [
       member("alena", "Alena", "Colorist", "alena_colorist_x5ztwa"),
       member("essie", "Essie", "Colorist", "essie_colorist_lrpf9h"),
-      member("jenny", "Jenny", "Colorist", "Jenny_Kossof_vllfru"),
+      member(
+        "jenny",
+        "Jenny",
+        "Colorist",
+        "Jenny_Kossof_vllfru",
+        "https://www.instagram.com/jennymastercolorist?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      ),
     ],
   },
   {
@@ -104,7 +108,6 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
         "joanna2_ejwrac",
         "https://www.instagram.com/joanna_artistry?igsh=cGUxZ2I4YjhwZ2Fn&utm_source=qr",
       ),
-      member("sari", "Sari", "Colorist / Stylist", "sari_colorist_stylist_pstjjz"),
       member("zack", "Zack", "Colorist / Stylist", "zack_colorist_stylist_zu3l5d"),
     ],
   },
@@ -113,15 +116,13 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     label: "Stylists",
     members: [
       member(
-        "anna",
-        "Anna",
-        "Stylist",
-        "anna_stylist_rp1pgw",
-        "https://www.instagram.com/styleby_anna_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+        "brentley",
+        "Brentley",
+        "Hair Stylist",
+        "0G3A7377_cviz1i",
+        "https://www.instagram.com/beauty.by.brentley?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       ),
-      member("brentley", "Brentley", "Hair Stylist", "0G3A7377_cviz1i"),
       member("carole", "Carole", "Stylist", "carole_sttylist_gtdoqr"),
-      member("diana", "Diana", "Stylist", "diana_stylist_l95hnw"),
       member(
         "donna",
         "Donna",
