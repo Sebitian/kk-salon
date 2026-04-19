@@ -95,6 +95,7 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
         "Jenny_Kossof_vllfru",
         "https://www.instagram.com/jennymastercolorist?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       ),
+      member("tom", "Tom", "Colorist", "tom_colorist_l4abuo"),
     ],
   },
   {

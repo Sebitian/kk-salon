@@ -14,7 +14,7 @@ import ShopShowcase from "@/components/home/shop-showcase"
 import ShopCollections from "@/components/home/shop-collections"
 import ComingSoonPage from "@/components/home/coming-soon"
 import ProductsVideoShowcase from "@/components/home/products-video-showcase"
-import { IMAGES } from "@/lib/cloudinary"
+import { cloudinaryImage, IMAGES } from "@/lib/cloudinary"
 
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
@@ -104,6 +104,20 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-[#faf8f5] py-14 sm:py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="overflow-hidden rounded-2xl bg-white p-3 sm:p-4 shadow-xl ring-1 ring-black/10">
+            <Image
+              src={cloudinaryImage("review_ehwaaq")}
+              alt="Kossof Salon Spa guest review highlights"
+              width={2200}
+              height={1300}
+              className="w-full h-auto rounded-xl object-contain"
+              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 92vw, 1200px"
+            />
           </div>
         </div>
       </section>
