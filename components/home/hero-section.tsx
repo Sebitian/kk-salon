@@ -69,7 +69,7 @@ export default function HeroSection() {
               href="https://clients.mangomint.com/gift-cards/741141"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center text-center min-w-[210px] px-8 py-4 text-base sm:text-lg font-semibold tracking-widest uppercase rounded-sm border border-white/80 text-white hover:bg-white hover:text-salon-brown transition-colors"
+              className="inline-flex items-center justify-center text-center min-w-[210px] px-8 py-4 text-base sm:text-lg font-semibold tracking-widest uppercase rounded-sm bg-yellow-400 border border-yellow-400 text-black hover:bg-yellow-500 hover:text-black transition-colors"
             >
               Gift Cards
             </Link>
