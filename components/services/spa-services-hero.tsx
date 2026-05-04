@@ -16,7 +16,7 @@ export default function SpaServicesHero() {
             Waxing, Makeup, Facials, Body Treatments & Massage Therapies
           </p>
           <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto italic font-light pt-2">
-            Indulge in our curated spa experiences.
+            Indulge in our curated spa experiences. please click one of the booking options to see a list of services.
           </p>
           <div className="pt-8 flex w-full items-center justify-center">
             <Link

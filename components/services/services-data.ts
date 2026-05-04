@@ -613,41 +613,6 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
         ],
       },
       {
-        title: "Facial Enhancements",
-        items: [
-          {
-            name: "Gua Sha Sculpting",
-            price: "$10",
-            description:
-              "A soothing Gua Sha massage using a smooth stone to enhance circulation, relieve tension, and promote lymphatic drainage for a more sculpted, radiant complexion.",
-          },
-          {
-            name: "Cryo Globe Cooling",
-            price: "$10",
-            description:
-              "Chilled cryo globes soothe inflammation, calm redness, tighten pores, and refresh the skin while enhancing circulation for an instant cooling, lifted glow.",
-          },
-          {
-            name: "Cranial Sensory Experience",
-            price: "$10",
-            description:
-              "A deeply relaxing scalp ritual using a stainless-steel ball-tipped device to gently stimulate the scalp, ease tension, and calm the nervous system. This soothing sensory treatment promotes circulation, releases stress and delivers an immediate sense of tranquility.",
-          },
-          {
-            name: "Farmhouse Fresh Bright Eyes Treatment",
-            price: "$25",
-            description:
-              "A targeted eye treatment that hydrates, smooths, and brightens the delicate eye area-helping reduce the appearance of dark circles, puffiness, and fine lines for a refreshed, youthful look.",
-          },
-          {
-            name: "Farmhouse Fresh Hand & Foot Treatment",
-            price: "$35",
-            description:
-              "An indulgent luxury treatment featuring a refreshing hand and foot soak, gentle exfoliation, and a nourishing Farmhouse Fresh mask. Finished with a soothing hand and foot massage, leaving skin soft, hydrated, and beautifully revitalized.",
-          },
-        ],
-      },
-      {
         title: "Body Treatments",
         items: [
           {
@@ -780,47 +745,6 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
             price: "$200 | 60min / $260 | 90min",
             description:
               "Unwind together with a luxurious couple\u2019s massage designed to relax the body, calm the mind, and restore balance. Side-by-side in a serene private setting, you and your guest will enjoy a customized massage experience tailored to your preferred pressure and focus areas for total relaxation and connection. Final pricing based on massage service selection.",
-          },
-        ],
-      },
-      {
-        title: "Massage Enhancements",
-        items: [
-          {
-            name: "Farmhouse Fresh Hand & Foot Treatment",
-            price: "$35",
-            description:
-              "An indulgent luxury treatment featuring a refreshing hand and foot soak, gentle exfoliation, and a nourishing Farmhouse Fresh mask. Finished with a soothing hand and foot massage, leaving skin soft, hydrated, and beautifully revitalized.",
-          },
-          {
-            name: "Gua Sha Sculpting",
-            price: "$25 / 15min",
-            description:
-              "A soothing Gua Sha massage using a smooth stone to enhance circulation, relieve tension, and promote lymphatic drainage for a more sculpted, radiant complexion.",
-          },
-          {
-            name: "Cranial Sensory Experience",
-            price: "$10 / 15min",
-            description:
-              "A deeply relaxing scalp ritual using a stainless-steel ball-tipped device to gently stimulate the scalp, ease tension, and calm the nervous system.",
-          },
-          {
-            name: "Hot Stone",
-            price: "$25",
-            description:
-              "A luxurious add-on featuring warm, smooth stones placed on key areas to deeply relax muscles, improve circulation, and enhance overall tension relief for a profoundly soothing and rejuvenating experience.",
-          },
-          {
-            name: "Himalayan Salt Stone",
-            price: "$25",
-            description:
-              "A luxurious enhancement to your massage, using warm Himalayan salt stones to soothe sore muscles, promote circulation, and deeply relax the body, leaving you feeling rejuvenated, balanced, and serene.",
-          },
-          {
-            name: "Morocconoil Nourish/Firm - Hand & Foot Wrap",
-            price: "$35",
-            description:
-              "A deeply conditioning hand & foot treatment infused with Moroccanoil oil to nourish dry skin, improve firmness, and restore softness while promoting relaxation and comfort.",
           },
         ],
       },

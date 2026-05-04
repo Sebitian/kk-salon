@@ -16,7 +16,7 @@ export default function SalonServicesHero() {
             Hair & Nails
           </p>
           <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto italic font-light pt-2">
-            Explore our full menu of elevated salon services.
+            Explore our full menu of elevated salon services. please click one of the booking options to see a list of services.
           </p>
           <div className="pt-8 flex w-full items-center justify-center">
             <Link

@@ -594,11 +594,11 @@ const SALON_NAIL_BASE_SECTION: ServicesSection = {
 const SALON_NAIL_SECTION_META: Record<string, { id: string; intro: string; image?: { src: string; alt: string } }> = {
   Manicures: {
     id: "manicures",
-    intro: "Luxury manicures from the final menu.",
+    intro: "Luxury manicures.",
   },
   Pedicures: {
     id: "pedicures",
-    intro: "Luxury pedicures from the final menu.",
+    intro: "Luxury pedicures.",
     image: {
       src: cloudinaryImage("PEDICURE_nlvtoz"),
       alt: "Pedicure services at Kossof Salon Spa",

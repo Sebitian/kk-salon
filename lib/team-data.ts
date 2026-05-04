@@ -16,6 +16,10 @@ const LEGACY_BIOS: Record<string, string> = {
     "Your long hair is safe with me. I specialize in cutting and styling long hair and truly understand the journey it takes to grow it. I had hair past my waist and didn't get my first haircut until I was 18, so I know the time, patience, and care that goes into keeping it long, healthy, and beautiful.\n\nI'm certified in Brazilian Blowout and Keratin Complex treatments, helping you achieve smooth, manageable results while maintaining your length.\n\nWhen I'm not behind the chair, I'm usually into photography or working on cars—two passions that reflect my attention to detail and love for craftsmanship.",
   Joanna:
     "Joanna is a highly skilled hairstylist with over two decades of experience, specializing in precision cuts, advanced color techniques, keratin treatments, hair extensions, and curly hair design. Her artistry with color includes balayage, foilyage, air touch, ombré, highlights, lowlights, color corrections, and creative transformations—all tailored to each client’s personality and style. She’s known for creating natural, multidimensional tones that make hair shine with life and movement.\n\nA true master of curly and textured hair, Joanna is certified in Ouidad, Advanced Rëzo, and Mizani AirCut cutting methods. She’s passionate about empowering clients to embrace their natural texture, offering expert techniques that define curls, enhance shape, and bring out their healthiest, most vibrant look. Whether it’s soft waves or tight ringlets, Joanna customizes every cut to highlight each client’s unique beauty.\n\nKnown for her warmth and professionalism, Joanna takes pride in her personalized approach—ensuring every guest leaves her chair not only loving their hair, but also feeling confident and renewed.",
+  Essie:
+    "I am a master colorist with 39 years of experience behind the chair. I specialize in creating beautiful blondes and expertly crafted highlights, with a refined eye for tone, dimension, and customized color.\n\nMy expertise spans all color services, allowing me to tailor each look to enhance my clients’ features and lifestyle. I take pride in my precision and consistency, delivering results that are both stunning and wearable.\n\nI am truly passionate about my craft and deeply committed to making every client feel confident, radiant, and cared for. Building lasting relationships with my clients is one of the most meaningful parts of what I do.",
+  Donna:
+    "I’m a highly experienced hair designer with 31 years behind the chair on the North Shore. I specialize in precision cutting and styling for women, men, and children of all hair textures and lengths, always taking a thoughtful, customized approach with each client.\n\nI love creating beautiful, wearable styles—from everyday cuts to more elevated looks—and I especially enjoy updos and formal event styling to help clients feel confident for their special moments.\n\nIn addition to cutting and styling, I specialize in keratin treatments, perms, and conditioning treatments, delivering smooth, healthy, and manageable results tailored to each individual’s hair.\n\nI’m committed to continuing education and staying current with the latest techniques and trends in the industry. My dedication, consistency, and attention to detail have helped me build trusted, long-lasting relationships with my clients. I also speak Polish, allowing me to connect with a wider range of clients.",
 }
 
 export type TeamMember = {
@@ -124,6 +128,7 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
         "https://www.instagram.com/beauty.by.brentley?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       ),
       member("carole", "Carole", "Stylist", "carole_sttylist_gtdoqr"),
+      member("dylan", "Dylan", "Specialist", "Dylan_pljai0"),
       member(
         "donna",
         "Donna",
@@ -135,7 +140,6 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
       member("ledia", "Ledia", "Stylist", "ledia_stylist_jkvcer"),
       member("lissette", "Lissette", "Stylist / Hair Extensions / Wigs & Hairpieces", "lissette_stylist_llmt30"),
       member("patty", "Patty", "Stylist", "patty_stylist_cavgkb"),
-      // member("dylan", "Dylan", "Mens Hair Specialist", ""),
       // member("joe", "Joe", "Stylist", "joe_y0gir5"),
     ],
   },
