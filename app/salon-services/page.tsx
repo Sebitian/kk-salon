@@ -34,6 +34,7 @@ export default function SalonServicesPage() {
         schemaName="Kossof Salon Services"
         schemaDescription="Full salon service menu including haircuts, color, treatments, and nails."
         searchPlaceholder="Try: balayage, keratin, manicure, waxing..."
+        showSectionNav={false}
       />
     </>
   )

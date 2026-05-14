@@ -92,8 +92,6 @@ function BookingIconLink({ bookingUrl }: { bookingUrl?: string }) {
   return (
     <Link
       href={bookingUrl}
-      target="_blank"
-      rel="noopener noreferrer"
       aria-label="Book this service"
       title="Book this service"
       className="inline-flex h-8 w-8 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-md bg-salon-raspberry text-white transition-colors hover:bg-salon-raspberry/90"
@@ -104,16 +102,17 @@ function BookingIconLink({ bookingUrl }: { bookingUrl?: string }) {
   )
 }
 
-function BookingMenuEmbed({ bookingEmbedUrl, bookingEmbedTitle }: { bookingEmbedUrl: string; bookingEmbedTitle?: string }) {
+function BookingMenuOverlayCta({ bookingEmbedUrl, bookingEmbedTitle }: { bookingEmbedUrl: string; bookingEmbedTitle?: string }) {
   return (
-    <div className="mt-8 border-t border-salon-brown/10 pt-6">
-      <div className="mx-auto max-w-md lg:max-w-lg overflow-hidden rounded-2xl border border-salon-brown/15 bg-[#f8f6f5] shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
-        <iframe
-          src={bookingEmbedUrl}
-          title={bookingEmbedTitle ?? "Online booking menu"}
-          loading="lazy"
-          className="h-[620px] w-full bg-[#f3f3f3] md:h-[760px] lg:h-[820px]"
-        />
+    <div className="border-t border-salon-brown/10 pt-6">
+      <div className="mx-auto max-w-md rounded-xl border border-salon-brown/15 bg-[#f8f6f5] px-5 py-5 text-center shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
+        <Link
+          href={bookingEmbedUrl}
+          aria-label={bookingEmbedTitle ?? "Open online booking"}
+          className="inline-flex w-full items-center justify-center rounded-md bg-salon-raspberry px-5 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white transition-colors hover:bg-salon-raspberry/90"
+        >
+          Book in Online Booking
+        </Link>
       </div>
     </div>
   )
@@ -245,8 +244,6 @@ function ServiceDetailModal({
           <div className="mt-2">
             <Link
               href={item.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-salon-raspberry px-5 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white transition-colors hover:bg-salon-raspberry/90"
             >
               <CalendarPlus className="h-4 w-4" aria-hidden="true" />
@@ -264,6 +261,7 @@ interface ServicesContentProps {
   schemaName?: string
   schemaDescription?: string
   searchPlaceholder?: string
+  showSectionNav?: boolean
   /** When set, footer shows a phone CTA instead of online booking. */
   footerCallSchedule?: { tel: string; numberDisplay: string }
 }
@@ -273,6 +271,7 @@ export default function ServicesContent({
   schemaName = "Kossof Salon Spa Services",
   schemaDescription = "Full service menu including hair, nails, facials, massage therapies, waxing, lashes + brows, and makeup services.",
   searchPlaceholder = "Try: balayage, bridal makeup, deep tissue...",
+  showSectionNav = true,
   footerCallSchedule,
 }: ServicesContentProps) {
   const [searchQuery, setSearchQuery] = useState("")
@@ -431,9 +430,9 @@ export default function ServicesContent({
           content="Full service menu including haircuts, color, treatments, nails, facials, massage therapies, waxing, lashes + brows, wedding services, and makeup."
         />
 
-        {sections.length > 1 ? (
+        {showSectionNav && sections.length > 1 ? (
           <nav
-            className="w-full border-b border-salon-brown/10 bg-[#fdfbf9] px-4 py-4 sm:px-6 sm:py-5"
+            className="w-full border-b border-salon-brown/10 bg-white px-4 py-4 sm:px-6 sm:py-5"
             aria-label="Service categories"
           >
             <div className="mx-auto max-w-7xl">
@@ -443,7 +442,7 @@ export default function ServicesContent({
                     <button
                       type="button"
                       onClick={() => scrollToTarget(section.id)}
-                      className="inline-flex max-w-[min(100%,14rem)] items-center justify-center rounded-sm border border-salon-brown/20 bg-white px-3 py-2 text-left text-[11px] font-semibold uppercase leading-snug tracking-[0.06em] text-salon-brown shadow-sm transition-colors hover:border-salon-raspberry/45 hover:bg-salon-raspberry/[0.06] hover:text-salon-brown sm:max-w-none sm:text-xs sm:tracking-[0.08em]"
+                      className="inline-flex w-fit max-w-[12.5rem] items-center justify-center rounded-full border border-salon-brown/15 bg-[#f7f7f8]/95 px-3.5 py-2 text-center text-[10px] font-semibold uppercase leading-snug tracking-[0.06em] text-salon-brown whitespace-normal break-words shadow-[0_2px_10px_rgba(0,0,0,0.04)] backdrop-blur-sm transition-colors hover:border-salon-raspberry/35 hover:bg-salon-raspberry/[0.08] sm:max-w-none sm:px-4 sm:text-xs sm:tracking-[0.08em]"
                     >
                       {section.title}
                     </button>
@@ -552,7 +551,7 @@ export default function ServicesContent({
                   <div className="mb-10">
                     <h2
                       id={headingId}
-                      className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-widest text-salon-brown font-sans"
+                      className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold uppercase leading-tight tracking-[0.06em] sm:tracking-[0.08em] md:tracking-[0.14em] text-salon-brown font-sans break-words"
                     >
                       {section.title}
                     </h2>
@@ -592,25 +591,26 @@ export default function ServicesContent({
                             />
                           ))}
                         </div> */}
+                        <div className="pl-2" itemScope itemType="https://schema.org/ItemList">
+                          {group.items.map(({ item, itemIndex }) => (
+                            <ServiceItemAccordion
+                              key={`${group.title}-mobile-${itemIndex}`}
+                              name={item.name}
+                              price={item.price}
+                              description={item.description}
+                              bookingUrl={item.bookingUrl}
+                              anchorId={getServiceAnchorId(section.id, group.groupIndex, itemIndex)}
+                            />
+                          ))}
+                        </div>
                         {group.bookingEmbedUrl ? (
-                          <BookingMenuEmbed
-                            bookingEmbedUrl={group.bookingEmbedUrl}
-                            bookingEmbedTitle={group.bookingEmbedTitle}
-                          />
-                        ) : (
-                          <div className="pl-2" itemScope itemType="https://schema.org/ItemList">
-                            {group.items.map(({ item, itemIndex }) => (
-                              <ServiceItemAccordion
-                                key={`${group.title}-mobile-${itemIndex}`}
-                                name={item.name}
-                                price={item.price}
-                                description={item.description}
-                                bookingUrl={item.bookingUrl}
-                                anchorId={getServiceAnchorId(section.id, group.groupIndex, itemIndex)}
-                              />
-                            ))}
+                          <div className="mt-8">
+                            <BookingMenuOverlayCta
+                              bookingEmbedUrl={group.bookingEmbedUrl}
+                              bookingEmbedTitle={group.bookingEmbedTitle}
+                            />
                           </div>
-                        )}
+                        ) : null}
                       </div>
                     ))}
                   </div>
@@ -631,26 +631,27 @@ export default function ServicesContent({
                           </p>
                         )
                       )}
+                      <div className="pl-3 sm:pl-4" itemScope itemType="https://schema.org/ItemList">
+                        {singleGroup.items.map(({ item, itemIndex }) => (
+                          <ServiceItemAccordion
+                            key={`${singleGroup.title}-${itemIndex}`}
+                            name={item.name}
+                            price={item.price}
+                            description={item.description}
+                            bookingUrl={item.bookingUrl}
+                            anchorId={getServiceAnchorId(section.id, singleGroup.groupIndex, itemIndex)}
+                            defaultOpen
+                          />
+                        ))}
+                      </div>
                       {singleGroup.bookingEmbedUrl ? (
-                        <BookingMenuEmbed
-                          bookingEmbedUrl={singleGroup.bookingEmbedUrl}
-                          bookingEmbedTitle={singleGroup.bookingEmbedTitle}
-                        />
-                      ) : (
-                        <div className="pl-3 sm:pl-4" itemScope itemType="https://schema.org/ItemList">
-                          {singleGroup.items.map(({ item, itemIndex }) => (
-                            <ServiceItemAccordion
-                              key={`${singleGroup.title}-${itemIndex}`}
-                              name={item.name}
-                              price={item.price}
-                              description={item.description}
-                              bookingUrl={item.bookingUrl}
-                              anchorId={getServiceAnchorId(section.id, singleGroup.groupIndex, itemIndex)}
-                              defaultOpen
-                            />
-                          ))}
+                        <div className="mt-8">
+                          <BookingMenuOverlayCta
+                            bookingEmbedUrl={singleGroup.bookingEmbedUrl}
+                            bookingEmbedTitle={singleGroup.bookingEmbedTitle}
+                          />
                         </div>
-                      )}
+                      ) : null}
                     </div>
                   ) : (
                     <Accordion
@@ -679,26 +680,27 @@ export default function ServicesContent({
                                 </p>
                               )
                             )}
+                            <div className="pl-3 sm:pl-4" itemScope itemType="https://schema.org/ItemList">
+                              {group.items.map(({ item, itemIndex }) => (
+                                <ServiceItemAccordion
+                                  key={`${group.title}-${itemIndex}`}
+                                  name={item.name}
+                                  price={item.price}
+                                  description={item.description}
+                                  bookingUrl={item.bookingUrl}
+                                  anchorId={getServiceAnchorId(section.id, group.groupIndex, itemIndex)}
+                                  defaultOpen={autoExpandAll}
+                                />
+                              ))}
+                            </div>
                             {group.bookingEmbedUrl ? (
-                              <BookingMenuEmbed
-                                bookingEmbedUrl={group.bookingEmbedUrl}
-                                bookingEmbedTitle={group.bookingEmbedTitle}
-                              />
-                            ) : (
-                              <div className="pl-3 sm:pl-4" itemScope itemType="https://schema.org/ItemList">
-                                {group.items.map(({ item, itemIndex }) => (
-                                  <ServiceItemAccordion
-                                    key={`${group.title}-${itemIndex}`}
-                                    name={item.name}
-                                    price={item.price}
-                                    description={item.description}
-                                    bookingUrl={item.bookingUrl}
-                                    anchorId={getServiceAnchorId(section.id, group.groupIndex, itemIndex)}
-                                    defaultOpen={autoExpandAll}
-                                  />
-                                ))}
+                              <div className="mt-8">
+                                <BookingMenuOverlayCta
+                                  bookingEmbedUrl={group.bookingEmbedUrl}
+                                  bookingEmbedTitle={group.bookingEmbedTitle}
+                                />
                               </div>
-                            )}
+                            ) : null}
                           </AccordionContent>
                         </AccordionItem>
                       ))}
@@ -751,8 +753,6 @@ export default function ServicesContent({
             ) : (
               <Link
                 href="https://booking.mangomint.com/kossofsalonspa"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex w-full max-w-xs sm:w-auto sm:min-w-[220px] items-center justify-center whitespace-nowrap bg-salon-raspberry text-white px-8 py-3.5 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase hover:bg-salon-raspberry/90 transition-colors"
               >
                 Book Now

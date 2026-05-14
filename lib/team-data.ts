@@ -80,7 +80,6 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     label: "Assistants",
     members: [
       member("connie", "Connie", "Assistant", "connie_assistant_yiqn8v"),
-      member("dale", "Dale", "Assistant", "dale_assistant_diggrs"),
       member("gigi", "Gigi", "Assistant", "0G3A7005_o0kwyi"),
       member("suzy", "Suzy", "Assistant", "suzy_assistant_ztoueu"),
       member("yolanda", "Yolanda", "Assistant", "0G3A7362_bidhe6"),

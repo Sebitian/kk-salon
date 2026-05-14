@@ -1,6 +1,583 @@
 import { ServicesSection } from "./services-data"
 import { cloudinaryImage } from "@/lib/cloudinary"
 
+export type SalonServicesHeroJumpLink = {
+  label: string
+  href: string
+  external?: boolean
+}
+
+export const SALON_SERVICES_HERO_JUMP_LINKS: SalonServicesHeroJumpLink[] = [
+  { label: "Haircut & style", href: "#haircut-style-services" },
+  { label: "Retexturizing", href: "#retexturizing-services" },
+  { label: "Hair & scalp treatments", href: "#hair-scalp-treatments" },
+  { label: "Nails", href: "#nails-classic-services" },
+  { label: "Special occasion", href: "#special-occasion-formal-hair-styling" },
+  { label: "Extensions", href: "#extensions-wigs-hairpieces" },
+  { label: "Color", href: "#color-services" },
+  { label: "Highlights & balayage", href: "#highlight-lowlight-balayage" },
+  { label: "Wedding hair & makeup", href: "#wedding-hair-makeup" },
+]
+
+export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
+  {
+    id: "haircut-style-services",
+    title: "Haircut & Style Services",
+    intro:
+      "A personalized one-on-one consultation with your stylist evaluates your hair's texture, density, condition, and history, while considering your lifestyle and styling routine. Together, we create a tailored plan for your services and provide accurate pricing for the best possible results.",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#ede7e4]/20",
+    image: {
+      src: cloudinaryImage("HAIRCUT_zic5ay"),
+      alt: "Haircut styling at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Haircut & Style Services",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=13",
+        bookingEmbedTitle: "Kossof Salon Spa haircut and style booking menu",
+        items: [
+          { name: "Women's Haircut + Style", price: "from $65" },
+          { name: "Woman's Haircut Only", price: "from $55" },
+          { name: "Blow-dry Style", price: "from $45" },
+          { name: "Shampoo Only", price: "$12" },
+          { name: "Hot Tool Add-On", price: "$10" },
+          { name: "Braiding", price: "from $30" },
+          { name: "Bang Trim", price: "$10" },
+          { name: "Curly Hair Certified Haircut/ Style with Joanna", price: "from $140" },
+          { name: "Men's Haircut", price: "from $40" },
+          { name: "Neck Trim", price: "$10" },
+          { name: "Beard Trim & Shaping", price: "$15" },
+          { name: "Girls Haircut + Style 10 & Under", price: "from $40" },
+          { name: "Boys Haircut 10 & Under", price: "from $35" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "retexturizing-services",
+    title: "Retexturizing Services",
+    textLeftOnDesktop: false,
+    textPanelBgClassName: "bg-white",
+    image: {
+      src: cloudinaryImage("RETEXTURIZING_zfmr01"),
+      alt: "Retexturizing services at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Retexturizing Services",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=10",
+        bookingEmbedTitle: "Kossof Salon Spa retexturizing booking menu",
+        items: [
+          { name: "Keratin Complex Blowout Treatment", price: "from $145" },
+          { name: "Keratin Complex Smoothing Treatment", price: "from $395" },
+          { name: "Brazilian Blowout Express Treatment", price: "from $145" },
+          { name: "Brazilian Blowout Smoothing Treatment", price: "from $395" },
+          { name: "Perm/Body Wave", price: "from $150" },
+          { name: "Virgin Relaxer", price: "from $200" },
+          { name: "Retouch Relaxer", price: "from $150" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "hair-scalp-treatments",
+    title: "Hair & Scalp Treatments",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#ede7e4]/20",
+    image: {
+      src: cloudinaryImage("SCALP_pjtzku"),
+      alt: "Hair and scalp treatments at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Hair & Scalp Treatments",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=9",
+        bookingEmbedTitle: "Kossof Salon Spa hair and scalp treatments booking menu",
+        items: [
+          { name: "Pure Balance Clarifying Treatment", price: "$15" },
+          { name: "Milbon Treatment - Color Preserve, Moisture, Scalp, Smooth, Reawaken or Repair", price: "$65" },
+          { name: "Moroccanoil Moisture Treatment", price: "$25" },
+          { name: "Moroccanoil Scalp Treatment", price: "$40" },
+          { name: "Keratin Complex Vanilla Bean Treatment", price: "$20" },
+          { name: "Brazilian Blowout Split End Corrector", price: "$25" },
+          { name: "Phyto Polleine Scalp Treatment", price: "$35" },
+          { name: "Keune Mask - Blonde Savior, Color Brillianz, Keratin Smooth, Satin Oil or Vital Nutrition", price: "$25" },
+          { name: "Keune Bond Builder System", price: "$50" },
+        ],
+        note:
+          "*Milbon Treatment and *Keune Bond Builder System include take-home maintenance product.",
+      },
+    ],
+  },
+  {
+    id: "nails-classic-services",
+    title: "Nails",
+    textLeftOnDesktop: false,
+    textPanelBgClassName: "bg-white",
+    image: {
+      src: cloudinaryImage("PEDICURE_nlvtoz"),
+      alt: "Nail services at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Classic Nail Services",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=14",
+        bookingEmbedTitle: "Kossof Salon Spa classic nail booking menu",
+        items: [
+          { name: "Manicure", price: "$28" },
+          { name: "Polish Change Hands", price: "$20" },
+          { name: "Pedicure", price: "$56" },
+          { name: "Express \"Mini\" Pedicure", price: "$45" },
+          { name: "Polish Change Toes", price: "$35" },
+          { name: "Nail Repair", price: "$5" },
+          { name: "French or Dazzle Dry Add-On", price: "$5" },
+        ],
+      },
+      {
+        title: "Spa Nail Services",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=15",
+        bookingEmbedTitle: "Kossof Salon Spa spa nail booking menu",
+        items: [
+          { name: "Spa Manicure", price: "$42" },
+          { name: "Honey Nectar Whip Manicure", price: "$42" },
+          { name: "Spa Pedicure", price: "$75" },
+          { name: "Honey Nectar Whip Pedicure", price: "$75" },
+          { name: "French or Dazzle Dry Add-On", price: "$5" },
+        ],
+      },
+      {
+        title: "Gel Nail Services",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=14",
+        bookingEmbedTitle: "Kossof Salon Spa gel nail booking menu",
+        note: "No Chip Removal price is for services not performed in house.",
+        items: [
+          { name: "Structured Gel Manicure*", price: "$75" },
+          { name: "No Chip Manicure*", price: "$54" },
+          { name: "No Chip Pedicure", price: "$75" },
+          { name: "No Chip Removal (if not performed in house)", price: "$10" },
+          { name: "Cat Eye, Chrome or French Add On", price: "$5" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "special-occasion-formal-hair-styling",
+    title: "Special Occasion/Formal Hair Styling",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#ede7e4]/20",
+    image: {
+      src: cloudinaryImage("HAIRSTYLE_wir8yz"),
+      alt: "Special occasion hairstyling at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Special Occasion/Formal Hair Styling",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=16",
+        bookingEmbedTitle: "Kossof Salon Spa formal styling booking menu",
+        note: "Hair must be clean and dry for formal styling.",
+        items: [
+          { name: "Up-do", price: "from $95" },
+          { name: "Downstyle", price: "from $95" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "extensions-wigs-hairpieces",
+    title: "Extensions, Wigs & Hairpieces",
+    textLeftOnDesktop: false,
+    textPanelBgClassName: "bg-white",
+    image: {
+      src: cloudinaryImage("HAIRSTYLE_wir8yz"),
+      alt: "Hair extensions and wigs consultation at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Extensions, Wigs & Hairpieces",
+        bookingEmbedUrl: "https://booking.mangomint.com/kossofsalonspa",
+        bookingEmbedTitle: "Kossof Salon Spa full booking menu",
+        items: [{ name: "Price based on consultation", price: "Consultation" }],
+      },
+    ],
+  },
+  {
+    id: "color-services",
+    title: "Color",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#ede7e4]/20",
+    image: {
+      src: cloudinaryImage("COLOR_rnziuz"),
+      alt: "Hair color services at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Color",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=8",
+        bookingEmbedTitle: "Kossof Salon Spa color booking menu",
+        items: [
+          { name: "Single Process Roots Only", price: "from $80" },
+          { name: "Single Process Refresh thru the ends", price: "from $95" },
+          { name: "Women's Grey Blending", price: "from $80" },
+          { name: "Men's Grey Blending", price: "$40" },
+          { name: "Beard Color", price: "$35" },
+          { name: "Base Lift", price: "from $65" },
+          { name: "Gloss/Toner", price: "from $50" },
+          { name: "Double Process (bleach + tone)", price: "from $125" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "highlight-lowlight-balayage",
+    title: "Highlight/Lowlight & Balayage",
+    textLeftOnDesktop: false,
+    textPanelBgClassName: "bg-white",
+    image: {
+      src: cloudinaryImage("COLOR_rnziuz"),
+      alt: "Highlight and balayage color services at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Highlight/Lowlight & Balayage",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=8",
+        bookingEmbedTitle: "Kossof Salon Spa highlight and balayage booking menu",
+        note: "Specialty color and corrective color pricing based on consultation.",
+        items: [
+          { name: "Partial", price: "from $145" },
+          { name: "Full", price: "from $175" },
+          { name: "Face Frame", price: "from $70" },
+          { name: "Partial Balayage/Ombre", price: "from $185" },
+          { name: "Full Balayage/Ombre", price: "from $225" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "wedding-hair-makeup",
+    title: "Wedding Hair + Makeup",
+    intro: "In Salon and On-Site* pricing.",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#ede7e4]/20",
+    image: {
+      src: cloudinaryImage("HAIRSTYLE_wir8yz"),
+      alt: "Wedding hair and makeup services at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Bride",
+        items: [
+          { name: "Hair - Trial Run or Wedding Day", price: "from $150 (In Salon) / from $200 (On-Site*)" },
+          { name: "Makeup", price: "$120 (In Salon) / $150 (On-Site*)" },
+          { name: "Makeup with Lashes", price: "$140 (In Salon) / $170 (On-Site*)" },
+        ],
+      },
+      {
+        title: "Bridal Party",
+        items: [
+          { name: "Hair - Blow dry", price: "from $65 (In Salon) / from $85 (On-Site*)" },
+          { name: "Hair - Formal styling", price: "from $95 (In Salon) / from $125 (On-Site*)" },
+          { name: "Makeup", price: "$100 (In Salon) / $120 (On-Site*)" },
+          { name: "Makeup with lashes", price: "$120 (In Salon) / $140 (On-Site*)" },
+        ],
+        note:
+          "On-Site/Out of salon fee: $250 + 18% gratuity added. Hair must be clean and dry for formal styling. Face must be clean for make-up application.",
+      },
+    ],
+  },
+]
+/*
+import { ServicesSection } from "./services-data"
+import { cloudinaryImage } from "@/lib/cloudinary"
+
+export type SalonServicesHeroJumpLink = {
+  label: string
+  href: string
+  external?: boolean
+}
+
+export const SALON_SERVICES_HERO_JUMP_LINKS: SalonServicesHeroJumpLink[] = [
+  { label: "Haircut & style", href: "#haircut-style-services" },
+  { label: "Retexturizing", href: "#retexturizing-services" },
+  { label: "Hair & scalp treatments", href: "#hair-scalp-treatments" },
+  { label: "Nails", href: "#nails-classic-services" },
+  { label: "Special occasion", href: "#special-occasion-formal-hair-styling" },
+  { label: "Extensions", href: "#extensions-wigs-hairpieces" },
+  { label: "Color", href: "#color-services" },
+  { label: "Highlights & balayage", href: "#highlight-lowlight-balayage" },
+  { label: "Wedding hair & makeup", href: "#wedding-hair-makeup" },
+]
+
+export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
+  {
+    id: "haircut-style-services",
+    title: "Haircut & Style Services",
+    intro:
+      "A personalized one-on-one consultation with your stylist evaluates your hair's texture, density, condition, and history, while considering your lifestyle and styling routine. Together, we create a tailored plan for your services and provide accurate pricing for the best possible results.",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#ede7e4]/20",
+    image: {
+      src: cloudinaryImage("HAIRCUT_zic5ay"),
+      alt: "Haircut styling at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Haircut & Style Services",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=13",
+        bookingEmbedTitle: "Kossof Salon Spa haircut and style booking menu",
+        items: [
+          { name: "Women's Haircut + Style", price: "from $65" },
+          { name: "Woman's Haircut Only", price: "from $55" },
+          { name: "Blow-dry Style", price: "from $45" },
+          { name: "Shampoo Only", price: "$12" },
+          { name: "Hot Tool Add-On", price: "$10" },
+          { name: "Braiding", price: "from $30" },
+          { name: "Bang Trim", price: "$10" },
+          { name: "Curly Hair Certified Haircut/ Style with Joanna", price: "from $140" },
+          { name: "Men's Haircut", price: "from $40" },
+          { name: "Neck Trim", price: "$10" },
+          { name: "Beard Trim & Shaping", price: "$15" },
+          { name: "Girls Haircut + Style 10 & Under", price: "from $40" },
+          { name: "Boys Haircut 10 & Under", price: "from $35" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "retexturizing-services",
+    title: "Retexturizing Services",
+    textLeftOnDesktop: false,
+    textPanelBgClassName: "bg-white",
+    image: {
+      src: cloudinaryImage("RETEXTURIZING_zfmr01"),
+      alt: "Retexturizing services at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Retexturizing Services",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=10",
+        bookingEmbedTitle: "Kossof Salon Spa retexturizing booking menu",
+        items: [
+          { name: "Keratin Complex Blowout Treatment", price: "from $145" },
+          { name: "Keratin Complex Smoothing Treatment", price: "from $395" },
+          { name: "Brazilian Blowout Express Treatment", price: "from $145" },
+          { name: "Brazilian Blowout Smoothing Treatment", price: "from $395" },
+          { name: "Perm/Body Wave", price: "from $150" },
+          { name: "Virgin Relaxer", price: "from $200" },
+          { name: "Retouch Relaxer", price: "from $150" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "hair-scalp-treatments",
+    title: "Hair & Scalp Treatments",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#ede7e4]/20",
+    image: {
+      src: cloudinaryImage("SCALP_pjtzku"),
+      alt: "Hair and scalp treatments at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Hair & Scalp Treatments",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=9",
+        bookingEmbedTitle: "Kossof Salon Spa hair and scalp treatments booking menu",
+        items: [
+          { name: "Pure Balance Clarifying Treatment", price: "$15" },
+          { name: "Milbon Treatment - Color Preserve, Moisture, Scalp, Smooth, Reawaken or Repair", price: "$65" },
+          { name: "Moroccanoil Moisture Treatment", price: "$25" },
+          { name: "Moroccanoil Scalp Treatment", price: "$40" },
+          { name: "Keratin Complex Vanilla Bean Treatment", price: "$20" },
+          { name: "Brazilian Blowout Split End Corrector", price: "$25" },
+          { name: "Phyto Polleine Scalp Treatment", price: "$35" },
+          { name: "Keune Mask - Blonde Savior, Color Brillianz, Keratin Smooth, Satin Oil or Vital Nutrition", price: "$25" },
+          { name: "Keune Bond Builder System", price: "$50" },
+        ],
+        note:
+          "*Milbon Treatment and *Keune Bond Builder System include take-home maintenance product.",
+      },
+    ],
+  },
+  {
+    id: "nails-classic-services",
+    title: "Nails",
+    textLeftOnDesktop: false,
+    textPanelBgClassName: "bg-white",
+    image: {
+      src: cloudinaryImage("PEDICURE_nlvtoz"),
+      alt: "Nail services at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Classic Nail Services",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=14",
+        bookingEmbedTitle: "Kossof Salon Spa classic nail booking menu",
+        items: [
+          { name: "Manicure", price: "$28" },
+          { name: "Polish Change Hands", price: "$20" },
+          { name: "Pedicure", price: "$56" },
+          { name: "Express \"Mini\" Pedicure", price: "$45" },
+          { name: "Polish Change Toes", price: "$35" },
+          { name: "Nail Repair", price: "$5" },
+          { name: "French or Dazzle Dry Add-On", price: "$5" },
+        ],
+      },
+      {
+        title: "Spa Nail Services",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=15",
+        bookingEmbedTitle: "Kossof Salon Spa spa nail booking menu",
+        items: [
+          { name: "Spa Manicure", price: "$42" },
+          { name: "Honey Nectar Whip Manicure", price: "$42" },
+          { name: "Spa Pedicure", price: "$75" },
+          { name: "Honey Nectar Whip Pedicure", price: "$75" },
+          { name: "French or Dazzle Dry Add-On", price: "$5" },
+        ],
+      },
+      {
+        title: "Gel Nail Services",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=14",
+        bookingEmbedTitle: "Kossof Salon Spa gel nail booking menu",
+        note: "No Chip Removal price is for services not performed in house.",
+        items: [
+          { name: "Structured Gel Manicure*", price: "$75" },
+          { name: "No Chip Manicure*", price: "$54" },
+          { name: "No Chip Pedicure", price: "$75" },
+          { name: "No Chip Removal (if not performed in house)", price: "$10" },
+          { name: "Cat Eye, Chrome or French Add On", price: "$5" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "special-occasion-formal-hair-styling",
+    title: "Special Occasion/Formal Hair Styling",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#ede7e4]/20",
+    image: {
+      src: cloudinaryImage("HAIRSTYLE_wir8yz"),
+      alt: "Special occasion hairstyling at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Special Occasion/Formal Hair Styling",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=16",
+        bookingEmbedTitle: "Kossof Salon Spa formal styling booking menu",
+        note: "Hair must be clean and dry for formal styling.",
+        items: [
+          { name: "Up-do", price: "from $95" },
+          { name: "Downstyle", price: "from $95" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "extensions-wigs-hairpieces",
+    title: "Extensions, Wigs & Hairpieces",
+    textLeftOnDesktop: false,
+    textPanelBgClassName: "bg-white",
+    image: {
+      src: cloudinaryImage("HAIRSTYLE_wir8yz"),
+      alt: "Hair extensions and wigs consultation at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Extensions, Wigs & Hairpieces",
+        bookingEmbedUrl: "https://booking.mangomint.com/kossofsalonspa",
+        bookingEmbedTitle: "Kossof Salon Spa full booking menu",
+        items: [{ name: "Price based on consultation", price: "Consultation" }],
+      },
+    ],
+  },
+  {
+    id: "color-services",
+    title: "Color",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#ede7e4]/20",
+    image: {
+      src: cloudinaryImage("COLOR_rnziuz"),
+      alt: "Hair color services at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Color",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=8",
+        bookingEmbedTitle: "Kossof Salon Spa color booking menu",
+        items: [
+          { name: "Single Process Roots Only", price: "from $80" },
+          { name: "Single Process Refresh thru the ends", price: "from $95" },
+          { name: "Women's Grey Blending", price: "from $80" },
+          { name: "Men's Grey Blending", price: "$40" },
+          { name: "Beard Color", price: "$35" },
+          { name: "Base Lift", price: "from $65" },
+          { name: "Gloss/Toner", price: "from $50" },
+          { name: "Double Process (bleach + tone)", price: "from $125" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "highlight-lowlight-balayage",
+    title: "Highlight/Lowlight & Balayage",
+    textLeftOnDesktop: false,
+    textPanelBgClassName: "bg-white",
+    image: {
+      src: cloudinaryImage("COLOR_rnziuz"),
+      alt: "Highlight and balayage color services at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Highlight/Lowlight & Balayage",
+        bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=8",
+        bookingEmbedTitle: "Kossof Salon Spa highlight and balayage booking menu",
+        note: "Specialty color and corrective color pricing based on consultation.",
+        items: [
+          { name: "Partial", price: "from $145" },
+          { name: "Full", price: "from $175" },
+          { name: "Face Frame", price: "from $70" },
+          { name: "Partial Balayage/Ombre", price: "from $185" },
+          { name: "Full Balayage/Ombre", price: "from $225" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "wedding-hair-makeup",
+    title: "Wedding Hair + Makeup",
+    intro: "In Salon and On-Site* pricing.",
+    textLeftOnDesktop: true,
+    textPanelBgClassName: "bg-[#ede7e4]/20",
+    image: {
+      src: cloudinaryImage("HAIRSTYLE_wir8yz"),
+      alt: "Wedding hair and makeup services at Kossof Salon Spa",
+    },
+    groups: [
+      {
+        title: "Bride",
+        items: [
+          { name: "Hair - Trial Run or Wedding Day", price: "from $150 (In Salon) / from $200 (On-Site*)" },
+          { name: "Makeup", price: "$120 (In Salon) / $150 (On-Site*)" },
+          { name: "Makeup with Lashes", price: "$140 (In Salon) / $170 (On-Site*)" },
+        ],
+      },
+      {
+        title: "Bridal Party",
+        items: [
+          { name: "Hair - Blow dry", price: "from $65 (In Salon) / from $85 (On-Site*)" },
+          { name: "Hair - Formal styling", price: "from $95 (In Salon) / from $125 (On-Site*)" },
+          { name: "Makeup", price: "$100 (In Salon) / $120 (On-Site*)" },
+          { name: "Makeup with lashes", price: "$120 (In Salon) / $140 (On-Site*)" },
+        ],
+        note:
+          "On-Site/Out of salon fee: $250 + 18% gratuity added. Hair must be clean and dry for formal styling. Face must be clean for make-up application.",
+      },
+    ],
+  },
+]
+import { ServicesSection } from "./services-data"
+import { cloudinaryImage } from "@/lib/cloudinary"
+
 const SALON_HAIR_BASE_SECTION: ServicesSection = {
   id: "hair",
   title: "Salon Services",
@@ -632,7 +1209,27 @@ const withDefaultDuration = (sections: ServicesSection[]): ServicesSection[] =>
     })),
   }))
 
+// Main categories from the printed salon PDF; href scroll targets match ids on /salon-services
+export type SalonServicesHeroJumpLink = {
+  label: string
+  href: string
+  external?: boolean
+}
+
+export const SALON_SERVICES_HERO_JUMP_LINKS: SalonServicesHeroJumpLink[] = [
+  { label: "Special occasion", href: "#styling" },
+  { label: "Hair extensions", href: "https://booking.mangomint.com/kossofsalonspa", external: true },
+  { label: "Color", href: "#hair-color" },
+  { label: "Wedding hair & makeup", href: "/weddings-services" },
+  { label: "Hair", href: "#haircuts-styling" },
+  { label: "Retexturizing", href: "#retexturizing-services" },
+  { label: "Manicures", href: "#manicures" },
+  { label: "Pedicures", href: "#pedicures" },
+  { label: "Hair & scalp treatments", href: "#hair-scalp-treatments" },
+]
+
 export const SALON_SERVICES_SECTIONS: ServicesSection[] = withDefaultDuration([
   ...SALON_HAIR_SPLIT_SECTIONS,
   ...SALON_NAIL_SPLIT_SECTIONS,
 ])
+*/
