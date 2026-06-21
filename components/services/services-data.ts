@@ -26,7 +26,7 @@ export type ServicesSection = {
   textLeftOnDesktop: boolean
   /** Tailwind classes to color the text panel background */
   textPanelBgClassName: string
-  image: {
+  image?: {
     src: string
     alt: string
   }

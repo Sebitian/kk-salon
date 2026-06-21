@@ -54,14 +54,6 @@ export default function SalonServicesHero() {
               )
             })}
           </nav>
-          <div className="pt-8 flex w-full items-center justify-center">
-            <Link
-              href="https://booking.mangomint.com/kossofsalonspa"
-              className="inline-flex w-full max-w-xs sm:w-auto sm:min-w-[210px] items-center justify-center whitespace-nowrap bg-salon-raspberry text-white px-8 py-3.5 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase hover:bg-salon-raspberry/90 transition-colors"
-            >
-              Book Now
-            </Link>
-          </div>
         </div>
       </div>
     </section>

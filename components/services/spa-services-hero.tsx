@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 export default function SpaServicesHero() {
   return (
     <section className="pt-40 sm:pt-44 pb-16 px-4 bg-white">
@@ -18,14 +16,6 @@ export default function SpaServicesHero() {
           <p className="text-salon-brown/80 text-base lg:text-lg leading-relaxed max-w-3xl mx-auto italic font-light pt-2">
             Indulge in our curated spa experiences. please click one of the booking options to see a list of services.
           </p>
-          <div className="pt-8 flex w-full items-center justify-center">
-            <Link
-              href="https://booking.mangomint.com/kossofsalonspa"
-              className="inline-flex w-full max-w-xs sm:w-auto sm:min-w-[210px] items-center justify-center whitespace-nowrap bg-salon-raspberry text-white px-8 py-3.5 rounded-sm text-sm font-semibold tracking-[0.12em] uppercase hover:bg-salon-raspberry/90 transition-colors"
-            >
-              Book Now
-            </Link>
-          </div>
         </div>
       </div>
     </section>

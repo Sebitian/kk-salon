@@ -1,16 +1,16 @@
 import { IMAGES } from "@/lib/cloudinary"
 
 export default function JsonLd() {
-  const schemas = [
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
     {
-      "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Kossof Salon Spa",
       "url": "https://kossofsalonspa.com",
       "description": "Kossof Salon Spa in Lincolnshire, IL offers luxury hair, nail, and beauty services."
     },
     {
-      "@context": "https://schema.org",
       "@type": "BeautySalon",
       "name": "Kossof Salon Spa",
       "image": IMAGES.klogo,
@@ -58,12 +58,13 @@ export default function JsonLd() {
       ],
       "priceRange": "$$"
     }
-  ]
+    ],
+  }
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   )
 }

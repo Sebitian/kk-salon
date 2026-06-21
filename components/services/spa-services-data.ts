@@ -100,10 +100,6 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
     title: "Body Waxing",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
-    image: {
-      src: cloudinaryImage("UWAXING_dyi8kr"),
-      alt: "Body waxing at Kossof Salon Spa",
-    },
     groups: [
       {
         title: "Body",
@@ -142,10 +138,6 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
     title: "Lashes + Brows",
     textLeftOnDesktop: true,
     textPanelBgClassName: "bg-[#cad7de]/20",
-    image: {
-      src: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=1920&h=1200&fit=crop&auto=format&q=85",
-      alt: "Lashes and brows services at Kossof Salon Spa",
-    },
     groups: [
       {
         title: "Lashes + Brows",

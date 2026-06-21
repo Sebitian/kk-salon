@@ -709,30 +709,38 @@ export default function ServicesContent({
                 </div>
               </div>
 
-              <div className={`relative w-full lg:w-1/2 overflow-hidden ${imageColOrder}`}>
-                <div className="absolute inset-0" aria-hidden="true">
-                  <Image
-                    src={section.image.src}
-                    alt=""
-                    fill
-                    className="object-cover object-center blur-md scale-110 opacity-30"
-                    quality={70}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-white/35"></div>
-                </div>
+              <div
+                className={`relative w-full lg:w-1/2 overflow-hidden ${imageColOrder} ${section.image ? "" : "hidden lg:block"}`}
+              >
+                {section.image ? (
+                  <>
+                    <div className="absolute inset-0" aria-hidden="true">
+                      <Image
+                        src={section.image.src}
+                        alt=""
+                        fill
+                        className="object-cover object-center blur-md scale-110 opacity-30"
+                        quality={70}
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                      <div className="absolute inset-0 bg-white/35"></div>
+                    </div>
 
-                <div className="relative h-[42vh] sm:h-[50vh] lg:h-[560px]">
-                  <Image
-                    src={section.image.src}
-                    alt={section.image.alt}
-                    fill
-                    className="object-cover object-center"
-                    quality={90}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    priority={section.id === "hair"}
-                  />
-                </div>
+                    <div className="relative h-[42vh] sm:h-[50vh] lg:h-[560px]">
+                      <Image
+                        src={section.image.src}
+                        alt={section.image.alt}
+                        fill
+                        className="object-cover object-center"
+                        quality={90}
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        priority={section.id === "hair"}
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <div className="relative h-[42vh] sm:h-[50vh] lg:h-[560px] bg-white" aria-hidden="true" />
+                )}
               </div>
             </section>
           )

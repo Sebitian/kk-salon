@@ -188,10 +188,6 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
     title: "Extensions, Wigs & Hairpieces",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
-    image: {
-      src: cloudinaryImage("HAIRSTYLE_wir8yz"),
-      alt: "Hair extensions and wigs consultation at Kossof Salon Spa",
-    },
     groups: [
       {
         title: "Extensions, Wigs & Hairpieces",
@@ -259,10 +255,6 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
     intro: "In Salon and On-Site* pricing.",
     textLeftOnDesktop: true,
     textPanelBgClassName: "bg-[#ede7e4]/20",
-    image: {
-      src: cloudinaryImage("HAIRSTYLE_wir8yz"),
-      alt: "Wedding hair and makeup services at Kossof Salon Spa",
-    },
     groups: [
       {
         title: "Bride",
@@ -477,10 +469,6 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
     title: "Extensions, Wigs & Hairpieces",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
-    image: {
-      src: cloudinaryImage("HAIRSTYLE_wir8yz"),
-      alt: "Hair extensions and wigs consultation at Kossof Salon Spa",
-    },
     groups: [
       {
         title: "Extensions, Wigs & Hairpieces",
@@ -548,10 +536,6 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
     intro: "In Salon and On-Site* pricing.",
     textLeftOnDesktop: true,
     textPanelBgClassName: "bg-[#ede7e4]/20",
-    image: {
-      src: cloudinaryImage("HAIRSTYLE_wir8yz"),
-      alt: "Wedding hair and makeup services at Kossof Salon Spa",
-    },
     groups: [
       {
         title: "Bride",
