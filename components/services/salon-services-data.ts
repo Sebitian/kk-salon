@@ -229,10 +229,6 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
     title: "Highlight/Lowlight & Balayage",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
-    image: {
-      src: cloudinaryImage("COLOR_rnziuz"),
-      alt: "Highlight and balayage color services at Kossof Salon Spa",
-    },
     groups: [
       {
         title: "Highlight/Lowlight & Balayage",
@@ -510,10 +506,6 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
     title: "Highlight/Lowlight & Balayage",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
-    image: {
-      src: cloudinaryImage("COLOR_rnziuz"),
-      alt: "Highlight and balayage color services at Kossof Salon Spa",
-    },
     groups: [
       {
         title: "Highlight/Lowlight & Balayage",

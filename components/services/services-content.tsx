@@ -104,8 +104,8 @@ function BookingIconLink({ bookingUrl }: { bookingUrl?: string }) {
 
 function BookingMenuOverlayCta({ bookingEmbedUrl, bookingEmbedTitle }: { bookingEmbedUrl: string; bookingEmbedTitle?: string }) {
   return (
-    <div className="border-t border-salon-brown/10 pt-6">
-      <div className="mx-auto max-w-md rounded-xl border border-salon-brown/15 bg-[#f8f6f5] px-5 py-5 text-center shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
+    <div className="mt-6 border-t border-salon-brown/10 pt-6 pb-6">
+      <div className="mx-auto max-w-md rounded-xl border border-salon-brown/15 bg-[#f8f6f5] px-5 py-4 text-center shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
         <Link
           href={bookingEmbedUrl}
           aria-label={bookingEmbedTitle ?? "Open online booking"}
@@ -526,26 +526,34 @@ export default function ServicesContent({
           </section>
         ) : null}
 
-        {visibleSections.map((section) => {
+        {visibleSections.map((section, sectionIndex) => {
           const autoExpandAll = trimmedQuery ? true : section.groups.length <= 2
           const singleGroup = section.groups.length === 1 ? section.groups[0] : null
+          const hasBookingCta = section.groups.some((group) => group.bookingEmbedUrl)
+          const prevHasBookingCta =
+            sectionIndex > 0 &&
+            visibleSections[sectionIndex - 1].groups.some((group) => group.bookingEmbedUrl)
           const textColOrder = section.textLeftOnDesktop
-            ? "order-2 lg:order-1"
-            : "order-2 lg:order-2"
+            ? "order-1 lg:order-1"
+            : "order-1 lg:order-2"
           const imageColOrder = section.textLeftOnDesktop
-            ? "order-1 lg:order-2"
-            : "order-1 lg:order-1"
+            ? "order-2 lg:order-2"
+            : "order-2 lg:order-1"
           const headingId = `${section.id}-heading`
+          const textPanelPadding = [
+            sectionIndex === 0 ? "pt-20 lg:pt-28" : prevHasBookingCta ? "pt-0" : "pt-12 lg:pt-16",
+            hasBookingCta ? "pb-0" : "pb-12 lg:pb-14",
+          ].join(" ")
 
           return (
             <section
               key={section.id}
               id={section.id}
-              className="w-full flex flex-col lg:flex-row scroll-mt-24"
+              className="w-full flex flex-col lg:flex-row lg:items-start scroll-mt-24"
               aria-labelledby={headingId}
             >
               <div
-                className={`w-full lg:w-1/2 py-20 lg:py-28 px-8 lg:px-20 flex items-center ${textColOrder} ${section.textPanelBgClassName}`}
+                className={`w-full lg:w-1/2 px-8 lg:px-20 flex items-start ${textPanelPadding} ${textColOrder} ${section.textPanelBgClassName}`}
               >
                 <div className="w-full max-w-xl mx-auto">
                   <div className="mb-10">
@@ -604,12 +612,10 @@ export default function ServicesContent({
                           ))}
                         </div>
                         {group.bookingEmbedUrl ? (
-                          <div className="mt-8">
-                            <BookingMenuOverlayCta
-                              bookingEmbedUrl={group.bookingEmbedUrl}
-                              bookingEmbedTitle={group.bookingEmbedTitle}
-                            />
-                          </div>
+                          <BookingMenuOverlayCta
+                            bookingEmbedUrl={group.bookingEmbedUrl}
+                            bookingEmbedTitle={group.bookingEmbedTitle}
+                          />
                         ) : null}
                       </div>
                     ))}
@@ -645,12 +651,10 @@ export default function ServicesContent({
                         ))}
                       </div>
                       {singleGroup.bookingEmbedUrl ? (
-                        <div className="mt-8">
-                          <BookingMenuOverlayCta
-                            bookingEmbedUrl={singleGroup.bookingEmbedUrl}
-                            bookingEmbedTitle={singleGroup.bookingEmbedTitle}
-                          />
-                        </div>
+                        <BookingMenuOverlayCta
+                          bookingEmbedUrl={singleGroup.bookingEmbedUrl}
+                          bookingEmbedTitle={singleGroup.bookingEmbedTitle}
+                        />
                       ) : null}
                     </div>
                   ) : (
@@ -694,12 +698,10 @@ export default function ServicesContent({
                               ))}
                             </div>
                             {group.bookingEmbedUrl ? (
-                              <div className="mt-8">
-                                <BookingMenuOverlayCta
-                                  bookingEmbedUrl={group.bookingEmbedUrl}
-                                  bookingEmbedTitle={group.bookingEmbedTitle}
-                                />
-                              </div>
+                              <BookingMenuOverlayCta
+                                bookingEmbedUrl={group.bookingEmbedUrl}
+                                bookingEmbedTitle={group.bookingEmbedTitle}
+                              />
                             ) : null}
                           </AccordionContent>
                         </AccordionItem>
@@ -710,7 +712,7 @@ export default function ServicesContent({
               </div>
 
               <div
-                className={`relative w-full lg:w-1/2 overflow-hidden ${imageColOrder} ${section.image ? "" : "hidden lg:block"}`}
+                className={`relative hidden w-full overflow-hidden lg:block lg:w-1/2 ${imageColOrder}`}
               >
                 {section.image ? (
                   <>
