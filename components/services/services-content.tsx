@@ -534,14 +534,14 @@ export default function ServicesContent({
             sectionIndex > 0 &&
             visibleSections[sectionIndex - 1].groups.some((group) => group.bookingEmbedUrl)
           const textColOrder = section.textLeftOnDesktop
-            ? "order-1 lg:order-1"
-            : "order-1 lg:order-2"
+            ? "order-2 lg:order-1"
+            : "order-2 lg:order-2"
           const imageColOrder = section.textLeftOnDesktop
-            ? "order-2 lg:order-2"
-            : "order-2 lg:order-1"
+            ? "order-1 lg:order-2"
+            : "order-1 lg:order-1"
           const headingId = `${section.id}-heading`
           const textPanelPadding = [
-            sectionIndex === 0 ? "pt-20 lg:pt-28" : prevHasBookingCta ? "pt-0" : "pt-12 lg:pt-16",
+            sectionIndex === 0 ? "pt-20 lg:pt-28" : prevHasBookingCta ? "pt-12 lg:pt-0" : "pt-12 lg:pt-16",
             hasBookingCta ? "pb-0" : "pb-12 lg:pb-14",
           ].join(" ")
 
@@ -712,7 +712,7 @@ export default function ServicesContent({
               </div>
 
               <div
-                className={`relative hidden w-full overflow-hidden lg:block lg:w-1/2 ${imageColOrder}`}
+                className={`relative w-full lg:w-1/2 overflow-hidden ${imageColOrder} ${section.image ? "" : "hidden lg:block"}`}
               >
                 {section.image ? (
                   <>
