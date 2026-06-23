@@ -34,6 +34,7 @@ export default function SpaServicesPage() {
         schemaName="Kossof Spa Services"
         schemaDescription="Full spa service menu including waxing, lashes + brows, makeup artistry, facials, advanced facial treatments, body treatments, body wraps, and massage therapies."
         searchPlaceholder="Try: massage, facial, makeup, body wrap, scrub..."
+        showBookingEmbedCta={false}
       />
     </>
   )
