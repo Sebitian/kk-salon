@@ -104,6 +104,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
           { name: "Phyto Polleine Scalp Treatment", price: "$35" },
           { name: "Keune Mask - Blonde Savior, Color Brillianz, Keratin Smooth, Satin Oil or Vital Nutrition", price: "$25" },
           { name: "Keune Bond Builder System", price: "$50" },
+          { name: "Qoat", price: "$25" },
         ],
         note:
           "*Milbon Treatment and *Keune Bond Builder System include take-home maintenance product.",
@@ -381,6 +382,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
           { name: "Phyto Polleine Scalp Treatment", price: "$35" },
           { name: "Keune Mask - Blonde Savior, Color Brillianz, Keratin Smooth, Satin Oil or Vital Nutrition", price: "$25" },
           { name: "Keune Bond Builder System", price: "$50" },
+          { name: "Qoat", price: "$25" },
         ],
         note:
           "*Milbon Treatment and *Keune Bond Builder System include take-home maintenance product.",
