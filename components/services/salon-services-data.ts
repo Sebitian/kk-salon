@@ -163,7 +163,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
   },
   {
     id: "special-occasion-formal-hair-styling",
-    title: "Special Occasion/Formal Hair Styling",
+    title: "Special Occasion / Formal Hair Styling",
     textLeftOnDesktop: true,
     textPanelBgClassName: "bg-[#ede7e4]/20",
     image: {
@@ -172,7 +172,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
     },
     groups: [
       {
-        title: "Special Occasion/Formal Hair Styling",
+        title: "Special Occasion / Formal Hair Styling",
         bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=16",
         bookingEmbedTitle: "Kossof Salon Spa formal styling booking menu",
         note: "Hair must be clean and dry for formal styling.",
@@ -226,12 +226,12 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
   },
   {
     id: "highlight-lowlight-balayage",
-    title: "Highlight/Lowlight & Balayage",
+    title: "Highlight / Lowlight & Balayage",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
     groups: [
       {
-        title: "Highlight/Lowlight & Balayage",
+        title: "Highlight / Lowlight & Balayage",
         bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=8",
         bookingEmbedTitle: "Kossof Salon Spa highlight and balayage booking menu",
         note: "Specialty color and corrective color pricing based on consultation.",
@@ -440,7 +440,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
   },
   {
     id: "special-occasion-formal-hair-styling",
-    title: "Special Occasion/Formal Hair Styling",
+    title: "Special Occasion / Formal Hair Styling",
     textLeftOnDesktop: true,
     textPanelBgClassName: "bg-[#ede7e4]/20",
     image: {
@@ -449,7 +449,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
     },
     groups: [
       {
-        title: "Special Occasion/Formal Hair Styling",
+        title: "Special Occasion / Formal Hair Styling",
         bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=16",
         bookingEmbedTitle: "Kossof Salon Spa formal styling booking menu",
         note: "Hair must be clean and dry for formal styling.",
@@ -503,12 +503,12 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
   },
   {
     id: "highlight-lowlight-balayage",
-    title: "Highlight/Lowlight & Balayage",
+    title: "Highlight / Lowlight & Balayage",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
     groups: [
       {
-        title: "Highlight/Lowlight & Balayage",
+        title: "Highlight / Lowlight & Balayage",
         bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=8",
         bookingEmbedTitle: "Kossof Salon Spa highlight and balayage booking menu",
         note: "Specialty color and corrective color pricing based on consultation.",

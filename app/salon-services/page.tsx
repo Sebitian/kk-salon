@@ -35,6 +35,7 @@ export default function SalonServicesPage() {
         schemaDescription="Full salon service menu including haircuts, color, treatments, and nails."
         searchPlaceholder="Try: balayage, keratin, manicure, waxing..."
         showSectionNav={false}
+        showBookingEmbedCta={false}
       />
     </>
   )

@@ -264,6 +264,8 @@ interface ServicesContentProps {
   showSectionNav?: boolean
   /** When set, footer shows a phone CTA instead of online booking. */
   footerCallSchedule?: { tel: string; numberDisplay: string }
+  /** When false, hides per-section "Book in Online Booking" CTAs. */
+  showBookingEmbedCta?: boolean
 }
 
 export default function ServicesContent({
@@ -273,6 +275,7 @@ export default function ServicesContent({
   searchPlaceholder = "Try: balayage, bridal makeup, deep tissue...",
   showSectionNav = true,
   footerCallSchedule,
+  showBookingEmbedCta = true,
 }: ServicesContentProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const trimmedQuery = searchQuery.trim()
@@ -332,7 +335,8 @@ export default function ServicesContent({
               ),
           }))
           .filter(
-            (group) => group.items.length > 0 || Boolean(group.bookingEmbedUrl),
+            (group) =>
+              group.items.length > 0 || (showBookingEmbedCta && Boolean(group.bookingEmbedUrl)),
           )
 
         return {
@@ -341,7 +345,7 @@ export default function ServicesContent({
         }
       })
       .filter((section) => section.groups.length > 0)
-  }, [matchingServiceIds, sections])
+  }, [matchingServiceIds, sections, showBookingEmbedCta])
 
   const visibleItemsCount = useMemo(() => {
     return visibleSections.reduce((sectionAcc, section) => {
@@ -529,8 +533,10 @@ export default function ServicesContent({
         {visibleSections.map((section, sectionIndex) => {
           const autoExpandAll = trimmedQuery ? true : section.groups.length <= 2
           const singleGroup = section.groups.length === 1 ? section.groups[0] : null
-          const hasBookingCta = section.groups.some((group) => group.bookingEmbedUrl)
+          const hasBookingCta =
+            showBookingEmbedCta && section.groups.some((group) => group.bookingEmbedUrl)
           const prevHasBookingCta =
+            showBookingEmbedCta &&
             sectionIndex > 0 &&
             visibleSections[sectionIndex - 1].groups.some((group) => group.bookingEmbedUrl)
           const textColOrder = section.textLeftOnDesktop
@@ -559,7 +565,7 @@ export default function ServicesContent({
                   <div className="mb-10">
                     <h2
                       id={headingId}
-                      className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold uppercase leading-tight tracking-[0.06em] sm:tracking-[0.08em] md:tracking-[0.14em] text-salon-brown font-sans break-words"
+                      className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold uppercase leading-tight tracking-[0.06em] sm:tracking-[0.08em] md:tracking-[0.14em] text-salon-brown font-sans text-balance"
                     >
                       {section.title}
                     </h2>
@@ -611,7 +617,7 @@ export default function ServicesContent({
                             />
                           ))}
                         </div>
-                        {group.bookingEmbedUrl ? (
+                        {showBookingEmbedCta && group.bookingEmbedUrl ? (
                           <BookingMenuOverlayCta
                             bookingEmbedUrl={group.bookingEmbedUrl}
                             bookingEmbedTitle={group.bookingEmbedTitle}
@@ -650,7 +656,7 @@ export default function ServicesContent({
                           />
                         ))}
                       </div>
-                      {singleGroup.bookingEmbedUrl ? (
+                      {showBookingEmbedCta && singleGroup.bookingEmbedUrl ? (
                         <BookingMenuOverlayCta
                           bookingEmbedUrl={singleGroup.bookingEmbedUrl}
                           bookingEmbedTitle={singleGroup.bookingEmbedTitle}
@@ -697,7 +703,7 @@ export default function ServicesContent({
                                 />
                               ))}
                             </div>
-                            {group.bookingEmbedUrl ? (
+                            {showBookingEmbedCta && group.bookingEmbedUrl ? (
                               <BookingMenuOverlayCta
                                 bookingEmbedUrl={group.bookingEmbedUrl}
                                 bookingEmbedTitle={group.bookingEmbedTitle}
