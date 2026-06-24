@@ -227,12 +227,12 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
   },
   {
     id: "highlight-lowlight-balayage",
-    title: "Highlight / Lowlight & Balayage",
+    title: "Highlight\u00A0/ Lowlight & Balayage",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
     groups: [
       {
-        title: "Highlight / Lowlight & Balayage",
+        title: "Highlight\u00A0/ Lowlight & Balayage",
         bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=8",
         bookingEmbedTitle: "Kossof Salon Spa highlight and balayage booking menu",
         note: "Specialty color and corrective color pricing based on consultation.",
@@ -505,12 +505,12 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
   },
   {
     id: "highlight-lowlight-balayage",
-    title: "Highlight / Lowlight & Balayage",
+    title: "Highlight\u00A0/ Lowlight & Balayage",
     textLeftOnDesktop: false,
     textPanelBgClassName: "bg-white",
     groups: [
       {
-        title: "Highlight / Lowlight & Balayage",
+        title: "Highlight\u00A0/ Lowlight & Balayage",
         bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=8",
         bookingEmbedTitle: "Kossof Salon Spa highlight and balayage booking menu",
         note: "Specialty color and corrective color pricing based on consultation.",
