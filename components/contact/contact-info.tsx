@@ -40,18 +40,32 @@ export default function ContactInfo() {
           </div>
         </div>
 
-        {/* Email with clickable link */}
+        {/* Email with clickable links */}
         <div className="flex items-start">
           <Mail className="h-6 w-6 text-primary shrink-0 mt-0.5 mr-3" />
           <div>
             <h3 className="font-semibold mb-1">Email</h3>
-            <a 
-              href="mailto:info@kossofsalonspa.com"
-              className="text-gray-600 hover:text-primary transition-colors"
-              itemProp="email"
-            >
-              info@kossofsalonspa.com
-            </a>
+            <div className="space-y-3">
+              <div>
+                <p className="text-sm text-gray-500 mb-1">Appointments &amp; scheduling</p>
+                <a
+                  href="mailto:frontdesk@kossofsalonspa.com"
+                  className="text-gray-600 hover:text-primary transition-colors"
+                >
+                  frontdesk@kossofsalonspa.com
+                </a>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 mb-1">General inquiries</p>
+                <a
+                  href="mailto:info@kossofsalonspa.com"
+                  className="text-gray-600 hover:text-primary transition-colors"
+                  itemProp="email"
+                >
+                  info@kossofsalonspa.com
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 

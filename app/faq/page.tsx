@@ -7,7 +7,7 @@ const faqItems = [
   {
     question: "How do I book an appointment at Kossof Salon Spa?",
     answer:
-      "You can book online at booking.mangomint.com/kossofsalonspa or call 847-821-6604. For updates and social contact options, you can also use the links in our website footer.",
+      "You can book online at booking.mangomint.com/kossofsalonspa or call 847-821-6604. For appointment and scheduling questions, email frontdesk@kossofsalonspa.com. For updates and social contact options, you can also use the links in our website footer.",
   },
   {
     question: "What services do you offer at Kossof Salon Spa?",
@@ -238,6 +238,16 @@ export default function FAQPage() {
                 <p>185 N Milwaukee Avenue, Suite 120</p>
                 <p>Lincolnshire, IL 60069</p>
                 <p className="mt-4 font-semibold text-gray-900">Email</p>
+                <p className="text-sm text-gray-500">Appointments &amp; scheduling</p>
+                <p>
+                  <a
+                    href="mailto:frontdesk@kossofsalonspa.com"
+                    className="text-primary hover:text-primary-dark transition-colors font-medium"
+                  >
+                    frontdesk@kossofsalonspa.com
+                  </a>
+                </p>
+                <p className="mt-3 text-sm text-gray-500">General inquiries</p>
                 <p>
                   <a
                     href="mailto:info@kossofsalonspa.com"
