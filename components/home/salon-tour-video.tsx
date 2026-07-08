@@ -38,7 +38,7 @@ export default function SalonTourVideo() {
       <div className="w-16 h-1 bg-salon-raspberry mx-auto mt-4 mb-5 sm:mb-6" />
 
       <div ref={containerRef} className="w-full overflow-hidden">
-        <div className="relative aspect-[3/4] w-full sm:mx-auto sm:max-w-xl sm:aspect-[4/5]">
+        <div className="relative aspect-[9/16] w-full sm:mx-auto sm:max-w-xl">
           <video
             ref={videoRef}
             src={VIDEOS.salonTour}
@@ -46,7 +46,7 @@ export default function SalonTourVideo() {
             loop
             playsInline
             preload="none"
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-top"
             aria-label="Kossof Salon Spa tour"
           />
         </div>
