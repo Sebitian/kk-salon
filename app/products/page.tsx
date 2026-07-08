@@ -29,7 +29,7 @@ export default function ProductsPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-sm px-6 py-3 text-xs sm:text-sm font-semibold tracking-widest uppercase bg-salon-raspberry text-white hover:bg-salon-raspberry/90 transition-colors w-full"
             >
-              Salon Interactive
+              Shop Hair Care Brands
             </Link>
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm shadow-2xl">
               <video
@@ -51,7 +51,7 @@ export default function ProductsPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-sm px-6 py-3 text-xs sm:text-sm font-semibold tracking-widest uppercase bg-salon-raspberry text-white hover:bg-salon-raspberry/90 transition-colors w-full"
             >
-              Farmhouse Fresh
+              Shop Farmhouse Fresh Skin Care
             </Link>
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm shadow-2xl">
               <video

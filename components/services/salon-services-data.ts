@@ -38,7 +38,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
         bookingEmbedTitle: "Kossof Salon Spa haircut and style booking menu",
         items: [
           { name: "Women's Haircut + Style", price: "from $65" },
-          { name: "Woman's Haircut Only", price: "from $55" },
+          { name: "Women's Haircut Only", price: "from $55" },
           { name: "Blow-dry Style", price: "from $45" },
           { name: "Shampoo Only", price: "$12" },
           { name: "Hot Tool Add-On", price: "$10" },
@@ -48,8 +48,8 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
           { name: "Men's Haircut", price: "from $40" },
           { name: "Neck Trim", price: "$10" },
           { name: "Beard Trim & Shaping", price: "$15" },
-          { name: "Girls Haircut + Style 10 & Under", price: "from $40" },
-          { name: "Boys Haircut 10 & Under", price: "from $35" },
+          { name: "Girl's Haircut + Style (10 & Under)", price: "from $40" },
+          { name: "Boy's Haircut (10 & Under)", price: "from $35" },
         ],
       },
     ],
@@ -97,6 +97,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
         items: [
           { name: "Pure Balance Clarifying Treatment", price: "$15" },
           { name: "Milbon Treatment - Color Preserve, Moisture, Scalp, Smooth, Reawaken or Repair", price: "$65" },
+          { name: "Milbon Gold Treatment", price: "$100" },
           { name: "Moroccanoil Moisture Treatment", price: "$25" },
           { name: "Moroccanoil Scalp Treatment", price: "$40" },
           { name: "Keratin Complex Vanilla Bean Treatment", price: "$20" },
@@ -214,7 +215,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
         bookingEmbedTitle: "Kossof Salon Spa color booking menu",
         items: [
           { name: "Single Process Roots Only", price: "from $80" },
-          { name: "Single Process Refresh thru the ends", price: "from $95" },
+          { name: "Single Process Refresh through the ends", price: "from $95" },
           { name: "Women's Grey Blending", price: "from $80" },
           { name: "Men's Grey Blending", price: "$40" },
           { name: "Beard Color", price: "$35" },
@@ -316,7 +317,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
         bookingEmbedTitle: "Kossof Salon Spa haircut and style booking menu",
         items: [
           { name: "Women's Haircut + Style", price: "from $65" },
-          { name: "Woman's Haircut Only", price: "from $55" },
+          { name: "Women's Haircut Only", price: "from $55" },
           { name: "Blow-dry Style", price: "from $45" },
           { name: "Shampoo Only", price: "$12" },
           { name: "Hot Tool Add-On", price: "$10" },
@@ -326,8 +327,8 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
           { name: "Men's Haircut", price: "from $40" },
           { name: "Neck Trim", price: "$10" },
           { name: "Beard Trim & Shaping", price: "$15" },
-          { name: "Girls Haircut + Style 10 & Under", price: "from $40" },
-          { name: "Boys Haircut 10 & Under", price: "from $35" },
+          { name: "Girl's Haircut + Style (10 & Under)", price: "from $40" },
+          { name: "Boy's Haircut (10 & Under)", price: "from $35" },
         ],
       },
     ],
@@ -375,6 +376,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
         items: [
           { name: "Pure Balance Clarifying Treatment", price: "$15" },
           { name: "Milbon Treatment - Color Preserve, Moisture, Scalp, Smooth, Reawaken or Repair", price: "$65" },
+          { name: "Milbon Gold Treatment", price: "$100" },
           { name: "Moroccanoil Moisture Treatment", price: "$25" },
           { name: "Moroccanoil Scalp Treatment", price: "$40" },
           { name: "Keratin Complex Vanilla Bean Treatment", price: "$20" },
@@ -492,7 +494,7 @@ export const SALON_SERVICES_SECTIONS: ServicesSection[] = [
         bookingEmbedTitle: "Kossof Salon Spa color booking menu",
         items: [
           { name: "Single Process Roots Only", price: "from $80" },
-          { name: "Single Process Refresh thru the ends", price: "from $95" },
+          { name: "Single Process Refresh through the ends", price: "from $95" },
           { name: "Women's Grey Blending", price: "from $80" },
           { name: "Men's Grey Blending", price: "$40" },
           { name: "Beard Color", price: "$35" },
@@ -590,7 +592,7 @@ const SALON_HAIR_BASE_SECTION: ServicesSection = {
               "This luxury curly haircut is expertly crafted by Joanna, a certified curly hair stylist trained in Rezo Cut, Ouidad Cut, and Mizani AirCut techniques. Each cut is tailored to enhance curl definition, minimize frizz, and shape curls for long-lasting balance, movement, and health. Pricing based on consultation.",
           },
           {
-            name: "Girls Haircut & Style (10 & Under)",
+            name: "Girl's Haircut & Style (10 & Under)",
             price: "from $40",
             duration: "30 min",
             bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=21",
@@ -621,7 +623,7 @@ const SALON_HAIR_BASE_SECTION: ServicesSection = {
               "A quick, precise trimming service designed to maintain the perfect shape, length, and style of your fringe. It also includes refreshing face-framing layers to keep your look balanced and polished.",
           },
           {
-            name: "Boys Haircut (10 & Under)",
+            name: "Boy's Haircut (10 & Under)",
             price: "from $35",
             duration: "30 min",
             bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=22",
@@ -662,7 +664,7 @@ const SALON_HAIR_BASE_SECTION: ServicesSection = {
         note: "",
         items: [
           {
-            name: "Woman's Blowout Styling",
+            name: "Women's Blowout Styling",
             price: "from $45",
             duration: "30 min",
             bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=99",
@@ -733,7 +735,7 @@ const SALON_HAIR_BASE_SECTION: ServicesSection = {
               "Intended to cover gray hair at the roots only, without being pulled through the ends.",
           },
           {
-            name: "Single Process Thru the Ends",
+            name: "Single Process through the Ends",
             price: "from $95",
             duration: "30 min",
             bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=35",
@@ -741,7 +743,7 @@ const SALON_HAIR_BASE_SECTION: ServicesSection = {
               "Formulated to cover gray hair throughout and refresh or change the overall base color.",
           },
           {
-            name: "Woman's Grey Blending",
+            name: "Women's Grey Blending",
             price: "$80.00",
             duration: "30 min",
             bookingUrl: "https://booking.mangomint.com/kossofsalonspa?serviceId=47",

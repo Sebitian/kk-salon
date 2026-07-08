@@ -87,10 +87,10 @@ export default function Footer() {
             <div className="space-y-4 text-sm font-light">
               <p className="leading-relaxed">185 MILWAUKEE AVENUE, STE. 120<br />LINCOLNSHIRE, IL 60069</p>
               <div className="pt-4 space-y-2">
+                <p className="text-white/50 text-xs">For questions regarding appointments and scheduling, email:</p>
                 <a href="mailto:frontdesk@kossofsalonspa.com" className="block hover:text-salon-blue transition-colors italic">frontdesk@kossofsalonspa.com</a>
-                <span className="block text-white/50 text-xs">Appointments &amp; scheduling</span>
+                <p className="text-white/50 text-xs pt-2">For all other inquiries, email:</p>
                 <a href="mailto:info@kossofsalonspa.com" className="block hover:text-salon-blue transition-colors italic">info@kossofsalonspa.com</a>
-                <span className="block text-white/50 text-xs">General inquiries</span>
                 <a href="tel:8478216604" className="block hover:text-salon-blue transition-colors font-medium pt-2">847-821-6604</a>
               </div>
             </div>

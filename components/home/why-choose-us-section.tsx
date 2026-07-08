@@ -103,7 +103,7 @@ export default function WhyChooseUsSection() {
   )
 
   return (
-    <section className="pt-0 pb-8 sm:pb-12 bg-white overflow-hidden">
+    <section className="py-0 bg-white overflow-hidden">
       {/* Full-bleed carousel (swipe + arrows + dots) */}
       <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen mb-0">
         <div className="relative">

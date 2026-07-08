@@ -20,14 +20,16 @@ const LEGACY_BIOS: Record<string, string> = {
     "I am a master colorist with 39 years of experience behind the chair. I specialize in creating beautiful blondes and expertly crafted highlights, with a refined eye for tone, dimension, and customized color.\n\nMy expertise spans all color services, allowing me to tailor each look to enhance my clients’ features and lifestyle. I take pride in my precision and consistency, delivering results that are both stunning and wearable.\n\nI am truly passionate about my craft and deeply committed to making every client feel confident, radiant, and cared for. Building lasting relationships with my clients is one of the most meaningful parts of what I do.",
   Donna:
     "I’m a highly experienced hair designer with 31 years behind the chair on the North Shore. I specialize in precision cutting and styling for women, men, and children of all hair textures and lengths, always taking a thoughtful, customized approach with each client.\n\nI love creating beautiful, wearable styles—from everyday cuts to more elevated looks—and I especially enjoy updos and formal event styling to help clients feel confident for their special moments.\n\nIn addition to cutting and styling, I specialize in keratin treatments, perms, and conditioning treatments, delivering smooth, healthy, and manageable results tailored to each individual’s hair.\n\nI’m committed to continuing education and staying current with the latest techniques and trends in the industry. My dedication, consistency, and attention to detail have helped me build trusted, long-lasting relationships with my clients. I also speak Polish, allowing me to connect with a wider range of clients.",
+  "stephanie-stylist":
+    "Stephanie has over 10 years of experience and specializes in precision haircuts for women, men, and children. She is dedicated to creating personalized styles that complement each client’s hair type, lifestyle, and individual look. With a warm, friendly approach and attention to detail, Stephanie is committed to helping every guest leave feeling confident and refreshed.",
 }
 
 export type TeamMember = {
   id: string
   name: string
   title: string
-  publicId: string
-  imageUrl: string
+  publicId?: string
+  imageUrl?: string
   description: string
   instagram?: string
 }
@@ -42,16 +44,15 @@ function member(
   id: string,
   name: string,
   title: string,
-  publicId: string,
+  publicId?: string,
   instagram?: string,
 ): TeamMember {
-  const description = LEGACY_BIOS[name] ?? ""
+  const description = LEGACY_BIOS[id] ?? LEGACY_BIOS[name] ?? ""
   return {
     id,
     name,
     title,
-    publicId,
-    imageUrl: cloudinaryImage(publicId),
+    ...(publicId ? { publicId, imageUrl: cloudinaryImage(publicId) } : {}),
     description,
     ...(instagram ? { instagram } : {}),
   }
@@ -108,16 +109,17 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
       member(
         "joanna",
         "Joanna",
-        "Colorist / Stylist / Curly Hair Specialist / Hair Extensions",
+        "Colorist / Hair Stylist / Curly Hair Specialist / Hair Extensions",
         "joanna2_ejwrac",
         "https://www.instagram.com/joanna_artistry?igsh=cGUxZ2I4YjhwZ2Fn&utm_source=qr",
       ),
-      member("zack", "Zack", "Colorist / Stylist", "zack_colorist_stylist_zu3l5d"),
+      member("zack", "Zack", "Colorist / Hair Stylist", "zack_colorist_stylist_zu3l5d"),
+      member("christine", "Christine", "Colorist / Hair Stylist"),
     ],
   },
   {
     id: "stylists",
-    label: "Stylists",
+    label: "Hair Stylists",
     members: [
       member(
         "brentley",
@@ -126,19 +128,20 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
         "0G3A7377_cviz1i",
         "https://www.instagram.com/beauty.by.brentley?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       ),
-      member("carole", "Carole", "Stylist", "carole_sttylist_gtdoqr"),
-      member("dylan", "Dylan", "Specialist", "Dylan_pljai0"),
+      member("carole", "Carole", "Hair Stylist", "carole_sttylist_gtdoqr"),
+      member("dylan", "Dylan", "Hair Stylist", "Dylan_pljai0"),
       member(
         "donna",
         "Donna",
-        "Stylist",
+        "Hair Stylist",
         "donna_stylist_wy1es9",
         "https://www.instagram.com/hairdesigner33/?utm_source=ig_web_button_share_sheet",
       ),
-      member("grace", "Grace", "Stylist", "grace_stylist_vx9l6x"),
-      member("ledia", "Ledia", "Stylist", "ledia_stylist_jkvcer"),
-      member("lissette", "Lissette", "Stylist / Hair Extensions / Wigs & Hairpieces", "lissette_stylist_llmt30"),
-      member("patty", "Patty", "Stylist", "patty_stylist_cavgkb"),
+      member("grace", "Grace", "Hair Stylist", "grace_stylist_vx9l6x"),
+      member("ledia", "Ledia", "Hair Stylist", "ledia_stylist_jkvcer"),
+      member("lissette", "Lissette", "Hair Stylist / Hair Extensions / Wigs & Hairpieces", "lissette_stylist_llmt30"),
+      member("patty", "Patty", "Hair Stylist", "patty_stylist_cavgkb"),
+      member("stephanie-stylist", "Stephanie", "Hair Stylist", "0G3A7343_wsdvvg"),
       // member("joe", "Joe", "Stylist", "joe_y0gir5"),
     ],
   },
@@ -155,12 +158,12 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     label: "Spa",
     members: [
       member("carol-marie", "Carol Marie", "Esthetician / Makeup Artist", "carol_marrie_esthetician_rrcawz"),
-      member("maria", "Maria Kelly", "Estethician / Massage & Neuro-muscular Therapist", "maria_kelley_esthetician_massage_therapist_er7ey7"),
-      member("marie", "Marie", "Estethician", "marie_estethician_xrhmc9"),
+      member("maria", "Maria Kelly", "Esthetician / Massage & Neuro-muscular Therapist", "maria_kelley_esthetician_massage_therapist_er7ey7"),
+      member("marie", "Marie", "Esthetician", "marie_estethician_xrhmc9"),
       member("matt", "Matt", "Massage Therapist", "matt_massage_therapist_qtxfzl"),
-      member("mirela", "Mirela", "Estethician / Massage", "mirela_estethician_massage_dhygsq"),
-      member("natalie", "Natalie", "Estethician / Makeup Artist / Permanent Makeup / Microneedling", "natalie_estethician_y7eehm"),
-      member("sheyla", "Sheyla", "Estethician", "sheyla_estethician_iq0xvb"),
+      member("mirela", "Mirela", "Esthetician / Massage Therapist", "mirela_estethician_massage_dhygsq"),
+      member("natalie", "Natalie", "Esthetician / Makeup Artist / Permanent Makeup / Microneedling", "natalie_estethician_y7eehm"),
+      member("sheyla", "Sheyla", "Esthetician", "sheyla_estethician_iq0xvb"),
     ],
   },
 ]

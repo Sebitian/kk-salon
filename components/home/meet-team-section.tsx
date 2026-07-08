@@ -46,12 +46,15 @@ export default function MeetTeamSection() {
                   </h3>
                   <span className="h-px flex-1 max-w-[120px] bg-salon-brown/40" aria-hidden />
                 </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10 list-none p-0 m-0">
+                <ul className="flex flex-wrap justify-center gap-x-6 gap-y-10 list-none p-0 m-0">
                   {category.members.map((member) => {
                     const hasBio = member.description.trim().length > 0
                     return (
-                      <li key={member.id} className="flex flex-col items-center text-center">
-                        <div className="w-full max-w-[220px] overflow-hidden rounded-sm shadow-md border border-salon-brown/10 bg-white">
+                      <li
+                        key={member.id}
+                        className="flex flex-col items-center text-center w-[min(220px,calc((100%-1.5rem)/2))] sm:w-[min(220px,calc((100%-3rem)/3))] lg:w-[min(220px,calc((100%-4.5rem)/4))]"
+                      >
+                        <div className="w-full overflow-hidden rounded-sm shadow-md border border-salon-brown/10 bg-white">
                           <button
                             type="button"
                             onClick={() => setBioMember(member)}
@@ -60,6 +63,7 @@ export default function MeetTeamSection() {
                               hasBio ? `Read bio for ${member.name}` : `View ${member.name}`
                             }
                           >
+                            {member.imageUrl ? (
                             <Image
                               src={member.imageUrl}
                               alt=""
@@ -68,6 +72,12 @@ export default function MeetTeamSection() {
                               className="object-cover object-top pointer-events-none select-none"
                               draggable={false}
                             />
+                          ) : (
+                            <div
+                              className="absolute inset-0 bg-[#faf8f5]"
+                              aria-hidden
+                            />
+                          )}
                           </button>
                         </div>
                         <div className="mt-4 flex items-center justify-center gap-2 min-h-[1.25rem]">
