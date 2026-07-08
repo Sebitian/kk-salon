@@ -37,21 +37,21 @@ export default function HeroSection() {
         </div>
         <div className="w-full max-w-5xl px-4 py-6 sm:px-8 sm:py-8 lg:py-10">
           <div className="flex flex-col items-center gap-1 sm:gap-2">
-            <span className="block text-center text-white text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-light leading-none tracking-[0.18em] sm:tracking-[0.3em] uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] pl-[0.18em] sm:pl-[0.3em]">
+            <span className="block text-center text-white text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-none tracking-[0.16em] sm:tracking-[0.24em] uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] pl-[0.16em] sm:pl-[0.24em]">
               Luxury
             </span>
             <span
-              className="h-px w-36 sm:w-52 lg:w-64 bg-white/85"
+              className="h-px w-28 sm:w-44 lg:w-52 bg-white/85"
               aria-hidden="true"
             />
-            <span className="block text-center text-white text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-light leading-none tracking-[0.18em] sm:tracking-[0.3em] uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] pl-[0.18em] sm:pl-[0.3em]">
+            <span className="block text-center text-white text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-none tracking-[0.16em] sm:tracking-[0.24em] uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] pl-[0.16em] sm:pl-[0.24em]">
               Beauty
             </span>
             <span
-              className="h-px w-36 sm:w-52 lg:w-64 bg-white/85"
+              className="h-px w-28 sm:w-44 lg:w-52 bg-white/85"
               aria-hidden="true"
             />
-            <span className="block text-center text-white text-4xl sm:text-6xl lg:text-8xl xl:text-9xl font-light leading-none tracking-[0.18em] sm:tracking-[0.3em] uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] pl-[0.18em] sm:pl-[0.3em]">
+            <span className="block text-center text-white text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-light leading-none tracking-[0.16em] sm:tracking-[0.24em] uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] pl-[0.16em] sm:pl-[0.24em]">
               Experience
             </span>
           </div>

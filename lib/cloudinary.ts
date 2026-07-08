@@ -32,6 +32,7 @@ export const IMAGES = {
 
 export const VIDEOS = {
   services: cloudinaryVideo("services_nepyjr"),
+  salonTour: cloudinaryVideo("salon_tour_xm3k2p"),
   kossofProductsFinal: cloudinaryVideo("Kossof_Products_Final"),
   kossofProductsFinalAlt: cloudinaryVideo("Kossof.Products.Final_1_dvjdyq"),
   kossofMoroccanFinal: cloudinaryVideo("Kossof.Moroccan.Final"),

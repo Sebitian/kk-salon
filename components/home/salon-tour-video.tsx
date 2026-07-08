@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { VIDEOS } from "@/lib/cloudinary"
 
 export default function SalonTourVideo() {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -40,7 +41,7 @@ export default function SalonTourVideo() {
         <div className="relative aspect-[3/4] w-full sm:mx-auto sm:max-w-xl sm:aspect-[4/5]">
           <video
             ref={videoRef}
-            src="/salon_tour.mp4"
+            src={VIDEOS.salonTour}
             muted
             loop
             playsInline
