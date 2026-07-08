@@ -2,7 +2,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Dancing_Script } from "next/font/google"
 import HeroSection from "@/components/home/hero-section"
-import SalonTourVideo from "@/components/home/salon-tour-video"
 import ServicesOverview from "@/components/home/services-overview"
 import WhyChooseUsSection from "@/components/home/why-choose-us-section"
 import TestimonialsSection from "@/components/home/testimonials-section"
@@ -28,7 +27,7 @@ export default function Home() {
     <>
       {/* ===============TEST */}
       <HeroSection />
-      <div className="bg-black pt-4 pb-0 sm:pt-5">
+      <div className="bg-black py-4 sm:py-5">
         <div className="mx-auto flex max-w-3xl flex-col gap-3 px-3 sm:px-5">
           <Link
             href="/products"
@@ -55,8 +54,6 @@ export default function Home() {
             Weddings Services
           </Link>
         </div>
-
-        <SalonTourVideo />
       </div>
       <section className="py-16 px-4 bg-white" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
         <div className="container mx-auto max-w-5xl">
