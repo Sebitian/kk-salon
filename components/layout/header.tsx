@@ -112,7 +112,7 @@ export default function Header() {
                 pathname === "/weddings-services" && "text-primary"
               )}
             >
-              WEDDINGS
+              WEDDING AND EVENT SERVICES
             </Link>
           </div>
 
@@ -245,7 +245,7 @@ export default function Header() {
               )}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              WEDDINGS
+              WEDDING AND EVENT SERVICES
             </Link>
 
             <Link

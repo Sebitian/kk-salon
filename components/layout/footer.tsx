@@ -122,7 +122,7 @@ export default function Footer() {
               </Link>
               <Link href="/salon-services" className="block hover:text-salon-blue transition-colors">Salon Services</Link>
               <Link href="/spa-services" className="block hover:text-salon-blue transition-colors">Spa Services</Link>
-              <Link href="/weddings-services" className="block hover:text-salon-blue transition-colors">Wedding Services</Link>
+              <Link href="/weddings-services" className="block hover:text-salon-blue transition-colors">Wedding and Event Services</Link>
               <Link href="/about" className="block hover:text-salon-blue transition-colors">About Us</Link>
               <Link href="/faq" className="block hover:text-salon-blue transition-colors">FAQ</Link>
             </div>

@@ -51,7 +51,7 @@ export default function Home() {
             href="/weddings-services"
             className="w-full inline-flex items-center justify-center rounded-full px-7 sm:px-9 py-4 sm:py-5 bg-black text-white shadow-[0_10px_26px_rgba(0,0,0,0.45)] ring-1 ring-white/30 text-base sm:text-lg font-semibold tracking-[0.12em] uppercase"
           >
-            Weddings Services
+            Wedding and Event Services
           </Link>
         </div>
       </div>

@@ -4,15 +4,15 @@ import ServicesContent from "@/components/services/services-content"
 import { WEDDINGS_SERVICES_SECTIONS } from "@/components/services/weddings-services-data"
 
 export const metadata: Metadata = {
-  title: "Wedding Services | Bridal Hair & Makeup - Kossof Salon Spa",
+  title: "Wedding and Event Services | Bridal Hair & Makeup - Kossof Salon Spa",
   description:
-    "Explore our wedding services menu with in-salon and on-location bridal hair and makeup for brides and bridal parties.",
+    "Explore our wedding and event services menu with in-salon and on-location bridal hair and makeup for brides and bridal parties.",
   keywords:
-    "wedding services, bridal hair, bridal makeup, wedding day hair, wedding day makeup, on-location bridal services",
+    "wedding and event services, bridal hair, bridal makeup, wedding day hair, wedding day makeup, on-location bridal services",
   openGraph: {
-    title: "Kossof Wedding Services",
+    title: "Kossof Wedding and Event Services",
     description:
-      "Bridal hair and makeup services for weddings, with in-salon and on-location options.",
+      "Bridal hair and makeup services for weddings and events, with in-salon and on-location options.",
     type: "website",
     images: [
       {
@@ -31,8 +31,8 @@ export default function WeddingsServicesPage() {
       <WeddingsServicesHero />
       <ServicesContent
         sections={WEDDINGS_SERVICES_SECTIONS}
-        schemaName="Kossof Wedding Services"
-        schemaDescription="Wedding service menu including in-salon and on-location bridal hair and makeup."
+        schemaName="Kossof Wedding and Event Services"
+        schemaDescription="Wedding and event service menu including in-salon and on-location bridal hair and makeup."
         searchPlaceholder="Try: bridal hair, bridal makeup, on-location..."
         footerCallSchedule={{ tel: "8478216604", numberDisplay: "847-821-6604" }}
       />

@@ -12,7 +12,7 @@ const faqItems = [
   {
     question: "What services do you offer at Kossof Salon Spa?",
     answer:
-      "We offer salon services (haircuts, color, treatments, retexturizing, nails, waxing, lashes + brows, and makeup), spa services (facials, advanced facial treatments, body treatments, body wraps, and massage therapies), and wedding services (bridal hair and makeup with in-salon and on-location options).",
+      "We offer salon services (haircuts, color, treatments, retexturizing, nails, waxing, lashes + brows, and makeup), spa services (facials, advanced facial treatments, body treatments, body wraps, and massage therapies), and wedding and event services (bridal hair and makeup with in-salon and on-location options).",
   },
   {
     question: "Do new color or extension clients need a consultation?",
@@ -48,9 +48,9 @@ const faqItems = [
 
 export const metadata: Metadata = {
   title:
-    "Kossof Salon Spa FAQ | Salon, Spa, and Wedding Services in Lincolnshire, IL",
+    "Kossof Salon Spa FAQ | Salon, Spa, and Wedding and Event Services in Lincolnshire, IL",
   description:
-    "Frequently asked questions about Kossof Salon Spa in Lincolnshire, IL, including booking, consultations, cancellation policy, salon services, spa services, wedding services, and business hours.",
+    "Frequently asked questions about Kossof Salon Spa in Lincolnshire, IL, including booking, consultations, cancellation policy, salon services, spa services, wedding and event services, and business hours.",
   keywords: [
     "Kossof Salon Spa FAQ",
     "Lincolnshire salon FAQ",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kossof Salon Spa FAQ",
     description:
-      "Answers to common questions about appointments, policies, and salon, spa, and wedding services at Kossof Salon Spa.",
+      "Answers to common questions about appointments, policies, and salon, spa, and wedding and event services at Kossof Salon Spa.",
     type: "website",
     locale: "en_US",
     siteName: "Kossof Salon Spa",
@@ -165,7 +165,7 @@ export default function FAQPage() {
             </h1>
             <p className="text-white text-center text-lg max-w-3xl mx-auto">
               Answers about appointments, policies, and our salon, spa, and
-              wedding service menus in Lincolnshire, Illinois.
+              wedding and event service menus in Lincolnshire, Illinois.
             </p>
           </div>
         </section>
@@ -196,7 +196,7 @@ export default function FAQPage() {
                 href="/weddings-services"
                 className="inline-flex items-center justify-center rounded-md border border-salon-brown/20 px-4 py-3 text-sm font-semibold tracking-[0.08em] uppercase text-salon-brown hover:border-salon-blue/60 transition-colors"
               >
-                Wedding Services
+                Wedding and Event Services
               </Link>
             </div>
           </section>
