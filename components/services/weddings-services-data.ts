@@ -3,7 +3,7 @@ import { ServicesSection } from "./services-data"
 export const WEDDINGS_SERVICES_SECTIONS: ServicesSection[] = [
   {
     id: "weddings",
-    title: "Wedding and Event Services",
+    title: "weddings / events",
     intro: "Wedding hair and makeup services with in-salon and on-location options.",
     textLeftOnDesktop: true,
     textPanelBgClassName: "bg-[#ede7e4]/20",

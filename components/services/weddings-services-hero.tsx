@@ -9,7 +9,7 @@ export default function WeddingsServicesHero() {
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
           <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-salon-brown">
-            Wedding and Event Services
+            weddings / events
           </h1>
           <div className="w-24 h-1 bg-salon-blue mx-auto mt-4" />
           <p className="text-salon-brown/70 text-xl lg:text-2xl font-light tracking-wide max-w-2xl mx-auto pt-4">
