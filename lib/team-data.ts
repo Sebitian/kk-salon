@@ -139,7 +139,6 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
         "https://www.instagram.com/hairdesigner33/?utm_source=ig_web_button_share_sheet",
       ),
       member("grace", "Grace", "Hairstylist", "grace_stylist_vx9l6x"),
-      member("ledia", "Ledia", "Hairstylist", "ledia_stylist_jkvcer"),
       member("lissette", "Lissette", "Hairstylist / Hair Extensions / Wigs & Hairpieces", "lissette_stylist_llmt30"),
       member("patty", "Patty", "Hairstylist", "patty_stylist_cavgkb"),
       member("stephanie-stylist", "Stephanie", "Hairstylist", "0G3A7343_wsdvvg"),
