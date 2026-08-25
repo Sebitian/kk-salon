@@ -1,4 +1,5 @@
 import { IMAGES } from "@/lib/cloudinary"
+import { SALON_LANGUAGE_NAMES } from "@/lib/languages"
 
 export default function JsonLd() {
   const schema = {
@@ -56,7 +57,8 @@ export default function JsonLd() {
         "https://www.instagram.com/kossof_salonspa/",
         "https://www.tiktok.com/@kossof.salon.spa"
       ],
-      "priceRange": "$$"
+      "priceRange": "$$",
+      "availableLanguage": SALON_LANGUAGE_NAMES
     }
     ],
   }

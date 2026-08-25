@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { IMAGES } from "@/lib/cloudinary"
 import { TikTokLogo } from "@/components/tiktok-logo"
+import LanguagesSpoken from "@/components/languages-spoken"
 
 function FacebookLogo({ className }: { className?: string }) {
   return (
@@ -92,6 +93,10 @@ export default function Footer() {
                 <p className="text-white/50 text-xs pt-2">For all other inquiries, email:</p>
                 <a href="mailto:info@kossofsalonspa.com" className="block hover:text-salon-blue transition-colors italic">info@kossofsalonspa.com</a>
                 <a href="tel:8478216604" className="block hover:text-salon-blue transition-colors font-medium pt-2">847-821-6604</a>
+              </div>
+              <div className="pt-2">
+                <p className="text-white/50 text-xs mb-3">We speak</p>
+                <LanguagesSpoken variant="footer" />
               </div>
             </div>
           </div>

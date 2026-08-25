@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import LanguagesSpoken from "@/components/languages-spoken";
 import { IMAGES } from "@/lib/cloudinary";
+import { SALON_LANGUAGE_NAMES, SALON_LANGUAGES_SENTENCE } from "@/lib/languages";
 
 const faqItems = [
   {
@@ -40,6 +42,11 @@ const faqItems = [
       "Kossof Salon Spa is located at 185 N Milwaukee Avenue, Suite 120, Lincolnshire, IL 60069.",
   },
   {
+    question: "What languages do you speak at the salon?",
+    answer: `Our team speaks ${SALON_LANGUAGES_SENTENCE}.`,
+    showLanguages: true,
+  },
+  {
     question: "What are your salon hours?",
     answer:
       "We are closed Monday. Tuesday, Wednesday, and Thursday: 9:00 AM to 7:00 PM. Friday: 9:00 AM to 6:00 PM. Saturday: 9:00 AM to 5:00 PM. Sunday: 9:00 AM to 3:00 PM.",
@@ -60,6 +67,7 @@ export const metadata: Metadata = {
     "hair color consultation",
     "salon cancellation policy",
     "bridal hair and makeup pricing",
+    "salon languages spoken",
   ],
   openGraph: {
     title: "Kossof Salon Spa FAQ",
@@ -130,6 +138,7 @@ const localBusinessSchema = {
     },
   ],
   priceRange: "$$",
+  availableLanguage: SALON_LANGUAGE_NAMES,
 };
 
 export default function FAQPage() {
@@ -223,6 +232,9 @@ export default function FAQPage() {
                   <p className="text-gray-600 leading-relaxed" itemProp="text">
                     {item.answer}
                   </p>
+                  {"showLanguages" in item && item.showLanguages && (
+                    <LanguagesSpoken className="mt-4" />
+                  )}
                 </div>
               </article>
             ))}
