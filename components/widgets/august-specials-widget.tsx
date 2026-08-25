@@ -190,23 +190,8 @@ export default function AugustSpecialsWidget({
   useEffect(() => {
     if (window.location.hash === "#august-specials") {
       setOpen(true)
-      return
     }
-
-    if (sessionStorage.getItem("august-newsletter-dismissed") === "true") {
-      return
-    }
-
-    const timer = window.setTimeout(() => setOpen(true), 400)
-    return () => window.clearTimeout(timer)
   }, [])
-
-  const handleOpenChange = (nextOpen: boolean) => {
-    setOpen(nextOpen)
-    if (!nextOpen) {
-      sessionStorage.setItem("august-newsletter-dismissed", "true")
-    }
-  }
 
   return (
     <>
@@ -219,7 +204,7 @@ export default function AugustSpecialsWidget({
         <NewsletterIcon className="h-[1.65rem] w-[1.65rem]" />
       </button>
 
-      <Dialog open={open} onOpenChange={handleOpenChange}>
+      <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent
           className={`${nunito.className} max-h-[min(92vh,920px)] w-[calc(100%-1rem)] max-w-[600px] overflow-hidden border-0 bg-[#fff0c8] p-0 sm:rounded-[20px] [&>button]:absolute [&>button]:right-3 [&>button]:top-3 [&>button]:z-30 [&>button]:flex [&>button]:h-10 [&>button]:w-10 [&>button]:items-center [&>button]:justify-center [&>button]:rounded-full [&>button]:border-0 [&>button]:bg-[#f7f2ea] [&>button]:text-salon-raspberry [&>button]:opacity-100 [&>button]:shadow-sm [&>button]:transition-colors hover:[&>button]:bg-[#f7f2ea] hover:[&>button]:opacity-100 [&>button]:focus:outline-none [&>button]:focus:ring-2 [&>button]:focus:ring-salon-raspberry/30 [&>button_svg]:h-[18px] [&>button_svg]:w-[18px] [&>button_svg]:stroke-[2.75]`}
         >
