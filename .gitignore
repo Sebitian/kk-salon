@@ -22,6 +22,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# saved email dumps (too many files for the Next.js watcher)
+/_gmail-export/
+
 # large video files (served from Vercel Blob)
 *.mov
 

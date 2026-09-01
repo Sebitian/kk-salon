@@ -6,6 +6,7 @@ import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
 import WhatsAppWidget from "@/components/widgets/whatsapp-widget"
 import AugustSpecialsWidgetLazy from "@/components/widgets/august-specials-widget-lazy"
+import PromotionsPopupLazy from "@/components/widgets/promotions-popup-lazy"
 import GoogleAnalytics from "@/components/analytics/google-analytics"
 import MangomintOverlay from "@/components/booking/mangomint-overlay"
 import { Analytics } from "@vercel/analytics/react"
@@ -83,6 +84,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <PromotionsPopupLazy />
         <AugustSpecialsWidgetLazy />
         {/* <WhatsAppWidget /> */}
       </body>
