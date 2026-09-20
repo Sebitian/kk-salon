@@ -71,7 +71,7 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     id: "client-service",
     label: "Client Service",
     members: [
-      member("kirill", "Kirill", "Front Desk", "0G3A7333_ls2949"),
+      member("david", "David", "Front Desk", "v1789919652/0G3A4582_ahaqoo"),
       member("lane", "Lani", "Front Desk", "lane_frontdesk_z6fzxu"),
       member("stephanie", "Stephanie", "Front Desk", "0G3A7343_wsdvvg"),
     ],
@@ -115,7 +115,6 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
       ),
       member("zack", "Zack", "Colorist / Hairstylist", "zack_colorist_stylist_zu3l5d"),
       member("christine", "Christine", "Colorist / Hairstylist"),
-      member("toni", "Toni", "Colorist / Hairstylist"),
     ],
   },
   {
@@ -129,6 +128,7 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
         "0G3A7377_cviz1i",
         "https://www.instagram.com/beauty.by.brentley?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       ),
+      member("cameron", "Cameron", "Hairstylist", "v1789919569/0G3A4595_yuwifw"),
       member("carole", "Carole", "Hairstylist", "carole_sttylist_gtdoqr"),
       member("dylan", "Dylan", "Hairstylist", "Dylan_pljai0"),
       member(
@@ -142,6 +142,7 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
       member("lissette", "Lissette", "Hairstylist / Hair Extensions / Wigs & Hairpieces", "lissette_stylist_llmt30"),
       member("patty", "Patty", "Hairstylist", "patty_stylist_cavgkb"),
       member("stephanie-stylist", "Stephanie", "Hairstylist", "0G3A7343_wsdvvg"),
+      member("toni", "Toni", "Hairstylist", "v1789919600/0G3A4565_obhbsb"),
       // member("joe", "Joe", "Stylist", "joe_y0gir5"),
     ],
   },

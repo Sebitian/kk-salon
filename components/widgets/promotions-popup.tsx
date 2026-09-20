@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { IMAGES } from "@/lib/cloudinary"
 
-const DISMISSED_KEY = "current-promotions-dismissed"
+const DISMISSED_KEY = "fall-sale-flyer-dismissed"
 
 export default function PromotionsPopup() {
   const [open, setOpen] = useState(false)
@@ -32,16 +32,17 @@ export default function PromotionsPopup() {
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent
-        className="max-h-[min(92vh,920px)] w-[calc(100%-1rem)] max-w-[640px] overflow-hidden border-0 bg-white p-0 sm:rounded-[20px] [&>button]:absolute [&>button]:right-3 [&>button]:top-3 [&>button]:z-30 [&>button]:flex [&>button]:h-10 [&>button]:w-10 [&>button]:items-center [&>button]:justify-center [&>button]:rounded-full [&>button]:border-0 [&>button]:bg-[#f7f2ea] [&>button]:text-salon-raspberry [&>button]:opacity-100 [&>button]:shadow-sm [&>button]:transition-colors hover:[&>button]:bg-[#f7f2ea] hover:[&>button]:opacity-100 [&>button]:focus:outline-none [&>button]:focus:ring-2 [&>button]:focus:ring-salon-raspberry/30 [&>button_svg]:h-[18px] [&>button_svg]:w-[18px] [&>button_svg]:stroke-[2.75]"
+        <DialogContent
+        className="max-h-[min(92vh,920px)] w-[calc(100%-1rem)] max-w-[640px] overflow-hidden border-0 bg-white p-0 sm:rounded-[20px]"
+        closeClassName="right-3 top-3 z-30 flex h-10 w-10 items-center justify-center rounded-full border-0 bg-transparent text-salon-raspberry opacity-100 shadow-none ring-0 ring-offset-0 hover:bg-transparent hover:text-salon-raspberry hover:opacity-100 focus:outline-none focus:ring-0 focus:ring-transparent focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 data-[state=open]:bg-transparent data-[state=open]:text-salon-raspberry [&_svg]:h-[18px] [&_svg]:w-[18px] [&_svg]:stroke-[2.75] [&_svg]:text-salon-raspberry"
       >
         <DialogTitle className="sr-only">Current Promotions</DialogTitle>
         <div className="max-h-[min(92vh,920px)] overflow-y-auto">
           <Image
             src={IMAGES.currentPromotions}
-            alt="Kossof Salon Spa current promotions: Men's Haircut plus Phyto Treatment, Spa Day Special, Clarifying Hair Week, and Lunch Break Happy Hour. Call 847-821-6604 to schedule."
-            width={600}
-            height={500}
+            alt="Kossof Salon Spa fall sale flyer. Call 847-821-6604 to schedule."
+            width={1545}
+            height={1999}
             className="h-auto w-full object-contain"
             priority
           />

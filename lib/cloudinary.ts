@@ -26,7 +26,7 @@ export const IMAGES = {
   logoWhite: cloudinaryImage("logo-white_tbrhkx"),
   logoBlackNobg: cloudinaryImage("logo-black-nobg_an8p1f"),
   logoBold: cloudinaryImage("logo-bold_ujafyd"),
-  currentPromotions: cloudinaryImage("Fall_2_nnbtk2"),
+  currentPromotions: cloudinaryImage("Minimalist_Fall_Sale_Flyer_t7kvrl"),
   klogo: "/klogo.png",
   gif1: cloudinaryImage("gif1_xzeqcx"),
 } as const
