@@ -8,6 +8,7 @@ import WhatsAppWidget from "@/components/widgets/whatsapp-widget"
 import AugustSpecialsWidgetLazy from "@/components/widgets/august-specials-widget-lazy"
 import PromotionsPopupLazy from "@/components/widgets/promotions-popup-lazy"
 import GoogleAnalytics from "@/components/analytics/google-analytics"
+import PostHogProvider from "@/components/analytics/posthog-provider"
 import MangomintOverlay from "@/components/booking/mangomint-overlay"
 import { Analytics } from "@vercel/analytics/react"
 
@@ -77,16 +78,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} font-sans`}>
-        <JsonLd />
-        <GoogleAnalytics />
-        <Analytics />
-        <MangomintOverlay />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <PromotionsPopupLazy />
-        <AugustSpecialsWidgetLazy />
-        {/* <WhatsAppWidget /> */}
+        <PostHogProvider>
+          <JsonLd />
+          <GoogleAnalytics />
+          <Analytics />
+          <MangomintOverlay />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <PromotionsPopupLazy />
+          <AugustSpecialsWidgetLazy />
+          {/* <WhatsAppWidget /> */}
+        </PostHogProvider>
       </body>
     </html>
   )
