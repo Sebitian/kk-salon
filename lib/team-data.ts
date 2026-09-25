@@ -90,7 +90,6 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     id: "colorists",
     label: "Colorists",
     members: [
-      member("alena", "Alena", "Colorist", "alena_colorist_x5ztwa"),
       member("essie", "Essie", "Colorist", "essie_colorist_lrpf9h"),
       member(
         "jenny",
