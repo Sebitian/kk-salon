@@ -171,6 +171,7 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
           { name: "Hybrid Full Set", price: "$245" },
           { name: "Hybrid Two Week Fill", price: "$80" },
           { name: "Hybrid Three Week Fill", price: "$100" },
+          { name: "Lash Extension Removal", price: "$30" },
         ],
       },
     ],
