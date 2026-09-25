@@ -6,9 +6,9 @@ import { SPA_SERVICES_SECTIONS } from "@/components/services/spa-services-data"
 export const metadata: Metadata = {
   title: "Spa Services & Pricing | Facials, Massage Therapies, Makeup & Body - Kossof Salon Spa",
   description:
-    "Explore our full menu of luxury spa services: waxing, lashes + brows, makeup artistry, facials, advanced facial treatments, body treatments, massage therapies, and spa enhancements.",
+    "Explore our full menu of luxury spa services: lash extensions, waxing, lashes + brows, makeup artistry, facials, advanced facial treatments, body treatments, massage therapies, and spa enhancements.",
   keywords:
-    "spa services, makeup artistry, facials, microdermabrasion, LED facial, body treatments, body wrap, body scrub, massage, waxing, lash lift, deep tissue massage, hot stone massage, couples massage, aromatherapy",
+    "spa services, lash extensions, classic lashes, hybrid lashes, wet set lashes, makeup artistry, facials, microdermabrasion, LED facial, body treatments, body wrap, body scrub, massage, waxing, lash lift, deep tissue massage, hot stone massage, couples massage, aromatherapy",
   openGraph: {
     title: "Kossof Spa Services & Pricing",
     description:
@@ -32,7 +32,7 @@ export default function SpaServicesPage() {
       <ServicesContent
         sections={SPA_SERVICES_SECTIONS}
         schemaName="Kossof Spa Services"
-        schemaDescription="Full spa service menu including waxing, lashes + brows, makeup artistry, facials, advanced facial treatments, body treatments, body wraps, and massage therapies."
+        schemaDescription="Full spa service menu including lash extensions, waxing, lashes + brows, makeup artistry, facials, advanced facial treatments, body treatments, body wraps, and massage therapies."
         searchPlaceholder="Try: massage, facial, makeup, body wrap, scrub..."
         showBookingEmbedCta={false}
       />
