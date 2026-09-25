@@ -153,6 +153,30 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
     ],
   },
   {
+    id: "lash-extensions",
+    title: "Lash Extensions",
+    textLeftOnDesktop: false,
+    textPanelBgClassName: "bg-white",
+    groups: [
+      {
+        title: "Lash Extensions",
+        note: "24 hour cancellation policy: if an appointment is canceled less than 24 hours in advance, a 50% service charge will apply.",
+        items: [
+          { name: "Classic Full Set", price: "$180" },
+          { name: "Classic Two Week Fill", price: "$70" },
+          { name: "Classic Three Week Fill", price: "$90" },
+          { name: "Wet Set Full Set", price: "$245" },
+          { name: "Wet Set Two Week Fill", price: "$80" },
+          { name: "Wet Set Three Week Fill", price: "$100" },
+          { name: "Hybrid Full Set", price: "$245" },
+          { name: "Hybrid Two Week Fill", price: "$80" },
+          { name: "Hybrid Three Week Fill", price: "$100" },
+          { name: "Lash Extension Removal", price: "$30" },
+        ],
+      },
+    ],
+  },
+  {
     id: "makeup-artistry",
     title: "Makeup Artistry",
     textLeftOnDesktop: false,
