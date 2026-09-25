@@ -56,7 +56,7 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
           { name: "Dermaplaning Facial", price: "$175" },
           { name: "Signature Microdermabrasion Facial", price: "$175" },
           { name: "LED Regeneration Facial", price: "$150" },
-          { name: "Nano Infusion Facial (2 hour session)", price: "$150" },
+          { name: "Nano Infusion Facial (2 hour session)", price: "$175" },
         ],
       },
       {
