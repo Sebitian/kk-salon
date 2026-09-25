@@ -49,14 +49,14 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
         title: "Advanced Facial Treatments",
         bookingEmbedUrl: "https://booking.mangomint.com/741141?showOnlyScId=19",
         bookingEmbedTitle: "Kossof Salon Spa advanced facial treatments booking menu",
-        note: "A $50 non-refundable deposit will be applied towards the service for Microneedling.",
+        note: "A $50 non-refundable deposit will be applied towards the service for Nano Infusion Facial.",
         items: [
           { name: "Aqua Glow Hydra Facial", price: "$175" },
           { name: "Dermaplaning Treatment", price: "$95" },
           { name: "Dermaplaning Facial", price: "$175" },
           { name: "Signature Microdermabrasion Facial", price: "$175" },
           { name: "LED Regeneration Facial", price: "$150" },
-          { name: "Microneedling (2 hour session)", price: "$150" },
+          { name: "Nano Infusion Facial (2 hour session)", price: "$150" },
         ],
       },
       {
