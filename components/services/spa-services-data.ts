@@ -227,7 +227,6 @@ export const SPA_SERVICES_SECTIONS: ServicesSection[] = [
           { name: "Moroccanoil Mind Melt Scalp & Shoulder Ritual", price: "$65 | 30min" },
           { name: "CBD Healing Relief Massage", price: "$140 | 60min / $180 | 90min" },
           { name: "Expectant Mother Massage", price: "$120 | 60min / $160 | 90min" },
-          { name: "Neuromuscular Therapy", price: "$80 | 30min / $160 | 60min / $200 | 90min" },
         ],
       },
       {
