@@ -158,7 +158,6 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
     label: "Spa",
     members: [
       member("carol-marie", "Carol Marie", "Esthetician / Makeup Artist", "carol_marrie_esthetician_rrcawz"),
-      member("maria", "Maria Kelly", "Esthetician / Massage & Neuro-muscular Therapist", "maria_kelley_esthetician_massage_therapist_er7ey7"),
       member("marie", "Marie", "Esthetician", "marie_estethician_xrhmc9"),
       member("matt", "Matt", "Massage Therapist", "matt_massage_therapist_qtxfzl"),
       member("mirela", "Mirela", "Esthetician / Massage Therapist", "mirela_estethician_massage_dhygsq"),

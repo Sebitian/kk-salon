@@ -735,12 +735,6 @@ export const SERVICES_SECTIONS: ServicesSection[] = [
               "Focused neck, shoulder, and scalp work to ease headaches and mental fatigue.",
           },
           {
-            name: "Neuromuscular therapy",
-            price: "$160 | 60min / $200 | 90min",
-            description:
-              "A corrective, precision-focused treatment that targets trigger points, muscles imbalances, and chronic tension to restore optimal function, relieve pain, and promote deep structural balance.",
-          },
-          {
             name: "Couples Massage",
             price: "$200 | 60min / $260 | 90min",
             description:
