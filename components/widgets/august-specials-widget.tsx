@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import NewsletterIcon from "@/components/icons/newsletter-icon"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import { IMAGES } from "@/lib/cloudinary"
 
 export default function AugustSpecialsWidget() {
   const [open, setOpen] = useState(false)
@@ -30,7 +31,7 @@ export default function AugustSpecialsWidget() {
           <DialogTitle className="sr-only">November Newsletter</DialogTitle>
           <div className="max-h-[min(92vh,920px)] overflow-y-auto">
             <Image
-              src="/november-newsletter/november-newsletter.png"
+              src={IMAGES.currentPromotions}
               alt="Kossof Salon Spa November Newsletter: Holiday Preview Week Nov 3-8, Gratitude Week Nov 17-21, Veterans Day 20% off services for active duty military or veterans, and Black Friday gift card bonus. Call 847-821-6604 or visit kossofsalonspa.com."
               width={1545}
               height={1999}
