@@ -22,6 +22,8 @@ const LEGACY_BIOS: Record<string, string> = {
     "I’m a highly experienced hair designer with 31 years behind the chair on the North Shore. I specialize in precision cutting and styling for women, men, and children of all hair textures and lengths, always taking a thoughtful, customized approach with each client.\n\nI love creating beautiful, wearable styles—from everyday cuts to more elevated looks—and I especially enjoy updos and formal event styling to help clients feel confident for their special moments.\n\nIn addition to cutting and styling, I specialize in keratin treatments, perms, and conditioning treatments, delivering smooth, healthy, and manageable results tailored to each individual’s hair.\n\nI’m committed to continuing education and staying current with the latest techniques and trends in the industry. My dedication, consistency, and attention to detail have helped me build trusted, long-lasting relationships with my clients. I also speak Polish, allowing me to connect with a wider range of clients.",
   "stephanie-stylist":
     "Stephanie has over 10 years of experience and specializes in precision haircuts for women, men, and children. She is dedicated to creating personalized styles that complement each client’s hair type, lifestyle, and individual look. With a warm, friendly approach and attention to detail, Stephanie is committed to helping every guest leave feeling confident and refreshed.",
+  debbi:
+    "With more than four decades in the hair industry, Debbi brings a wealth of experience and a passion for helping guests embrace their natural curls. Her career began at her uncle's salon, Paul Glick and Associates on Chicago's Magnificent Mile, where she trained as an apprentice before becoming a stylist. She has spent her career serving guests throughout the North Shore and beyond.\n\nSpecializing in curly hair cutting and coloring, Debbi takes a personalized approach to creating looks that complement each guest's natural texture and individual style. She believes a great salon experience includes the knowledge and confidence to care for your hair at home. From cleansing and defining to drying and styling, she helps guests build a routine that keeps their curls looking beautiful between visits.",
 }
 
 export type TeamMember = {
@@ -114,6 +116,13 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
       ),
       member("zack", "Zack", "Colorist / Hairstylist", "zack_colorist_stylist_zu3l5d"),
       member("christine", "Christine", "Colorist / Hairstylist"),
+      member(
+        "debbi",
+        "Debbi",
+        "Colorist / Hairstylist",
+        undefined,
+        "https://www.instagram.com/devadeb22/",
+      ),
     ],
   },
   {
