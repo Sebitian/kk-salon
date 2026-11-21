@@ -50,11 +50,17 @@ function member(
   instagram?: string,
 ): TeamMember {
   const description = LEGACY_BIOS[id] ?? LEGACY_BIOS[name] ?? ""
+  const image =
+    publicId === undefined
+      ? {}
+      : publicId.startsWith("/")
+        ? { imageUrl: publicId }
+        : { publicId, imageUrl: cloudinaryImage(publicId) }
   return {
     id,
     name,
     title,
-    ...(publicId ? { publicId, imageUrl: cloudinaryImage(publicId) } : {}),
+    ...image,
     description,
     ...(instagram ? { instagram } : {}),
   }
@@ -118,9 +124,9 @@ export const TEAM_CATEGORIES: TeamCategory[] = [
       member("christine", "Christine", "Colorist / Hairstylist"),
       member(
         "debbi",
-        "Debbi",
-        "Colorist / Hairstylist",
-        undefined,
+        "Debbie",
+        "Colorist/Hairstylist & Curly Hair Specialist",
+        "/team/debbie.jpg",
         "https://www.instagram.com/devadeb22/",
       ),
     ],
